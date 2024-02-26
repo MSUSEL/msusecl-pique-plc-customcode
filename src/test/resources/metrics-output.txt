@@ -1,0 +1,23 @@
+	Code size (number of bytes)	Variables size (number of bytes)	Stack size (number of bytes)	Number of calls	Called in tasks	Used different global Variables	Number of direct address accesses	Number of local variables	Number of inputs variables	Number of output variables	NOS - Number Of Statements	Percentage of comment	Complexity (McCabe)	Complexity of nesting (Prather)	DIT - Depth of Inheritance Tree	NOC - Number Of Children	RFC - Response For Class	CBO - Coupling Between Objects	Complexity of reference (Elshof)	Lack of Cohesion Of Methods - LCOM	Number of different used operators - Halstead (n1)	Number of operators - Halstead (N1)	Number of different used operands - Halstead (n2)	Number of operands - Halstead (N2)	Length - Halstead (HL)	Volume - Halstead (HV)	Difficulty - Halstead (D)	Number of SFC branches
+	Number of SFC steps
+
+SortTable	216	88	16	1	1	0	0	4	3	4	5	15	2	1.20	0	0	2	2	0.70	0	5	14	15	21	70	151	3.5		
+Sim_Piston	456	120	16	5	1	0	0	7	5	2	22	0	6	1.23	0	0	0	1	0.44	0	13	51	24	54	158	546	14.6		
+ProcessControlCentralFB	568	96	16	1	1	0	0	8	4	8	32	0	6	1.16	0	0	1	1	0.41	0	9	89	41	104	248	1089	11.4		
+Oven	256	24	16	1	1	0	0	0	2	2	10	0	8	1.80	0	0	0	0	0.25	0	8	20	10	23	57	179	9.2		
+ItemPackage	128	56	16	1	1	0	0	2	2	3	8	6	5	1.50	0	0	1	1	0.64	0	6	12	12	16	58	116	4.0		
+INC1	56		16	3																									
+Handshake	104	32	16	3	1	0	0	1	2	3	6	0	4	1.50	0	0	1	1	0.88	0	4	8	9	11	36	70	2.4		
+FormingPressFB	32	16	16	1	1	0	0	0	1	1	1	0	1	1.00	0	0	0	0	1.00	0	1	1	2	2	2	4	0.5		
+DoughDispenser	296	32	16	1	1	0	0	3	2	2	15	4	9	1.67	0	0	0	0	0.30	0	10	27	13	32	81	266	12.3		
+DoughCutter	208	24	16	1	1	0	0	3	1	1	9	0	7	1.89	0	0	0	0	0.33	0	9	17	8	20	52	151	11.3		
+DispenserResetFB	80	16	16	1	1	0	0	0	3	2	2	0	1	1.00	0	0	0	0	0.63	0	4	9	5	8	19	53	3.2		
+DecoratorSelectorFB	568	320	16	1	1	0	0	17	2	3	24	0	1	1.00	0	0	2	2	0.43	0	6	60	34	78	188	734	6.9		
+CookieTypes								3				0																	
+CookieProcessFB	1256	1560	16	1	1	0	0	18	15	17	40	0	1	1.00	0	0	7	7	0.54	0	5	114	94	180	627	1949	4.8		
+CookieProcess	1120	2257	0	1	1	0	0	39	5	2	48	0	1	1.00			8		0.63		3	104	105	168	709	1837	2.4		
+ConveyorItems	712	160	16	1	1	0	0	12	8	5	37	19	15	2.11	0	0	2	1	0.35	0	16	79	33	96	230	982	23.3		
+Conveyor	272	216	16	3	1	0	0	3	9	5	6	14	3	1.33	0	0	1	1	0.66	0	7	19	20	30	106	232	5.3		
+BoxingFB	192	72	16	1	1	0	0	5	3	3	10	0	1	1.00	0	0	1	1	0.52	0	6	21	17	32	84	239	5.6		
+BatchShutdownFB	32	16	16	1	1	0	0	1	1	2	1	0	1	1.00	0	0	0	0	1.00	0	1	1	2	2	2	4	0.5		
+BatchCompleteCountFB	136	56	16	1	1	0	0	3	4	1	8	0	2	1.13	0	0	1	1	0.75	0	8	17	17	22	93	181	5.2		
