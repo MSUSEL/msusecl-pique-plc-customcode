@@ -260,7 +260,7 @@ public class helperFunctions {
  
         return contentBuilder.toString();
     }
-	
+
 	/**
 	 * This function finds all diagnostics associated with a certain toolName and returns them in a Map with the diagnostic name as the key.
 	 * This is used common to initialize the diagnostics for tools.
