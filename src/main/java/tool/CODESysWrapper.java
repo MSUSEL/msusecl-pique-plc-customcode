@@ -257,12 +257,27 @@ public class CODESysWrapper extends Tool implements ITool {
             // Parse first two lines of output that define columns
             for (int i = 0; i < columnDefinitionLines; i++) {
                 String[] columnNames = lines[i].trim().split("\t");
-                for (int j = 0; j < columnNames.length; j++) {
-                    columns.add(columnNames[j]);
-                }
+                columns.addAll(Arrays.asList(columnNames));
             }
 
+            // Initialize a json object which represents a row of output
+            // the row items are stored as a json array of { column name : value } json objects
+            JSONObject jsonRowlabel = new JSONObject();
+            JSONArray jsonRowBody = new JSONArray();
+
             // Parse regular lines to match up with column names
+            // start after the first few lines that define the column names
+            // Example jsonified line: {"SortTable" : [ {"Code size (number of bytes)" : 216}, {"Variables size (number of bytes)" : 88}...] }
+            for (int i = columnDefinitionLines + 1; i < lines.length; i++) {
+                String[] rowItems = lines[i].trim().split("\t");
+
+
+                jsonOutput.put(rowItems[0],)
+                for (String item : rowItems) {
+                    jsonOutput.put(item, )
+                }
+
+            }
 
         } catch (JSONException e) {
             LOGGER.warn("Unable to read results from Trivy JSON output");
