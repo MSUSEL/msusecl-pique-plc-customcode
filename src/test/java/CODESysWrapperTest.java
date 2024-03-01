@@ -6,11 +6,14 @@ import pique.model.Diagnostic;
 import pique.model.Finding;
 import tool.CODESysWrapper;
 
+import javax.sound.midi.Soundbank;
 import java.io.File;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.sql.SQLOutput;
 import java.util.Map;
 import java.util.Optional;
+import java.util.Set;
 
 import static org.junit.Assert.*;
 
@@ -43,6 +46,7 @@ public class CODESysWrapperTest {
     // msusecl-pique-plc-customcode
     @Test
     public void testIfMetricsOutputIsParsedToTableCorrectly() {
+        double floatDelta = 0.0002;
         // This is necessary to format the correct path to helperFunctions.readFileContent()
         // and mocking readFileContent() just doesn't make sense here. So this is technically an integration test
         Path relativeFilePath = Paths.get("../msusecl-pique-plc-customcode/src/test/resources/metrics-output.txt");
@@ -53,18 +57,26 @@ public class CODESysWrapperTest {
         boolean firstRowExists = testTable.containsRow("SortTable");
         boolean firstColumnExists = testTable.containsColumn("Code size (number of bytes)");
         boolean lastRowExists = testTable.containsRow("BatchCompleteCountFB");
-        boolean lastColumnExists = testTable.containsColumn("Number of SFC steps");
+        boolean lastColumnExists = testTable.containsColumn("Number of SFC branches");
 
         assertTrue(firstRowExists);
         assertTrue(firstColumnExists);
         assertTrue(lastRowExists);
         assertTrue(lastColumnExists);
 
-        double firstValue = testTable.get("SortTable", "Code Size (number of bytes)");
-        double lastValue = testTable.get("BatchCompleteCountFB", "Number of SFC steps");
 
-        assertEquals(216, firstValue);
-        assertEquals(5.2, lastValue);
+        double firstValue = testTable.get("SortTable", "Code size (number of bytes)");
+        double midValue = testTable.get("Sim_Piston", "Stack size (number of bytes)");
+        double lastValue = testTable.get("BatchCompleteCountFB", "Number of SFC branches");
+
+
+        Set<String> columnKeySet = testTable.columnKeySet();
+        System.out.println(columnKeySet);
+        System.out.println(testTable.column("Number of SFC branches"));
+
+        assertEquals(216.0, firstValue, floatDelta);
+        assertEquals(16.0, midValue, floatDelta);
+        assertEquals(-9.9, lastValue, floatDelta);
     }
 
 

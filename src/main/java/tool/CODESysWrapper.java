@@ -30,7 +30,6 @@ import org.slf4j.LoggerFactory;
 import pique.analysis.ITool;
 import pique.analysis.Tool;
 import pique.model.Diagnostic;
-import pique.model.Finding;
 import pique.utility.PiqueProperties;
 import utilities.helperFunctions;
 
@@ -189,13 +188,13 @@ public class CODESysWrapper extends Tool implements ITool {
 
 
         // Parse first two lines of output that define columns
-        ArrayList<String> columnKeys = new ArrayList<>();
-        for (int i = 0; i < columnDefinitionLines; i++) {
-            String[] columnNames = lines[i].trim().split("\t");
-            columnKeys.addAll(Arrays.asList(columnNames));
-        }
-//        String[] columnNames = lines[0].trim().split("\t");
-//        ArrayList<String> columnKeys = new ArrayList<>(Arrays.asList(columnNames));
+        //ArrayList<String> columnKeys = new ArrayList<>();
+//        for (int i = 0; i < columnDefinitionLines; i++) {
+//            String[] columnNames = lines[i].trim().split("\t");
+//            columnKeys.addAll(Arrays.asList(columnNames));
+//        }
+        String[] columnNames = lines[0].trim().split("\t");
+        ArrayList<String> columnKeys = new ArrayList<>(Arrays.asList(columnNames));
 
         Table<String, String, Double> formattedToolOuput = HashBasedTable.create();
         int iter = 0;
@@ -205,9 +204,10 @@ public class CODESysWrapper extends Tool implements ITool {
             StringBuilder unformattedLine = new StringBuilder(lines[i]);
             StringBuilder value = new StringBuilder();
 
-            ArrayList<String> formattedLine = lineBuilder(value, unformattedLine, line, false);
+            ArrayList<String> formattedLine = metricsLineBuilder(value, unformattedLine, line, false);
             rowKeys.add(formattedLine.get(0));
-            for (int j = 1; j < formattedLine.size(); j++) {
+            formattedLine.remove(0);
+            for (int j = 0; j < columnKeys.size(); j++) {
                 formattedToolOuput.put(rowKeys.get(iter), columnKeys.get(j), Doubles.tryParse(formattedLine.get(j)));
             }
             iter++;
@@ -235,7 +235,7 @@ public class CODESysWrapper extends Tool implements ITool {
         return formattedOutput;
     }
 
-    private ArrayList<String> lineBuilder(StringBuilder value, StringBuilder unformattedLine, ArrayList<String> line, boolean secondTab) {
+    private ArrayList<String> metricsLineBuilder(StringBuilder value, StringBuilder unformattedLine, ArrayList<String> line, boolean secondTab) {
         // base cases
         if (unformattedLine.length() == 0) {
             // return finished line
@@ -244,17 +244,19 @@ public class CODESysWrapper extends Tool implements ITool {
             // current character is not a tab, add to value, call lineBuilder with modified unformatted line
             if (unformattedLine.charAt(0) != '\t') {
                 value.append(unformattedLine.charAt(0));
-                return lineBuilder(value, unformattedLine.deleteCharAt(0), line, false);
+                return metricsLineBuilder(value, unformattedLine.deleteCharAt(0), line, false);
             // current character is a first tab, set secondTab to true (treat this tab as a delimiter), store current value in line, and make recursive call to lineBuilder
             } else if (!secondTab) {
-                line.add(value.toString());
+                if (value.length() != 0) {
+                    line.add(value.toString());
+                }
                 value.setLength(0);
-                return lineBuilder(value, unformattedLine.deleteCharAt(0), line, true);
+                return metricsLineBuilder(value, unformattedLine.deleteCharAt(0), line, true);
             // current character is the second tab in a row. Treat it as a null value
             } else {
                 // This is weird, but I need a way to represent a null value that doesn't use null, 0.0, or empty string
                 line.add("-9.9");
-                return lineBuilder(value, unformattedLine.deleteCharAt(0), line, false);
+                return metricsLineBuilder(value, unformattedLine.deleteCharAt(0), line, true);
             }
         }
     }
