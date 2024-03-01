@@ -22,9 +22,9 @@
  */
 package tool;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
+import com.google.common.collect.HashBasedTable;
+import com.google.common.collect.Table;
+import com.google.common.primitives.Doubles;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import pique.analysis.ITool;
@@ -125,84 +125,18 @@ public class CODESysWrapper extends Tool implements ITool {
         LOGGER.debug(this.getName() + " Parsing Analysis...");
 
         //parse metrics
-        JSONObject JSONmetrics = parseMetricsToJSON(toolResults);
+        Table<String, String, Double> formattedMetricsOutput= parseMetrics(toolResults);
         //TODO Map JSONified results
 
         //parse rules
-        JSONObject JSONrules = parseRulestoJSON(toolResults);
+        Table<String, String, String> formattedRulesOutput= parseRules(toolResults);
         //TODO Map JSONified results
 
 
         // The following instantiation has dummy values for parameters to clarify function for exploration of pique
-        Finding f = new Finding(toolResults.toString(), lineNumber, 1, 1); //getSeverityFromModel);
+        //Finding f = new Finding(toolResults.toString(), lineNumber, 1, 1); //getSeverityFromModel);
 
         Map<String, Diagnostic> diagnostics = helperFunctions.initializeDiagnostics(this.getName());
-
-
-        String rules = "";
-
-
-        try {
-            metrics = helperFunctions.readFileContent(toolResults);
-        } catch (IOException e) {
-            LOGGER.info("No results to read from CODESys.");
-        }
-
-        try {
-            // if the results field is null we had no findings, thus return
-            if (results.isEmpty()) {
-                return diagnostics;
-            }
-
-            String[] lines = results.split("\n");
-
-            for (int i = 0; i < results.length(); i++) {
-
-            }
-
-//                 for (int i = 0; i < trivyResults.length(); i++) {
-//                     JSONArray jsonVulnerabilities = ((JSONObject) trivyResults.get(i)).optJSONArray("Vulnerabilities");
-//                     if (jsonVulnerabilities != null){
-//                         //apparently is null when no vulnerabilities are found.
-//                         for (int j = 0; j < jsonVulnerabilities.length(); j++) {
-//                             JSONObject jsonFinding = ((JSONObject) jsonVulnerabilities.get(j));
-//                             String vulnerabilityID = jsonFinding.getString("VulnerabilityID");
-//
-//                             ArrayList<String> associatedCWEs = new ArrayList<>();
-//                             JSONArray jsonWeaknesses = jsonFinding.optJSONArray("CweIDs");
-//                             if (jsonWeaknesses == null) {
-//                                 //try the cve-cwe script...
-//                                 ArrayList<String> wrapper = new ArrayList<>();
-//                                 wrapper.add(vulnerabilityID);
-//                             }else {
-//                                 for (int k = 0; k < jsonWeaknesses.length(); k++) {
-//                                     associatedCWEs.add(jsonWeaknesses.get(k).toString());
-//                                 }
-//                             }
-//                             //regardless of cwes, continue with severity.
-//                             String vulnerabilitySeverity = jsonFinding.getString("Severity");
-//                             int severity = this.severityToInt(vulnerabilitySeverity);
-//
-//                             for (int k = 0; k < associatedCWEs.size(); k++) {
-//                                 Diagnostic diag = diagnostics.get((associatedCWEs.get(k) + " Diagnostic Trivy"));
-//                                 if (diag != null) {
-//                                     Finding finding = new Finding("", 0, 0, severity);
-//                                     //finding.setName(vulnerabilityID);
-//                                     diag.setChild(finding);
-//                                 } else {
-//                                     //this means that either it is unknown, mapped to a CWE outside of the expected results, or is not assigned a CWE
-//                                     // We may want to treat this in another way in the future, but im ignoring it for now.
-//                                     System.out.println("Vulnerability " + vulnerabilityID + " with CWE: " + associatedCWEs.get(k) + "  outside of CWE-1000 was found. Ignoring this CVE.");
-//                                     LOGGER.warn("Vulnerability " + vulnerabilityID + " with CWE: " + associatedCWEs.get(k) + "  outside of CWE-1000 was found. Ignoring this CVE.");
-//                                 }
-//                             }
-//                         }
-//                     }
-//                 }
-
-        } catch (JSONException e) {
-            LOGGER.warn("Unable to read results from Trivy JSON output");
-        }
 
         return diagnostics;
     }
@@ -212,16 +146,17 @@ public class CODESysWrapper extends Tool implements ITool {
      */
     @Override
     public Path initialize(Path toolRoot) {
-        final String[] cmd = {"trivy", "version"};
-
-        try {
-            helperFunctions.getOutputFromProgram(cmd, LOGGER);
-        } catch (IOException e) {
-            e.printStackTrace();
-            LOGGER.error("Failed to initialize " + this.getName());
-            LOGGER.error(e.getStackTrace().toString());
-        }
-
+        System.out.println("Initializing");
+//        final String[] cmd = {"trivy", "version"};
+//
+//        try {
+//            helperFunctions.getOutputFromProgram(cmd, LOGGER);
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//            LOGGER.error("Failed to initialize " + this.getName());
+//            LOGGER.error(e.getStackTrace().toString());
+//        }
+//
         return toolRoot;
     }
 
@@ -231,17 +166,15 @@ public class CODESysWrapper extends Tool implements ITool {
      * @param toolOutput is a path to the directory containing tool output files
      * @return an JSONObject of diagnostic(finding?) information to be mapped in parseAnalysis()
      */
-    private JSONObject parseMetricsToJSON(Path toolOutput) {
+    public Table<String, String, Double> parseMetrics(Path toolOutput) {
         // Will these filenames always be the same or do we need a cleverer way to grab each file?
         final String metricsOutput = "metrics-output.txt";
         int columnDefinitionLines = 2;  // There are two lines at the top of the example output file that define "columns" in the output
+        ArrayList<String> rowKeys = new ArrayList<>();
 
-        JSONObject jsonOutput = new JSONObject();
-        String metrics = "";
-        ArrayList<String> columns = new ArrayList<>();
-
+        String metrics = "";    // This will be the tool output metrics file
         // get the full file path
-        Path metricsFilePath = toolOutput.resolve(metricsOutput);
+        Path metricsFilePath = toolOutput;
 
         // This might be better as a map but I'm not sure how or if metrics and rules interact
         // This way, parsed json can be mapped later
@@ -251,38 +184,38 @@ public class CODESysWrapper extends Tool implements ITool {
             LOGGER.info("No results to read from CODESys.");
         }
 
-        try {
-            String[] lines = metrics.split("\n");
-
-            // Parse first two lines of output that define columns
-            for (int i = 0; i < columnDefinitionLines; i++) {
-                String[] columnNames = lines[i].trim().split("\t");
-                columns.addAll(Arrays.asList(columnNames));
-            }
-
-            // Initialize a json object which represents a row of output
-            // the row items are stored as a json array of { column name : value } json objects
-            JSONObject jsonRowlabel = new JSONObject();
-            JSONArray jsonRowBody = new JSONArray();
-
-            // Parse regular lines to match up with column names
-            // start after the first few lines that define the column names
-            // Example jsonified line: {"SortTable" : [ {"Code size (number of bytes)" : 216}, {"Variables size (number of bytes)" : 88}...] }
-            for (int i = columnDefinitionLines + 1; i < lines.length; i++) {
-                String[] rowItems = lines[i].trim().split("\t");
+        // Maybe wrap this in try-catch? What error to catch?
+        String[] lines = metrics.split("\n");
 
 
-                jsonOutput.put(rowItems[0],)
-                for (String item : rowItems) {
-                    jsonOutput.put(item, )
-                }
-
-            }
-
-        } catch (JSONException e) {
-            LOGGER.warn("Unable to read results from Trivy JSON output");
+        // Parse first two lines of output that define columns
+        ArrayList<String> columnKeys = new ArrayList<>();
+        for (int i = 0; i < columnDefinitionLines; i++) {
+            String[] columnNames = lines[i].trim().split("\t");
+            columnKeys.addAll(Arrays.asList(columnNames));
         }
-        return jsonOutput;
+//        String[] columnNames = lines[0].trim().split("\t");
+//        ArrayList<String> columnKeys = new ArrayList<>(Arrays.asList(columnNames));
+
+        Table<String, String, Double> formattedToolOuput = HashBasedTable.create();
+        int iter = 0;
+        for (int i = columnDefinitionLines + 1; i < lines.length; i++) {
+            // create parameters necessary for line parsing
+            ArrayList<String> line = new ArrayList<>();
+            StringBuilder unformattedLine = new StringBuilder(lines[i]);
+            StringBuilder value = new StringBuilder();
+
+            ArrayList<String> formattedLine = lineBuilder(value, unformattedLine, line, false);
+            rowKeys.add(formattedLine.get(0));
+            for (int j = 1; j < formattedLine.size(); j++) {
+                formattedToolOuput.put(rowKeys.get(iter), columnKeys.get(j), Doubles.tryParse(formattedLine.get(j)));
+            }
+            iter++;
+        }
+
+//        for (Integer value : )
+
+        return formattedToolOuput;
     }
 
     /*
@@ -291,15 +224,39 @@ public class CODESysWrapper extends Tool implements ITool {
      * @param toolOutput is a path to the directory containing tool output files
      * @return an JSONObject of diagnostic(finding?) information to be mapped in parseAnalysis()
      */
-    private JSONObject parseRulestoJSON(Path toolOutput) {
+    private Table<String, String, String> parseRules(Path toolOutput) {
         // Always this filename?
         final String rulesOutput = "static-analysis-output-all_rules_metrics_turnedon.txt";
 
-        JSONObject jsonResults = new JSONObject();
+        Table<String, String, String> formattedOutput = HashBasedTable.create();
         //example: [ERROR]         Final Exam: CookieProcess [Device: PLC Logic: Final_Proj](Line 3 (Decl)): SA0033:  Unused Variable 'StartPB'
         int lineNumber = 0;//PARSE ME FROM FILE
 
-        return jsonResults;
+        return formattedOutput;
+    }
+
+    private ArrayList<String> lineBuilder(StringBuilder value, StringBuilder unformattedLine, ArrayList<String> line, boolean secondTab) {
+        // base cases
+        if (unformattedLine.length() == 0) {
+            // return finished line
+            return line;
+        } else {
+            // current character is not a tab, add to value, call lineBuilder with modified unformatted line
+            if (unformattedLine.charAt(0) != '\t') {
+                value.append(unformattedLine.charAt(0));
+                return lineBuilder(value, unformattedLine.deleteCharAt(0), line, false);
+            // current character is a first tab, set secondTab to true (treat this tab as a delimiter), store current value in line, and make recursive call to lineBuilder
+            } else if (!secondTab) {
+                line.add(value.toString());
+                value.setLength(0);
+                return lineBuilder(value, unformattedLine.deleteCharAt(0), line, true);
+            // current character is the second tab in a row. Treat it as a null value
+            } else {
+                // This is weird, but I need a way to represent a null value that doesn't use null, 0.0, or empty string
+                line.add("-9.9");
+                return lineBuilder(value, unformattedLine.deleteCharAt(0), line, false);
+            }
+        }
     }
 
     //maps low-critical to numeric values based on the highest value for each range.

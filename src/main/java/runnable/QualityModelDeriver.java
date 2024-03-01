@@ -8,8 +8,7 @@ import pique.model.QualityModelExport;
 import pique.model.QualityModelImport;
 import pique.runnable.AQualityModelDeriver;
 import pique.utility.PiqueProperties;
-import tool.GrypeWrapper;
-import tool.TrivyWrapper;
+import tool.CODESysWrapper;
 
 import java.io.IOException;
 import java.nio.file.Path;
@@ -52,10 +51,8 @@ public class QualityModelDeriver extends AQualityModelDeriver {
         String projectRootFlag = "";
         Path benchmarkRepo = Paths.get(prop.getProperty("benchmark.repo"));
 
-        //ITool gyrpeWrapper = new GrypeWrapper(prop.getProperty("github-token-path"));
-        ITool gyrpeWrapper = new GrypeWrapper(prop.getProperty("github-token-path"), prop.getProperty("nvd-api-key-path"));
-        ITool trivyWrapper = new TrivyWrapper(prop.getProperty("github-token-path"));
-        Set<ITool> tools = Stream.of(gyrpeWrapper, trivyWrapper).collect(Collectors.toSet());
+        ITool codeSysWrapper = new CODESysWrapper();
+        Set<ITool> tools = Stream.of(codeSysWrapper).collect(Collectors.toSet());
         QualityModelImport qmImport = new QualityModelImport(blankqmFilePath);
         QualityModel qmDescription = qmImport.importQualityModel();
         //qmDescription = pique.utility.TreeTrimmingUtility.trimQualityModelTree(qmDescription);
