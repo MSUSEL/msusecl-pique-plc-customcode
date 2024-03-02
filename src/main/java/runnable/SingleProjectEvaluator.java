@@ -11,7 +11,7 @@ import pique.model.QualityModel;
 import pique.model.QualityModelImport;
 import pique.runnable.ASingleProjectEvaluator;
 import pique.utility.PiqueProperties;
-import tool.CODESysWrapper;
+import tool.CODESYSWrapper;
 import utilities.helperFunctions;
 
 import java.io.File;
@@ -64,10 +64,10 @@ public class SingleProjectEvaluator extends ASingleProjectEvaluator {
 
         Path qmLocation = Paths.get(prop.getProperty("derived.qm"));
 
-        ITool codeSysWrapper = new CODESysWrapper();
+        ITool CODESYSWrapper = new CODESYSWrapper();
         //ITool gyrpeWrapper = new GrypeWrapper(prop.getProperty("github-token-path"), prop.getProperty("nvd-api-key-path"));
         //ITool trivyWrapper = new TrivyWrapper(prop.getProperty("github-token-path"));
-        Set<ITool> tools = Stream.of(codeSysWrapper).collect(Collectors.toSet());
+        Set<ITool> tools = Stream.of(CODESYSWrapper).collect(Collectors.toSet());
 
         for (Path dockerfile : dockerfilesToAnalyze) {
             //tricky here. getParent  because the Path points to a json file, and we need the parent.

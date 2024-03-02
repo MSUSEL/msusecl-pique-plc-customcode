@@ -8,7 +8,7 @@ import pique.model.QualityModelExport;
 import pique.model.QualityModelImport;
 import pique.runnable.AQualityModelDeriver;
 import pique.utility.PiqueProperties;
-import tool.CODESysWrapper;
+import tool.CODESYSWrapper;
 
 import java.io.IOException;
 import java.nio.file.Path;
@@ -51,8 +51,8 @@ public class QualityModelDeriver extends AQualityModelDeriver {
         String projectRootFlag = "";
         Path benchmarkRepo = Paths.get(prop.getProperty("benchmark.repo"));
 
-        ITool codeSysWrapper = new CODESysWrapper();
-        Set<ITool> tools = Stream.of(codeSysWrapper).collect(Collectors.toSet());
+        ITool CODESYSWrapper = new CODESYSWrapper();
+        Set<ITool> tools = Stream.of(CODESYSWrapper).collect(Collectors.toSet());
         QualityModelImport qmImport = new QualityModelImport(blankqmFilePath);
         QualityModel qmDescription = qmImport.importQualityModel();
         //qmDescription = pique.utility.TreeTrimmingUtility.trimQualityModelTree(qmDescription);
