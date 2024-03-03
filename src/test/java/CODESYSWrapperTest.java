@@ -79,7 +79,6 @@ public class CODESYSWrapperTest {
     public void isRulesOutputParsedCorrectly() {
         Path relativeFilePath = Paths.get("../msusecl-pique-plc-customcode/src/test/resources/");
         Path inputFile = relativeFilePath.toAbsolutePath().normalize();
-        // What data structure do I want to use? - Going to start with a 2D ArrayList
         List<List<String>> processedFile = CODESYSWrapper.parseRules(inputFile);
 
         // Does any output exist
@@ -96,7 +95,9 @@ public class CODESYSWrapperTest {
     assertEquals(midLine.get(0), "SA0168");
     assertEquals(finalLine.get(0), "SA0025");
 
-    // TODO Test for the description String
+    assertEquals(firstLine.get(1), "Unused Variable 'StartPB'");
+    assertEquals(midLine.get(1), "The variable 'items[pr]' is assigned but its value is never used");
+    assertEquals(finalLine.get(1), "Enumeration constant 'Green' not qualified");
 
     }
 }
