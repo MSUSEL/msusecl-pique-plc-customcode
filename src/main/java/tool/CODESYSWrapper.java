@@ -144,13 +144,12 @@ public class CODESYSWrapper extends Tool implements ITool {
 
         //parse metrics
         Table<String, String, Double> formattedMetricsOutput= parseMetrics(toolResults);
-        //TODO Map formatted metrics to PIQUE model
 
         //parse rules
         List<List<String>> formattedRulesOutput= parseRules(toolResults);
-        //TODO Map formatted rules to PIQUE model
 
         //Finding f = new Finding(toolResults.toString(), lineNumber, 1, 1); //getSeverityFromModel);
+        // TODO Parse findings and map to diagnostic
 
         Map<String, Diagnostic> diagnostics = helperFunctions.initializeDiagnostics(this.getName());
 
@@ -180,7 +179,6 @@ public class CODESYSWrapper extends Tool implements ITool {
         ArrayList<String> rowKeys = new ArrayList<>();
 
         String metrics = "";    // This will be the tool output metrics file
-        // get the full file path
 
         try {
             metrics = helperFunctions.readFileContent(toolOutput.resolve(metricsOutput));
@@ -189,7 +187,7 @@ public class CODESYSWrapper extends Tool implements ITool {
         }
         String[] lines = metrics.split("\n");
 
-        //Parse first two lines of output that define columns
+        // parse first two lines of output that define columns
         ArrayList<String> columnKeys = new ArrayList<>();
         for (int i = 0; i < columnDefinitionLines; i++) {
             String[] columnNames = lines[i].trim().split("\t");
@@ -209,7 +207,7 @@ public class CODESYSWrapper extends Tool implements ITool {
             formattedLine.remove(0);
             for (int j = 0; j < columnKeys.size(); j++) {
                 // IMPORTANT!!!
-                // This if statement is very, very bad. Remove it as soon as possible!!
+                // This first if statement is very, very bad. Remove it as soon as possible!!
                 // We're missing values for the last column. It isn't parsed wrong - the values don't exist in the output file
                 // this leads to a lack of confidence in any of the findings because we have more metrics than values
                 // and there is no proof that the rest of the values are aligned to the correct columns.
@@ -255,6 +253,7 @@ public class CODESYSWrapper extends Tool implements ITool {
     /**
      * Formats the read-in tool output file into a List of lines (themselves represented as ArrayLists of strings)
      * Extraneous detail is removed leaving SA number and description of the vulnerability
+     *
      * @param rules A raw String representation of the rules tool output
      * @return formattedOutput An ArrayList containing ArrayLists of strings representing findings associated with a specific standard
      */
@@ -281,16 +280,16 @@ public class CODESYSWrapper extends Tool implements ITool {
     }
 
     /**
-     * This method recursively parses raw lines from the metrics output file. The main purpose is to create an ArrayList that contains
+     * Recursively parses raw lines from the metrics output file. The main purpose is to create an ArrayList that contains
      * a row label followed by all values in the row as separate elements of the ArrayList. This ArrayList can then be used
      * to build the rows of the Table data structure. What makes this level of processing necessary is that tab characters represent
-     * both delimiters and empty/null values
+     * both the delimiter and empty/null values
      *
      * @param value StringBuilder that is used to store the values in a line of output as differentiated from delimiters or labels
      * @param unformattedLine raw line in string form that is parsed into a formatted line
      * @param line formatted line and the output of this method
      * @param secondTab flag used to determine whether a tab character is a delimiter or an empty value in the line
-     * @return line
+     * @return line ArrayList of the row label followed by each value (or null represented by -9.9) in the row
      */
     private ArrayList<String> metricsLineBuilder(StringBuilder value, StringBuilder unformattedLine, ArrayList<String> line, boolean secondTab) {
         // base case

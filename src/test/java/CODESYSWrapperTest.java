@@ -46,7 +46,7 @@ public class CODESYSWrapperTest {
 
     // msusecl-pique-plc-customcode
     @Test
-    public void testIfMetricsOutputIsParsedToTableCorrectly() {
+    public void isMetricsOutputParsedToTableCorrectly() {
         double floatDelta = 0.0002; // used in comparing doubles due to inherent precision issues with doubles
 
         // This is necessary to format the correct path to helperFunctions.readFileContent()
@@ -76,7 +76,7 @@ public class CODESYSWrapperTest {
     }
 
     @Test
-    public void testIfRulesOutputIsParsedCorrectly() {
+    public void isRulesOutputParsedCorrectly() {
         Path relativeFilePath = Paths.get("../msusecl-pique-plc-customcode/src/test/resources/");
         Path inputFile = relativeFilePath.toAbsolutePath().normalize();
         // What data structure do I want to use? - Going to start with a 2D ArrayList
@@ -96,7 +96,7 @@ public class CODESYSWrapperTest {
     assertEquals(midLine.get(0), "SA0168");
     assertEquals(finalLine.get(0), "SA0025");
 
-    // Test for the description string as well
-        // TODO Test for the description String
+    // TODO Test for the description String
+
     }
 }
