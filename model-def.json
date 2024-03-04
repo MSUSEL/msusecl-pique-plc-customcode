@@ -287,13 +287,12 @@
   },
   //TODO
   "measures": {
-    "Code Size": {
+    "POU Size": {
       "name": "Code Size",
       "positive": "false",
       "description": "Size of program",
       "children": {
-        "SE - EcoStruxure MACA: Lines of Code": {},
-        "CWE-5 Diagnostic Trivy": {}
+        "NOS - Number Of Statements": {}
       }
     },
     "CWE-6": {
@@ -11262,6 +11261,186 @@
       "toolName": "CODESYS",
       "description": "Detects declarations of enumerations which are not provided with the {attribute 'strict'} attribute.",
 	  "importance": "High"
+	}
+	"Code Size (number of bytes)":{
+	  "toolName": "CODESYS",
+      "description": "Code size in bytes",
+	  "importance": "Unknown"
+	},
+	"Variable Size (number of bytes)":{
+	  "toolName": "CODESYS",
+      "description": "Variable size in bytes",
+	  "importance": "Unknown"
+	},
+	"Stack Size (number of bytes)":{
+	  "toolName": "CODESYS",
+      "description": "Stack size in bytes",
+	  "importance": "Unknown"
+	},
+	"Number of calls":{
+	  "toolName": "CODESYS",
+      "description": "Number of calls",
+	  "importance": "Unknown"
+	},
+	"Called in tasks":{
+	  "toolName": "CODESYS",
+      "description": "Called in tasks",
+	  "importance": "Unknown"
+	},
+	"Used different global Variables":{
+	  "toolName": "CODESYS",
+      "description": "Used different global Variables",
+	  "importance": "Unknown"
+	},
+	"Number of direct address accesses":{
+	  "toolName": "CODESYS",
+      "description": "Number of direct address accesses",
+	  "importance": "Unknown"
+	},
+	"Number of local variables":{
+	  "toolName": "CODESYS",
+      "description": "Number of local variables",
+	  "importance": "Unknown"
+	},
+	"Number of inputs variables":{
+	  "toolName": "CODESYS",
+      "description": "Number of inputs variables",
+	  "importance": "Unknown"
+	},
+	"Number of outputs variables":{
+	  "toolName": "CODESYS",
+      "description": "Number of outputs variables",
+	  "importance": "Unknown"
+	},
+	"NOS - Number Of Statements":{
+	  "toolName": "CODESYS",
+      "description": "NOS - Number Of Statements",
+	  "importance": "Unknown"
+	},
+	"Percentage of comment":{
+	  "toolName": "CODESYS",
+      "description": "Percentage of comment",
+	  "importance": "Unknown"
+	},
+	"Complexity (McCabe)":{
+	  "toolName": "CODESYS",
+      "description": "Complexity (McCabe)",
+	  "importance": "Unknown"
+	},
+	"Complexity of nesting (Prather)":{
+	  "toolName": "CODESYS",
+      "description": "Complexity of nesting (Prather)",
+	  "importance": "Unknown"
+	},
+	"DIT - Depth of Inheritance Tree":{
+	  "toolName": "CODESYS",
+      "description": "DIT - Depth of Inheritance Tree",
+	  "importance": "Unknown"
+	},
+	"NOC - Number Of Children":{
+	  "toolName": "CODESYS",
+      "description": "NOC - Number Of Children",
+	  "importance": "Unknown"
+	},
+	"RFC - Response For Class":{
+	  "toolName": "CODESYS",
+      "description": "RFC - Response For Class",
+	  "importance": "Unknown"
+	},
+	"CBO - Coupling Between Objects":{
+	  "toolName": "CODESYS",
+      "description": "CBO - Coupling Between Objects",
+	  "importance": "Unknown"
+	},
+	"Complexity of reference (Elshof)":{
+	  "toolName": "CODESYS",
+      "description": "Complexity of reference (Elshof)",
+	  "importance": "Unknown"
+	},
+	"Lack of Cohesion Of Methods - LCOM":{
+	  "toolName": "CODESYS",
+      "description": "Lack of Cohesion Of Methods - LCOM",
+	  "importance": "Unknown"
+	},
+	"Number of different used operators - Halstead (n1)":{
+	  "toolName": "CODESYS",
+      "description": "Number of different used operators - Halstead (n1)",
+	  "importance": "Unknown"
+	},
+	"Number of operators - Halstead (N1)":{
+	  "toolName": "CODESYS",
+      "description": "Number of operators - Halstead (N1)",
+	  "importance": "Unknown"
+	},
+	"Number of different used operands - Halstead (n2)":{
+	  "toolName": "CODESYS",
+      "description": "Number of different used operands - Halstead (n2)",
+	  "importance": "Unknown"
+	},
+	"Number of operands - Halstead (N2)":{
+	  "toolName": "CODESYS",
+      "description": "Number of operands - Halstead (N2)",
+	  "importance": "Unknown"
+	},
+	"Length - Halstead (HL)":{
+	  "toolName": "CODESYS",
+      "description": "Length - Halstead (HL)",
+	  "importance": "Unknown"
+	},
+	"Volume - Halstead (HV)":{
+	  "toolName": "CODESYS",
+      "description": "Volume - Halstead (HV)",
+	  "importance": "Unknown"
+	},
+	"Difficulty - Halstead (D)":{
+	  "toolName": "CODESYS",
+      "description": "Difficulty - Halstead (D)",
+	  "importance": "Unknown"
+	},
+	"Number of SFC branches":{
+	  "toolName": "CODESYS",
+      "description": "Number of SFC branches",
+	  "importance": "Unknown"
+	},
+	"Number of SFC steps":{
+	  "toolName": "CODESYS",
+      "description": "Number of SFC steps",
+	  "importance": "Unknown"
+	},
+	"Number of subroutines":{
+	  "toolName": "CODESYS",
+      "description": "Number of subroutines in the greater program",
+	  "importance": "Unknown"
 	},
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

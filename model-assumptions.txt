@@ -1,0 +1,14 @@
+if plcopen metrics map to a QA, I am making the metric apply to all PFs of that QA (for example, Maintainability)
+ -otherwise, map to relevant PFs only
+ 
+ 
+ 
+Need help with descriptions for:
+	Number of calls
+	Called in tasks
+	
+	
+question (perhaps for redempta)
+	how to capture the meaning/significance of the distribution of metrics
+		-metrics for a pdf?? (mean, medium, mode, etc)
+	
