@@ -15,18 +15,158 @@
     "quality_aspects": {
       "ISO-25010": {
         "description": "degree to which the code reflects the quality properties outlined in the ISO 25010:2011 software product quality model",
-        "eval_strategy": "pique.evaluation.DefaultFactorEvaluator"
+        "eval_strategy": "pique.evaluation.DefaultFactorEvaluator",
+		"children": {
+			"Reliability": {}
+			"Efficiency": {}
+			"Maintainability": {}
+			"Reusability": {}
+			"Testability": {}
+		}
       },
       "Safety": {
         "description": "degree to which the code cannot cause harm to individuals, damage to the product or industrial process, or adverse impacts to the environment.",
-        "eval_strategy": "pique.evaluation.DefaultFactorEvaluator"
+        "eval_strategy": "pique.evaluation.DefaultFactorEvaluator",
+		"children": {
+			"Data Validity": {}
+			"Process state awareness": {}
+			"State exclusivity": {}
+			"Configuration awareness": {}
+			"Conservativity": {}
+		}
       },
       "Design-level Errors": {
         "description": "degree to which the code is vulnerable, from both a hardware and a software level",
-        "eval_strategy": "pique.evaluation.DefaultFactorEvaluator"
+        "eval_strategy": "pique.evaluation.DefaultFactorEvaluator",
+		"children": {
+			"Hardware Based (Physical) Error": {}
+			"Software Based (Virtual) Errors": {}
+		}
       }
     },
     "product_factors": {
+	  "Rule-based Issues": {
+        "name": "Rule-based Issues",
+        "description": "This product factor captures all rule-based issues presented by the tool CODESYS. The score of this node reflects how ",
+        "eval_strategy": "pique.evaluation.DefaultProductFactorEvaluator",
+        "children": {
+			"SA0001: Unreachable code - Score": {},
+			"SA0002: Empty objects - Score": {},
+			"SA0003: Empty statements - Score": {},
+			"SA0004: Multiple write access on output - Score": {},
+			"SA0005: Invalid addresses and data types - Score": {},
+			"SA0006: Write access from several tasks - Score": {},
+			"SA0007: Address operator on constants - Score": {},
+			"SA0008: Check subrange types - Score": {},
+			"SA0009: Unused return values - Score": {},
+			"SA0010: Arrays with only one component - Score": {},
+			"SA0011: Useless declarations - Score": {},
+			"SA0012: Variable which could be declared as constants - Score": {},
+			"SA0013: Declarations with the same variable name - Score": {},
+			"SA0014: Assignment of instances - Score": {},
+			"SA0015: Access to global data via FB_Init - Score": {},
+			"SA0016: Gaps in structures - Score": {},
+			"SA0017: Non-regular assignments - Score": {},
+			"SA0018: Unusual bit access - Score": {},
+			"SA0019: Implicit pointer conversions - Score": {},
+			"SA0020: Possibly assignment of truncated value to REAL variable - Score": {},
+			"SA0021: Transporting the address of a temporary variable - Score": {},
+			"SA0022: (Possibly) unassigned return value - Score": {},
+			"SA0023: Complex return values - Score": {},
+			"SA0024: Untyped literals / constants - Score": {},
+			"SA0025: Unqualified enumeration constants - Score": {},
+			"SA0026: Possible truncated strings - Score": {},
+			"SA0027: Multiple uses of identifiers - Score": {},
+			"SA0028: Overlapping memory areas - Score": {},
+			"SA0029: Notation in code different to declaration - Score": {},
+			"SA0031: Unused signatures - Score": {},
+			"SA0032: Unused enumeration constants - Score": {},
+			"SA0033: Unused variables - Score": {},
+			"SA0034: Enumerations with incorrect assignment - Score": {},
+			"SA0035: Unused input variables - Score": {},
+			"SA0036: Unused output variables - Score": {},
+			"SA0037: Write access to input variable - Score": {},
+			"SA0038: Read access to output variable - Score": {},
+			"SA0039: Possible null-pointer deferences - Score": {},
+			"SA0040: Possible division by zero - Score": {},
+			"SA0041: Detect possible loop invariant code - Score": {},
+			"SA0042: Usage of different access paths - Score": {},
+			"SA0043: Use of a global variable in only one POU - Score": {},
+			"SA0044: Declarations with reference to interface - Score": {},
+			"SA0046: Possible use of not initialised interface - Score": {},
+			"SA0047: Accesses to direct address - Score": {},
+			"SA0048: AT-declarations on direct addresses - Score": {},
+			"SA0051: Comparison operations on BOOL variables - Score": {},
+			"SA0052: Unusual shift operation - Score": {},
+			"SA0053: Too big bitwise shift - Score": {},
+			"SA0054: Comparisons of REAL/LREAL for equality / inequality - Score": {},
+			"SA0055: Unnecessary comparisons of unsigned operands - Score": {},
+			"SA0056: Constant out of valid range - Score": {},
+			"SA0057: Possible loss of decimal places - Score": {},
+			"SA0058: Operations on enumeration variables - Score": {},
+			"SA0059: Comparison operations always returning TRUE or FALSE - Score": {},
+			"SA0060: Zero used as invalid operand - Score": {},
+			"SA0061: Unusual operation on pointer - Score": {},
+			"SA0062: Uses of TRUE or FALSE in expressions - Score": {},
+			"SA0063: Possibly not 16-bit-compatible operations - Score": {},
+			"SA0064: Addition of pointer - Score": {},
+			"SA0065: Incorrect pointer addition to base size - Score": {},
+			"SA0066: Uses of temporary results - Score": {},
+			"SA0072: Invalid uses of counter variable - Score": {},
+			"SA0073: Uses of inadequate counter variable - Score": {},
+			"SA0075: Missing ELSE - Score": {},
+			"SA0076: Missing enumeration constant - Score": {},
+			"SA0077: Type mismatches with CASE expression - Score": {},
+			"SA0078: Missing CASE branches - Score": {},
+			"SA0080: Loop index variable for array index exceeds array range - Score": {},
+			"SA0081: Upper border is not a constant - Score": {},
+			"SA0090: Return statement before end of function - Score": {},
+			"SA0095: Assignments in conditions - Score": {},
+			"SA0100: Variables greater than <n> bytes - Score": {},
+			"SA0101: Names with invalid length - Score": {},
+			"A0102: Access to program/fb variables from the outside - Score": {},
+			"SA0103: Concurrent access on not atomic data - Score": {},
+			"SA0105: Multiple instance calls - Score": {},
+			"SA0106: Virtual method calls in FB_INIT - Score": {},
+			"SA0107: Missing formal parameters - Score": {},
+			"SA0111: Pointer variables - Score": {},
+			"SA0112: Reference variables - Score": {},
+			"SA0113: Variables with data type WSTRING - Score": {},
+			"SA0114: Variables with data type LTIME - Score": {},
+			"SA0115: Variables with data type UNION - Score": {},
+			"SA0117: Variables with data type BIT - Score": {},
+			"SA0118: Initialisations not using constants - Score": {},
+			"SA0119:Object-oriented features - Score": {},
+			"SA0120: Program calls - Score": {},
+			"SA0121: Missing 'VAR_EXTERNAL' declarations - Score": {},
+			"SA0122: Array index defined as expression - Score": {},
+			"SA0123: Usages of INI, ADR or BITADR - Score": {},
+			"SA0124: Pointer dereferences in declarations - Score": {},
+			"SA0125: References in initializations - Score": {},
+			"SA0130: Implicit expanding conversions - Score": {},
+			"SA0131: Implicit narrowing conversions - Score": {},
+			"SA0132: Implicit signed/unsigned conversions - Score": {},
+			"SA0133: Explicit narrowing conversions - Score": {},
+			"SA0134: Explicit signed/unsigned conversions - Score": {},
+			"SA0140: Statements commented out - Score": {},
+			"SA0145: Possible use of not initialised reference - Score": {},
+			"SA0147: Unusual shift operation - strict - Score": {},
+			"SA0148: Unusual bit access - strict - Score": {},
+			"SA0150: Violations of lower or upper limits or the metrics - Score": {},
+			"SA0160: Recursive calls - Score": {},
+			"SA0161: Unpacked structure in packed structure - Score": {},
+			"SA0162: Missing comments - Score": {},
+			"SA0163: Nested comments - Score": {},
+			"SA0164: Multiline comments - Score": {},
+			"SA0165: Tasks calling other POUs than programs - Score": {},
+			"SA0166: Max. number of input/output/in-out variables... - Score": {},
+			"SA0167: Temporary function block instances - Score": {},
+			"SA0168: Unnecessary Assignments - Score": {},
+			"SA0169: Ignored outputs - Score": {},
+			"SA0170: Address of an output variable should not be used - Score": {},
+			"SA0171: Enumerations should have the 'strict' attribute - Score": {}
+		}
+      },
 	  "Reliability": {
         "name": "Reliability",
         "description": "From McCall: Extent to which a program satisfies its specifications and fulfills the user’s mission objectives (sub-characteristicof product operation)\n From ISO 25010: Degree to which a system, product or component performs specified functions under specified conditions for a specified period of time. Sub-characteristic maturity: Degree to which a system, product or component meets needs for reliability under normal operation.",
@@ -37,7 +177,8 @@
           "Coupling of objects to the environment": {},
           "Complexity and length of source code": {},
           "Ingoing direct data exchange between POUs via calls": {},
-          "Duplication": {},
+          "Duplication": {}
+		}
       },
 	  "Efficiency": {
         "name": "Efficiency",
@@ -46,7 +187,8 @@
         "children": {
           "Memory allocation": {},
           "Usage of global variables": {},
-          "Usage of local variables": {},
+          "Usage of local variables": {}
+		}
       },
 	  "Maintainability": {
         "name": "Maintainability",
@@ -62,7 +204,8 @@
           "Cohesion": {},
           "Coupling of objects to the environment": {},
           "Complexity and length of source code": {},
-          "Duplication": {},
+          "Duplication": {}
+		}
       },
 	  "Reusability": {
         "name": "Reusability",
@@ -78,7 +221,8 @@
           "Coupling of objects to the environment": {},
           "Complexity and length of source code": {},
           "Direct data exchange between POUs via calls": {},
-          "Duplication": {},
+          "Duplication": {}
+		}
       },
 	  "Testability": {
         "name": "Testability",
@@ -93,12 +237,974 @@
           "Cohesion": {},
           "Coupling of objects to the environment": {},
           "Complexity and length of source code": {},
-          "Duplication": {},
+          "Duplication": {}
 		}
+      },
+	  "Data Validity": {
+        "name": "Data Validity",
+        "description": "Degree to which the code ensures values received by the PLC represent real world measurements",
+        "eval_strategy": "pique.evaluation.DefaultProductFactorEvaluator",
+        "children": {}
+      },
+	  "Process state awareness": {
+        "name": "Process state awareness",
+        "description": "Degree to which the code tracks specific sets of conditions in which the process may exist",
+        "eval_strategy": "pique.evaluation.DefaultProductFactorEvaluator",
+        "children": {}
+      },
+	  "State exclusivity": {
+        "name": "State exclusivity",
+        "description": "Degree to which the code disallows simultaneous assertion of incompatible system states",
+        "eval_strategy": "pique.evaluation.DefaultProductFactorEvaluator",
+        "children": {}
+      },
+	  "Configuration awareness": {
+        "name": "Configuration awareness",
+        "description": "Degree to which the code incorporates awareness of configuration changes to the PLC",
+        "eval_strategy": "pique.evaluation.DefaultProductFactorEvaluator",
+        "children": {}
+      },
+	  "Conservativity": {
+        "name": "Conservativity",
+        "description": "Degree to which the code incorporates a fall-back state of operations",
+        "eval_strategy": "pique.evaluation.DefaultProductFactorEvaluator",
+        "children": {}
+      },
+	  "Hardware Based (Physical) Error": {
+        "name": "Hardware Based (Physical) Error",
+        "description": "The attribute associated with hardware based (physical) errors is device type",
+        "eval_strategy": "pique.evaluation.DefaultProductFactorEvaluator",
+        "children": {}
+      },
+	  "Software Based (Virtual) Errors": {
+        "name": "Software Based (Virtual) Errors",
+        "description": "The attributes associated with software based (virtual) errors are the error class and error subclass",
+        "eval_strategy": "pique.evaluation.DefaultProductFactorEvaluator",
+        "children": {}
       }
     }
   },
   "measures": {
+	"SA0001: Unreachable code - Score": {
+      "toolName": "CODESYS",
+      "description": "Detects lines of code that are not executed, for example due to a RETURN or CONTINUE statement",
+      "positive": "false",
+	  "children": {
+		  "SA0001: Unreachable code": {}
+	  }
+    },
+	"SA0002: Empty objects - Score": {
+      "toolName": "CODESYS",
+      "description": "Detects POUs, GVLs, data type declarations, or interfaces that do not contain any code",
+      "positive": "false",
+	  "children": {
+		  "SA0002: Empty objects": {}
+	  }
+    },
+	"SA0003: Empty statements - Score": {
+      "toolName": "CODESYS",
+      "description": "Detects lines of code that have a semicolon (;) but not a statement",
+	  "positive": "false",
+	  "children": {
+		  "SA0003: Empty statements": {}
+	  }
+    },
+	"SA0004: Multiple write access on output - Score": {
+      "toolName": "CODESYS",
+      "description": "Detects outputs which are written to more than one location.",
+	  "positive": "false",
+	  "children": {
+		  "SA0004: Multiple write access on output": {}
+	  }
+	},
+	"SA0005: Invalid addresses and data types - Score": {
+      "toolName": "CODESYS",
+      "description": "Detects invalid addresses and data type specifications. Valid size prefixes in addresses: X for BOOL B for 1-byte data types, W for 2-byte data types, and D for 4-byte data types.",
+	  "positive": "false",
+	  "children": {
+		  "SA0005: Invalid addresses and data types": {}
+	  }
+	},
+	"SA0006: Write access from several tasks - Score": {
+      "toolName": "CODESYS",
+      "description": "Detects variables which are written to by more than one task.",
+	  "positive": "false",
+	  "children": {
+		  "SA0006: Write access from several tasks": {}
+	  }
+	},
+	"SA0007: Address operator on constants - Score": {
+      "toolName": "CODESYS",
+      "description": "Detects lines of code where the operator ADR is applied for a constant",
+	  "positive": "false",
+	  "children": {
+		  "SA0007: Address operator on constants": {}
+	  }
+	},
+	"SA0008: Check subrange types - Score": {
+      "toolName": "CODESYS",
+      "description": "Detects out-of-range violations of subrange types. Assigned literals are already checked by the compiler. When constants are assigned, then the values must be within the defined range. When variables are assigned, then the data types must be identical.",
+	  "positive": "false",
+	  "children": {
+		  "SA0008: Check subrange types": {}
+	  }
+	},
+	"SA0009: Unused return values - Score": {
+      "toolName": "CODESYS",
+      "description": "Detects function, method and property calls in which the return value is not used",
+	  "positive": "false",
+	  "children": {
+		  "SA0009: Unused return values": {}
+	  }
+	},
+	"SA0010: Arrays with only one component - Score": {
+      "toolName": "CODESYS",
+      "description": "Detects arrays with only one element",
+	  "positive": "false",
+	  "children": {
+		  "SA0010: Arrays with only one component": {}
+	  }
+	},
+	"SA0011: Useless declarations - Score": {
+      "toolName": "CODESYS",
+      "description": "Detects structures or enumerations with only one component",
+	  "positive": "false",
+	  "children": {
+		  "SA0011: Useless declarations": {}
+	  }
+	},
+	"SA0012: Variable which could be declared as constants - Score": {
+      "toolName": "CODESYS",
+      "description": "Detects variables that are not accessed with write permission and therefore could be declared as constants",
+	  "positive": "false",
+	  "children": {
+		  "SA0012: Variable which could be declared as constants": {}
+	  }
+	},
+	"SA0013: Declarations with the same variable name - Score": {
+      "toolName": "CODESYS",
+      "description": "Detects variables with names that are already used by other variables (for example, global and local variables with the same name). Also detects variables with names of functions, actions, methods, or properties which are used in the same access scope. Variables are also detected that are declared in a GVL in the Devices view or in the POUs pool. For this, however, the GVL of the POUs view have to be used in the application program.",
+	  "positive": "false",
+	  "children": {
+		  "SA0013: Declarations with the same variable name - Score": {}
+	  }
+	},
+	"SA0014: Assignment of instances - Score": {
+      "toolName": "CODESYS",
+      "description": "Detects assignments to function block instances. In the case of instances with pointer or reference variables, these assignments are potentially risky.",
+	  "positive": "false",
+	  "children": {
+		  "SA0014: Assignment of instances": {}
+	  }
+	},
+	"SA0015: Access to global data via FB_Init - Score": {
+      "toolName": "CODESYS",
+      "description": "Detects the access of a function block to global variables by means of the method FB_Init. The value of this variable depends on the order of initializations.",
+	  "positive": "false",
+	  "children": {
+		  "SA0015: Access to global data via FB_Init": {}
+	  }
+	},
+	"SA0016: Gaps in structures - Score": {
+      "toolName": "CODESYS",
+      "description": "Detects gaps in structures or function blocks that are caused by the alignment requirements of the currently set target system. If possible, you should remove the gaps by resorting the structure elements or filling them with a dummy element. If this is not possible, then you can deactivate the rule for the affected structures by means of the analysis pragma.",
+	  "positive": "false",
+	  "children": {
+		  "SA0016: Gaps in structures": {}
+	  }
+	},
+	"SA0017: Non-regular assignments - Score": {
+      "toolName": "CODESYS",
+      "description": "Detects assignments to pointers that are neither addresses (ADR operator, pointer variables) nor constants 0",
+	  "positive": "false",
+	  "children": {
+		  "SA0017: Non-regular assignments": {}
+	  }
+	},
+	"SA0018: Unusual bit access - Score": {
+      "toolName": "CODESYS",
+      "description": "Detects bit access to signed variables. However, the IEC 61131-3 standard permits only bit access and bit shift operations on bit fields. See also the strict rules SA0147 and SA0148.",
+	  "positive": "false",
+	  "children": {
+		  "SA0018: Unusual bit access": {}
+	  }
+	},
+	"SA0019: Implicit pointer conversions - Score": {
+      "toolName": "CODESYS",
+      "description": "Detects implicitly generated pointer conversions",
+	  "positive": "false",
+	  "children": {
+		  "SA0019: Implicit pointer conversions": {}
+	  }
+	},
+	"SA0020: Possibly assignment of truncated value to REAL variable - Score": {
+      "toolName": "CODESYS",
+      "description": "Detects operations on integer variables for which a truncated value could be assigned to a REAL data type variable",
+	  "positive": "false",
+	  "children": {
+		  "SA0020: Possibly assignment of truncated value to REAL variable": {}
+	  }
+	},
+	"SA0021: Transporting the address of a temporary variable - Score": {
+      "toolName": "CODESYS",
+      "description": "Detects address assignments of temporary variables (on the stack) to non-temporary variables",
+	  "positive": "false",
+	  "children": {
+		  "SA0021: Transporting the address of a temporary variable": {}
+	  }
+	},
+	"SA0022: (Possibly) unassigned return value - Score": {
+      "toolName": "CODESYS",
+      "description": "Detects all functions and methods that include an execution thread without an assignment to the return value",
+	  "positive": "false",
+	  "children": {
+		  "SA0022: (Possibly) unassigned return value": {}
+	  }
+	},
+	"SA0023: Complex return values - Score": {
+      "toolName": "CODESYS",
+      "description": "Determines complex return values that cannot be returned with a simple registry copy of the processor. This includes structures, arrays, and return values of type STRING (regardless of the size of the used memory).",
+	  "positive": "false",
+	  "children": {
+		  "SA0023: Complex return values": {}
+	  }
+	},
+	"SA0024: Untyped literals / constants - Score": {
+      "toolName": "CODESYS",
+      "description": "Detects untyped literals and constants",
+	  "positive": "false",
+	  "children": {
+		  "SA0024: Untyped literals / constants": {}
+	  }
+	},
+	"SA0025: Unqualified enumeration constants - Score": {
+      "toolName": "CODESYS",
+      "description": "Detects enumeration constants for which a qualified name does not prepend the enumeration",
+	  "positive": "false",
+	  "children": {
+		  "SA0025: Unqualified enumeration constants": {}
+	  }
+	},
+	"SA0026: Possible truncated strings - Score": {
+      "toolName": "CODESYS",
+      "description": "Detects string assignments and string initializations that do not use sufficient string length",
+	  "positive": "false",
+	  "children": {
+		  "SA0026: Possible truncated strings": {}
+	  }
+	},
+	"SA0027: Multiple uses of identifiers - Score": {
+      "toolName": "CODESYS",
+      "description": "Detects multiple uses of a name/identifier for a variable or an object (POU) within the scope of a project. In the case of enumerations, the qualified name is taken into account.",
+	  "positive": "false",
+	  "children": {
+		  "SA0027: Multiple uses of identifiers": {}
+	  }
+	},
+	"SA0028: Overlapping memory areas - Score": {
+      "toolName": "CODESYS",
+      "description": "Detects the lines of code where two or more variables reserve the same memory.",
+	  "positive": "false",
+	  "children": {
+		  "SA0028: Overlapping memory areas": {}
+	  }
+	},
+	"SA0029: Notation in code different to declaration - Score": {
+      "toolName": "CODESYS",
+      "description": "Detects the code locations where the notation of an identifier is different from the notation in its declaration",
+	  "positive": "false",
+	  "children": {
+		  "SA0029: Notation in code different to declaration": {}
+	  }
+	},
+	"SA0031: Unused signatures - Score": {
+      "toolName": "CODESYS",
+      "description": "Detects programs, function blocks, functions, data types, interfaces, methods, properties, and actions that are not called within the compiled program code",
+	  "positive": "false",
+	  "children": {
+		  "SA0031: Unused signatures": {}
+	  }
+	},
+	"SA0032: Unused enumeration constants - Score": {
+      "toolName": "CODESYS",
+      "description": "Detects enumeration constants that are not used in the compiled program code",
+	  "positive": "false",
+	  "children": {
+		  "SA0032: Unused enumeration constants": {}
+	  }
+	},
+	"SA0033: Unused variables - Score": {
+      "toolName": "CODESYS",
+      "description": "Detects variables that are declared but not used within the compiled program code",
+	  "positive": "false",
+	  "children": {
+		  "SA0033: Unused variables": {}
+	  }
+	},
+	"SA0034: Enumerations with incorrect assignment - Score": {
+      "toolName": "CODESYS",
+      "description": "Detects values that are assigned to an enumeration variable. Only defined enumeration constants of an enumeration variable are permitted to be assigned.",
+	  "positive": "false",
+	  "children": {
+		  "SA0034: Enumerations with incorrect assignment": {}
+	  }
+	},
+	"SA0035: Unused input variables - Score": {
+      "toolName": "CODESYS",
+      "description": "Detects input variables that are not used by any function block instance",
+	  "positive": "false",
+	  "children": {
+		  "SA0035: Unused input variables": {}
+	  }
+	},
+	"SA0036: Unused output variables - Score": {
+      "toolName": "CODESYS",
+      "description": "Detects the output variables of functions and function blocks which are not assigned within the respective function or function block.",
+	  "positive": "false",
+	  "children": {
+		  "SA0036: Unused output variables": {}
+	  }
+	},
+	"SA0037: Write access to input variable - Score": {
+      "toolName": "CODESYS",
+      "description": "Detects input variables (VAR_INPUT) that are accessed with write permission within the POU",
+	  "positive": "false",
+	  "children": {
+		  "SA0037: Write access to input variable": {}
+	  }
+	},
+	"SA0038: Read access to output variable - Score": {
+      "toolName": "CODESYS",
+      "description": "Detects output variables (VAR_OUTPUT) that are accessed with read permission within the POU",
+	  "positive": "false",
+	  "children": {
+		  "SA0038: Read access to output variable": {}
+	  }
+	},
+	"SA0039: Possible null-pointer deferences - Score": {
+      "toolName": "CODESYS",
+      "description": "Detects code locations where a null pointer is possibly dereferenced",
+	  "positive": "false",
+	  "children": {
+		  "SA0039: Possible null-pointer deferences": {}
+	  }
+	},
+	"SA0040: Possible division by zero - Score": {
+      "toolName": "CODESYS",
+      "description": "Detects code locations where there is possible division by zero",
+	  "positive": "false",
+	  "children": {
+		  "SA0040: Possible division by zero": {}
+	  }
+	},
+	"SA0041: Detect possible loop invariant code - Score": {
+      "toolName": "CODESYS",
+      "description": "Detects assignments in loops that calculate the same value for each loop cycle. These lines of code could possibly be inserted outside of the loop.",
+	  "positive": "false",
+	  "children": {
+		  "SA0041: Detect possible loop invariant code": {}
+	  }
+	},
+	"SA0042: Usage of different access paths - Score": {
+      "toolName": "CODESYS",
+      "description": "Detects the usage of different access paths for the same variable",
+	  "positive": "false",
+	  "children": {
+		  "SA0042: Usage of different access paths": {}
+	  }
+	},
+	"SA0043: Use of a global variable in only one POU - Score": {
+      "toolName": "CODESYS",
+      "description": "Detects the use of a global variable in only a single POU",
+	  "positive": "false",
+	  "children": {
+		  "SA0043: Use of a global variable in only one POU": {}
+	  }
+	},
+	"SA0044: Declarations with reference to interface - Score": {
+      "toolName": "CODESYS",
+      "description": "Detects declarations with REFERENCE TO interfaces and declarations of VAR_IN_OUT variables with interfaces (implicitly implemented by means of REFERENCE TO)",
+	  "positive": "false",
+	  "children": {
+		  "SA0044: Declarations with reference to interface": {}
+	  }
+	},
+	"SA0046: Possible use of not initialised interface - Score": {
+      "toolName": "CODESYS",
+      "description": "Detects the use of interfaces that were not initialized before being used",
+	  "positive": "false",
+	  "children": {
+		  "SA0046: Possible use of not initialised interface": {}
+	  }
+	},
+	"SA0047: Accesses to direct address - Score": {
+      "toolName": "CODESYS",
+      "description": "Detects direct address access in the implementation code",
+	  "positive": "false",
+	  "children": {
+		  "SA0047: Accesses to direct address": {}
+	  }
+	},
+	"SA0048: AT-declarations on direct addresses - Score": {
+      "toolName": "CODESYS",
+      "description": "Detects AT declarations on direct addresses",
+	  "positive": "false",
+	  "children": {
+		  "SA0048: AT-declarations on direct addresses": {}
+	  }
+	},
+	"SA0051: Comparison operations on BOOL variables - Score": {
+      "toolName": "CODESYS",
+      "description": "Detects comparison operations on variables of type BOOL",
+	  "positive": "false",
+	  "children": {
+		  "SA0051: Comparison operations on BOOL variables": {}
+	  }
+	},
+	"SA0052: Unusual shift operation - Score": {
+      "toolName": "CODESYS",
+      "description": "Detects shift operations (bit shift) on signed variables. In the case of shift operations on bit field data types (Byte, DWORD, LWORD, WORD), an error is not reported.",
+	  "positive": "false",
+	  "children": {
+		  "SA0052: Unusual shift operation": {}
+	  }
+	},
+	"SA0053: Too big bitwise shift - Score": {
+      "toolName": "CODESYS",
+      "description": "Detects whether or not the data type width of the operand has been exceeded in the case of a bitwise shift (bit shift) of operands",
+	  "positive": "false",
+	  "children": {
+		  "SA0053: Too big bitwise shift": {}
+	  }
+	},
+	"SA0054: Comparisons of REAL/LREAL for equality / inequality - Score": {
+      "toolName": "CODESYS",
+      "description": "Detects whether or not the comparison operators = (equality) and <> (inequality) compare the operands of type REAL or LREAL.",
+	  "positive": "false",
+	  "children": {
+		  "SA0054: Comparisons of REAL/LREAL for equality / inequality": {}
+	  }
+	},
+	"SA0055: Unnecessary comparisons of unsigned operands - Score": {
+      "toolName": "CODESYS",
+      "description": "Detects unnecessary comparisons with unsigned operands. An unsigned data type is never less than zero. This can be used as a sign check.",
+	  "positive": "false",
+	  "children": {
+		  "SA0055: Unnecessary comparisons of unsigned operands": {}
+	  }
+	},
+	"SA0056: Constant out of valid range - Score": {
+      "toolName": "CODESYS",
+      "description": "Detects literals (constants) outside of the valid range of the operator",
+	  "positive": "false",
+	  "children": {
+		  "SA0056: Constant out of valid range": {}
+	  }
+	},
+	"SA0057: Possible loss of decimal places - Score": {
+      "toolName": "CODESYS",
+      "description": "Detects statements with possible loss of decimal places",
+	  "positive": "false",
+	  "children": {
+		  "SA0057: Possible loss of decimal places": {}
+	  }
+	},
+	"SA0058: Operations on enumeration variables - Score": {
+      "toolName": "CODESYS",
+      "description": "Detects operations on variables of the enumeration data type Assignments are permitted.",
+	  "positive": "false",
+	  "children": {
+		  "SA0058: Operations on enumeration variables": {}
+	  }
+	},
+	"SA0059: Comparison operations always returning TRUE or FALSE - Score": {
+      "toolName": "CODESYS",
+      "description": "Detects comparisons with literals that always have the result TRUE or FALSE, and can already be processed during at the compile.",
+	  "positive": "false",
+	  "children": {
+		  "SA0059: Comparison operations always returning TRUE or FALSE": {}
+	  }
+	},
+	"SA0060: Zero used as invalid operand - Score": {
+      "toolName": "CODESYS",
+      "description": "Detects operations where an operand with the value "0" causes an invalid or a nonsense operation",
+	  "positive": "false",
+	  "children": {
+		  "SA0060: Zero used as invalid operand": {}
+	  }
+	},
+	"SA0061: Unusual operation on pointer - Score": {
+      "toolName": "CODESYS",
+      "description": "Detects operations one variables of type POINTER TO which are not = (equality), <> (inequality), + (addition), or ADR.",
+	  "positive": "false",
+	  "children": {
+		  "SA0061: Unusual operation on pointer": {}
+	  }
+	},
+	"SA0062: Uses of TRUE or FALSE in expressions - Score": {
+      "toolName": "CODESYS",
+      "description": "Detects the use of the literals TRUE or FALSE in expressions",
+	  "positive": "false",
+	  "children": {
+		  "SA0062: Uses of TRUE or FALSE in expressions": {}
+	  }
+	},
+	"SA0063: Possibly not 16-bit-compatible operations - Score": {
+      "toolName": "CODESYS",
+      "description": "Detects 16-bit operations with temporary results. Background: On 16-bit systems, 32-bit temporary results can be truncated. Example: (int+10) can exceed 16 bits.",
+	  "positive": "false",
+	  "children": {
+		  "SA0063: Possibly not 16-bit-compatible operations": {}
+	  }
+	},
+	"SA0064: Addition of pointer - Score": {
+      "toolName": "CODESYS",
+      "description": "Detects the addition of pointers",
+	  "positive": "false",
+	  "children": {
+		  "SA0064: Addition of pointer": {}
+	  }
+	},
+	"SA0065: Incorrect pointer addition to base size - Score": {
+      "toolName": "CODESYS",
+      "description": "Detects pointer additions for which the value to be added does not match the base size of the pointer. Only literals of the base size can be added. Also multiplication products of the base size cannot be added.",
+	  "positive": "false",
+	  "children": {
+		  "SA0065: Incorrect pointer addition to base size": {}
+	  }
+	},
+	"SA0066: Uses of temporary results - Score": {
+      "toolName": "CODESYS",
+      "description": "Detects the use of temporary results in statements with a data type that is less than the registry size. The implicit cast in this case may lead to unwanted results.",
+	  "positive": "false",
+	  "children": {
+		  "SA0066: Uses of temporary results": {}
+	  }
+	},
+	"SA0072: Invalid uses of counter variable - Score": {
+      "toolName": "CODESYS",
+      "description": "Detects the use of a counter variable in a FOR loop",
+	  "positive": "false",
+	  "children": {
+		  "SA0072: Invalid uses of counter variable": {}
+	  }
+	},
+	"SA0073: Uses of inadequate counter variable - Score": {
+      "toolName": "CODESYS",
+      "description": "Detects the use of non-temporary variables in FOR loops.",
+	  "positive": "false",
+	  "children": {
+		  "SA0073: Uses of inadequate counter variable": {}
+	  }
+	},
+	"SA0075: Missing ELSE - Score": {
+      "toolName": "CODESYS",
+      "description": "Detects CASE statements without an ELSE branch",
+	  "positive": "false",
+	  "children": {
+		  "SA0075: Missing ELSE": {}
+	  }
+	},
+	"SA0076: Missing enumeration constant - Score": {
+      "toolName": "CODESYS",
+      "description": "Detects whether or not an enumeration variable is used as a condition and not all enumeration values are treated as CASE branches",
+	  "positive": "false",
+	  "children": {
+		  "SA0076: Missing enumeration constant": {}
+	  }
+	},
+	"SA0077: Type mismatches with CASE expression - Score": {
+      "toolName": "CODESYS",
+      "description": "Detects code locations where the data type of a condition does not match that of the CASE branch",
+	  "positive": "false",
+	  "children": {
+		  "SA0077: Type mismatches with CASE expression": {}
+	  }
+	},
+	"SA0078: Missing CASE branches - Score": {
+      "toolName": "CODESYS",
+      "description": "Detects CASE statements without CASE branches and only one ELSE statement",
+	  "positive": "false",
+	  "children": {
+		  "SA0078: Missing CASE branches": {}
+	  }
+	},
+	"SA0080: Loop index variable for array index exceeds array range - Score": {
+      "toolName": "CODESYS",
+      "description": "Detects the FOR statements where the index variable is used to access an array index and exceeds the range of the array index",
+	  "positive": "false",
+	  "children": {
+		  "SA0080: Loop index variable for array index exceeds array range": {}
+	  }
+	},
+	"SA0081: Upper border is not a constant - Score": {
+      "toolName": "CODESYS",
+      "description": "Detects the FOR statements where the upper bound is not defined with a constant value",
+	  "positive": "false",
+	  "children": {
+		  "SA0081: Upper border is not a constant": {}
+	  }
+	},
+	"SA0090: Return statement before end of function - Score": {
+      "toolName": "CODESYS",
+      "description": "Detects whether or not the RETURN statement is not the last statement in a function, method, property, or program.",
+	  "positive": "false",
+	  "children": {
+		  "SA0090: Return statement before end of function": {}
+	  }
+	},
+	"SA0095: Assignments in conditions - Score": {
+      "toolName": "CODESYS",
+      "description": "Detects assignments in conditions of IF, CASE, or REPEAT constructs",
+	  "positive": "false",
+	  "children": {
+		  "SA0095: Assignments in conditions": {}
+	  }
+	},
+	"SA0100: Variables greater than <n> bytes - Score": {
+      "toolName": "CODESYS",
+      "description": "Detects variables that use more than n bytes, where n is defined by the current configuration. Default value: 1024 bytes. The value can be changed by double-clicking the line.",
+	  "positive": "false",
+	  "children": {
+		  "SA0100: Variables greater than <n> bytes": {}
+	  }
+	},
+	"SA0101: Names with invalid length - Score": {
+      "toolName": "CODESYS",
+      "description": "Detects names with invalid lengths. In the Project Settings, double-click the rule entry to open a dialog where you can define the length of the name and define any exception.",
+	  "positive": "false",
+	  "children": {
+		  "SA0101: Names with invalid length": {}
+	  }
+	},
+	"A0102: Access to program/fb variables from the outside - Score": {
+      "toolName": "CODESYS",
+      "description": "Detects external access to local variables of programs or function blocks.",
+	  "positive": "false",
+	  "children": {
+		  "A0102: Access to program/fb variables from the outside": {}
+	  }
+	},
+	"SA0103: Concurrent access on not atomic data - Score": {
+      "toolName": "CODESYS",
+      "description": "Detects whether or not non-atomic variables (for example, with data type STRING, WSTRING, ARRAY, STRUCT, FB instances, 64-bit data types) are used in more than one task",
+	  "positive": "false",
+	  "children": {
+		  "SA0103: Concurrent access on not atomic data": {}
+	  }
+	},
+	"SA0105: Multiple instance calls - Score": {
+      "toolName": "CODESYS",
+      "description": "Detects the instances of function blocks that are called multiple times. To do this, the function blocks haves to be marked with the pragma {attribute 'analysis:report-multiple-instance-calls'}.",
+	  "positive": "false",
+	  "children": {
+		  "SA0105: Multiple instance calls": {}
+	  }
+	},
+	"SA0106: Virtual method calls in FB_INIT - Score": {
+      "toolName": "CODESYS",
+      "description": "Detects method calls in the FB_Init method of a base function block, which are overwritten by a function block derived from a base function block",
+	  "positive": "false",
+	  "children": {
+		  "SA0106: Virtual method calls in FB_INIT": {}
+	  }
+	},
+	"SA0107: Missing formal parameters - Score": {
+      "toolName": "CODESYS",
+      "description": "Detects whether or not formal parameters are missing",
+	  "positive": "false",
+	  "children": {
+		  "SA0107: Missing formal parameters": {}
+	  }
+	},
+	"SA0111: Pointer variables - Score": {
+      "toolName": "CODESYS",
+      "description": "Detects variables of type POINTER TO",
+	  "positive": "false",
+	  "children": {
+		  "SA0111: Pointer variables": {}
+	  }
+	},
+	"SA0112: Reference variables - Score": {
+      "toolName": "CODESYS",
+      "description": "Detects variables of type REFERENCE TO",
+	  "positive": "false",
+	  "children": {
+		  "SA0112: Reference variables": {}
+	  }
+	},
+	"SA0113: Variables with data type WSTRING - Score": {
+      "toolName": "CODESYS",
+      "description": "Detects variables of type WSTRING",
+	  "positive": "false",
+	  "children": {
+		  "SA0113: Variables with data type WSTRING": {}
+	  }
+	},
+	"SA0114: Variables with data type LTIME - Score": {
+      "toolName": "CODESYS",
+      "description": "Detects variables of type LTIME.",
+	  "positive": "false",
+	  "children": {
+		  "SA0114: Variables with data type LTIME": {}
+	  }
+	},
+	"SA0115: Variables with data type UNION - Score": {
+      "toolName": "CODESYS",
+      "description": "Detects declarations of a UNION data type and variable declarations of the UNION type",
+	  "positive": "false",
+	  "children": {
+		  "SA0115: Variables with data type UNION": {}
+	  }
+	},
+	"SA0117: Variables with data type BIT - Score": {
+      "toolName": "CODESYS",
+      "description": "Detects variable declarations of data type BIT (possible within structure definitions)",
+	  "positive": "false",
+	  "children": {
+		  "SA0117: Variables with data type BIT": {}
+	  }
+	},
+	"SA0118: Initialisations not using constants - Score": {
+      "toolName": "CODESYS",
+      "description": "Detects initializations that do not assign constants",
+	  "positive": "false",
+	  "children": {
+		  "SA0118: Initialisations not using constants": {}
+	  }
+	},
+	"SA0119:Object-oriented features - Score": {
+      "toolName": "CODESYS",
+      "description": "Detects the use of object-oriented features, such as function block declarations with EXTENDS and IMPLEMENTS, or property and interface declarations. This rule is useful when you write code that is intended to be ported to other IEC 61131-3-compliant systems.",
+	  "positive": "false",
+	  "children": {
+		  "SA0119:Object-oriented features": {}
+	  }
+	},
+	"SA0120: Program calls - Score": {
+      "toolName": "CODESYS",
+      "description": "Detects program calls",
+	  "positive": "false",
+	  "children": {
+		  "SA0120: Program calls": {}
+	  }
+	},
+	"SA0121: Missing 'VAR_EXTERNAL' declarations - Score": {
+      "toolName": "CODESYS",
+      "description": "Detects the use of a global variable in function blocks without them being declared there as VAR_EXTERNAL",
+	  "positive": "false",
+	  "children": {
+		  "SA0121: Missing 'VAR_EXTERNAL' declarations": {}
+	  }
+	},
+	"SA0122: Array index defined as expression - Score": {
+      "toolName": "CODESYS",
+      "description": "Detects the use of expressions in the declaration of array indexes",
+	  "positive": "false",
+	  "children": {
+		  "SA0122: Array index defined as expression": {}
+	  }
+	},
+	"SA0123: Usages of INI, ADR or BITADR - Score": {
+      "toolName": "CODESYS",
+      "description": "Detects the use of the CODESYS Static Analysis-specific operators INI, ADR, and BITADR.",
+	  "positive": "false",
+	  "children": {
+		  "SA0123: Usages of INI, ADR or BITADR": {}
+	  }
+	},
+	"SA0124: Pointer dereferences in declarations - Score": {
+      "toolName": "CODESYS",
+      "description": "Detects pointer dereferences that are used for initialization in the declaration part",
+	  "positive": "false",
+	  "children": {
+		  "SA0124: Pointer dereferences in declarations": {}
+	  }
+	},
+	"SA0125: References in initializations - Score": {
+      "toolName": "CODESYS",
+      "description": "Detects reference variables that are used for initialization in the declaration part",
+	  "positive": "false",
+	  "children": {
+		  "SA0125: References in initializations": {}
+	  }
+	},
+	"SA0130: Implicit expanding conversions - Score": {
+      "toolName": "CODESYS",
+      "description": "Detects implicit conversions from smaller data types to larger data types",
+	  "positive": "false",
+	  "children": {
+		  "SA0130: Implicit expanding conversions": {}
+	  }
+	},
+	"SA0131: Implicit narrowing conversions - Score": {
+      "toolName": "CODESYS",
+      "description": "Detects implicit conversions from larger data types to smaller data types",
+	  "positive": "false",
+	  "children": {
+		  "SA0131: Implicit narrowing conversions": {}
+	  }
+	},
+	"SA0132: Implicit signed/unsigned conversions - Score": {
+      "toolName": "CODESYS",
+      "description": "Detects implicit conversions from signed data types to unsigned data types or the other way around.",
+	  "positive": "false",
+	  "children": {
+		  "SA0132: Implicit signed/unsigned conversions": {}
+	  }
+	},
+	"SA0133: Explicit narrowing conversions - Score": {
+      "toolName": "CODESYS",
+      "description": "Detects explicit conversions from a larger data type to a smaller data type",
+	  "positive": "false",
+	  "children": {
+		  "SA0133: Explicit narrowing conversions": {}
+	  }
+	},
+	"SA0134: Explicit signed/unsigned conversions - Score": {
+      "toolName": "CODESYS",
+      "description": "Detects explicit conversions from signed data types to unsigned data types and the other way around",
+	  "positive": "false",
+	  "children": {
+		  "SA0134: Explicit signed/unsigned conversions": {}
+	  }
+	},
+	"SA0140: Statements commented out - Score": {
+      "toolName": "CODESYS",
+      "description": "Detects commented-out statements",
+	  "positive": "false",
+	  "children": {
+		  "SA0140: Statements commented out": {}
+	  }
+	},
+	"SA0145: Possible use of not initialised reference - Score": {
+      "toolName": "CODESYS",
+      "description": "Detects any reference variables that may not be initialized before use and are not checked by the operator __ISVALIDREF. This rule is applied in the implementation part of POUs. For the declaration, there is rule SA0124.",
+	  "positive": "false",
+	  "children": {
+		  "SA0145: Possible use of not initialised reference": {}
+	  }
+	},
+	"SA0147: Unusual shift operation - strict - Score": {
+      "toolName": "CODESYS",
+      "description": "Detects bit shift operations that are not made to bit field data types (BYTE, WORD, DWORD, LWORD)",
+	  "positive": "false",
+	  "children": {
+		  "SA0147: Unusual shift operation - strict": {}
+	  }
+	},
+	"SA0148: Unusual bit access - strict - Score": {
+      "toolName": "CODESYS",
+      "description": "Detects bit access that is not made to bit field data types (BYTE, WORD, DWORD, and LWORD). The IEC 61131-3 standard permits only bit access to bit field data types. However, the CODESYS compiler also permits bit access to unsigned data types.",
+	  "positive": "false",
+	  "children": {
+		  "SA0148: Unusual bit access - strict": {}
+	  }
+	},
+	"SA0150: Violations of lower or upper limits or the metrics - Score": {
+      "toolName": "CODESYS",
+      "description": "Detects the POUs that violate the activated metrics at the lower or upper limits",
+	  "positive": "false",
+	  "children": {
+		  "SA0150: Violations of lower or upper limits or the metrics": {}
+	  }
+	},
+	"SA0160: Recursive calls - Score": {
+      "toolName": "CODESYS",
+      "description": "Detects recursive calls in actions, methods, and properties of function blocks. Also detects possible recursions from virtual function calls and interface calls.",
+	  "positive": "false",
+	  "children": {
+		  "SA0160: Recursive calls": {}
+	  }
+	},
+	"SA0161: Unpacked structure in packed structure - Score": {
+      "toolName": "CODESYS",
+      "description": "Detects unpacked structures that are used in packed structures",
+	  "positive": "false",
+	  "children": {
+		  "SA0161: Unpacked structure in packed structure": {}
+	  }
+	},
+	"SA0162: Missing comments - Score": {
+      "toolName": "CODESYS",
+      "description": "Detects uncommented locations in the program",
+	  "positive": "false",
+	  "children": {
+		  "SA0162: Missing comments": {}
+	  }
+	},
+	"SA0163: Nested comments - Score": {
+      "toolName": "CODESYS",
+      "description": "Detects nested comments",
+	  "positive": "false",
+	  "children": {
+		  "SA0163: Nested comments": {}
+	  }
+	},
+	"SA0164: Multiline comments - Score": {
+      "toolName": "CODESYS",
+      "description": "Detects multiline comments that are coded as (* comment *). Only single-line comments that are coded as // comment are permitted.",
+	  "positive": "false",
+	  "children": {
+		  "SA0164: Multiline comments": {}
+	  }
+	},
+	"SA0165: Tasks calling other POUs than programs - Score": {
+      "toolName": "CODESYS",
+      "description": "Detects tasks that call function blocks or functions instead of a program",
+	  "positive": "false",
+	  "children": {
+		  "SA0165: Tasks calling other POUs than programs": {}
+	  }
+	},
+	"SA0166: Max. number of input/output/in-out variables... - Score": {
+      "toolName": "CODESYS",
+      "description": "Detects whether or not a defined number of input variables (VAR_INPUT), output variables (VAR_OUTPUT) or VAR_IN_OUT variables is exceeded in a POU. In the Project Settings, double-click the rule entry to open a dialog where you define the maximum number.",
+	  "positive": "false",
+	  "children": {
+		  "SA0166: Max. number of input/output/in-out variables...": {}
+	  }
+	},
+	"SA0167: Temporary function block instances - Score": {
+      "toolName": "CODESYS",
+      "description": "The check detects function block instances which are declared as temporary variables. This affects instances which are declared in a method or function or as VAR_TEMP, and therefore are reinitialized in each processing cycle or for each POU call.",
+	  "positive": "false",
+	  "children": {
+		  "SA0167: Temporary function block instances": {}
+	  }
+	},
+	"SA0168: Unnecessary Assignments - Score": {
+      "toolName": "CODESYS",
+      "description": "Detects assignments to variables which do not have any effect in the code.",
+	  "positive": "false",
+	  "children": {
+		  "SA0168: Unnecessary Assignments": {}
+	  }
+	},
+	"SA0169: Ignored outputs - Score": {
+      "toolName": "CODESYS",
+      "description": "Detects the outputs of methods and functions that are not specified when calling the method or function.",
+	  "positive": "false",
+	  "children": {
+		  "SA0169: Ignored outputs": {}
+	  }
+	},
+	"SA0170: Address of an output variable should not be used - Score": {
+      "toolName": "CODESYS",
+      "description": "Detects code locations where the address of an output variable (VAR_OUTPUT, VAR_IN_OUT) of a function block is is determined.",
+	  "positive": "false",
+	  "children": {
+		  "SA0170: Address of an output variable should not be used": {}
+	  }
+	},
+	"SA0171: Enumerations should have the 'strict' attribute - Score": {
+      "toolName": "CODESYS",
+      "description": "Detects declarations of enumerations which are not provided with the {attribute 'strict'} attribute.",
+	  "positive": "false",
+	  "children": {
+		  "SA0171: Enumerations should have the 'strict' attribute": {}
+	  }
+	},
     "POU Size": {
       "name": "POU Size",
       "positive": "false",
@@ -243,7 +1349,8 @@
       "children": {
 		  "Number of calls": {}
       }
-    }	
+    },
+	
   },
   "diagnostics": {
     "SA0001: Unreachable code": {
