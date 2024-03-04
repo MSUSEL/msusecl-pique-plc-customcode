@@ -1,5 +1,5 @@
-if plcopen metrics map to a QA, I am making the metric apply to all PFs of that QA (for example, Maintainability)
- -otherwise, map to relevant PFs only
+missing metric: "CODESYS Static Analysis: Duplication ratio" (page 26 on plcopen pdf)
+
  
  
  
