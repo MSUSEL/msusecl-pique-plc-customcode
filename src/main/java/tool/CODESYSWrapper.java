@@ -251,7 +251,7 @@ public class CODESYSWrapper extends Tool implements ITool {
     }
 
     /**
-     * Formats the read-in tool output file into a List of lines (themselves represented as ArrayLists of strings)
+     * Formats the tool output file into a List of lines (themselves represented as ArrayLists of strings)
      * Extraneous detail is removed leaving SA number and description of the vulnerability
      *
      * @param rules A raw String representation of the rules tool output
@@ -294,7 +294,6 @@ public class CODESYSWrapper extends Tool implements ITool {
     private ArrayList<String> metricsLineBuilder(StringBuilder value, StringBuilder unformattedLine, ArrayList<String> line, boolean secondTab) {
         // base case
         if (unformattedLine.length() == 0) {
-            // return finished line
             return line;
         } else {
             // current character is not a tab, add to value, call lineBuilder with modified unformatted line
@@ -328,18 +327,14 @@ public class CODESYSWrapper extends Tool implements ITool {
         Integer severityInt = 1;
         switch (severity.toLowerCase()) {
             case "low": {
-                severityInt = 4;
+                severityInt = 1;
                 break;
             }
             case "medium": {
-                severityInt = 7;
+                severityInt = 3;
                 break;
             }
             case "high": {
-                severityInt = 9;
-                break;
-            }
-            case "critical": {
                 severityInt = 10;
                 break;
             }

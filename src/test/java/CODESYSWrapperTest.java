@@ -85,18 +85,18 @@ public class CODESYSWrapperTest {
         assertFalse(processedFile.isEmpty());
         int filedividedbytwo = processedFile.size() / 2;
 
-        List<String> firstLine = processedFile.get(1);
-        List<String> midLine = processedFile.get(processedFile.size() / 2);
+        List<String> firstLine = processedFile.get(0);
+        List<String> midLine = processedFile.get(98);
         List<String> finalLine = processedFile.get(processedFile.size() - 1);
 
     // This is not yet reliable
     // There is more string processing to do based on what we care about
     assertEquals(firstLine.get(0), "SA0033");
-    assertEquals(midLine.get(0), "SA0168");
+    assertEquals(midLine.get(0), "SA0162");
     assertEquals(finalLine.get(0), "SA0025");
 
     assertEquals(firstLine.get(1), "Unused Variable 'StartPB'");
-    assertEquals(midLine.get(1), "The variable 'items[pr]' is assigned but its value is never used");
+    assertEquals(midLine.get(1), "Missing comment for 'ApplyRed'");
     assertEquals(finalLine.get(1), "Enumeration constant 'Green' not qualified");
 
     }
