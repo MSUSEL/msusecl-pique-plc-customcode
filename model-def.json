@@ -13,6 +13,13 @@
       }
     },
     "quality_aspects": {
+		"Rule-based Issues":{
+			"description": "This product factor captures all rule-based issues presented by the tool CODESYS. The score of this node reflects how many rules have been violated",
+			"eval_strategy": "pique.evaluation.DefaultFactorEvaluator",
+			"children": {
+				"Rule-based Issues": {}
+			}
+		},
       "ISO-25010": {
         "description": "degree to which the code reflects the quality properties outlined in the ISO 25010:2011 software product quality model",
         "eval_strategy": "pique.evaluation.DefaultFactorEvaluator",
@@ -47,7 +54,7 @@
     "product_factors": {
 	  "Rule-based Issues": {
         "name": "Rule-based Issues",
-        "description": "This product factor captures all rule-based issues presented by the tool CODESYS. The score of this node reflects how ",
+        "description": "This product factor captures all rule-based issues presented by the tool CODESYS. The score of this node reflects how many rules have been violated",
         "eval_strategy": "pique.evaluation.DefaultProductFactorEvaluator",
         "children": {
 			"SA0001: Unreachable code - Score": {},
