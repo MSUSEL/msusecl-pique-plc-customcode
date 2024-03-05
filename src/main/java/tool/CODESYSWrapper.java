@@ -25,15 +25,19 @@ package tool;
 import com.google.common.collect.HashBasedTable;
 import com.google.common.collect.Table;
 import com.google.common.primitives.Doubles;
+import com.opencsv.CSVReader;
+import org.checkerframework.checker.units.qual.C;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import pique.analysis.ITool;
 import pique.analysis.Tool;
 import pique.model.Diagnostic;
+import pique.model.Finding;
 import pique.utility.PiqueProperties;
 
 import utilities.helperFunctions;
 
+import javax.swing.border.LineBorder;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -148,8 +152,15 @@ public class CODESYSWrapper extends Tool implements ITool {
         //parse rules
         List<List<String>> formattedRulesOutput= parseRules(toolResults);
 
-        //Finding f = new Finding(toolResults.toString(), lineNumber, 1, 1); //getSeverityFromModel);
+        // Once I have a finding object, what do I do with it?
+        //  Loop through all diagnostics
+        //      Get diagnostic name - key through findings and count number of times finding (e.g. SA0101) appears
+        //      Probably going to need separate findings for rules and metrics
+
+        //Finding f = new Finding(formattedRulesOutput.get()); //getSeverityFromModel);
+
         // TODO Parse findings and map to diagnostic
+
 
         Map<String, Diagnostic> diagnostics = helperFunctions.initializeDiagnostics(this.getName());
 
@@ -157,7 +168,7 @@ public class CODESYSWrapper extends Tool implements ITool {
     }
 
     /**
-     * Initialize CODSYS tool
+     * Initialize CODESYS tool
      */
     @Override
     public Path initialize(Path toolRoot) {
@@ -174,9 +185,14 @@ public class CODESYSWrapper extends Tool implements ITool {
      */
     public Table<String, String, Double> parseMetrics(Path toolOutput) {
         // Will these filenames always be the same or do we need a cleverer way to grab each file?
-        final String metricsOutput = "metrics-output.txt";
+        //final String metricsOutput = "metrics-output.txt";
+        final String metricsOutput = "MidtermESET_2205_2023-Metrics.csv";
         int columnDefinitionLines = 2;  // There are two lines at the top of the example output file that define "columns" in the output
-        ArrayList<String> rowKeys = new ArrayList<>();
+        ArrayList<String> row = new ArrayList<>();
+        String fileFormat;  // csv or txt
+        String delimiter;
+        int ignoreLines;
+        Table<String, String, Double> formattedToolOuput = HashBasedTable.create();
 
         String metrics = "";    // This will be the tool output metrics file
 
@@ -185,40 +201,40 @@ public class CODESYSWrapper extends Tool implements ITool {
         } catch (IOException e) {
             LOGGER.info("No results to read from CODESYS.");
         }
-        String[] lines = metrics.split("\n");
 
-        // parse first two lines of output that define columns
-        ArrayList<String> columnKeys = new ArrayList<>();
-        for (int i = 0; i < columnDefinitionLines; i++) {
-            String[] columnNames = lines[i].trim().split("\t");
-            columnKeys.addAll(Arrays.asList(columnNames));
+        fileFormat = "csv"; // Need a statement here to detect file type
+        String[] lines = metrics.split("\n");
+        if (fileFormat.equals("csv")) {
+            delimiter = ";";
+            ignoreLines = 3;
+        } else {
+            delimiter = "\t";
+            ignoreLines = 0;
         }
 
-        Table<String, String, Double> formattedToolOuput = HashBasedTable.create();
-        int iter = 0;
-        for (int i = columnDefinitionLines + 1; i < lines.length; i++) {
-            // create parameters necessary for line parsing
-            ArrayList<String> line = new ArrayList<>();
-            StringBuilder unformattedLine = new StringBuilder(lines[i]);
-            StringBuilder value = new StringBuilder();
-
-            ArrayList<String> formattedLine = metricsLineBuilder(value, unformattedLine, line, false);
-            rowKeys.add(formattedLine.get(0));
-            formattedLine.remove(0);
-            for (int j = 0; j < columnKeys.size(); j++) {
-                // IMPORTANT!!!
-                // This first if statement is very, very bad. Remove it as soon as possible!!
-                // We're missing values for the last column. It isn't parsed wrong - the values don't exist in the output file
-                // this leads to a lack of confidence in any of the findings because we have more metrics than values
-                // and there is no proof that the rest of the values are aligned to the correct columns.
-                if (j == 28) {
-                    formattedToolOuput.put(rowKeys.get(iter), columnKeys.get(j), Doubles.tryParse(formattedLine.get(j - 1)));
-                }
-                else {
-                    formattedToolOuput.put(rowKeys.get(iter), columnKeys.get(j), Doubles.tryParse(formattedLine.get(j)));
-                }
+        // parse lines of output that define columns
+        ArrayList<String> columnKeys = new ArrayList<>();
+        for (int i = ignoreLines; i < columnDefinitionLines + ignoreLines; i++) {
+            String[] columnNames = lines[i].trim().split(delimiter);
+            for (int j = 1; j < columnNames.length; j++) {
+                columnKeys.add(columnNames[j]);
             }
-            iter++;
+        }
+
+        // parse rows of values
+        int startPoint = ignoreLines + columnDefinitionLines + 1;
+        for (int i = startPoint; i < lines.length; i++) {
+            String trimmedLine = lines[i].replaceFirst("\\s++\\S", "");
+            String[] line = trimmedLine.split(delimiter, -1);
+            row.addAll(Arrays.asList(line));
+
+            for (int j = 0; j < columnKeys.size() - 1; j++) {
+                if (row.get(j + 1).isEmpty()) {
+                    // hashBasedTable does not tolerate nulls so replace nulls with -9.9
+                    row.set(j + 1, "-9.9");
+                }
+                formattedToolOuput.put(row.get(0), columnKeys.get(j + 1), Doubles.tryParse(row.get(j + 1)));
+            }
         }
         return formattedToolOuput;
     }
@@ -229,7 +245,7 @@ public class CODESYSWrapper extends Tool implements ITool {
      * Questions:
      * What information from this file do we actually use?
      * Every line contains "[ERROR]", "Final Exam:", and "[Device: PLC Logic: Final_Proj]"
-     * Do these values ever change - eg [WAARNING]? or [Device: <name>: <run name>?"
+     * Do these values ever change - eg [WARNING]? or [Device: <name>: <run name>?"
      * First version of this method includes all parts of the line in case there are other options
      *
      * @param toolOutput is a path to the directory containing tool output files
@@ -277,44 +293,6 @@ public class CODESYSWrapper extends Tool implements ITool {
             formattedOutput.add(formattedLine);
         }
         return formattedOutput;
-    }
-
-    /**
-     * Recursively parses raw lines from the metrics output file. The main purpose is to create an ArrayList that contains
-     * a row label followed by all values in the row as separate elements of the ArrayList. This ArrayList can then be used
-     * to build the rows of the Table data structure. What makes this level of processing necessary is that tab characters represent
-     * both the delimiter and empty/null values
-     *
-     * @param value StringBuilder that is used to store the values in a line of output as differentiated from delimiters or labels
-     * @param unformattedLine raw line in string form that is parsed into a formatted line
-     * @param line formatted line and the output of this method
-     * @param secondTab flag used to determine whether a tab character is a delimiter or an empty value in the line
-     * @return line ArrayList of the row label followed by each value (or null represented by -9.9) in the row
-     */
-    private ArrayList<String> metricsLineBuilder(StringBuilder value, StringBuilder unformattedLine, ArrayList<String> line, boolean secondTab) {
-        // base case
-        if (unformattedLine.length() == 0) {
-            return line;
-        } else {
-            // current character is not a tab, add to value, call lineBuilder with modified unformatted line
-            if (unformattedLine.charAt(0) != '\t') {
-                value.append(unformattedLine.charAt(0));
-                return metricsLineBuilder(value, unformattedLine.deleteCharAt(0), line, false);
-            // current character is a first tab, set secondTab to true (treat this tab as a delimiter), store current value in line, and make recursive call to lineBuilder
-            } else if (!secondTab) {
-                if (value.length() != 0) {
-                    line.add(value.toString());
-                }
-                value.setLength(0);
-                return metricsLineBuilder(value, unformattedLine.deleteCharAt(0), line, true);
-            // current character is the second tab in a row. Treat it as a null value
-            } else {
-                // This is weird, but I need a way to represent a null value that doesn't use null, 0.0, or empty string
-                // due to the constraints of guava Tables
-                line.add("-9.9");
-                return metricsLineBuilder(value, unformattedLine.deleteCharAt(0), line, true);
-            }
-        }
     }
 
     /**

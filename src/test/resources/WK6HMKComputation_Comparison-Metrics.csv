@@ -1,0 +1,9 @@
+Min.:
+Max.:
+
+;Code size (number of bytes);Variables size (number of bytes);Stack size (number of bytes);Number of calls;Called in tasks;Used different global Variables;Number of direct address accesses;Number of local variables;Number of inputs variables;Number of output variables;NOS - Number Of Statements;Percentage of comment;Complexity (McCabe);Complexity of nesting (Prather);DIT - Depth of Inheritance Tree;NOC - Number Of Children;RFC - Response For Class;CBO - Coupling Between Objects;Complexity of reference (Elshof);Lack of Cohesion Of Methods - LCOM;Number of different used operators - Halstead (n1);Number of operators - Halstead (N1);Number of different used operands - Halstead (n2);Number of operands - Halstead (N2);Length - Halstead (HL);Volume - Halstead (HV);Difficulty - Halstead (D);Number of SFC branches
+;Number of SFC steps
+
+W6PU7_6;120;16;0;1;1;0;0;4;1;1;1;0;1;1.00;;;0;;1.00;;5;6;7;7;31;46;2.5;;
+W6PU7_2;96;18;0;1;1;0;0;5;1;1;1;0;1;1.00;;;0;;1.00;;5;5;6;6;27;38;2.5;;
+W6PU7_18_LD;560;194;0;1;1;0;0;18;1;3;13;0;2;1.08;;;2;;0.67;;17;43;30;52;216;527;14.7;;

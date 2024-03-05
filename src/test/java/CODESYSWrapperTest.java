@@ -56,19 +56,30 @@ public class CODESYSWrapperTest {
         Path inputFile = relativeFilePath.toAbsolutePath().normalize();
         Table<String, String, Double> testTable = CODESYSWrapper.parseMetrics(inputFile);
 
-        boolean firstRowExists = testTable.containsRow("SortTable");
+        // csv-based
+        boolean firstRowExists = testTable.containsRow("T_PLC_MS");
         boolean firstColumnExists = testTable.containsColumn("Code size (number of bytes)");
         boolean lastRowExists = testTable.containsRow("BatchCompleteCountFB");
-        boolean lastColumnExists = testTable.containsColumn("Number of SFC branches");
+        boolean lastColumnExists = testTable.containsColumn("BIT_COUNT");
+
+        // text-based
+//        boolean firstRowExists = testTable.containsRow("SortTable");
+//        boolean firstColumnExists = testTable.containsColumn("Code size (number of bytes)");
+//        boolean lastRowExists = testTable.containsRow("BatchCompleteCountFB");
+//        boolean lastColumnExists = testTable.containsColumn("Number of SFC branches");
 
         assertTrue(firstRowExists);
         assertTrue(firstColumnExists);
         assertTrue(lastRowExists);
         assertTrue(lastColumnExists);
 
-        double firstValue = Preconditions.checkNotNull(testTable.get("SortTable", "Code size (number of bytes)")) ;
-        double midValue = Preconditions.checkNotNull(testTable.get("Sim_Piston", "Stack size (number of bytes)"));
-        double lastValue = Preconditions.checkNotNull(testTable.get("BatchCompleteCountFB", "Number of SFC steps"));
+        // csv-based
+        
+
+        // text-based
+//        double firstValue = Preconditions.checkNotNull(testTable.get("SortTable", "Code size (number of bytes)")) ;
+//        double midValue = Preconditions.checkNotNull(testTable.get("Sim_Piston", "Stack size (number of bytes)"));
+//        double lastValue = Preconditions.checkNotNull(testTable.get("BatchCompleteCountFB", "Number of SFC steps"));
 
         assertEquals(216.0, firstValue, floatDelta);
         assertEquals(16.0, midValue, floatDelta);

@@ -1,0 +1,133 @@
+                Static analysis...
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj]: SA0031:  Unused Property Get 'Container'
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj]: SA0031:  Unused Property Get 'Visu'
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj]: SA0031:  Unused Method 'FB_ReInit'
+[ERROR]         MidtermESET_2205_2023: Main [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj]: SA0162:  Missing comment for 'Main'
+[ERROR]         MidtermESET_2205_2023: Main [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj]: SA0101:  Incorrect length of name 'Main'
+[ERROR]         MidtermESET_2205_2023: Main [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Line 3 (Decl)): SA0162:  Missing comment for 'Conveyor'
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 23): SA0102:  Access to program/fb variable 'Conveyor' from the outside
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 23): SA0102:  Access to program/fb variable 'Conveyor' from the outside
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 23): SA0102:  Access to program/fb variable 'Conveyor' from the outside
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 23): SA0102:  Access to program/fb variable 'Conveyor' from the outside
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 23): SA0102:  Access to program/fb variable 'Conveyor' from the outside
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 23): SA0102:  Access to program/fb variable 'Conveyor' from the outside
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 33): SA0102:  Access to program/fb variable 'Conveyor' from the outside
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 0): SA0102:  Access to program/fb variable 'Conveyor' from the outside
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 0): SA0102:  Access to program/fb variable 'Conveyor' from the outside
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 0): SA0102:  Access to program/fb variable 'Conveyor' from the outside
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 0): SA0102:  Access to program/fb variable 'Conveyor' from the outside
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 0): SA0102:  Access to program/fb variable 'Conveyor' from the outside
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 0): SA0102:  Access to program/fb variable 'Conveyor' from the outside
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 3): SA0102:  Access to program/fb variable 'Conveyor' from the outside
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 3): SA0102:  Access to program/fb variable 'Conveyor' from the outside
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 3): SA0102:  Access to program/fb variable 'Conveyor' from the outside
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 3): SA0102:  Access to program/fb variable 'Conveyor' from the outside
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 3): SA0102:  Access to program/fb variable 'Conveyor' from the outside
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 3): SA0102:  Access to program/fb variable 'Conveyor' from the outside
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 42): SA0102:  Access to program/fb variable 'Conveyor' from the outside
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 42): SA0102:  Access to program/fb variable 'Conveyor' from the outside
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 42): SA0102:  Access to program/fb variable 'Conveyor' from the outside
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 42): SA0102:  Access to program/fb variable 'Conveyor' from the outside
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 42): SA0102:  Access to program/fb variable 'Conveyor' from the outside
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 42): SA0102:  Access to program/fb variable 'Conveyor' from the outside
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 48): SA0102:  Access to program/fb variable 'Conveyor' from the outside
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 48): SA0102:  Access to program/fb variable 'Conveyor' from the outside
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 48): SA0102:  Access to program/fb variable 'Conveyor' from the outside
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 48): SA0102:  Access to program/fb variable 'Conveyor' from the outside
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 48): SA0102:  Access to program/fb variable 'Conveyor' from the outside
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 48): SA0102:  Access to program/fb variable 'Conveyor' from the outside
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 50): SA0102:  Access to program/fb variable 'Conveyor' from the outside
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 50): SA0102:  Access to program/fb variable 'Conveyor' from the outside
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 50): SA0102:  Access to program/fb variable 'Conveyor' from the outside
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 50): SA0102:  Access to program/fb variable 'Conveyor' from the outside
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 50): SA0102:  Access to program/fb variable 'Conveyor' from the outside
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 50): SA0102:  Access to program/fb variable 'Conveyor' from the outside
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 61): SA0102:  Access to program/fb variable 'Conveyor' from the outside
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 2): SA0102:  Access to program/fb variable 'Conveyor' from the outside
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 2): SA0102:  Access to program/fb variable 'Conveyor' from the outside
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 2): SA0102:  Access to program/fb variable 'Conveyor' from the outside
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 2): SA0102:  Access to program/fb variable 'Conveyor' from the outside
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 2): SA0102:  Access to program/fb variable 'Conveyor' from the outside
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 2): SA0102:  Access to program/fb variable 'Conveyor' from the outside
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 83): SA0102:  Access to program/fb variable 'Conveyor' from the outside
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 93): SA0102:  Access to program/fb variable 'Conveyor' from the outside
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 93): SA0102:  Access to program/fb variable 'Conveyor' from the outside
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 93): SA0102:  Access to program/fb variable 'Conveyor' from the outside
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 93): SA0102:  Access to program/fb variable 'Conveyor' from the outside
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 93): SA0102:  Access to program/fb variable 'Conveyor' from the outside
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 93): SA0102:  Access to program/fb variable 'Conveyor' from the outside
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 69): SA0102:  Access to program/fb variable 'Conveyor' from the outside
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 69): SA0102:  Access to program/fb variable 'Conveyor' from the outside
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 71): SA0102:  Access to program/fb variable 'Conveyor' from the outside
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 71): SA0102:  Access to program/fb variable 'Conveyor' from the outside
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 109): SA0102:  Access to program/fb variable 'Conveyor' from the outside
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 109): SA0102:  Access to program/fb variable 'Conveyor' from the outside
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 111): SA0102:  Access to program/fb variable 'Conveyor' from the outside
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 111): SA0102:  Access to program/fb variable 'Conveyor' from the outside
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 117): SA0102:  Access to program/fb variable 'Conveyor' from the outside
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 117): SA0102:  Access to program/fb variable 'Conveyor' from the outside
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 119): SA0102:  Access to program/fb variable 'Conveyor' from the outside
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 119): SA0102:  Access to program/fb variable 'Conveyor' from the outside
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 123): SA0102:  Access to program/fb variable 'Conveyor' from the outside
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 123): SA0102:  Access to program/fb variable 'Conveyor' from the outside
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 123): SA0102:  Access to program/fb variable 'Conveyor' from the outside
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 123): SA0102:  Access to program/fb variable 'Conveyor' from the outside
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 123): SA0102:  Access to program/fb variable 'Conveyor' from the outside
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 123): SA0102:  Access to program/fb variable 'Conveyor' from the outside
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 128): SA0102:  Access to program/fb variable 'Conveyor' from the outside
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 128): SA0102:  Access to program/fb variable 'Conveyor' from the outside
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 130): SA0102:  Access to program/fb variable 'Conveyor' from the outside
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 130): SA0102:  Access to program/fb variable 'Conveyor' from the outside
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 139): SA0102:  Access to program/fb variable 'Conveyor' from the outside
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 139): SA0102:  Access to program/fb variable 'Conveyor' from the outside
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 143): SA0102:  Access to program/fb variable 'Conveyor' from the outside
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 151): SA0102:  Access to program/fb variable 'Conveyor' from the outside
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 151): SA0102:  Access to program/fb variable 'Conveyor' from the outside
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 123): SA0102:  Access to program/fb variable 'Conveyor' from the outside
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 125): SA0102:  Access to program/fb variable 'Conveyor' from the outside
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 128): SA0102:  Access to program/fb variable 'Conveyor' from the outside
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 130): SA0102:  Access to program/fb variable 'Conveyor' from the outside
+[ERROR]         MidtermESET_2205_2023: Main [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Line 4 (Decl)): SA0162:  Missing comment for 'Run'
+[ERROR]         MidtermESET_2205_2023: Main [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Line 4 (Decl)): SA0101:  Incorrect length of name 'Run'
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 9): SA0102:  Access to program/fb variable 'Run' from the outside
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 9): SA0102:  Access to program/fb variable 'Run' from the outside
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 9): SA0102:  Access to program/fb variable 'Run' from the outside
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 9): SA0102:  Access to program/fb variable 'Run' from the outside
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 9): SA0102:  Access to program/fb variable 'Run' from the outside
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 9): SA0102:  Access to program/fb variable 'Run' from the outside
+[ERROR]         MidtermESET_2205_2023: Main [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Line 5 (Decl)): SA0162:  Missing comment for 'Z1_button_VI'
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 63): SA0102:  Access to program/fb variable 'Z1_button_VI' from the outside
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 63): SA0102:  Access to program/fb variable 'Z1_button_VI' from the outside
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 63): SA0102:  Access to program/fb variable 'Z1_button_VI' from the outside
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 63): SA0102:  Access to program/fb variable 'Z1_button_VI' from the outside
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 63): SA0102:  Access to program/fb variable 'Z1_button_VI' from the outside
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 63): SA0102:  Access to program/fb variable 'Z1_button_VI' from the outside
+[ERROR]         MidtermESET_2205_2023: Main [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Line 6 (Decl)): SA0162:  Missing comment for 'Z2_button_VI'
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 65): SA0102:  Access to program/fb variable 'Z2_button_VI' from the outside
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 65): SA0102:  Access to program/fb variable 'Z2_button_VI' from the outside
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 65): SA0102:  Access to program/fb variable 'Z2_button_VI' from the outside
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 65): SA0102:  Access to program/fb variable 'Z2_button_VI' from the outside
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 65): SA0102:  Access to program/fb variable 'Z2_button_VI' from the outside
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 65): SA0102:  Access to program/fb variable 'Z2_button_VI' from the outside
+[ERROR]         MidtermESET_2205_2023: Main [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Line 7 (Decl)): SA0162:  Missing comment for 'Z3_button_VI'
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 67): SA0102:  Access to program/fb variable 'Z3_button_VI' from the outside
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 67): SA0102:  Access to program/fb variable 'Z3_button_VI' from the outside
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 67): SA0102:  Access to program/fb variable 'Z3_button_VI' from the outside
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 67): SA0102:  Access to program/fb variable 'Z3_button_VI' from the outside
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 67): SA0102:  Access to program/fb variable 'Z3_button_VI' from the outside
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 67): SA0102:  Access to program/fb variable 'Z3_button_VI' from the outside
+[ERROR]         MidtermESET_2205_2023: Main [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Line 8 (Decl)): SA0162:  Missing comment for 'ClearFaultButton_VI'
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 97): SA0102:  Access to program/fb variable 'ClearFaultButton_VI' from the outside
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 97): SA0102:  Access to program/fb variable 'ClearFaultButton_VI' from the outside
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 97): SA0102:  Access to program/fb variable 'ClearFaultButton_VI' from the outside
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 97): SA0102:  Access to program/fb variable 'ClearFaultButton_VI' from the outside
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 97): SA0102:  Access to program/fb variable 'ClearFaultButton_VI' from the outside
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 97): SA0102:  Access to program/fb variable 'ClearFaultButton_VI' from the outside
+[ERROR]         MidtermESET_2205_2023: Main [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Line 9 (Decl)): SA0162:  Missing comment for 'AlarmTest_VI'
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 39): SA0102:  Access to program/fb variable 'AlarmTest_VI' from the outside
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 39): SA0102:  Access to program/fb variable 'AlarmTest_VI' from the outside
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 39): SA0102:  Access to program/fb variable 'AlarmTest_VI' from the outside
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 39): SA0102:  Access to program/fb variable 'AlarmTest_VI' from the outside
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 39): SA0102:  Access to program/fb variable 'AlarmTest_VI' from the outside
+[ERROR]         MidtermESET_2205_2023: ConveyerSys [CODESYS_Control_Win_V3_x64: PLC Logic: Midterm_Proj](Element ID 39): SA0102:  Access to program/fb variable 'AlarmTest_VI' from the outside
+                Static analysis complete -- 131 errors, 0 warnings
