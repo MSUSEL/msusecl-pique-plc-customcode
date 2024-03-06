@@ -188,12 +188,10 @@ public class CODESYSWrapper extends Tool implements ITool {
         //final String metricsOutput = "metrics-output.txt";
         final String metricsOutput = "MidtermESET_2205_2023-Metrics.csv";
         int columnDefinitionLines = 2;  // There are two lines at the top of the example output file that define "columns" in the output
-        ArrayList<String> row = new ArrayList<>();
-        String fileFormat;  // csv or txt
-        String delimiter;
         int ignoreLines;
+        String fileType;
+        String delimiter;
         Table<String, String, Double> formattedToolOuput = HashBasedTable.create();
-
         String metrics = "";    // This will be the tool output metrics file
 
         try {
@@ -202,9 +200,10 @@ public class CODESYSWrapper extends Tool implements ITool {
             LOGGER.info("No results to read from CODESYS.");
         }
 
-        fileFormat = "csv"; // Need a statement here to detect file type
         String[] lines = metrics.split("\n");
-        if (fileFormat.equals("csv")) {
+
+        fileType = checkFileFormat(metricsOutput);
+        if (fileType.equals(".csv") || fileType.equals(".CSV")) {
             delimiter = ";";
             ignoreLines = 3;
         } else {
@@ -214,26 +213,32 @@ public class CODESYSWrapper extends Tool implements ITool {
 
         // parse lines of output that define columns
         ArrayList<String> columnKeys = new ArrayList<>();
+
         for (int i = ignoreLines; i < columnDefinitionLines + ignoreLines; i++) {
             String[] columnNames = lines[i].trim().split(delimiter);
-            for (int j = 1; j < columnNames.length; j++) {
-                columnKeys.add(columnNames[j]);
+            String[] trimmedColumnNames = new String[columnNames.length - 1];   // need a better way to do this
+            if (Objects.equals(columnNames[0], "")) {
+                trimmedColumnNames = Arrays.copyOfRange(columnNames, 1, columnNames.length);
+                Collections.addAll(columnKeys, trimmedColumnNames);
+            } else {
+                Collections.addAll(columnKeys, columnNames);
             }
         }
 
         // parse rows of values
         int startPoint = ignoreLines + columnDefinitionLines + 1;
         for (int i = startPoint; i < lines.length; i++) {
+            ArrayList<String> row = new ArrayList<>();
             String trimmedLine = lines[i].replaceFirst("\\s++\\S", "");
             String[] line = trimmedLine.split(delimiter, -1);
-            row.addAll(Arrays.asList(line));
+            Collections.addAll(row, line);
 
-            for (int j = 0; j < columnKeys.size() - 1; j++) {
+            for (int j = 0; j < columnKeys.size(); j++) {
                 if (row.get(j + 1).isEmpty()) {
                     // hashBasedTable does not tolerate nulls so replace nulls with -9.9
                     row.set(j + 1, "-9.9");
                 }
-                formattedToolOuput.put(row.get(0), columnKeys.get(j + 1), Doubles.tryParse(row.get(j + 1)));
+                formattedToolOuput.put(row.get(0), columnKeys.get(j), Doubles.tryParse(row.get(j + 1)));
             }
         }
         return formattedToolOuput;
@@ -319,5 +324,14 @@ public class CODESYSWrapper extends Tool implements ITool {
         }
 
         return severityInt;
+    }
+
+    private String checkFileFormat(String fileName) {
+        if (fileName.length() < 3) {
+            throw new IllegalArgumentException("fileName does not exist or is improperly formatted");
+        } else {
+            System.out.println(fileName.substring(fileName.length() - 4));
+            return fileName.substring(fileName.length() - 4);
+        }
     }
 }

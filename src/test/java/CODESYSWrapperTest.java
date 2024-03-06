@@ -46,7 +46,7 @@ public class CODESYSWrapperTest {
 
     // msusecl-pique-plc-customcode
     @Test
-    public void isMetricsOutputParsedToTableCorrectly() {
+    public void isCSVMetricsOutputParsedToTableCorrectly() {
         double floatDelta = 0.0002; // used in comparing doubles due to inherent precision issues with doubles
 
         // This is necessary to format the correct path to helperFunctions.readFileContent()
@@ -59,14 +59,8 @@ public class CODESYSWrapperTest {
         // csv-based
         boolean firstRowExists = testTable.containsRow("T_PLC_MS");
         boolean firstColumnExists = testTable.containsColumn("Code size (number of bytes)");
-        boolean lastRowExists = testTable.containsRow("BatchCompleteCountFB");
-        boolean lastColumnExists = testTable.containsColumn("BIT_COUNT");
-
-        // text-based
-//        boolean firstRowExists = testTable.containsRow("SortTable");
-//        boolean firstColumnExists = testTable.containsColumn("Code size (number of bytes)");
-//        boolean lastRowExists = testTable.containsRow("BatchCompleteCountFB");
-//        boolean lastColumnExists = testTable.containsColumn("Number of SFC branches");
+        boolean lastRowExists = testTable.containsRow("BIT_COUNT");
+        boolean lastColumnExists = testTable.containsColumn("Number of SFC steps");
 
         assertTrue(firstRowExists);
         assertTrue(firstColumnExists);
@@ -74,12 +68,40 @@ public class CODESYSWrapperTest {
         assertTrue(lastColumnExists);
 
         // csv-based
-        
+        double firstValue = Preconditions.checkNotNull(testTable.get("T_PLC_MS", "Code size (number of bytes)")) ;
+        double midValue = Preconditions.checkNotNull(testTable.get("Main", "Stack size (number of bytes)"));
+        double lastValue = Preconditions.checkNotNull(testTable.get("BIT_COUNT", "Number of SFC steps"));
 
-        // text-based
-//        double firstValue = Preconditions.checkNotNull(testTable.get("SortTable", "Code size (number of bytes)")) ;
-//        double midValue = Preconditions.checkNotNull(testTable.get("Sim_Piston", "Stack size (number of bytes)"));
-//        double lastValue = Preconditions.checkNotNull(testTable.get("BatchCompleteCountFB", "Number of SFC steps"));
+        assertEquals(128.0, firstValue, floatDelta);
+        assertEquals(0.0, midValue, floatDelta);
+        assertEquals(-9.9, lastValue, floatDelta);
+
+    }
+
+    @Test
+    public void isTxtMetricsOutputParsedToTableCorrectly() {
+        double floatDelta = 0.0002; // used in comparing doubles due to inherent precision issues with doubles
+
+        // This is necessary to format the correct path to helperFunctions.readFileContent()
+        // and mocking readFileContent() just doesn't make sense here. So this is technically a small integration test
+        // metrics-output.txt
+        Path relativeFilePath = Paths.get("../msusecl-pique-plc-customcode/src/test/resources/");
+        Path inputFile = relativeFilePath.toAbsolutePath().normalize();
+        Table<String, String, Double> testTable = CODESYSWrapper.parseMetrics(inputFile);
+
+        boolean firstRowExists = testTable.containsRow("SortTable");
+        boolean firstColumnExists = testTable.containsColumn("Code size (number of bytes)");
+        boolean lastRowExists = testTable.containsRow("BatchCompleteCountFB");
+        boolean lastColumnExists = testTable.containsColumn("Number of SFC branches");
+
+        assertTrue(firstRowExists);
+        assertTrue(firstColumnExists);
+        assertTrue(lastRowExists);
+        assertTrue(lastColumnExists);
+
+        double firstValue = Preconditions.checkNotNull(testTable.get("SortTable", "Code size (number of bytes)")) ;
+        double midValue = Preconditions.checkNotNull(testTable.get("Sim_Piston", "Stack size (number of bytes)"));
+        double lastValue = Preconditions.checkNotNull(testTable.get("BatchCompleteCountFB", "Number of SFC steps"));
 
         assertEquals(216.0, firstValue, floatDelta);
         assertEquals(16.0, midValue, floatDelta);
