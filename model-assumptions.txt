@@ -1,0 +1,14 @@
+missing metric: "CODESYS Static Analysis: Duplication ratio" (page 26 on plcopen pdf)
+
+ 
+ 
+ 
+Need help with descriptions for:
+	Number of calls
+	Called in tasks
+	
+	
+question (perhaps for redempta)
+	how to capture the meaning/significance of the distribution of metrics
+		-metrics for a pdf?? (mean, medium, mode, etc)
+	
