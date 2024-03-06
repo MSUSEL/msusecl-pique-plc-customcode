@@ -1,0 +1,8 @@
+Variables size (number of bytes)
+Called in tasks
+Complexity of nesting (Prather)
+Complexity of reference (Elshof)
+Number of different used operators - Halstead (n1)
+Number of operators - Halstead (N1)
+Number of different used operands - Halstead (n2)
+Number of operands - Halstead (N2)
