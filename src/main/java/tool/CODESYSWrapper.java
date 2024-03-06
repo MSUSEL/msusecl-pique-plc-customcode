@@ -143,6 +143,9 @@ public class CODESYSWrapper extends Tool implements ITool {
     public Map<String, Diagnostic> parseAnalysis(Path toolResults) {
         //toolResults is a directory with 2 files, metrics and rules
 
+        // Add some logic around checking that tool-output files exist
+        // send both files here and logic to swtich based on file type
+
         System.out.println(this.getName() + " Parsing Analysis...");
         LOGGER.debug(this.getName() + " Parsing Analysis...");
 
@@ -152,6 +155,12 @@ public class CODESYSWrapper extends Tool implements ITool {
         //parse rules
         List<List<String>> formattedRulesOutput= parseRules(toolResults);
 
+
+        // TODO Parse findings and map to diagnostic
+
+
+        Map<String, Diagnostic> diagnostics = helperFunctions.initializeDiagnostics(this.getName());
+
         // Once I have a finding object, what do I do with it?
         //  Loop through all diagnostics
         //      Get diagnostic name - key through findings and count number of times finding (e.g. SA0101) appears
@@ -159,10 +168,6 @@ public class CODESYSWrapper extends Tool implements ITool {
 
         //Finding f = new Finding(formattedRulesOutput.get()); //getSeverityFromModel);
 
-        // TODO Parse findings and map to diagnostic
-
-
-        Map<String, Diagnostic> diagnostics = helperFunctions.initializeDiagnostics(this.getName());
 
         return diagnostics;
     }
@@ -186,6 +191,7 @@ public class CODESYSWrapper extends Tool implements ITool {
     public Table<String, String, Double> parseMetrics(Path toolOutput) {
         // Will these filenames always be the same or do we need a cleverer way to grab each file?
         //final String metricsOutput = "metrics-output.txt";
+
         final String metricsOutput = "MidtermESET_2205_2023-Metrics.csv";
         int columnDefinitionLines = 2;  // There are two lines at the top of the example output file that define "columns" in the output
         int ignoreLines;

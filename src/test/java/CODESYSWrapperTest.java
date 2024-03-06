@@ -131,6 +131,9 @@ public class CODESYSWrapperTest {
     assertEquals(firstLine.get(1), "Unused Variable 'StartPB'");
     assertEquals(midLine.get(1), "Missing comment for 'ApplyRed'");
     assertEquals(finalLine.get(1), "Enumeration constant 'Green' not qualified");
+    }
 
+    public void isTheNumberOfDiagnosticsCorrect() {
+        
     }
 }
