@@ -25,7 +25,7 @@ public class Wrapper {
         try {
             boolean helpFlag = check_help(args);
             ArgumentParser parser = ArgumentParsers.newFor("runnable.Wrapper").build()
-                    .defaultHelp(true).description("Entry point for PIQUE-CLOUD-dockerfile analysis");
+                    .defaultHelp(true).description("Entry point for PIQUE-PLC-CUSTOMCODE analysis");
             parser.addArgument("--run")
                     .setDefault("evaluate")
                     .choices("derive", "evaluate")
@@ -39,10 +39,6 @@ public class Wrapper {
                     .action(Arguments.storeTrue())
                     .setDefault(false)
                     .help("print version information and terminate program");
-            parser.addArgument("--downloadNVD")
-                    .action(Arguments.storeTrue())
-                    .setDefault(false)
-                    .help("Download the latest version of the NVD database");
 
             Namespace namespace = null;
             if (helpFlag) {
