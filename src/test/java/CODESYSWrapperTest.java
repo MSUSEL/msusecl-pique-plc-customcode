@@ -150,8 +150,17 @@ public class CODESYSWrapperTest {
 
     }
 
+
     @Test
     public void parseAnalysisTest() {
+        CODESYSWrapper wrapper = new CODESYSWrapper();
+
+        wrapper.parseAnalysis(Paths.get("benchmarks/"));
+
+    }
+
+    @Test
+    public void accpetanceTest() {
         QualityModelDeriver qualityModelDeriver = new QualityModelDeriver("src/test/resources/pique-test-properties.properties");
 
     }

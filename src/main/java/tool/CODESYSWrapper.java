@@ -87,6 +87,7 @@ public class CODESYSWrapper extends Tool implements ITool {
      */
     @Override
     public Path analyze(Path projectLocation) {
+        System.out.println("in project location");
 
         return projectLocation;
     }
@@ -132,7 +133,7 @@ public class CODESYSWrapper extends Tool implements ITool {
 
         for (String key: benchmarkProjects.keySet()) {
             for (String diagnosticKey : diagnostics.keySet()) {
-                System.out.println(diagnosticKey);
+
             }
 
             //parse metrics
