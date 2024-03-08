@@ -26,6 +26,7 @@ import com.google.common.collect.HashBasedTable;
 import com.google.common.collect.Table;
 import com.google.common.primitives.Doubles;
 import com.opencsv.CSVReader;
+import model.RuleFinding;
 import org.apache.commons.compress.utils.FileNameUtils;
 import org.apache.commons.lang3.tuple.ImmutablePair;
 import org.apache.commons.lang3.tuple.Pair;
@@ -86,55 +87,8 @@ public class CODESYSWrapper extends Tool implements ITool {
      */
     @Override
     public Path analyze(Path projectLocation) {
-        String imageName = projectLocation.toString();
-        LOGGER.info(this.getName() + "  Analyzing " + imageName);
-        System.out.println("Analyzing " + imageName + " with " + this.getName());
-        String imageNameForDirectory = imageName.split(":")[0];
 
-        //set up results dir
-        String workingDirectoryPrefix = "";
-        try {
-            //read output dir from properties file. FIXME we need better properties import
-            Properties prop = PiqueProperties.getProperties("src/main/resources/pique-properties.properties");
-            Path resultsDir = Paths.get(prop.getProperty("results.directory"));
-
-            workingDirectoryPrefix = resultsDir + "/tool-out/" + imageNameForDirectory + "/";
-            Files.createDirectories(Paths.get(workingDirectoryPrefix));
-        } catch (java.io.IOException e) {
-            e.printStackTrace();
-            LOGGER.debug("Error creating directory to save CODESYS tool results");
-            System.out.println("Error creating directory to save CODESYS tool results");
-        }
-        // Do we want this to be formatted as json?
-        File tempResults = new File(workingDirectoryPrefix + "CODESYS-" + imageName + ".json");
-        if (tempResults.exists()) {
-            LOGGER.info("Already ran CODESYS on: " + imageName + ", results stored in: " + tempResults.toString());
-        } else {
-            LOGGER.info("Have not run CODESYS on: " + imageName + ", running now and storing in:" + tempResults.toString());
-            tempResults.getParentFile().mkdirs();
-            //Unlike Grype, Trivy does not automatically download an image if it doesn't already exist.
-            //so, we need to download it.
-
-            //TODO determine how CODESYS handles this compared to Gype/Trivy
-            //TODO run CODESYS and put both metrics and rules file in same directory
-//                 String[] cmd = {"trivy",
-//                         "image",
-//                         "--format", "json",
-//                         "--quiet",
-//                         "--output", tempResults.toPath().toAbsolutePath().toString(),
-//                         projectLocation.toString()};
-//                 LOGGER.info(Arrays.toString(cmd));
-//                 try {
-//                     helperFunctions.getOutputFromProgram(cmd, LOGGER);
-//                 } catch (IOException e) {
-//                     LOGGER.error("Failed to run Trivy");
-//                     LOGGER.error(e.toString());
-//                     e.printStackTrace();
-//                 }
-        }
-        // Return the parent directory of CODESYS output as a Path
-        // This lets us run parseAnalysis on each file without changing our interface
-        return Paths.get(tempResults.getPath());
+        return projectLocation;
     }
 
     /**
@@ -177,11 +131,19 @@ public class CODESYSWrapper extends Tool implements ITool {
         Map<String, Diagnostic> diagnostics = helperFunctions.initializeDiagnostics(this.getName());
 
         for (String key: benchmarkProjects.keySet()) {
-            //parse metrics
-            Table<String, String, Double> formattedMetricsOutput= parseMetrics(benchmarkProjects.get(key).getLeft());
+            for (String diagnosticKey : diagnostics.keySet()) {
+                System.out.println(diagnosticKey);
+            }
 
-            //parse rules
-            List<List<String>> formattedRulesOutput= parseRules(benchmarkProjects.get(key).getRight());
+            //parse metrics
+//            Table<String, String, Double> formattedMetricsOutput= parseMetrics(benchmarkProjects.get(key).getLeft());
+//
+//            //parse rules into Findings
+//            List<List<String>> formattedRulesOutput= parseRules(benchmarkProjects.get(key).getRight());
+//            for (List<String> row : formattedRulesOutput) {
+//                Finding f = new RuleFinding(benchmarkProjects.get(key).getRight().toString(), row.get(0), row.get(1), -1);
+//                f.setName(row.get(0));
+//            }
         }
 
         // Once I have a finding object, what do I do with it?

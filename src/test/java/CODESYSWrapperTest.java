@@ -149,4 +149,11 @@ public class CODESYSWrapperTest {
 
 
     }
+
+    @Test
+    public void parseAnalysisTest() {
+        QualityModelDeriver qualityModelDeriver = new QualityModelDeriver("src/test/resources/pique-test-properties.properties");
+
+    }
+
 }
