@@ -26,6 +26,9 @@ import com.google.common.collect.HashBasedTable;
 import com.google.common.collect.Table;
 import com.google.common.primitives.Doubles;
 import com.opencsv.CSVReader;
+import org.apache.commons.compress.utils.FileNameUtils;
+import org.apache.commons.lang3.tuple.ImmutablePair;
+import org.apache.commons.lang3.tuple.Pair;
 import org.checkerframework.checker.units.qual.C;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -33,6 +36,7 @@ import pique.analysis.ITool;
 import pique.analysis.Tool;
 import pique.model.Diagnostic;
 import pique.model.Finding;
+import pique.utility.FileUtility;
 import pique.utility.PiqueProperties;
 
 import utilities.helperFunctions;
@@ -149,17 +153,36 @@ public class CODESYSWrapper extends Tool implements ITool {
         System.out.println(this.getName() + " Parsing Analysis...");
         LOGGER.debug(this.getName() + " Parsing Analysis...");
 
-        //parse metrics
-        Table<String, String, Double> formattedMetricsOutput= parseMetrics(toolResults);
-
-        //parse rules
-        List<List<String>> formattedRulesOutput= parseRules(toolResults);
-
-
-        // TODO Parse findings and map to diagnostic
-
+        HashMap<String, Pair<Path, Path>> benchmarkProjects = new HashMap<>();
+        // loop through every directory in benchmarks
+        for (File benchmarkDirectory : toolResults.toFile().listFiles()) {
+            if (benchmarkDirectory.isDirectory()) {
+                Path metricsFile = benchmarkDirectory.toPath();
+                Path rulesFile = benchmarkDirectory.toPath();
+                for(File benchmarkOutputFile : benchmarkDirectory.listFiles()) {
+                    String extension = FileNameUtils.getExtension(benchmarkOutputFile.getName());
+                    if (extension.equals("csv")) {
+                        metricsFile = benchmarkOutputFile.toPath();
+                    } else if (extension.equals("txt")) {
+                        rulesFile = benchmarkOutputFile.toPath();
+                    } else {
+                        LOGGER.debug("Unknown file extension in benchmark repository: " + benchmarkOutputFile.getName());
+                        System.out.println("Unknown file extension in benchmark repository: " + benchmarkOutputFile.getName());
+                    }
+                }
+                benchmarkProjects.put(benchmarkDirectory.getName(), new ImmutablePair<>(metricsFile, rulesFile));
+            }
+        }
 
         Map<String, Diagnostic> diagnostics = helperFunctions.initializeDiagnostics(this.getName());
+
+        for (String key: benchmarkProjects.keySet()) {
+            //parse metrics
+            Table<String, String, Double> formattedMetricsOutput= parseMetrics(benchmarkProjects.get(key).getLeft());
+
+            //parse rules
+            List<List<String>> formattedRulesOutput= parseRules(benchmarkProjects.get(key).getRight());
+        }
 
         // Once I have a finding object, what do I do with it?
         //  Loop through all diagnostics
@@ -192,7 +215,7 @@ public class CODESYSWrapper extends Tool implements ITool {
         // Will these filenames always be the same or do we need a cleverer way to grab each file?
         //final String metricsOutput = "metrics-output.txt";
 
-        final String metricsOutput = "MidtermESET_2205_2023-Metrics.csv";
+        //final String metricsOutput = "MidtermESET_2205_2023-Metrics.csv";
         int columnDefinitionLines = 2;  // There are two lines at the top of the example output file that define "columns" in the output
         int ignoreLines;
         String fileType;
@@ -201,14 +224,14 @@ public class CODESYSWrapper extends Tool implements ITool {
         String metrics = "";    // This will be the tool output metrics file
 
         try {
-            metrics = helperFunctions.readFileContent(toolOutput.resolve(metricsOutput));
+            metrics = helperFunctions.readFileContent(toolOutput);
         } catch (IOException e) {
             LOGGER.info("No results to read from CODESYS.");
         }
 
         String[] lines = metrics.split("\n");
 
-        fileType = checkFileFormat(metricsOutput);
+        fileType = checkFileFormat(toolOutput.toString());
         if (fileType.equals(".csv") || fileType.equals(".CSV")) {
             delimiter = ";";
             ignoreLines = 3;

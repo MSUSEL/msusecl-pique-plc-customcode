@@ -24,10 +24,10 @@
         "description": "degree to which the code reflects the quality properties outlined in the ISO 25010:2011 software product quality model",
         "eval_strategy": "pique.evaluation.DefaultFactorEvaluator",
 		"children": {
-			"Reliability": {}
-			"Efficiency": {}
-			"Maintainability": {}
-			"Reusability": {}
+			"Reliability": {},
+			"Efficiency": {},
+			"Maintainability": {},
+			"Reusability": {},
 			"Testability": {}
 		}
       },
@@ -35,10 +35,10 @@
         "description": "degree to which the code cannot cause harm to individuals, damage to the product or industrial process, or adverse impacts to the environment.",
         "eval_strategy": "pique.evaluation.DefaultFactorEvaluator",
 		"children": {
-			"Data Validity": {}
-			"Process state awareness": {}
-			"State exclusivity": {}
-			"Configuration awareness": {}
+			"Data Validity": {},
+			"Process state awareness": {},
+			"State exclusivity": {},
+			"Configuration awareness": {},
 			"Conservativity": {}
 		}
       },
@@ -46,7 +46,7 @@
         "description": "degree to which the code is vulnerable, from both a hardware and a software level",
         "eval_strategy": "pique.evaluation.DefaultFactorEvaluator",
 		"children": {
-			"Hardware Based (Physical) Error": {}
+			"Hardware Based (Physical) Error": {},
 			"Software Based (Virtual) Errors": {}
 		}
       }
@@ -176,7 +176,7 @@
       },
 	  "Reliability": {
         "name": "Reliability",
-        "description": "From McCall: Extent to which a program satisfies its specifications and fulfills the user’s mission objectives (sub-characteristicof product operation)\n From ISO 25010: Degree to which a system, product or component performs specified functions under specified conditions for a specified period of time. Sub-characteristic maturity: Degree to which a system, product or component meets needs for reliability under normal operation.",
+        "description": "From McCall: Extent to which a program satisfies its specifications and fulfills the user’s mission objectives (sub-characteristicof product operation) From ISO 25010: Degree to which a system, product or component performs specified functions under specified conditions for a specified period of time. Sub-characteristic maturity: Degree to which a system, product or component meets needs for reliability under normal operation.",
         "eval_strategy": "pique.evaluation.DefaultProductFactorEvaluator",
         "children": {
           "Number of transitions in SFC": {},
@@ -734,7 +734,7 @@
 	},
 	"SA0060: Zero used as invalid operand - Score": {
       "toolName": "CODESYS",
-      "description": "Detects operations where an operand with the value "0" causes an invalid or a nonsense operation",
+      "description": "Detects operations where an operand with the value \"0\" causes an invalid or a nonsense operation",
 	  "positive": "false",
 	  "children": {
 		  "SA0060: Zero used as invalid operand": {}
@@ -1225,7 +1225,7 @@
       "positive": "false",
       "description": "Number of steps, transitions, branches in SFC",
       "children": {
-        "Number of SFC branches": {}
+        "Number of SFC branches": {},
         "Number of SFC steps": {}
       }
     },
@@ -1242,8 +1242,8 @@
       "positive": "false",
       "description": "POU interfaces",
       "children": {
-        "Number of inputs variables": {}
-        "Number of output variables": {}
+        "Number of inputs variables": {},
+        "Number of outputs variables": {}
       }
     },
     "Comments in the source code": {
@@ -1259,7 +1259,7 @@
       "positive": "false",
       "description": "Depth of inheritance",
       "children": {
-        "DIT - Depth of Inheritance Tree": {}
+        "DIT - Depth of Inheritance Tree": {},
         "NOC - Number Of Children": {}
       }
     },
@@ -1276,7 +1276,7 @@
       "positive": "false",
       "description": "Coupling of objects to the environment",
       "children": {
-        "RFC - Response For Class": {}
+        "RFC - Response For Class": {},
         "CBO - Coupling Between Objects": {}
       }
     },
@@ -1285,9 +1285,9 @@
       "positive": "false",
       "description": "Complexity and length of source code",
       "children": {
-        "Difficulty - Halstead (D)": {}
-        "Volume - Halstead (HV)": {}
-        "Length - Halstead (HL)": {}
+        "Difficulty - Halstead (D)": {},
+        "Volume - Halstead (HV)": {},
+        "Length - Halstead (HL)": {},
         "Complexity (McCabe)": {}
       }
     },
@@ -1303,7 +1303,7 @@
       "positive": "false",
       "description": "Number of transitions in SFC",
       "children": {
-        "Number of SFC branches": {}
+        "Number of SFC branches": {},
         "Number of SFC steps": {}
       }
     },
@@ -1320,7 +1320,7 @@
       "positive": "true",
       "description": "Usage of inheritance",
       "children": {
-		  "DIT - Depth of Inheritance Tree": {}
+		  "DIT - Depth of Inheritance Tree": {},
 		  "NOC - Number Of Children": {}
       }
     },
@@ -1337,7 +1337,7 @@
       "positive": "false",
       "description": "Memory allocation",
       "children": {
-		  "Code size (number of bytes)": {}
+		  "Code size (number of bytes)": {},
 		  "Stack size (number of bytes)": {}
       }
     },
@@ -1356,7 +1356,7 @@
       "children": {
 		  "Number of calls": {}
       }
-    },
+    }
 	
   },
   "diagnostics": {
@@ -1637,7 +1637,7 @@
 	},
 	"SA0060: Zero used as invalid operand": {
       "toolName": "CODESYS",
-      "description": "Detects operations where an operand with the value "0" causes an invalid or a nonsense operation",
+      "description": "Detects operations where an operand with the value \"0\" causes an invalid or a nonsense operation",
 	  "importance": "Medium"
 	},
 	"SA0061: Unusual operation on pointer": {
@@ -1934,18 +1934,18 @@
       "toolName": "CODESYS",
       "description": "Detects declarations of enumerations which are not provided with the {attribute 'strict'} attribute.",
 	  "importance": "High"
-	}
-	"Code Size (number of bytes)":{
+	},
+	"Code size (number of bytes)":{
 	  "toolName": "CODESYS",
       "description": "Code size in bytes",
 	  "importance": "Unknown"
 	},
-	"Variable Size (number of bytes)":{
+	"Variable size (number of bytes)":{
 	  "toolName": "CODESYS",
       "description": "Variable size in bytes",
 	  "importance": "Unknown"
 	},
-	"Stack Size (number of bytes)":{
+	"Stack size (number of bytes)":{
 	  "toolName": "CODESYS",
       "description": "Stack size in bytes",
 	  "importance": "Unknown"
@@ -2084,7 +2084,7 @@
 	  "toolName": "CODESYS",
       "description": "Number of subroutines in the greater program",
 	  "importance": "Unknown"
-	},
+	}
   }
 }
 

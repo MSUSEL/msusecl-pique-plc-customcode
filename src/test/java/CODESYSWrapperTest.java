@@ -6,6 +6,7 @@ import org.junit.Test;
 import org.mockito.internal.matchers.Null;
 import pique.model.Diagnostic;
 import pique.model.Finding;
+import runnable.QualityModelDeriver;
 import tool.CODESYSWrapper;
 
 import javax.sound.midi.Soundbank;
@@ -133,7 +134,19 @@ public class CODESYSWrapperTest {
     assertEquals(finalLine.get(1), "Enumeration constant 'Green' not qualified");
     }
 
-    public void isTheNumberOfDiagnosticsCorrect() {
-        
+//    public void doesInitializeDiagnosticsReturnCorrectNumberOfDiagnostics() {
+//        int numberOfDiagnostics = 145;
+//
+//
+//        assertEquals();
+//    }
+
+    @Test
+    public void isModelDefinitionFileValid() {
+        QualityModelDeriver qualityModelDeriver = new QualityModelDeriver("src/test/resources/pique-test-properties.properties");
+
+        // assert count of sub-categories of Diagnostics
+
+
     }
 }
