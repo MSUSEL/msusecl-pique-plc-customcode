@@ -53,7 +53,7 @@ public class CODESYSWrapperTest {
         // This is necessary to format the correct path to helperFunctions.readFileContent()
         // and mocking readFileContent() just doesn't make sense here. So this is technically a small integration test
         // metrics-output.txt
-        Path relativeFilePath = Paths.get("../msusecl-pique-plc-customcode/src/test/resources/");
+        Path relativeFilePath = Paths.get("../msusecl-pique-plc-customcode/src/test/resources/MidtermESET_2205_2023-Metrics.csv");
         Path inputFile = relativeFilePath.toAbsolutePath().normalize();
         Table<String, String, Double> testTable = CODESYSWrapper.parseMetrics(inputFile);
 

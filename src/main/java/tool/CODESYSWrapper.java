@@ -108,52 +108,38 @@ public class CODESYSWrapper extends Tool implements ITool {
         System.out.println(this.getName() + " Parsing Analysis...");
         LOGGER.debug(this.getName() + " Parsing Analysis...");
 
-        HashMap<String, Pair<Path, Path>> benchmarkProjects = new HashMap<>();
+        Pair<Path, Path> benchmarkProjects;
+        Path metricsFile = toolResults;
+        Path rulesFile = toolResults;
         // loop through every directory in benchmarks
-        for (File benchmarkDirectory : toolResults.toFile().listFiles()) {
-            if (benchmarkDirectory.isDirectory()) {
-                Path metricsFile = benchmarkDirectory.toPath();
-                Path rulesFile = benchmarkDirectory.toPath();
-                for(File benchmarkOutputFile : benchmarkDirectory.listFiles()) {
-                    String extension = FileNameUtils.getExtension(benchmarkOutputFile.getName());
-                    if (extension.equals("csv")) {
-                        metricsFile = benchmarkOutputFile.toPath();
-                    } else if (extension.equals("txt")) {
-                        rulesFile = benchmarkOutputFile.toPath();
-                    } else {
-                        LOGGER.debug("Unknown file extension in benchmark repository: " + benchmarkOutputFile.getName());
-                        System.out.println("Unknown file extension in benchmark repository: " + benchmarkOutputFile.getName());
-                    }
+        if (toolResults.toFile().isDirectory()) {
+            for(File benchmarkOutputFile : toolResults.toFile().listFiles()) {
+                String extension = FileNameUtils.getExtension(benchmarkOutputFile.getName());
+                if (extension.equals("csv")) {
+                    metricsFile = benchmarkOutputFile.toPath();
+                } else if (extension.equals("txt")) {
+                    rulesFile = benchmarkOutputFile.toPath();
+                } else {
+                    LOGGER.debug("Unknown file extension in benchmark repository: " + benchmarkOutputFile.getName());
+                    System.out.println("Unknown file extension in benchmark repository: " + benchmarkOutputFile.getName());
                 }
-                benchmarkProjects.put(benchmarkDirectory.getName(), new ImmutablePair<>(metricsFile, rulesFile));
             }
         }
+        benchmarkProjects = new ImmutablePair<>(metricsFile, rulesFile);
 
         Map<String, Diagnostic> diagnostics = helperFunctions.initializeDiagnostics(this.getName());
 
-        for (String key: benchmarkProjects.keySet()) {
-            for (String diagnosticKey : diagnostics.keySet()) {
+        //parse metrics
+        Table<String, String, Double> formattedMetricsOutput= parseMetrics(benchmarkProjects.getLeft());
 
-            }
-
-            //parse metrics
-//            Table<String, String, Double> formattedMetricsOutput= parseMetrics(benchmarkProjects.get(key).getLeft());
-//
-//            //parse rules into Findings
-//            List<List<String>> formattedRulesOutput= parseRules(benchmarkProjects.get(key).getRight());
-//            for (List<String> row : formattedRulesOutput) {
-//                Finding f = new RuleFinding(benchmarkProjects.get(key).getRight().toString(), row.get(0), row.get(1), -1);
-//                f.setName(row.get(0));
-//            }
+        //parse rules into Findings
+        List<List<String>> formattedRulesOutput= parseRules(benchmarkProjects.getRight());
+        for (List<String> row : formattedRulesOutput) {
+            System.out.println("DiagnosticPrint1: " + row);
+            Finding f = new RuleFinding(benchmarkProjects.getRight().toString(), row.get(0), row.get(1), -1);
+            System.out.println("Diagnostic print 2: " + row.get(0));
+            f.setName(row.get(0));
         }
-
-        // Once I have a finding object, what do I do with it?
-        //  Loop through all diagnostics
-        //      Get diagnostic name - key through findings and count number of times finding (e.g. SA0101) appears
-        //      Probably going to need separate findings for rules and metrics
-
-        //Finding f = new Finding(formattedRulesOutput.get()); //getSeverityFromModel);
-
 
         return diagnostics;
     }
@@ -194,7 +180,7 @@ public class CODESYSWrapper extends Tool implements ITool {
 
         String[] lines = metrics.split("\n");
 
-        fileType = checkFileFormat(toolOutput.toString());
+        fileType = FileNameUtils.getExtension(toolOutput.toString());
         if (fileType.equals(".csv") || fileType.equals(".CSV")) {
             delimiter = ";";
             ignoreLines = 3;
@@ -322,7 +308,6 @@ public class CODESYSWrapper extends Tool implements ITool {
         if (fileName.length() < 3) {
             throw new IllegalArgumentException("fileName does not exist or is improperly formatted");
         } else {
-            System.out.println(fileName.substring(fileName.length() - 4));
             return fileName.substring(fileName.length() - 4);
         }
     }
