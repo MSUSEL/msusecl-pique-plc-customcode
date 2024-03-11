@@ -35,6 +35,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import pique.analysis.ITool;
 import pique.analysis.Tool;
+import pique.evaluation.DefaultFindingEvaluator;
 import pique.model.Diagnostic;
 import pique.model.Finding;
 import pique.utility.FileUtility;
@@ -92,17 +93,12 @@ public class CODESYSWrapper extends Tool implements ITool {
         System.out.println(this.getName() + " Parsing Analysis...");
         LOGGER.debug(this.getName() + " Parsing Analysis...");
 
-        ArrayList<Path> 
         Pair<Path, Path> benchmarkProjects;
         Path metricsFile = toolResults;
         Path rulesFile = toolResults;
         // loop through every directory in benchmarks
         if (toolResults.toFile().isDirectory()) {
             for(File benchmarkOutputFile : requireNonNull(toolResults.toFile().listFiles())) {
-
-                if (benchmarkOutputFile.isDirectory()) {
-                    benchmarkOutputFile.listFiles();
-                }
                 String extension = FileNameUtils.getExtension(benchmarkOutputFile.getName());
                 if (extension.equals("csv")) {
                     metricsFile = benchmarkOutputFile.toPath();
@@ -121,13 +117,15 @@ public class CODESYSWrapper extends Tool implements ITool {
         //parse metrics
         Table<String, String, Double> formattedMetricsOutput= parseMetrics(benchmarkProjects.getLeft());
 
-        //parse rules into Findings
+        //parse rules
         List<List<String>> formattedRulesOutput= parseRules(benchmarkProjects.getRight());
         for (List<String> row : formattedRulesOutput) {
-            System.out.println("DiagnosticPrint1: " + row);
-            Finding f = new RuleFinding(benchmarkProjects.getRight().toString(), row.get(0), row.get(1), -1);
-            System.out.println("Diagnostic print 2: " + row.get(0));
-            f.setName(row.get(0));
+            Diagnostic diag = diagnostics.get(row.get(0));
+            if (diag != null) {
+                Finding f = new RuleFinding(benchmarkProjects.getRight().toString(), row.get(0), row.get(1), -1);
+                diag.setChild(f);
+                diagnostics.put(f.getName(),diag);
+            }
         }
 
         return diagnostics;
@@ -139,7 +137,6 @@ public class CODESYSWrapper extends Tool implements ITool {
     @Override
     public Path initialize(Path toolRoot) {
         System.out.println("Initializing");
-        // TODO We need to know how to initialize the CODESYS static analysis tool
         return toolRoot;
     }
 
@@ -151,9 +148,8 @@ public class CODESYSWrapper extends Tool implements ITool {
      */
     public Table<String, String, Double> parseMetrics(Path toolOutput) {
         int columnDefinitionLines = 2;  // There are two lines at the top of the example output file that define "columns" in the output
-        int ignoreLines;
-        String fileType;
-        String delimiter;
+        String delimiter = ";";
+        int ignoreLines = 3;
         Table<String, String, Double> formattedToolOuput = HashBasedTable.create();
         String metrics = "";    // This will be the tool output metrics file
 
@@ -165,18 +161,8 @@ public class CODESYSWrapper extends Tool implements ITool {
 
         String[] lines = metrics.split("\n");
 
-        fileType = FileNameUtils.getExtension(toolOutput.toString());
-        if (fileType.equals("csv")) {
-            delimiter = ";";
-            ignoreLines = 3;
-        } else {
-            delimiter = "\t";
-            ignoreLines = 0;
-        }
-
         // parse lines of output that define columns
         ArrayList<String> columnKeys = new ArrayList<>();
-
         for (int i = ignoreLines; i < columnDefinitionLines + ignoreLines; i++) {
             String[] columnNames = lines[i].trim().split(delimiter);
             String[] trimmedColumnNames;   // need a better way to do this
@@ -214,14 +200,11 @@ public class CODESYSWrapper extends Tool implements ITool {
      * @return a List of list of strings representing diagnostic information to be mapped in parseAnalysis()
      */
     public List<List<String>> parseRules(Path toolOutput) {
-        // Always this filename?
-        final String rulesOutput = "static-analysis-output-all_rules_metrics_turnedon.txt";
-
         String rules = "";
         // Read in tool output
         //example line: [ERROR]         Final Exam: CookieProcess [Device: PLC Logic: Final_Proj](Line 3 (Decl)): SA0033:  Unused Variable 'StartPB'
         try {
-            rules = helperFunctions.readFileContent(toolOutput.resolve(rulesOutput));
+            rules = helperFunctions.readFileContent(toolOutput);
         } catch (IOException e) {
             LOGGER.info("No results to read from CODESYS.");
         }
@@ -236,8 +219,6 @@ public class CODESYSWrapper extends Tool implements ITool {
      * @return formattedOutput An ArrayList containing ArrayLists of strings representing findings associated with a specific standard
      */
     private List<List<String>> formatRulesOutput(String rules) {
-        // The number of lines at the top of the file that proved lables rather than static analysis
-        // This might only ever say "static analysis" in which case, titleLines can be removed.
         int titleLines = 1;
         List<List<String>> formattedOutput = new ArrayList<>();
         String[] lines = rules.trim().split("\n");
@@ -256,18 +237,6 @@ public class CODESYSWrapper extends Tool implements ITool {
         }
         return formattedOutput;
     }
-
-//    private void doTheThing() {
-//        String extension = FileNameUtils.getExtension(benchmarkOutputFile.getName());
-//        if (extension.equals("csv")) {
-//            metricsFile = benchmarkOutputFile.toPath();
-//        } else if (extension.equals("txt")) {
-//            rulesFile = benchmarkOutputFile.toPath();
-//        } else {
-//            LOGGER.debug("Unknown file extension in benchmark repository: " + benchmarkOutputFile.getName());
-//            System.out.println("Unknown file extension in benchmark repository: " + benchmarkOutputFile.getName());
-//        }
-//    }
 
     /**
      * maps low-critical to numeric values based on the highest value for each range.

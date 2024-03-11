@@ -81,27 +81,26 @@ public class CODESYSWrapperTest {
 
     @Test
     public void isRulesOutputParsedCorrectly() {
-        Path relativeFilePath = Paths.get("../msusecl-pique-plc-customcode/src/test/resources/");
+        Path relativeFilePath = Paths.get("../msusecl-pique-plc-customcode/src/test/resources/MidtermESET_2205_2023-StaticAnalysisOutput.txt");
         Path inputFile = relativeFilePath.toAbsolutePath().normalize();
         List<List<String>> processedFile = CODESYSWrapper.parseRules(inputFile);
 
         // Does any output exist
         assertFalse(processedFile.isEmpty());
-        int filedividedbytwo = processedFile.size() / 2;
 
         List<String> firstLine = processedFile.get(0);
-        List<String> midLine = processedFile.get(98);
+        List<String> midLine = processedFile.get(96);
         List<String> finalLine = processedFile.get(processedFile.size() - 1);
 
     // This is not yet reliable
     // There is more string processing to do based on what we care about
-    assertEquals(firstLine.get(0), "SA0033");
-    assertEquals(midLine.get(0), "SA0162");
-    assertEquals(finalLine.get(0), "SA0025");
+    assertEquals("SA0031", firstLine.get(0));
+    assertEquals("SA0162",midLine.get(0));
+    assertEquals("SA0102", finalLine.get(0));
 
-    assertEquals(firstLine.get(1), "Unused Variable 'StartPB'");
-    assertEquals(midLine.get(1), "Missing comment for 'ApplyRed'");
-    assertEquals(finalLine.get(1), "Enumeration constant 'Green' not qualified");
+    assertEquals(firstLine.get(1), "Unused Property Get 'Container'");
+    assertEquals(midLine.get(1), "Missing comment for 'Z1_button_VI'");
+    assertEquals(finalLine.get(1), "Access to program/fb variable 'AlarmTest_VI' from the outside");
     }
 
 //    public void doesInitializeDiagnosticsReturnCorrectNumberOfDiagnostics() {
@@ -133,8 +132,7 @@ public class CODESYSWrapperTest {
     @Test
     public void parseAnalysisTest() {
         CODESYSWrapper wrapper = new CODESYSWrapper();
-
-        wrapper.parseAnalysis(Paths.get("benchmarks/"));
+        wrapper.parseAnalysis(Paths.get("benchmarks/MidtermESET_2205_2023"));
 
     }
 
