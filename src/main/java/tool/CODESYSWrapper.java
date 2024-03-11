@@ -54,23 +54,6 @@ import java.util.*;
  * This class wraps the CODESYS static analysis tool. It initializes
  * the tool, gets the output, and parses that output into a model
  * that can be interpreted in PIQUE.
- *
- * IMPORTANT regarding metrics output!!!
- * There are currently some problems in this class. Parsing the metrics file
- * is not straightforward and the following questions need to be answered before
- * we can have confidence in our model.
- *
- * How general is our metrics-output.txt oracle? If it is not representative
- * of all possible CODESYS output, then parseAnalysis() is much too fragile
- * to handle the general case.
- *
- * Why does metrics-output.txt not include values for the last column? In the
- * output, that column name is on a separate line from the rest.
- *
- * Do the metrics ever output negative values? The Table data structure being
- * used cannot accept null or empty values, and 0 is in the range of possible
- * output values. Therefore, negative numbers are used to represent nulls in the
- * intermediate step between tool-output file, and PIQUE model.
  */
 public class CODESYSWrapper extends Tool implements ITool {
     private static final Logger LOGGER = LoggerFactory.getLogger(CODESYSWrapper.class);
@@ -102,8 +85,7 @@ public class CODESYSWrapper extends Tool implements ITool {
     public Map<String, Diagnostic> parseAnalysis(Path toolResults) {
         //toolResults is a directory with 2 files, metrics and rules
 
-        // Add some logic around checking that tool-output files exist
-        // send both files here and logic to swtich based on file type
+        // Add some error handling around checking that tool-output files exist
 
         System.out.println(this.getName() + " Parsing Analysis...");
         LOGGER.debug(this.getName() + " Parsing Analysis...");
@@ -158,13 +140,9 @@ public class CODESYSWrapper extends Tool implements ITool {
      * Parses the metrics output of CODESYS tool
      *
      * @param toolOutput is a path to the directory containing tool output files
-     * @return an JSONObject of diagnostic(finding?) information to be mapped in parseAnalysis()
+     * @return a Table of information to be mapped in parseAnalysis()
      */
     public Table<String, String, Double> parseMetrics(Path toolOutput) {
-        // Will these filenames always be the same or do we need a cleverer way to grab each file?
-        //final String metricsOutput = "metrics-output.txt";
-
-        //final String metricsOutput = "MidtermESET_2205_2023-Metrics.csv";
         int columnDefinitionLines = 2;  // There are two lines at the top of the example output file that define "columns" in the output
         int ignoreLines;
         String fileType;
@@ -194,7 +172,7 @@ public class CODESYSWrapper extends Tool implements ITool {
 
         for (int i = ignoreLines; i < columnDefinitionLines + ignoreLines; i++) {
             String[] columnNames = lines[i].trim().split(delimiter);
-            String[] trimmedColumnNames = new String[columnNames.length - 1];   // need a better way to do this
+            String[] trimmedColumnNames;   // need a better way to do this
             if (Objects.equals(columnNames[0], "")) {
                 trimmedColumnNames = Arrays.copyOfRange(columnNames, 1, columnNames.length);
                 Collections.addAll(columnKeys, trimmedColumnNames);
@@ -225,14 +203,8 @@ public class CODESYSWrapper extends Tool implements ITool {
     /**
      * Parses the rules output of CODESYS tool
      *
-     * Questions:
-     * What information from this file do we actually use?
-     * Every line contains "[ERROR]", "Final Exam:", and "[Device: PLC Logic: Final_Proj]"
-     * Do these values ever change - eg [WARNING]? or [Device: <name>: <run name>?"
-     * First version of this method includes all parts of the line in case there are other options
-     *
      * @param toolOutput is a path to the directory containing tool output files
-     * @return an JSONObject of diagnostic(finding?) information to be mapped in parseAnalysis()
+     * @return a List of list of strings representing diagnostic information to be mapped in parseAnalysis()
      */
     public List<List<String>> parseRules(Path toolOutput) {
         // Always this filename?
@@ -302,13 +274,5 @@ public class CODESYSWrapper extends Tool implements ITool {
         }
 
         return severityInt;
-    }
-
-    private String checkFileFormat(String fileName) {
-        if (fileName.length() < 3) {
-            throw new IllegalArgumentException("fileName does not exist or is improperly formatted");
-        } else {
-            return fileName.substring(fileName.length() - 4);
-        }
     }
 }
