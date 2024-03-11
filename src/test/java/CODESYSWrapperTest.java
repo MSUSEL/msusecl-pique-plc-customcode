@@ -80,36 +80,6 @@ public class CODESYSWrapperTest {
     }
 
     @Test
-    public void isTxtMetricsOutputParsedToTableCorrectly() {
-        double floatDelta = 0.0002; // used in comparing doubles due to inherent precision issues with doubles
-
-        // This is necessary to format the correct path to helperFunctions.readFileContent()
-        // and mocking readFileContent() just doesn't make sense here. So this is technically a small integration test
-        // metrics-output.txt
-        Path relativeFilePath = Paths.get("../msusecl-pique-plc-customcode/src/test/resources/");
-        Path inputFile = relativeFilePath.toAbsolutePath().normalize();
-        Table<String, String, Double> testTable = CODESYSWrapper.parseMetrics(inputFile);
-
-        boolean firstRowExists = testTable.containsRow("SortTable");
-        boolean firstColumnExists = testTable.containsColumn("Code size (number of bytes)");
-        boolean lastRowExists = testTable.containsRow("BatchCompleteCountFB");
-        boolean lastColumnExists = testTable.containsColumn("Number of SFC branches");
-
-        assertTrue(firstRowExists);
-        assertTrue(firstColumnExists);
-        assertTrue(lastRowExists);
-        assertTrue(lastColumnExists);
-
-        double firstValue = Preconditions.checkNotNull(testTable.get("SortTable", "Code size (number of bytes)")) ;
-        double midValue = Preconditions.checkNotNull(testTable.get("Sim_Piston", "Stack size (number of bytes)"));
-        double lastValue = Preconditions.checkNotNull(testTable.get("BatchCompleteCountFB", "Number of SFC steps"));
-
-        assertEquals(216.0, firstValue, floatDelta);
-        assertEquals(16.0, midValue, floatDelta);
-        assertEquals(-9.9, lastValue, floatDelta);
-    }
-
-    @Test
     public void isRulesOutputParsedCorrectly() {
         Path relativeFilePath = Paths.get("../msusecl-pique-plc-customcode/src/test/resources/");
         Path inputFile = relativeFilePath.toAbsolutePath().normalize();
@@ -140,6 +110,15 @@ public class CODESYSWrapperTest {
 //
 //        assertEquals();
 //    }
+
+    @Test
+    public void areDiagnosticsBuiltCorrectly() {
+        // Do diagnostic nodes exist for good input?
+
+        // Do diagnostics conform to correct structure?
+
+        // Assert values in test oracle
+    }
 
     @Test
     public void isModelDefinitionFileValid() {

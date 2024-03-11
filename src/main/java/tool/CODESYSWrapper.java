@@ -50,6 +50,8 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.*;
 
+import static java.util.Objects.requireNonNull;
+
 /**
  * This class wraps the CODESYS static analysis tool. It initializes
  * the tool, gets the output, and parses that output into a model
@@ -90,12 +92,17 @@ public class CODESYSWrapper extends Tool implements ITool {
         System.out.println(this.getName() + " Parsing Analysis...");
         LOGGER.debug(this.getName() + " Parsing Analysis...");
 
+        ArrayList<Path> 
         Pair<Path, Path> benchmarkProjects;
         Path metricsFile = toolResults;
         Path rulesFile = toolResults;
         // loop through every directory in benchmarks
         if (toolResults.toFile().isDirectory()) {
-            for(File benchmarkOutputFile : toolResults.toFile().listFiles()) {
+            for(File benchmarkOutputFile : requireNonNull(toolResults.toFile().listFiles())) {
+
+                if (benchmarkOutputFile.isDirectory()) {
+                    benchmarkOutputFile.listFiles();
+                }
                 String extension = FileNameUtils.getExtension(benchmarkOutputFile.getName());
                 if (extension.equals("csv")) {
                     metricsFile = benchmarkOutputFile.toPath();
@@ -159,7 +166,7 @@ public class CODESYSWrapper extends Tool implements ITool {
         String[] lines = metrics.split("\n");
 
         fileType = FileNameUtils.getExtension(toolOutput.toString());
-        if (fileType.equals(".csv") || fileType.equals(".CSV")) {
+        if (fileType.equals("csv")) {
             delimiter = ";";
             ignoreLines = 3;
         } else {
@@ -249,6 +256,18 @@ public class CODESYSWrapper extends Tool implements ITool {
         }
         return formattedOutput;
     }
+
+//    private void doTheThing() {
+//        String extension = FileNameUtils.getExtension(benchmarkOutputFile.getName());
+//        if (extension.equals("csv")) {
+//            metricsFile = benchmarkOutputFile.toPath();
+//        } else if (extension.equals("txt")) {
+//            rulesFile = benchmarkOutputFile.toPath();
+//        } else {
+//            LOGGER.debug("Unknown file extension in benchmark repository: " + benchmarkOutputFile.getName());
+//            System.out.println("Unknown file extension in benchmark repository: " + benchmarkOutputFile.getName());
+//        }
+//    }
 
     /**
      * maps low-critical to numeric values based on the highest value for each range.
