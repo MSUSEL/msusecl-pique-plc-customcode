@@ -36,7 +36,7 @@
         <version>1.1.1</version>
     </parent>
 
-    <artifactId>msusel-pique-cloud-dockerfile</artifactId>
+    <artifactId>msusel-pique-plc-customcode</artifactId>
     <version>1.0.1</version>
     <packaging>jar</packaging>
     <description>MSU PIQUE quality model implementation for dockerfiles</description>
