@@ -26,6 +26,7 @@ import com.google.common.collect.HashBasedTable;
 import com.google.common.collect.Table;
 import com.google.common.primitives.Doubles;
 import com.opencsv.CSVReader;
+import model.MetricsFinding;
 import model.RuleFinding;
 import org.apache.commons.compress.utils.FileNameUtils;
 import org.apache.commons.lang3.tuple.ImmutablePair;
@@ -120,6 +121,18 @@ public class CODESYSWrapper extends Tool implements ITool {
 
         //parse metrics
         Table<String, String, Double> formattedMetricsOutput= parseMetrics(benchmarkProjects.getLeft());
+        // This is placeholder code until I figure out how to map metrics to diagnostics/findings
+        for (String row : formattedMetricsOutput.rowKeySet()) {
+            for (String column: formattedMetricsOutput.columnKeySet()) {
+                // Encapsulate buildDiagnostic?
+                Diagnostic diag = diagnostics.get(column);
+                if (diag != null) {
+                    Finding f = new MetricsFinding(benchmarkProjects.getLeft().toString(), row, column, formattedMetricsOutput.get(row, column), -1);
+                    diag.setChild(f);
+                    diagnostics.put(column, diag); // Not exactly sure how we should be representing this? Row as key? Column as key? violation id as key?
+                }
+            }
+        }
 
         //parse rules
         List<List<String>> formattedRulesOutput= parseRules(benchmarkProjects.getRight());

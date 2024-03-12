@@ -132,8 +132,8 @@ public class CODESYSWrapperTest {
     @Test
     public void parseAnalysisTest() {
         CODESYSWrapper wrapper = new CODESYSWrapper();
-        wrapper.parseAnalysis(Paths.get("benchmarks/MidtermESET_2205_2023"));
-
+        //wrapper.parseAnalysis(Paths.get("benchmarks/MidtermESET_2205_2023"));
+        wrapper.parseAnalysis(Paths.get("benchmarks/WK6HMKComputation_Comparison"));
     }
 
     @Test
