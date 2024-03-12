@@ -31,6 +31,8 @@ import org.apache.commons.compress.utils.FileNameUtils;
 import org.apache.commons.lang3.tuple.ImmutablePair;
 import org.apache.commons.lang3.tuple.Pair;
 import org.checkerframework.checker.units.qual.C;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import pique.analysis.ITool;
@@ -113,6 +115,8 @@ public class CODESYSWrapper extends Tool implements ITool {
         benchmarkProjects = new ImmutablePair<>(metricsFile, rulesFile);
 
         Map<String, Diagnostic> diagnostics = helperFunctions.initializeDiagnostics(this.getName());
+        Map<String, String> diagKeyMap = separateIdAndDescription(diagnostics);
+
 
         //parse metrics
         Table<String, String, Double> formattedMetricsOutput= parseMetrics(benchmarkProjects.getLeft());
@@ -120,15 +124,34 @@ public class CODESYSWrapper extends Tool implements ITool {
         //parse rules
         List<List<String>> formattedRulesOutput= parseRules(benchmarkProjects.getRight());
         for (List<String> row : formattedRulesOutput) {
-            Diagnostic diag = diagnostics.get(row.get(0));
+            String key = generateDiagnosticsKeyFromRulesOutput(row.get(0), diagKeyMap);
+            Diagnostic diag = diagnostics.get(key);
             if (diag != null) {
                 Finding f = new RuleFinding(benchmarkProjects.getRight().toString(), row.get(0), row.get(1), -1);
                 diag.setChild(f);
-                diagnostics.put(f.getName(),diag);
+                diagnostics.put(key, diag);
             }
         }
 
         return diagnostics;
+    }
+
+    private Map<String, String> separateIdAndDescription(Map<String, Diagnostic> diagnostics) {
+        Map<String, String> diagKeyBuilder = new HashMap<>();
+        for (String key : diagnostics.keySet()) {
+            if (key.contains("SA")) {
+                String[] defs = key.split(":");
+                diagKeyBuilder.put(defs[0], defs[1]);
+            }
+        }
+        return diagKeyBuilder;
+    }
+
+    private String generateDiagnosticsKeyFromRulesOutput(String rulesOutputLine, Map<String, String> keyBuilder) {
+        String[] keyValuePair = rulesOutputLine.split(":");
+        String diagnosticsValue = keyBuilder.get(keyValuePair[0]);
+
+        return keyValuePair[0] + ":" + diagnosticsValue;
     }
 
     /**

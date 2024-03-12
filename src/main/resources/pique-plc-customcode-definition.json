@@ -131,7 +131,7 @@
 			"SA0095: Assignments in conditions - Score": {},
 			"SA0100: Variables greater than <n> bytes - Score": {},
 			"SA0101: Names with invalid length - Score": {},
-			"A0102: Access to program/fb variables from the outside - Score": {},
+			"SA0102: Access to program/fb variables from the outside - Score": {},
 			"SA0103: Concurrent access on not atomic data - Score": {},
 			"SA0105: Multiple instance calls - Score": {},
 			"SA0106: Virtual method calls in FB_INIT - Score": {},
@@ -884,12 +884,12 @@
 		  "SA0101: Names with invalid length": {}
 	  }
 	},
-	"A0102: Access to program/fb variables from the outside - Score": {
+	"SA0102: Access to program/fb variables from the outside - Score": {
       "toolName": "CODESYS",
       "description": "Detects external access to local variables of programs or function blocks.",
 	  "positive": "false",
 	  "children": {
-		  "A0102: Access to program/fb variables from the outside": {}
+		  "SA0102: Access to program/fb variables from the outside": {}
 	  }
 	},
 	"SA0103: Concurrent access on not atomic data - Score": {
@@ -1730,7 +1730,7 @@
       "description": "Detects names with invalid lengths. In the Project Settings, double-click the rule entry to open a dialog where you can define the length of the name and define any exception.",
 	  "importance": "Low"
 	},
-	"A0102: Access to program/fb variables from the outside": {
+	"SA0102: Access to program/fb variables from the outside": {
       "toolName": "CODESYS",
       "description": "Detects external access to local variables of programs or function blocks.",
 	  "importance": "Medium"
