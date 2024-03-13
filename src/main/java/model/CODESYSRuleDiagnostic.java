@@ -6,8 +6,10 @@ import pique.evaluation.INormalizer;
 import pique.evaluation.IUtilityFunction;
 import pique.model.Diagnostic;
 import pique.model.ModelNode;
+import tool.CODESYSWrapper;
 
 import java.math.BigDecimal;
+import java.util.HashMap;
 import java.util.Map;
 
 public class CODESYSRuleDiagnostic extends Diagnostic {
@@ -36,5 +38,23 @@ public class CODESYSRuleDiagnostic extends Diagnostic {
     public CODESYSRuleDiagnostic(BigDecimal value, String name, String description, IEvaluator evaluator, INormalizer normalizer, IUtilityFunction utilityFunction, Map<String, BigDecimal> weights, BigDecimal[] thresholds, Map<String, ModelNode> children, String importance) {
         super(value, name, description, evaluator, normalizer, utilityFunction, weights, thresholds, children);
         this.importance = importance;
+    }
+    @Override
+    public ModelNode clone() {
+
+        Map<String, ModelNode> clonedChildren = new HashMap<>();
+        getChildren().forEach((k, v) -> clonedChildren.put(k, v.clone()));
+
+        return new CODESYSRuleDiagnostic(getValue(), getName(), getDescription(), this.getEval_strategyObj(), this.getNormalizerObj(),
+                this.getUtility_function(), getWeights(), getThresholds(), clonedChildren, this.importance);
+    }
+
+    @Override
+    public boolean equals(Object other) {
+        if (!(other instanceof CODESYSRuleDiagnostic)) { return false; }
+        CODESYSRuleDiagnostic otherDiagnostic = (CODESYSRuleDiagnostic) other;
+
+        return getName().equals(otherDiagnostic.getName())
+                && getToolName().equals(otherDiagnostic.getToolName());
     }
 }

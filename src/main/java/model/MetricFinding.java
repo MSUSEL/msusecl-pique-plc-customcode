@@ -1,5 +1,6 @@
 package model;
 
+import evaluation.MetricFindingEvaluator;
 import lombok.Getter;
 import lombok.Setter;
 import pique.model.Finding;
@@ -12,5 +13,7 @@ public class MetricFinding extends Finding {
     public MetricFinding(String filePath, Double metricValue, int severity) {
         super(filePath, 0, 0, severity);
         this.metricValue = metricValue;
+        this.eval_strategy = "evaluation.MetricFindingEvaluator";
+        this.eval_strategyObj = new MetricFindingEvaluator();
     }
 }

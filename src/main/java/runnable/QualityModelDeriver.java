@@ -1,5 +1,6 @@
 package runnable;
 
+import model.PLCQualityModelImport;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import pique.analysis.ITool;
@@ -53,7 +54,9 @@ public class QualityModelDeriver extends AQualityModelDeriver {
 
         ITool CODESYSWrapper = new CODESYSWrapper();
         Set<ITool> tools = Stream.of(CODESYSWrapper).collect(Collectors.toSet());
-        QualityModelImport qmImport = new QualityModelImport(blankqmFilePath);
+        // note that PLCQualityModelImport is a copy paste of the normal quality model import, but with just a few lines changes.
+        // fixme in future, make the default QualityModelImport more extendable (everything is private, make it protected)
+        PLCQualityModelImport qmImport = new PLCQualityModelImport(blankqmFilePath);
         QualityModel qmDescription = qmImport.importQualityModel();
         //qmDescription = pique.utility.TreeTrimmingUtility.trimQualityModelTree(qmDescription);
 

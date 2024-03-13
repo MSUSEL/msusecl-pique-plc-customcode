@@ -60,12 +60,6 @@ public class Wrapper {
                 System.exit(0);
             }
 
-            if (downloadNVDFlag) {
-                System.out.println("Starting NVD download");
-                helperFunctions.downloadNVD();
-                System.exit(0);
-            }
-
             String nvdDictionaryPath = Paths.get(prop.getProperty("nvd-dictionary.location")).toString();
             File f = new File(nvdDictionaryPath);
             if (!f.isFile()) {

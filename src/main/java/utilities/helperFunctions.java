@@ -22,6 +22,8 @@
  */
 package utilities;
 
+import model.CODESYSRuleDiagnostic;
+import model.PLCQualityModelImport;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -65,127 +67,6 @@ public class helperFunctions {
 		}
 		else {
 			return true;
-		}
-	}
-
-
-	/***
-	 *
-	 * @param projectsRepository
-	 *              import a path to a file that contains meta-data information about which image to download
-	 * @return
-	 *              awkward, but return a set of Paths, where each Path is a string of format "imageName:version"
-	 *              This is not a valid Path on disk, it is a workaround because of PIQUE core's heavy reliance
-	 *              on things existing on disk before analysis.
-	 */
-	public static Set<Path> getDockerImagesToAnalyze(Path projectsRepository){
-		Set<Path> images = new HashSet<>();
-		try {
-			JSONObject jsonResults = new JSONObject(readFileContent(projectsRepository));
-			JSONArray perProject = jsonResults.getJSONArray("images");
-
-			for (int i = 0; i < perProject.length(); i++){
-				JSONObject obj = perProject.getJSONObject(i);
-				//get versions
-				JSONArray jsonVersions = obj.getJSONArray("versions");
-				for (int j = 0; j < jsonVersions.length(); j++){
-					images.add(Paths.get(obj.getString("name") + ":" + jsonVersions.getString(j)));
-				}
-			}
-		}catch(IOException e){
-			LOGGER.info("No benchmark data to read in");
-
-		}catch (JSONException e) {
-			LOGGER.info("Improper JSON format for docker projects in file " + projectsRepository.toString());
-		}
-		return images;
-	}
-
-	public static String[] getCWEFromNVDAPIDirectly(ArrayList<String> cveList, String githubTokenPath, String nvdAPIKeyPath){
-		Properties prop = PiqueProperties.getProperties();
-		String pathToScript = prop.getProperty("cveTocwe.location");
-
-		// Convert each cveList to a comma-separated string
-		StringBuilder cveString = new StringBuilder();
-		for (String entry : cveList) {
-			if (cveString.length() > 0) {
-				cveString.append(",");
-			}
-			cveString.append(entry);
-		}
-		if (cveString.toString().isEmpty()) {
-			return new String[]{};
-		}
-		String[] cmd = {"python3", pathToScript, "--list", cveString.toString(), "--github_token", githubTokenPath, "--use_api", nvdAPIKeyPath};
-
-		System.out.println("executing command: " + Arrays.toString(cmd));
-		String cwe = "";
-		try {
-			cwe = getOutputFromProgram(cmd,LOGGER);
-		} catch (IOException e) {
-			System.err.println("Error running CVE_to_CWE.py");
-			e.printStackTrace();
-		}
-		return cwe.split("\n \n");
-
-	}
-
-	/**
-	 * Given a set of CVE names in a string separated by spaces, return the CWEs the CVEs are associated with
-	 * @param cveList An ArrayList<String> of one or more CVE names
-	 * @return An array of CWEs associated with the given CVEs
-	 */
-	public static String[] getCWEFromNVDDatabaseDump(ArrayList<String> cveList, String githubTokenPath) {
-		Properties prop = PiqueProperties.getProperties();
-		String pathToScript = prop.getProperty("cveTocwe.location");
-		String pathToNVDDict = prop.getProperty("nvd-dictionary.location");
-
-		// Convert each cveList to a comma-separated string
-		StringBuilder cveString = new StringBuilder();
-		for (String entry : cveList) {
-			if (cveString.length() > 0) {
-				cveString.append(",");
-			}
-			cveString.append(entry);
-		}
-
-		if (cveString.toString().isEmpty()) {
-			return new String[]{};
-		}
-		String[] cmd = {"python3", pathToScript, "--list", cveString.toString(), "--github_token", githubTokenPath, "--nvdDict", pathToNVDDict};
-
-		System.out.println("executing command: " + Arrays.toString(cmd));
-		String cwe = "";
-		try {
-			cwe = getOutputFromProgram(cmd,LOGGER);
-		} catch (IOException e) {
-			System.err.println("Error running CVE_to_CWE.py");
-			e.printStackTrace();
-		}
-        return cwe.split("\n \n");
-	}
-
-	public static void downloadNVD() {
-		Properties prop = PiqueProperties.getProperties();
-		String pathToScript = prop.getProperty("downloadNVD.location");
-		String pathToDownloadTo = prop.getProperty("nvd-dictionary.location");
-		String nvdCVECount = prop.getProperty("nvd-cve-count");
-		String nvdApiKeyPath = prop.getProperty("nvd-api-key-path");
-
-		String[] cmd = {"python3", pathToScript, pathToDownloadTo, nvdCVECount, nvdApiKeyPath};
-
-		String result = "";
-		try {
-			result = getOutputFromProgram(cmd,LOGGER);
-			if (result.equals("true\n")) {
-				System.out.println("Successfully downloaded NVD.");
-			}
-			else {
-				System.err.println("Error downloading NVD " + result);
-			}
-		} catch (IOException e) {
-			System.err.println("Error running download_nvd.py");
-			e.printStackTrace();
 		}
 	}
 
@@ -271,9 +152,9 @@ public class helperFunctions {
 		// load the qm structure
 		Properties prop = PiqueProperties.getProperties();
 		Path blankqmFilePath = Paths.get(prop.getProperty("blankqm.filepath"));
-		QualityModelImport qmImport = new QualityModelImport(blankqmFilePath);
-		// TODO for this model, we can improve accuracy of results by writing a custom quality model importer that initiates
-		// CODESYSRuleDiagnostic objects instead of Diagnostic objects.
+		// FIXME importing the quality model twice, this is redundant. Tough find.
+		PLCQualityModelImport qmImport = new PLCQualityModelImport(blankqmFilePath);
+		// TODO for this model, we can improve accuracy of results by writing a custom quality model importer that initiates CODESYSRuleDiagnostic objects instead of Diagnostic objects.
         QualityModel qmDescription = qmImport.importQualityModel();
 
         Map<String, Diagnostic> diagnostics = new HashMap<>();

@@ -1938,152 +1938,182 @@
 	"Code size (number of bytes)":{
 	  "toolName": "CODESYS",
       "description": "Code size in bytes",
-	  "importance": "Unknown"
+	  "importance": "Unknown",
+		"eval_strategy": "evaluation.MetricDiagnosticEvaluator"
 	},
 	"Variable size (number of bytes)":{
 	  "toolName": "CODESYS",
       "description": "Variable size in bytes",
-	  "importance": "Unknown"
+	  "importance": "Unknown",
+		"eval_strategy": "evaluation.MetricDiagnosticEvaluator"
 	},
 	"Stack size (number of bytes)":{
 	  "toolName": "CODESYS",
       "description": "Stack size in bytes",
-	  "importance": "Unknown"
+	  "importance": "Unknown",
+		"eval_strategy": "evaluation.MetricDiagnosticEvaluator"
 	},
 	"Number of calls":{
 	  "toolName": "CODESYS",
       "description": "Number of calls",
-	  "importance": "Unknown"
+	  "importance": "Unknown",
+		"eval_strategy": "evaluation.MetricDiagnosticEvaluator"
 	},
 	"Called in tasks":{
 	  "toolName": "CODESYS",
       "description": "Called in tasks",
-	  "importance": "Unknown"
+	  "importance": "Unknown",
+		"eval_strategy": "evaluation.MetricDiagnosticEvaluator"
 	},
 	"Used different global Variables":{
 	  "toolName": "CODESYS",
       "description": "Used different global Variables",
-	  "importance": "Unknown"
+	  "importance": "Unknown",
+		"eval_strategy": "evaluation.MetricDiagnosticEvaluator"
 	},
 	"Number of direct address accesses":{
 	  "toolName": "CODESYS",
       "description": "Number of direct address accesses",
-	  "importance": "Unknown"
+	  "importance": "Unknown",
+		"eval_strategy": "evaluation.MetricDiagnosticEvaluator"
 	},
 	"Number of local variables":{
 	  "toolName": "CODESYS",
       "description": "Number of local variables",
-	  "importance": "Unknown"
+	  "importance": "Unknown",
+		"eval_strategy": "evaluation.MetricDiagnosticEvaluator"
 	},
 	"Number of inputs variables":{
 	  "toolName": "CODESYS",
       "description": "Number of inputs variables",
-	  "importance": "Unknown"
+	  "importance": "Unknown",
+		"eval_strategy": "evaluation.MetricDiagnosticEvaluator"
 	},
 	"Number of outputs variables":{
 	  "toolName": "CODESYS",
       "description": "Number of outputs variables",
-	  "importance": "Unknown"
+	  "importance": "Unknown",
+		"eval_strategy": "evaluation.MetricDiagnosticEvaluator"
 	},
 	"NOS - Number Of Statements":{
 	  "toolName": "CODESYS",
       "description": "NOS - Number Of Statements",
-	  "importance": "Unknown"
+	  "importance": "Unknown",
+		"eval_strategy": "evaluation.MetricDiagnosticEvaluator"
 	},
 	"Percentage of comment":{
 	  "toolName": "CODESYS",
       "description": "Percentage of comment",
-	  "importance": "Unknown"
+	  "importance": "Unknown",
+		"eval_strategy": "evaluation.MetricDiagnosticEvaluator"
 	},
 	"Complexity (McCabe)":{
 	  "toolName": "CODESYS",
       "description": "Complexity (McCabe)",
-	  "importance": "Unknown"
+	  "importance": "Unknown",
+		"eval_strategy": "evaluation.MetricDiagnosticEvaluator"
 	},
 	"Complexity of nesting (Prather)":{
 	  "toolName": "CODESYS",
       "description": "Complexity of nesting (Prather)",
-	  "importance": "Unknown"
+	  "importance": "Unknown",
+		"eval_strategy": "evaluation.MetricDiagnosticEvaluator"
 	},
 	"DIT - Depth of Inheritance Tree":{
 	  "toolName": "CODESYS",
       "description": "DIT - Depth of Inheritance Tree",
-	  "importance": "Unknown"
+	  "importance": "Unknown",
+		"eval_strategy": "evaluation.MetricDiagnosticEvaluator"
 	},
 	"NOC - Number Of Children":{
 	  "toolName": "CODESYS",
       "description": "NOC - Number Of Children",
-	  "importance": "Unknown"
+	  "importance": "Unknown",
+		"eval_strategy": "evaluation.MetricDiagnosticEvaluator"
 	},
 	"RFC - Response For Class":{
 	  "toolName": "CODESYS",
       "description": "RFC - Response For Class",
-	  "importance": "Unknown"
+	  "importance": "Unknown",
+		"eval_strategy": "evaluation.MetricDiagnosticEvaluator"
 	},
 	"CBO - Coupling Between Objects":{
 	  "toolName": "CODESYS",
       "description": "CBO - Coupling Between Objects",
-	  "importance": "Unknown"
+	  "importance": "Unknown",
+		"eval_strategy": "evaluation.MetricDiagnosticEvaluator"
 	},
 	"Complexity of reference (Elshof)":{
 	  "toolName": "CODESYS",
       "description": "Complexity of reference (Elshof)",
-	  "importance": "Unknown"
+	  "importance": "Unknown",
+		"eval_strategy": "evaluation.MetricDiagnosticEvaluator"
 	},
 	"Lack of Cohesion Of Methods - LCOM":{
 	  "toolName": "CODESYS",
       "description": "Lack of Cohesion Of Methods - LCOM",
-	  "importance": "Unknown"
+	  "importance": "Unknown",
+		"eval_strategy": "evaluation.MetricDiagnosticEvaluator"
 	},
 	"Number of different used operators - Halstead (n1)":{
 	  "toolName": "CODESYS",
       "description": "Number of different used operators - Halstead (n1)",
-	  "importance": "Unknown"
+	  "importance": "Unknown",
+		"eval_strategy": "evaluation.MetricDiagnosticEvaluator"
 	},
 	"Number of operators - Halstead (N1)":{
 	  "toolName": "CODESYS",
       "description": "Number of operators - Halstead (N1)",
-	  "importance": "Unknown"
+	  "importance": "Unknown",
+		"eval_strategy": "evaluation.MetricDiagnosticEvaluator"
 	},
 	"Number of different used operands - Halstead (n2)":{
 	  "toolName": "CODESYS",
       "description": "Number of different used operands - Halstead (n2)",
-	  "importance": "Unknown"
+	  "importance": "Unknown",
+		"eval_strategy": "evaluation.MetricDiagnosticEvaluator"
 	},
 	"Number of operands - Halstead (N2)":{
 	  "toolName": "CODESYS",
       "description": "Number of operands - Halstead (N2)",
-	  "importance": "Unknown"
+	  "importance": "Unknown",
+		"eval_strategy": "evaluation.MetricDiagnosticEvaluator"
 	},
 	"Length - Halstead (HL)":{
 	  "toolName": "CODESYS",
       "description": "Length - Halstead (HL)",
-	  "importance": "Unknown"
+	  "importance": "Unknown",
+		"eval_strategy": "evaluation.MetricDiagnosticEvaluator"
 	},
 	"Volume - Halstead (HV)":{
 	  "toolName": "CODESYS",
       "description": "Volume - Halstead (HV)",
-	  "importance": "Unknown"
+	  "importance": "Unknown",
+		"eval_strategy": "evaluation.MetricDiagnosticEvaluator"
 	},
 	"Difficulty - Halstead (D)":{
 	  "toolName": "CODESYS",
       "description": "Difficulty - Halstead (D)",
-	  "importance": "Unknown"
+	  "importance": "Unknown",
+		"eval_strategy": "evaluation.MetricDiagnosticEvaluator"
 	},
 	"Number of SFC branches":{
 	  "toolName": "CODESYS",
       "description": "Number of SFC branches",
-	  "importance": "Unknown"
+	  "importance": "Unknown",
+		"eval_strategy": "evaluation.MetricDiagnosticEvaluator"
 	},
 	"Number of SFC steps":{
 	  "toolName": "CODESYS",
       "description": "Number of SFC steps",
-	  "importance": "Unknown"
+	  "importance": "Unknown",
+		"eval_strategy": "evaluation.MetricDiagnosticEvaluator"
 	},
 	"Number of subroutines":{
 	  "toolName": "CODESYS",
       "description": "Number of subroutines in the greater program",
-	  "importance": "Unknown"
+	  "importance": "Unknown",
+		"eval_strategy": "evaluation.MetricDiagnosticEvaluator"
 	}
   }
 }

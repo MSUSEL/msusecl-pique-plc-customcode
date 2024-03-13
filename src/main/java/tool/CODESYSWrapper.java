@@ -25,6 +25,7 @@ package tool;
 import com.google.common.collect.HashBasedTable;
 import com.google.common.collect.Table;
 import com.google.common.primitives.Doubles;
+import model.CODESYSRuleDiagnostic;
 import model.MetricFinding;
 import model.RuleFinding;
 import org.apache.commons.compress.utils.FileNameUtils;
@@ -37,6 +38,7 @@ import pique.analysis.Tool;
 import pique.model.Diagnostic;
 import pique.model.Finding;
 
+import pique.model.ModelNode;
 import utilities.helperFunctions;
 
 import java.io.File;
@@ -111,9 +113,10 @@ public class CODESYSWrapper extends Tool implements ITool {
         List<List<String>> formattedRulesOutput= parseRules(benchmarkProjects.getRight());
         for (List<String> row : formattedRulesOutput) {
             String key = generateDiagnosticsKeyFromRulesOutput(row.get(0), diagKeyMap);
-            Diagnostic diag = diagnostics.get(key);
+            CODESYSRuleDiagnostic diag = (CODESYSRuleDiagnostic)diagnostics.get(key);
             if (diag != null) {
-                Finding f = new RuleFinding(benchmarkProjects.getRight().toString(), row.get(0), row.get(1), -1);
+                int severity = severityToInt(diag.getImportance());
+                Finding f = new RuleFinding(benchmarkProjects.getRight().toString(), row.get(0), row.get(1), severity);
                 //necessary to add more than one child
                 f.setName(row.get(0) + " - " + row.get(1));
                 diag.setChild(f);
@@ -139,6 +142,9 @@ public class CODESYSWrapper extends Tool implements ITool {
                         "not included in the model definition.");
             }
         }
+
+        //
+
         return diagnostics;
     }
 

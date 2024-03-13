@@ -48,25 +48,19 @@ public class SingleProjectEvaluator extends ASingleProjectEvaluator {
         //projectLocation is a json file, need to parse. 
         Path dockerfileJSONPath = Paths.get(projectsToAnalyze);
 
-        Set<Path> dockerfilesToAnalyze = helperFunctions.getDockerImagesToAnalyze(dockerfileJSONPath);
-
-
         Path projectsRepo = Paths.get(prop.getProperty("project.root"));
-
         Path resultsDir = Paths.get(prop.getProperty("results.directory"));
 
         LOGGER.info("Projects to analyze from file: " + dockerfileJSONPath.toString());
         System.out.println("Projects to analyze from file: " + dockerfileJSONPath.toString());
-        for (Path p : dockerfilesToAnalyze) {
-            LOGGER.info("\t" + p.toString());
-            System.out.println("\t" + p.toString());
-        }
+
 
         Path qmLocation = Paths.get(prop.getProperty("derived.qm"));
 
         ITool CODESYSWrapper = new CODESYSWrapper();
         Set<ITool> tools = Stream.of(CODESYSWrapper).collect(Collectors.toSet());
 
+        /*
         for (Path dockerfile : dockerfilesToAnalyze) {
             //tricky here. getParent  because the Path points to a json file, and we need the parent.
             Path outputPath = runEvaluator(dockerfile, resultsDir, qmLocation, tools).getParent();
@@ -82,6 +76,8 @@ public class SingleProjectEvaluator extends ASingleProjectEvaluator {
             System.out.println("output: " + outputPath.getFileName());
             System.out.println("exporting compact: " + project.exportToJson(resultsDir, true));
         }
+        *
+         */
     }
 
     @Override

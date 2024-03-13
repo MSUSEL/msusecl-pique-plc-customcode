@@ -14,4 +14,5 @@ public class RuleFinding extends Finding {
         this.ruleId = ruleId;
         this.description = description;
     }
+
 }
