@@ -25,3 +25,8 @@ replay_pid*
 
 .idea/*
 target/*
+
+/output/*
+/input/*
+
+/benchmarks/*

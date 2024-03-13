@@ -46,7 +46,6 @@ public class SingleProjectEvaluator extends ASingleProjectEvaluator {
             e.printStackTrace();
         }
 
-        Path projectsRepo = Paths.get(prop.getProperty("project.root"));
         Path resultsDir = Paths.get(prop.getProperty("results.directory"));
 
         Path qmLocation = Paths.get(prop.getProperty("derived.qm"));
@@ -64,9 +63,8 @@ public class SingleProjectEvaluator extends ASingleProjectEvaluator {
         }
 
         for (Path plcProject : projectRoots) {
-
-            //tricky here. getParent  because the Path points to a json file, and we need the parent.
             Path outputPath = runEvaluator(plcProject, resultsDir, qmLocation, tools).getParent();
+            System.out.println("returning: " + outputPath);
             try {
                 //create output directory if not exist
                 Files.createDirectories(outputPath);
@@ -74,9 +72,9 @@ public class SingleProjectEvaluator extends ASingleProjectEvaluator {
                 System.out.println("Could not create output directory");
                 throw new RuntimeException(e);
             }
-            LOGGER.info("output: " + outputPath.getFileName());
-            System.out.println("output: " + outputPath.getFileName());
-            System.out.println("exporting compact: " + project.exportToJson(resultsDir, true));
+            LOGGER.info("output: " +  outputPath);
+            System.out.println("output: " +  outputPath);
+            System.out.println("exporting compact: " + project.exportToJson(outputPath, true));
         }
 
     }
@@ -103,8 +101,11 @@ public class SingleProjectEvaluator extends ASingleProjectEvaluator {
 
         BigDecimal tqiValue = project.evaluateTqi();
 
+        Path output = Paths.get(resultsDir + "/" + projectDir.getFileName());
+        System.out.println("path output from runevaluator: " + output);
+
         // Create a file of the results and return its path
-        return project.exportToJson(resultsDir);
+        return project.exportToJson(output);
     }
 
     //region Get / Set
