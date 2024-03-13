@@ -65,8 +65,8 @@
               "Number of SFC branches": 0.5
             },
             "thresholds": [
-              -19.8,
-              -19.8
+              0,
+              0
             ],
             "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
             "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -100,8 +100,8 @@
               "Lack of Cohesion Of Methods - LCOM": 1.0
             },
             "thresholds": [
-              -9.9,
-              -9.9
+              0,
+              0
             ],
             "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
             "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -135,8 +135,8 @@
               "Number of calls": 1.0
             },
             "thresholds": [
-              0.3444444444444444444444444,
-              1
+              1,
+              1.444444444444444444444444
             ],
             "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
             "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -203,8 +203,8 @@
               "NOC - Number Of Children": 0.5
             },
             "thresholds": [
-              -19.8,
-              -19.8
+              0,
+              0
             ],
             "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
             "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -253,8 +253,8 @@
               "RFC - Response For Class": 0.5
             },
             "thresholds": [
-              -18.58888888888888888888889,
-              -9.233333333333333333333333
+              0.1111111111111111111111111,
+              2
             ],
             "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
             "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -288,7 +288,7 @@
               "Number of direct address accesses": 1.0
             },
             "thresholds": [
-              -8.8,
+              0,
               0
             ],
             "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
@@ -323,8 +323,8 @@
               "NOS - Number Of Statements": 1.0
             },
             "thresholds": [
-              -8.466666666666666666666667,
-              5
+              0.3333333333333333333333333,
+              57
             ],
             "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
             "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -403,8 +403,8 @@
               "Volume - Halstead (HV)": 0.25
             },
             "thresholds": [
-              -12.94444444444444444444444,
-              302.9000000000000000000000
+              22.25555555555555555555556,
+              2434.5
             ],
             "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
             "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -438,7 +438,7 @@
               "Used different global Variables": 1.0
             },
             "thresholds": [
-              -8.8,
+              0,
               0
             ],
             "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
@@ -513,8 +513,8 @@
               "Number of SFC branches": 0.5
             },
             "thresholds": [
-              -19.8,
-              -19.8
+              0,
+              0
             ],
             "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
             "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -548,8 +548,8 @@
               "Lack of Cohesion Of Methods - LCOM": 1.0
             },
             "thresholds": [
-              -9.9,
-              -9.9
+              0,
+              0
             ],
             "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
             "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -616,8 +616,8 @@
               "NOC - Number Of Children": 0.5
             },
             "thresholds": [
-              -19.8,
-              -19.8
+              0,
+              0
             ],
             "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
             "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -666,8 +666,8 @@
               "RFC - Response For Class": 0.5
             },
             "thresholds": [
-              -18.58888888888888888888889,
-              -9.233333333333333333333333
+              0.1111111111111111111111111,
+              2
             ],
             "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
             "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -701,7 +701,7 @@
               "Number of direct address accesses": 1.0
             },
             "thresholds": [
-              -8.8,
+              0,
               0
             ],
             "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
@@ -736,8 +736,8 @@
               "NOS - Number Of Statements": 1.0
             },
             "thresholds": [
-              -8.466666666666666666666667,
-              5
+              0.3333333333333333333333333,
+              57
             ],
             "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
             "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -816,8 +816,8 @@
               "Volume - Halstead (HV)": 0.25
             },
             "thresholds": [
-              -12.94444444444444444444444,
-              302.9000000000000000000000
+              22.25555555555555555555556,
+              2434.5
             ],
             "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
             "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -866,8 +866,8 @@
               "Number of inputs variables": 0.5
             },
             "thresholds": [
-              -8.8,
-              1
+              0,
+              1.4
             ],
             "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
             "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -938,8 +938,8 @@
               "Lack of Cohesion Of Methods - LCOM": 1.0
             },
             "thresholds": [
-              -9.9,
-              -9.9
+              0,
+              0
             ],
             "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
             "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -1006,8 +1006,8 @@
               "RFC - Response For Class": 0.5
             },
             "thresholds": [
-              -18.58888888888888888888889,
-              -9.233333333333333333333333
+              0.1111111111111111111111111,
+              2
             ],
             "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
             "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -1041,7 +1041,7 @@
               "Percentage of comment": 1.0
             },
             "thresholds": [
-              -8.8,
+              0,
               0
             ],
             "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
@@ -1091,8 +1091,8 @@
               "NOC - Number Of Children": 0.5
             },
             "thresholds": [
-              -19.8,
-              -19.8
+              0,
+              0
             ],
             "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
             "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -1141,8 +1141,8 @@
               "Number of SFC branches": 0.5
             },
             "thresholds": [
-              -19.8,
-              -19.8
+              0,
+              0
             ],
             "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
             "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -1176,8 +1176,8 @@
               "NOS - Number Of Statements": 1.0
             },
             "thresholds": [
-              -8.466666666666666666666667,
-              5
+              0.3333333333333333333333333,
+              57
             ],
             "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
             "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -1256,8 +1256,8 @@
               "Volume - Halstead (HV)": 0.25
             },
             "thresholds": [
-              -12.94444444444444444444444,
-              302.9000000000000000000000
+              22.25555555555555555555556,
+              2434.5
             ],
             "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
             "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -1291,7 +1291,7 @@
               "Used different global Variables": 1.0
             },
             "thresholds": [
-              -8.8,
+              0,
               0
             ],
             "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
@@ -1341,8 +1341,8 @@
               "Number of inputs variables": 0.5
             },
             "thresholds": [
-              -8.8,
-              1
+              0,
+              1.4
             ],
             "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
             "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -1462,7 +1462,7 @@
               "SA0101: Names with invalid length": 1.0
             },
             "thresholds": [
-              2,
+              0,
               4
             ],
             "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
@@ -2023,7 +2023,7 @@
             },
             "thresholds": [
               0,
-              1
+              4
             ],
             "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
             "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -2093,7 +2093,7 @@
             },
             "thresholds": [
               0,
-              0
+              10
             ],
             "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
             "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -3317,7 +3317,7 @@
               "SA0031: Unused signatures": 1.0
             },
             "thresholds": [
-              3,
+              0,
               4
             ],
             "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
@@ -3423,7 +3423,7 @@
             },
             "thresholds": [
               0,
-              0
+              1
             ],
             "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
             "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -3738,7 +3738,7 @@
             },
             "thresholds": [
               8,
-              42
+              53
             ],
             "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
             "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -3913,7 +3913,7 @@
             },
             "thresholds": [
               0,
-              0
+              3
             ],
             "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
             "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -4263,7 +4263,7 @@
             },
             "thresholds": [
               0,
-              0
+              3
             ],
             "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
             "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -4473,7 +4473,7 @@
             },
             "thresholds": [
               0,
-              0
+              3
             ],
             "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
             "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -5068,7 +5068,7 @@
             },
             "thresholds": [
               0,
-              0
+              1
             ],
             "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
             "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -5595,8 +5595,8 @@
               "Number of local variables": 1.0
             },
             "thresholds": [
-              -8.022222222222222222222222,
-              9
+              0.7777777777777777777777778,
+              31
             ],
             "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
             "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -5645,8 +5645,8 @@
               "Stack size (number of bytes)": 0.5
             },
             "thresholds": [
-              216.4666666666666666666667,
-              258.6666666666666666666667
+              218.6666666666666666666667,
+              1472
             ],
             "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
             "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -5680,7 +5680,7 @@
               "Used different global Variables": 1.0
             },
             "thresholds": [
-              -8.8,
+              0,
               0
             ],
             "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
@@ -5761,8 +5761,8 @@
               "Number of SFC branches": 0.5
             },
             "thresholds": [
-              -19.8,
-              -19.8
+              0,
+              0
             ],
             "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
             "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -5829,8 +5829,8 @@
               "RFC - Response For Class": 0.5
             },
             "thresholds": [
-              -18.58888888888888888888889,
-              -9.233333333333333333333333
+              0.1111111111111111111111111,
+              2
             ],
             "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
             "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -5864,8 +5864,8 @@
               "Number of calls": 1.0
             },
             "thresholds": [
-              0.3444444444444444444444444,
-              1
+              1,
+              1.444444444444444444444444
             ],
             "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
             "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -5944,8 +5944,8 @@
               "Volume - Halstead (HV)": 0.25
             },
             "thresholds": [
-              -12.94444444444444444444444,
-              302.9000000000000000000000
+              22.25555555555555555555556,
+              2434.5
             ],
             "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
             "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -5979,7 +5979,7 @@
               "Used different global Variables": 1.0
             },
             "thresholds": [
-              -8.8,
+              0,
               0
             ],
             "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
@@ -6070,8 +6070,8 @@
                   "Number of SFC branches": 0.5
                 },
                 "thresholds": [
-                  -19.8,
-                  -19.8
+                  0,
+                  0
                 ],
                 "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                 "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -6105,8 +6105,8 @@
                   "Lack of Cohesion Of Methods - LCOM": 1.0
                 },
                 "thresholds": [
-                  -9.9,
-                  -9.9
+                  0,
+                  0
                 ],
                 "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                 "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -6140,8 +6140,8 @@
                   "Number of calls": 1.0
                 },
                 "thresholds": [
-                  0.3444444444444444444444444,
-                  1
+                  1,
+                  1.444444444444444444444444
                 ],
                 "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                 "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -6208,8 +6208,8 @@
                   "NOC - Number Of Children": 0.5
                 },
                 "thresholds": [
-                  -19.8,
-                  -19.8
+                  0,
+                  0
                 ],
                 "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                 "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -6258,8 +6258,8 @@
                   "RFC - Response For Class": 0.5
                 },
                 "thresholds": [
-                  -18.58888888888888888888889,
-                  -9.233333333333333333333333
+                  0.1111111111111111111111111,
+                  2
                 ],
                 "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                 "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -6293,7 +6293,7 @@
                   "Number of direct address accesses": 1.0
                 },
                 "thresholds": [
-                  -8.8,
+                  0,
                   0
                 ],
                 "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
@@ -6328,8 +6328,8 @@
                   "NOS - Number Of Statements": 1.0
                 },
                 "thresholds": [
-                  -8.466666666666666666666667,
-                  5
+                  0.3333333333333333333333333,
+                  57
                 ],
                 "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                 "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -6408,8 +6408,8 @@
                   "Volume - Halstead (HV)": 0.25
                 },
                 "thresholds": [
-                  -12.94444444444444444444444,
-                  302.9000000000000000000000
+                  22.25555555555555555555556,
+                  2434.5
                 ],
                 "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                 "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -6443,7 +6443,7 @@
                   "Used different global Variables": 1.0
                 },
                 "thresholds": [
-                  -8.8,
+                  0,
                   0
                 ],
                 "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
@@ -6518,8 +6518,8 @@
                   "Number of SFC branches": 0.5
                 },
                 "thresholds": [
-                  -19.8,
-                  -19.8
+                  0,
+                  0
                 ],
                 "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                 "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -6553,8 +6553,8 @@
                   "Lack of Cohesion Of Methods - LCOM": 1.0
                 },
                 "thresholds": [
-                  -9.9,
-                  -9.9
+                  0,
+                  0
                 ],
                 "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                 "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -6621,8 +6621,8 @@
                   "NOC - Number Of Children": 0.5
                 },
                 "thresholds": [
-                  -19.8,
-                  -19.8
+                  0,
+                  0
                 ],
                 "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                 "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -6671,8 +6671,8 @@
                   "RFC - Response For Class": 0.5
                 },
                 "thresholds": [
-                  -18.58888888888888888888889,
-                  -9.233333333333333333333333
+                  0.1111111111111111111111111,
+                  2
                 ],
                 "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                 "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -6706,7 +6706,7 @@
                   "Number of direct address accesses": 1.0
                 },
                 "thresholds": [
-                  -8.8,
+                  0,
                   0
                 ],
                 "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
@@ -6741,8 +6741,8 @@
                   "NOS - Number Of Statements": 1.0
                 },
                 "thresholds": [
-                  -8.466666666666666666666667,
-                  5
+                  0.3333333333333333333333333,
+                  57
                 ],
                 "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                 "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -6821,8 +6821,8 @@
                   "Volume - Halstead (HV)": 0.25
                 },
                 "thresholds": [
-                  -12.94444444444444444444444,
-                  302.9000000000000000000000
+                  22.25555555555555555555556,
+                  2434.5
                 ],
                 "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                 "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -6871,8 +6871,8 @@
                   "Number of inputs variables": 0.5
                 },
                 "thresholds": [
-                  -8.8,
-                  1
+                  0,
+                  1.4
                 ],
                 "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                 "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -6930,8 +6930,8 @@
                   "Number of local variables": 1.0
                 },
                 "thresholds": [
-                  -8.022222222222222222222222,
-                  9
+                  0.7777777777777777777777778,
+                  31
                 ],
                 "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                 "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -6980,8 +6980,8 @@
                   "Stack size (number of bytes)": 0.5
                 },
                 "thresholds": [
-                  216.4666666666666666666667,
-                  258.6666666666666666666667
+                  218.6666666666666666666667,
+                  1472
                 ],
                 "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                 "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -7015,7 +7015,7 @@
                   "Used different global Variables": 1.0
                 },
                 "thresholds": [
-                  -8.8,
+                  0,
                   0
                 ],
                 "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
@@ -7068,8 +7068,8 @@
                   "Lack of Cohesion Of Methods - LCOM": 1.0
                 },
                 "thresholds": [
-                  -9.9,
-                  -9.9
+                  0,
+                  0
                 ],
                 "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                 "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -7136,8 +7136,8 @@
                   "RFC - Response For Class": 0.5
                 },
                 "thresholds": [
-                  -18.58888888888888888888889,
-                  -9.233333333333333333333333
+                  0.1111111111111111111111111,
+                  2
                 ],
                 "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                 "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -7171,7 +7171,7 @@
                   "Percentage of comment": 1.0
                 },
                 "thresholds": [
-                  -8.8,
+                  0,
                   0
                 ],
                 "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
@@ -7221,8 +7221,8 @@
                   "NOC - Number Of Children": 0.5
                 },
                 "thresholds": [
-                  -19.8,
-                  -19.8
+                  0,
+                  0
                 ],
                 "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                 "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -7271,8 +7271,8 @@
                   "Number of SFC branches": 0.5
                 },
                 "thresholds": [
-                  -19.8,
-                  -19.8
+                  0,
+                  0
                 ],
                 "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                 "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -7306,8 +7306,8 @@
                   "NOS - Number Of Statements": 1.0
                 },
                 "thresholds": [
-                  -8.466666666666666666666667,
-                  5
+                  0.3333333333333333333333333,
+                  57
                 ],
                 "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                 "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -7386,8 +7386,8 @@
                   "Volume - Halstead (HV)": 0.25
                 },
                 "thresholds": [
-                  -12.94444444444444444444444,
-                  302.9000000000000000000000
+                  22.25555555555555555555556,
+                  2434.5
                 ],
                 "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                 "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -7421,7 +7421,7 @@
                   "Used different global Variables": 1.0
                 },
                 "thresholds": [
-                  -8.8,
+                  0,
                   0
                 ],
                 "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
@@ -7471,8 +7471,8 @@
                   "Number of inputs variables": 0.5
                 },
                 "thresholds": [
-                  -8.8,
-                  1
+                  0,
+                  1.4
                 ],
                 "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                 "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -7546,8 +7546,8 @@
                   "Number of SFC branches": 0.5
                 },
                 "thresholds": [
-                  -19.8,
-                  -19.8
+                  0,
+                  0
                 ],
                 "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                 "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -7614,8 +7614,8 @@
                   "RFC - Response For Class": 0.5
                 },
                 "thresholds": [
-                  -18.58888888888888888888889,
-                  -9.233333333333333333333333
+                  0.1111111111111111111111111,
+                  2
                 ],
                 "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                 "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -7649,8 +7649,8 @@
                   "Number of calls": 1.0
                 },
                 "thresholds": [
-                  0.3444444444444444444444444,
-                  1
+                  1,
+                  1.444444444444444444444444
                 ],
                 "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                 "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -7729,8 +7729,8 @@
                   "Volume - Halstead (HV)": 0.25
                 },
                 "thresholds": [
-                  -12.94444444444444444444444,
-                  302.9000000000000000000000
+                  22.25555555555555555555556,
+                  2434.5
                 ],
                 "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                 "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -7764,7 +7764,7 @@
                   "Used different global Variables": 1.0
                 },
                 "thresholds": [
-                  -8.8,
+                  0,
                   0
                 ],
                 "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
@@ -8003,7 +8003,7 @@
                   "SA0101: Names with invalid length": 1.0
                 },
                 "thresholds": [
-                  2,
+                  0,
                   4
                 ],
                 "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
@@ -8564,7 +8564,7 @@
                 },
                 "thresholds": [
                   0,
-                  1
+                  4
                 ],
                 "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                 "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -8634,7 +8634,7 @@
                 },
                 "thresholds": [
                   0,
-                  0
+                  10
                 ],
                 "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                 "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -9858,7 +9858,7 @@
                   "SA0031: Unused signatures": 1.0
                 },
                 "thresholds": [
-                  3,
+                  0,
                   4
                 ],
                 "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
@@ -9964,7 +9964,7 @@
                 },
                 "thresholds": [
                   0,
-                  0
+                  1
                 ],
                 "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                 "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -10279,7 +10279,7 @@
                 },
                 "thresholds": [
                   8,
-                  42
+                  53
                 ],
                 "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                 "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -10454,7 +10454,7 @@
                 },
                 "thresholds": [
                   0,
-                  0
+                  3
                 ],
                 "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                 "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -10804,7 +10804,7 @@
                 },
                 "thresholds": [
                   0,
-                  0
+                  3
                 ],
                 "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                 "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -11014,7 +11014,7 @@
                 },
                 "thresholds": [
                   0,
-                  0
+                  3
                 ],
                 "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                 "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -11609,7 +11609,7 @@
                 },
                 "thresholds": [
                   0,
-                  0
+                  1
                 ],
                 "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                 "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -12161,8 +12161,8 @@
                       "Number of SFC branches": 0.5
                     },
                     "thresholds": [
-                      -19.8,
-                      -19.8
+                      0,
+                      0
                     ],
                     "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                     "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -12196,8 +12196,8 @@
                       "Lack of Cohesion Of Methods - LCOM": 1.0
                     },
                     "thresholds": [
-                      -9.9,
-                      -9.9
+                      0,
+                      0
                     ],
                     "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                     "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -12231,8 +12231,8 @@
                       "Number of calls": 1.0
                     },
                     "thresholds": [
-                      0.3444444444444444444444444,
-                      1
+                      1,
+                      1.444444444444444444444444
                     ],
                     "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                     "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -12299,8 +12299,8 @@
                       "NOC - Number Of Children": 0.5
                     },
                     "thresholds": [
-                      -19.8,
-                      -19.8
+                      0,
+                      0
                     ],
                     "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                     "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -12349,8 +12349,8 @@
                       "RFC - Response For Class": 0.5
                     },
                     "thresholds": [
-                      -18.58888888888888888888889,
-                      -9.233333333333333333333333
+                      0.1111111111111111111111111,
+                      2
                     ],
                     "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                     "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -12384,7 +12384,7 @@
                       "Number of direct address accesses": 1.0
                     },
                     "thresholds": [
-                      -8.8,
+                      0,
                       0
                     ],
                     "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
@@ -12419,8 +12419,8 @@
                       "NOS - Number Of Statements": 1.0
                     },
                     "thresholds": [
-                      -8.466666666666666666666667,
-                      5
+                      0.3333333333333333333333333,
+                      57
                     ],
                     "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                     "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -12499,8 +12499,8 @@
                       "Volume - Halstead (HV)": 0.25
                     },
                     "thresholds": [
-                      -12.94444444444444444444444,
-                      302.9000000000000000000000
+                      22.25555555555555555555556,
+                      2434.5
                     ],
                     "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                     "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -12534,7 +12534,7 @@
                       "Used different global Variables": 1.0
                     },
                     "thresholds": [
-                      -8.8,
+                      0,
                       0
                     ],
                     "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
@@ -12609,8 +12609,8 @@
                       "Number of SFC branches": 0.5
                     },
                     "thresholds": [
-                      -19.8,
-                      -19.8
+                      0,
+                      0
                     ],
                     "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                     "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -12644,8 +12644,8 @@
                       "Lack of Cohesion Of Methods - LCOM": 1.0
                     },
                     "thresholds": [
-                      -9.9,
-                      -9.9
+                      0,
+                      0
                     ],
                     "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                     "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -12712,8 +12712,8 @@
                       "NOC - Number Of Children": 0.5
                     },
                     "thresholds": [
-                      -19.8,
-                      -19.8
+                      0,
+                      0
                     ],
                     "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                     "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -12762,8 +12762,8 @@
                       "RFC - Response For Class": 0.5
                     },
                     "thresholds": [
-                      -18.58888888888888888888889,
-                      -9.233333333333333333333333
+                      0.1111111111111111111111111,
+                      2
                     ],
                     "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                     "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -12797,7 +12797,7 @@
                       "Number of direct address accesses": 1.0
                     },
                     "thresholds": [
-                      -8.8,
+                      0,
                       0
                     ],
                     "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
@@ -12832,8 +12832,8 @@
                       "NOS - Number Of Statements": 1.0
                     },
                     "thresholds": [
-                      -8.466666666666666666666667,
-                      5
+                      0.3333333333333333333333333,
+                      57
                     ],
                     "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                     "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -12912,8 +12912,8 @@
                       "Volume - Halstead (HV)": 0.25
                     },
                     "thresholds": [
-                      -12.94444444444444444444444,
-                      302.9000000000000000000000
+                      22.25555555555555555555556,
+                      2434.5
                     ],
                     "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                     "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -12962,8 +12962,8 @@
                       "Number of inputs variables": 0.5
                     },
                     "thresholds": [
-                      -8.8,
-                      1
+                      0,
+                      1.4
                     ],
                     "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                     "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -13021,8 +13021,8 @@
                       "Number of local variables": 1.0
                     },
                     "thresholds": [
-                      -8.022222222222222222222222,
-                      9
+                      0.7777777777777777777777778,
+                      31
                     ],
                     "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                     "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -13071,8 +13071,8 @@
                       "Stack size (number of bytes)": 0.5
                     },
                     "thresholds": [
-                      216.4666666666666666666667,
-                      258.6666666666666666666667
+                      218.6666666666666666666667,
+                      1472
                     ],
                     "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                     "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -13106,7 +13106,7 @@
                       "Used different global Variables": 1.0
                     },
                     "thresholds": [
-                      -8.8,
+                      0,
                       0
                     ],
                     "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
@@ -13159,8 +13159,8 @@
                       "Lack of Cohesion Of Methods - LCOM": 1.0
                     },
                     "thresholds": [
-                      -9.9,
-                      -9.9
+                      0,
+                      0
                     ],
                     "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                     "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -13227,8 +13227,8 @@
                       "RFC - Response For Class": 0.5
                     },
                     "thresholds": [
-                      -18.58888888888888888888889,
-                      -9.233333333333333333333333
+                      0.1111111111111111111111111,
+                      2
                     ],
                     "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                     "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -13262,7 +13262,7 @@
                       "Percentage of comment": 1.0
                     },
                     "thresholds": [
-                      -8.8,
+                      0,
                       0
                     ],
                     "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
@@ -13312,8 +13312,8 @@
                       "NOC - Number Of Children": 0.5
                     },
                     "thresholds": [
-                      -19.8,
-                      -19.8
+                      0,
+                      0
                     ],
                     "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                     "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -13362,8 +13362,8 @@
                       "Number of SFC branches": 0.5
                     },
                     "thresholds": [
-                      -19.8,
-                      -19.8
+                      0,
+                      0
                     ],
                     "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                     "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -13397,8 +13397,8 @@
                       "NOS - Number Of Statements": 1.0
                     },
                     "thresholds": [
-                      -8.466666666666666666666667,
-                      5
+                      0.3333333333333333333333333,
+                      57
                     ],
                     "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                     "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -13477,8 +13477,8 @@
                       "Volume - Halstead (HV)": 0.25
                     },
                     "thresholds": [
-                      -12.94444444444444444444444,
-                      302.9000000000000000000000
+                      22.25555555555555555555556,
+                      2434.5
                     ],
                     "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                     "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -13512,7 +13512,7 @@
                       "Used different global Variables": 1.0
                     },
                     "thresholds": [
-                      -8.8,
+                      0,
                       0
                     ],
                     "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
@@ -13562,8 +13562,8 @@
                       "Number of inputs variables": 0.5
                     },
                     "thresholds": [
-                      -8.8,
-                      1
+                      0,
+                      1.4
                     ],
                     "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                     "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -13637,8 +13637,8 @@
                       "Number of SFC branches": 0.5
                     },
                     "thresholds": [
-                      -19.8,
-                      -19.8
+                      0,
+                      0
                     ],
                     "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                     "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -13705,8 +13705,8 @@
                       "RFC - Response For Class": 0.5
                     },
                     "thresholds": [
-                      -18.58888888888888888888889,
-                      -9.233333333333333333333333
+                      0.1111111111111111111111111,
+                      2
                     ],
                     "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                     "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -13740,8 +13740,8 @@
                       "Number of calls": 1.0
                     },
                     "thresholds": [
-                      0.3444444444444444444444444,
-                      1
+                      1,
+                      1.444444444444444444444444
                     ],
                     "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                     "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -13820,8 +13820,8 @@
                       "Volume - Halstead (HV)": 0.25
                     },
                     "thresholds": [
-                      -12.94444444444444444444444,
-                      302.9000000000000000000000
+                      22.25555555555555555555556,
+                      2434.5
                     ],
                     "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                     "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -13855,7 +13855,7 @@
                       "Used different global Variables": 1.0
                     },
                     "thresholds": [
-                      -8.8,
+                      0,
                       0
                     ],
                     "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
@@ -14009,7 +14009,7 @@
                       "SA0101: Names with invalid length": 1.0
                     },
                     "thresholds": [
-                      2,
+                      0,
                       4
                     ],
                     "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
@@ -14570,7 +14570,7 @@
                     },
                     "thresholds": [
                       0,
-                      1
+                      4
                     ],
                     "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                     "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -14640,7 +14640,7 @@
                     },
                     "thresholds": [
                       0,
-                      0
+                      10
                     ],
                     "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                     "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -15864,7 +15864,7 @@
                       "SA0031: Unused signatures": 1.0
                     },
                     "thresholds": [
-                      3,
+                      0,
                       4
                     ],
                     "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
@@ -15970,7 +15970,7 @@
                     },
                     "thresholds": [
                       0,
-                      0
+                      1
                     ],
                     "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                     "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -16285,7 +16285,7 @@
                     },
                     "thresholds": [
                       8,
-                      42
+                      53
                     ],
                     "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                     "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -16460,7 +16460,7 @@
                     },
                     "thresholds": [
                       0,
-                      0
+                      3
                     ],
                     "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                     "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -16810,7 +16810,7 @@
                     },
                     "thresholds": [
                       0,
-                      0
+                      3
                     ],
                     "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                     "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -17020,7 +17020,7 @@
                     },
                     "thresholds": [
                       0,
-                      0
+                      3
                     ],
                     "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                     "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -17615,7 +17615,7 @@
                     },
                     "thresholds": [
                       0,
-                      0
+                      1
                     ],
                     "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                     "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -18272,7 +18272,7 @@
         "SA0101: Names with invalid length": 1.0
       },
       "thresholds": [
-        2,
+        0,
         4
       ],
       "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
@@ -18342,8 +18342,8 @@
         "Number of calls": 1.0
       },
       "thresholds": [
-        0.3444444444444444444444444,
-        1
+        1,
+        1.444444444444444444444444
       ],
       "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
       "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -18412,7 +18412,7 @@
         "Number of direct address accesses": 1.0
       },
       "thresholds": [
-        -8.8,
+        0,
         0
       ],
       "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
@@ -18742,8 +18742,8 @@
         "Stack size (number of bytes)": 0.5
       },
       "thresholds": [
-        216.4666666666666666666667,
-        258.6666666666666666666667
+        218.6666666666666666666667,
+        1472
       ],
       "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
       "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -18971,7 +18971,7 @@
       },
       "thresholds": [
         0,
-        1
+        4
       ],
       "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
       "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -19041,7 +19041,7 @@
       },
       "thresholds": [
         0,
-        0
+        10
       ],
       "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
       "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -19160,8 +19160,8 @@
         "NOC - Number Of Children": 0.5
       },
       "thresholds": [
-        -19.8,
-        -19.8
+        0,
+        0
       ],
       "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
       "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -19210,8 +19210,8 @@
         "RFC - Response For Class": 0.5
       },
       "thresholds": [
-        -18.58888888888888888888889,
-        -9.233333333333333333333333
+        0.1111111111111111111111111,
+        2
       ],
       "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
       "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -19420,8 +19420,8 @@
         "Lack of Cohesion Of Methods - LCOM": 1.0
       },
       "thresholds": [
-        -9.9,
-        -9.9
+        0,
+        0
       ],
       "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
       "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -19785,8 +19785,8 @@
         "Number of SFC branches": 0.5
       },
       "thresholds": [
-        -19.8,
-        -19.8
+        0,
+        0
       ],
       "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
       "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -19855,8 +19855,8 @@
         "Number of calls": 1.0
       },
       "thresholds": [
-        0.3444444444444444444444444,
-        1
+        1,
+        1.444444444444444444444444
       ],
       "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
       "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -20345,8 +20345,8 @@
         "Number of local variables": 1.0
       },
       "thresholds": [
-        -8.022222222222222222222222,
-        9
+        0.7777777777777777777777778,
+        31
       ],
       "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
       "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -20520,7 +20520,7 @@
         "SA0031: Unused signatures": 1.0
       },
       "thresholds": [
-        3,
+        0,
         4
       ],
       "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
@@ -20626,7 +20626,7 @@
       },
       "thresholds": [
         0,
-        0
+        1
       ],
       "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
       "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -20941,7 +20941,7 @@
       },
       "thresholds": [
         8,
-        42
+        53
       ],
       "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
       "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -21045,7 +21045,7 @@
         "Used different global Variables": 1.0
       },
       "thresholds": [
-        -8.8,
+        0,
         0
       ],
       "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
@@ -21095,8 +21095,8 @@
         "Number of inputs variables": 0.5
       },
       "thresholds": [
-        -8.8,
-        1
+        0,
+        1.4
       ],
       "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
       "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -21201,7 +21201,7 @@
       },
       "thresholds": [
         0,
-        0
+        3
       ],
       "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
       "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -21390,8 +21390,8 @@
         "NOC - Number Of Children": 0.5
       },
       "thresholds": [
-        -19.8,
-        -19.8
+        0,
+        0
       ],
       "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
       "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -21545,8 +21545,8 @@
         "Number of SFC branches": 0.5
       },
       "thresholds": [
-        -19.8,
-        -19.8
+        0,
+        0
       ],
       "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
       "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -21580,8 +21580,8 @@
         "NOS - Number Of Statements": 1.0
       },
       "thresholds": [
-        -8.466666666666666666666667,
-        5
+        0.3333333333333333333333333,
+        57
       ],
       "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
       "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -21686,7 +21686,7 @@
       },
       "thresholds": [
         0,
-        0
+        3
       ],
       "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
       "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -21860,7 +21860,7 @@
         "Percentage of comment": 1.0
       },
       "thresholds": [
-        -8.8,
+        0,
         0
       ],
       "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
@@ -21931,7 +21931,7 @@
       },
       "thresholds": [
         0,
-        0
+        3
       ],
       "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
       "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -22570,8 +22570,8 @@
         "Volume - Halstead (HV)": 0.25
       },
       "thresholds": [
-        -12.94444444444444444444444,
-        302.9000000000000000000000
+        22.25555555555555555555556,
+        2434.5
       ],
       "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
       "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -22606,7 +22606,7 @@
       },
       "thresholds": [
         0,
-        0
+        1
       ],
       "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
       "normalizer": "pique.evaluation.DefaultNormalizer",

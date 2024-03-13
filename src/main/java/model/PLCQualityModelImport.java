@@ -233,9 +233,11 @@ public class PLCQualityModelImport {
     }
 
     private IUtilityFunction getUtilityFunctionFromConfiguration(JsonObject jsonQmNode) {
+        // as of pique 0.9.5_2 jsonQmNode will be an object, not a string. FIXME
         if (jsonQmNode.get("utility_function") != null) {
-            String fullClassName = jsonQmNode.get("utility_function").getAsString();
+            String fullClassName = jsonQmNode.get("utility_function").getAsJsonObject().get("name").getAsString();
             try {
+                // TODO will have to copy attributes over from the serialized utility function to the new object, once we have them (such as the hashmaps of the images)
                 return (IUtilityFunction) Class.forName(fullClassName).getConstructor().newInstance();
             } catch (InstantiationException | IllegalAccessException | InvocationTargetException | NoSuchMethodException | ClassNotFoundException e) {
                 e.printStackTrace();

@@ -1,0 +1,7 @@
+Min.:
+Max.:
+
+;Code size (number of bytes);Variables size (number of bytes);Stack size (number of bytes);Number of calls;Called in tasks;Used different global Variables;Number of direct address accesses;Number of local variables;Number of inputs variables;Number of output variables;NOS - Number Of Statements;Percentage of comment;Complexity (McCabe);Complexity of nesting (Prather);DIT - Depth of Inheritance Tree;NOC - Number Of Children;RFC - Response For Class;CBO - Coupling Between Objects;Complexity of reference (Elshof);Lack of Cohesion Of Methods - LCOM;Number of different used operators - Halstead (n1);Number of operators - Halstead (N1);Number of different used operands - Halstead (n2);Number of operands - Halstead (N2);Length - Halstead (HL);Volume - Halstead (HV);Difficulty - Halstead (D);Number of SFC branches
+;Number of SFC steps
+
+PLC_PRG;1176;72;0;1;1;0;0;24;0;0;53;0;1;1.00;;;1;;0.33;;8;91;45;133;271;1283;11.8;;

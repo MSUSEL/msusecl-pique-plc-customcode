@@ -10,6 +10,7 @@ import pique.model.Diagnostic;
 import pique.model.Finding;
 import pique.model.ModelNode;
 import runnable.QualityModelDeriver;
+import runnable.SingleProjectEvaluator;
 import tool.CODESYSWrapper;
 
 import javax.sound.midi.Soundbank;
@@ -146,8 +147,13 @@ public class CODESYSWrapperTest {
     }
 
     @Test
-    public void accpetanceTest() {
+    public void acceptanceTest() {
         QualityModelDeriver qualityModelDeriver = new QualityModelDeriver("src/test/resources/pique-test-properties.properties");
+    }
+
+    @Test
+    public void testEvaluatorFunctionality(){
+        SingleProjectEvaluator singleProjectEvaluator = new SingleProjectEvaluator("input/");
     }
 
 }

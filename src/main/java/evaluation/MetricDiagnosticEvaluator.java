@@ -1,7 +1,6 @@
 package evaluation;
 
 import pique.evaluation.Evaluator;
-import pique.model.Diagnostic;
 import pique.model.ModelNode;
 import pique.utility.BigDecimalWithContext;
 
@@ -21,7 +20,6 @@ public class MetricDiagnosticEvaluator extends Evaluator {
         if (inNode.getNumChildren() == 0){
             return rawSum;
         }
-        System.out.println(inNode);
         return rawSum.divide(new BigDecimalWithContext(inNode.getNumChildren()), BigDecimalWithContext.getMC());
     }
 }

@@ -2,6 +2,7 @@ package runnable;
 
 import lombok.Getter;
 import lombok.Setter;
+import model.PLCQualityModelImport;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import pique.analysis.ITool;
@@ -45,26 +46,27 @@ public class SingleProjectEvaluator extends ASingleProjectEvaluator {
             e.printStackTrace();
         }
 
-        //projectLocation is a json file, need to parse. 
-        Path dockerfileJSONPath = Paths.get(projectsToAnalyze);
-
         Path projectsRepo = Paths.get(prop.getProperty("project.root"));
         Path resultsDir = Paths.get(prop.getProperty("results.directory"));
-
-        LOGGER.info("Projects to analyze from file: " + dockerfileJSONPath.toString());
-        System.out.println("Projects to analyze from file: " + dockerfileJSONPath.toString());
-
 
         Path qmLocation = Paths.get(prop.getProperty("derived.qm"));
 
         ITool CODESYSWrapper = new CODESYSWrapper();
         Set<ITool> tools = Stream.of(CODESYSWrapper).collect(Collectors.toSet());
 
-        /*
-        for (Path dockerfile : dockerfilesToAnalyze) {
-            //tricky here. getParent  because the Path points to a json file, and we need the parent.
-            Path outputPath = runEvaluator(dockerfile, resultsDir, qmLocation, tools).getParent();
+        Set<Path> projectRoots = new HashSet<>();
 
+        File[] subDirectories = Paths.get(projectsToAnalyze).toFile().listFiles();
+        for (File file : subDirectories) {
+            projectRoots.add(file.toPath());
+            System.out.println("Queuing directory: " + file + " for analysis");
+            LOGGER.info("Queuing directory: " + file + " for analysis");
+        }
+
+        for (Path plcProject : projectRoots) {
+
+            //tricky here. getParent  because the Path points to a json file, and we need the parent.
+            Path outputPath = runEvaluator(plcProject, resultsDir, qmLocation, tools).getParent();
             try {
                 //create output directory if not exist
                 Files.createDirectories(outputPath);
@@ -76,14 +78,13 @@ public class SingleProjectEvaluator extends ASingleProjectEvaluator {
             System.out.println("output: " + outputPath.getFileName());
             System.out.println("exporting compact: " + project.exportToJson(resultsDir, true));
         }
-        *
-         */
+
     }
 
     @Override
     public Path runEvaluator(Path projectDir, Path resultsDir, Path qmLocation, Set<ITool> tools){
         // Initialize data structures
-        QualityModelImport qmImport = new QualityModelImport(qmLocation);
+        PLCQualityModelImport qmImport = new PLCQualityModelImport(qmLocation);
         QualityModel qualityModel = qmImport.importQualityModel();
         project = new Project(projectDir.toString(), projectDir, qualityModel);
 

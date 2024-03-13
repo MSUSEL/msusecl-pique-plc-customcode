@@ -219,8 +219,8 @@ public class CODESYSWrapper extends Tool implements ITool {
 
             for (int j = 0; j < columnKeys.size(); j++) {
                 if (row.get(j + 1).isEmpty()) {
-                    // hashBasedTable does not tolerate nulls so replace nulls with -9.9
-                    row.set(j + 1, "-9.9");
+                    // FIXME ---- hashBasedTable does not tolerate nulls so replace nulls with 0
+                    row.set(j + 1, "0");
                 }
                 formattedToolOuput.put(row.get(0), columnKeys.get(j), Doubles.tryParse(row.get(j + 1)));
             }
@@ -263,6 +263,7 @@ public class CODESYSWrapper extends Tool implements ITool {
             ArrayList<String> formattedLine = new ArrayList<>();
             // should probably improve performance of this nested loop with more string formatting but this is good enough for now
             for (int j = 0; j < line.length; j++) {
+                //potentially FIXME -- robustify the SA parsing
                 if (line[j].contains("SA")) {
                     formattedLine.add(line[j].trim());
                     formattedLine.add(line[j + 1].trim());
