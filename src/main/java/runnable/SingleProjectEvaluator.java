@@ -32,11 +32,9 @@ import pique.analysis.ITool;
 import pique.evaluation.Project;
 import pique.model.Diagnostic;
 import pique.model.QualityModel;
-import pique.model.QualityModelImport;
 import pique.runnable.ASingleProjectEvaluator;
 import pique.utility.PiqueProperties;
 import tool.CODESYSWrapper;
-import utilities.helperFunctions;
 
 import java.io.File;
 import java.io.IOException;
