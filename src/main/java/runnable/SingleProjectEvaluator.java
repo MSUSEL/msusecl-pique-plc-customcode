@@ -64,17 +64,16 @@ public class SingleProjectEvaluator extends ASingleProjectEvaluator {
 
         for (Path plcProject : projectRoots) {
             Path outputPath = runEvaluator(plcProject, resultsDir, qmLocation, tools).getParent();
-            System.out.println("returning: " + outputPath);
             try {
                 //create output directory if not exist
                 Files.createDirectories(outputPath);
             } catch (IOException e) {
-                System.out.println("Could not create output directory");
+                System.out.println("Could not create output directory for compact file");
                 throw new RuntimeException(e);
             }
-            LOGGER.info("output: " +  outputPath);
-            System.out.println("output: " +  outputPath);
-            System.out.println("exporting compact: " + project.exportToJson(outputPath, true));
+            LOGGER.info("output directory: " + outputPath.getFileName());
+            System.out.println("Output directory (known bug with the 'input/' directory being included in the output path): " + resultsDir.getFileName() + "/" + plcProject.getParent());
+            System.out.println("Exporting compact output file for use with the pique visualizer : " + project.exportToJson(resultsDir, true));
         }
 
     }
@@ -101,11 +100,8 @@ public class SingleProjectEvaluator extends ASingleProjectEvaluator {
 
         BigDecimal tqiValue = project.evaluateTqi();
 
-        Path output = Paths.get(resultsDir + "/" + projectDir.getFileName());
-        System.out.println("path output from runevaluator: " + output);
-
         // Create a file of the results and return its path
-        return project.exportToJson(output);
+        return project.exportToJson(resultsDir);
     }
 
     //region Get / Set
