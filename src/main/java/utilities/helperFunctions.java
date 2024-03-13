@@ -272,6 +272,8 @@ public class helperFunctions {
 		Properties prop = PiqueProperties.getProperties();
 		Path blankqmFilePath = Paths.get(prop.getProperty("blankqm.filepath"));
 		QualityModelImport qmImport = new QualityModelImport(blankqmFilePath);
+		// TODO for this model, we can improve accuracy of results by writing a custom quality model importer that initiates
+		// CODESYSRuleDiagnostic objects instead of Diagnostic objects.
         QualityModel qmDescription = qmImport.importQualityModel();
 
         Map<String, Diagnostic> diagnostics = new HashMap<>();

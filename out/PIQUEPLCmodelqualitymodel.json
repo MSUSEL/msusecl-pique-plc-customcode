@@ -65,8 +65,8 @@
               "Number of SFC branches": 0.5
             },
             "thresholds": [
-              0,
-              0
+              -18,
+              -6
             ],
             "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
             "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -100,8 +100,8 @@
               "Lack of Cohesion Of Methods - LCOM": 1.0
             },
             "thresholds": [
-              0,
-              0
+              -9,
+              -3
             ],
             "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
             "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -135,8 +135,8 @@
               "Number of calls": 1.0
             },
             "thresholds": [
-              0,
-              0
+              -9,
+              -3
             ],
             "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
             "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -203,8 +203,8 @@
               "NOC - Number Of Children": 0.5
             },
             "thresholds": [
-              0,
-              0
+              -18,
+              -6
             ],
             "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
             "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -253,8 +253,8 @@
               "RFC - Response For Class": 0.5
             },
             "thresholds": [
-              0,
-              0
+              -18,
+              -6
             ],
             "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
             "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -288,8 +288,8 @@
               "Number of direct address accesses": 1.0
             },
             "thresholds": [
-              0,
-              0
+              -9,
+              -3
             ],
             "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
             "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -323,8 +323,8 @@
               "NOS - Number Of Statements": 1.0
             },
             "thresholds": [
-              0,
-              0
+              -9,
+              -3
             ],
             "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
             "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -403,8 +403,8 @@
               "Volume - Halstead (HV)": 0.25
             },
             "thresholds": [
-              0,
-              0
+              -36,
+              -12
             ],
             "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
             "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -438,8 +438,8 @@
               "Used different global Variables": 1.0
             },
             "thresholds": [
-              0,
-              0
+              -9,
+              -3
             ],
             "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
             "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -513,8 +513,8 @@
               "Number of SFC branches": 0.5
             },
             "thresholds": [
-              0,
-              0
+              -18,
+              -6
             ],
             "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
             "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -548,8 +548,8 @@
               "Lack of Cohesion Of Methods - LCOM": 1.0
             },
             "thresholds": [
-              0,
-              0
+              -9,
+              -3
             ],
             "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
             "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -616,8 +616,8 @@
               "NOC - Number Of Children": 0.5
             },
             "thresholds": [
-              0,
-              0
+              -18,
+              -6
             ],
             "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
             "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -666,8 +666,8 @@
               "RFC - Response For Class": 0.5
             },
             "thresholds": [
-              0,
-              0
+              -18,
+              -6
             ],
             "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
             "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -701,8 +701,8 @@
               "Number of direct address accesses": 1.0
             },
             "thresholds": [
-              0,
-              0
+              -9,
+              -3
             ],
             "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
             "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -736,8 +736,8 @@
               "NOS - Number Of Statements": 1.0
             },
             "thresholds": [
-              0,
-              0
+              -9,
+              -3
             ],
             "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
             "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -816,8 +816,8 @@
               "Volume - Halstead (HV)": 0.25
             },
             "thresholds": [
-              0,
-              0
+              -36,
+              -12
             ],
             "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
             "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -866,8 +866,8 @@
               "Number of inputs variables": 0.5
             },
             "thresholds": [
-              0,
-              0
+              -9,
+              -3
             ],
             "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
             "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -938,8 +938,8 @@
               "Lack of Cohesion Of Methods - LCOM": 1.0
             },
             "thresholds": [
-              0,
-              0
+              -9,
+              -3
             ],
             "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
             "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -1006,8 +1006,8 @@
               "RFC - Response For Class": 0.5
             },
             "thresholds": [
-              0,
-              0
+              -18,
+              -6
             ],
             "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
             "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -1041,8 +1041,8 @@
               "Percentage of comment": 1.0
             },
             "thresholds": [
-              0,
-              0
+              -9,
+              -3
             ],
             "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
             "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -1091,8 +1091,8 @@
               "NOC - Number Of Children": 0.5
             },
             "thresholds": [
-              0,
-              0
+              -18,
+              -6
             ],
             "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
             "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -1141,8 +1141,8 @@
               "Number of SFC branches": 0.5
             },
             "thresholds": [
-              0,
-              0
+              -18,
+              -6
             ],
             "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
             "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -1176,8 +1176,8 @@
               "NOS - Number Of Statements": 1.0
             },
             "thresholds": [
-              0,
-              0
+              -9,
+              -3
             ],
             "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
             "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -1256,8 +1256,8 @@
               "Volume - Halstead (HV)": 0.25
             },
             "thresholds": [
-              0,
-              0
+              -36,
+              -12
             ],
             "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
             "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -1291,8 +1291,8 @@
               "Used different global Variables": 1.0
             },
             "thresholds": [
-              0,
-              0
+              -9,
+              -3
             ],
             "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
             "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -1341,8 +1341,8 @@
               "Number of inputs variables": 0.5
             },
             "thresholds": [
-              0,
-              0
+              -9,
+              -3
             ],
             "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
             "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -1462,8 +1462,8 @@
               "SA0101: Names with invalid length": 1.0
             },
             "thresholds": [
-              0,
-              0
+              -1,
+              -1
             ],
             "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
             "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -1952,7 +1952,7 @@
               "SA0066: Uses of temporary results": 1.0
             },
             "thresholds": [
-              0,
+              -1,
               0
             ],
             "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
@@ -2022,7 +2022,7 @@
               "SA0038: Read access to output variable": 1.0
             },
             "thresholds": [
-              0,
+              -1,
               0
             ],
             "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
@@ -2547,7 +2547,7 @@
               "SA0033: Unused variables": 1.0
             },
             "thresholds": [
-              0,
+              -1,
               0
             ],
             "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
@@ -2619,6 +2619,41 @@
             "thresholds": [
               0,
               0
+            ],
+            "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
+            "normalizer": "pique.evaluation.DefaultNormalizer",
+            "utility_function": {
+              "name": "pique.evaluation.DefaultUtility",
+              "description": "Simple linear utility function based on min and max of threshold data"
+            }
+          },
+          "SA0102: Access to program/fb variables from the outside - Score": {
+            "positive": false,
+            "name": "SA0102: Access to program/fb variables from the outside - Score",
+            "value": 0.0,
+            "description": "Detects external access to local variables of programs or function blocks.",
+            "children": {
+              "SA0102: Access to program/fb variables from the outside": {
+                "toolName": "CODESYS",
+                "name": "SA0102: Access to program/fb variables from the outside",
+                "value": 0.0,
+                "description": "Detects external access to local variables of programs or function blocks.",
+                "children": {},
+                "weights": {},
+                "eval_strategy": "pique.evaluation.DefaultDiagnosticEvaluator",
+                "normalizer": "pique.evaluation.DefaultNormalizer",
+                "utility_function": {
+                  "name": "pique.evaluation.DefaultUtility",
+                  "description": "Simple linear utility function based on min and max of threshold data"
+                }
+              }
+            },
+            "weights": {
+              "SA0102: Access to program/fb variables from the outside": 1.0
+            },
+            "thresholds": [
+              -1,
+              -1
             ],
             "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
             "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -3037,7 +3072,7 @@
               "SA0062: Uses of TRUE or FALSE in expressions": 1.0
             },
             "thresholds": [
-              0,
+              -1,
               0
             ],
             "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
@@ -3282,7 +3317,7 @@
               "SA0040: Possible division by zero": 1.0
             },
             "thresholds": [
-              0,
+              -1,
               0
             ],
             "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
@@ -3317,8 +3352,8 @@
               "SA0031: Unused signatures": 1.0
             },
             "thresholds": [
-              0,
-              0
+              -1,
+              -1
             ],
             "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
             "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -3737,8 +3772,8 @@
               "SA0162: Missing comments": 1.0
             },
             "thresholds": [
-              0,
-              0
+              -1,
+              -1
             ],
             "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
             "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -4507,7 +4542,7 @@
               "SA0130: Implicit expanding conversions": 1.0
             },
             "thresholds": [
-              0,
+              -1,
               0
             ],
             "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
@@ -4857,7 +4892,7 @@
               "SA0024: Untyped literals / constants": 1.0
             },
             "thresholds": [
-              0,
+              -1,
               0
             ],
             "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
@@ -4995,41 +5030,6 @@
             },
             "weights": {
               "SA0105: Multiple instance calls": 1.0
-            },
-            "thresholds": [
-              0,
-              0
-            ],
-            "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
-            "normalizer": "pique.evaluation.DefaultNormalizer",
-            "utility_function": {
-              "name": "pique.evaluation.DefaultUtility",
-              "description": "Simple linear utility function based on min and max of threshold data"
-            }
-          },
-          "A0102: Access to program/fb variables from the outside - Score": {
-            "positive": false,
-            "name": "A0102: Access to program/fb variables from the outside - Score",
-            "value": 0.0,
-            "description": "Detects external access to local variables of programs or function blocks.",
-            "children": {
-              "A0102: Access to program/fb variables from the outside": {
-                "toolName": "CODESYS",
-                "name": "A0102: Access to program/fb variables from the outside",
-                "value": 0.0,
-                "description": "Detects external access to local variables of programs or function blocks.",
-                "children": {},
-                "weights": {},
-                "eval_strategy": "pique.evaluation.DefaultDiagnosticEvaluator",
-                "normalizer": "pique.evaluation.DefaultNormalizer",
-                "utility_function": {
-                  "name": "pique.evaluation.DefaultUtility",
-                  "description": "Simple linear utility function based on min and max of threshold data"
-                }
-              }
-            },
-            "weights": {
-              "A0102: Access to program/fb variables from the outside": 1.0
             },
             "thresholds": [
               0,
@@ -5464,6 +5464,7 @@
           "SA0033: Unused variables - Score": 0.008695652173913043478260870,
           "SA0121: Missing 'VAR_EXTERNAL' declarations - Score": 0.008695652173913043478260870,
           "SA0044: Declarations with reference to interface - Score": 0.008695652173913043478260870,
+          "SA0102: Access to program/fb variables from the outside - Score": 0.008695652173913043478260870,
           "SA0133: Explicit narrowing conversions - Score": 0.008695652173913043478260870,
           "SA0002: Empty objects - Score": 0.008695652173913043478260870,
           "SA0081: Upper border is not a constant - Score": 0.008695652173913043478260870,
@@ -5532,7 +5533,6 @@
           "SA0035: Unused input variables - Score": 0.008695652173913043478260870,
           "SA0037: Write access to input variable - Score": 0.008695652173913043478260870,
           "SA0105: Multiple instance calls - Score": 0.008695652173913043478260870,
-          "A0102: Access to program/fb variables from the outside - Score": 0.008695652173913043478260870,
           "SA0134: Explicit signed/unsigned conversions - Score": 0.008695652173913043478260870,
           "SA0131: Implicit narrowing conversions - Score": 0.008695652173913043478260870,
           "SA0119:Object-oriented features - Score": 0.008695652173913043478260870,
@@ -5595,8 +5595,8 @@
               "Number of local variables": 1.0
             },
             "thresholds": [
-              0,
-              0
+              -9,
+              -3
             ],
             "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
             "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -5645,8 +5645,8 @@
               "Stack size (number of bytes)": 0.5
             },
             "thresholds": [
-              0,
-              0
+              -18,
+              -6
             ],
             "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
             "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -5680,8 +5680,8 @@
               "Used different global Variables": 1.0
             },
             "thresholds": [
-              0,
-              0
+              -9,
+              -3
             ],
             "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
             "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -5761,8 +5761,8 @@
               "Number of SFC branches": 0.5
             },
             "thresholds": [
-              0,
-              0
+              -18,
+              -6
             ],
             "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
             "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -5829,8 +5829,8 @@
               "RFC - Response For Class": 0.5
             },
             "thresholds": [
-              0,
-              0
+              -18,
+              -6
             ],
             "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
             "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -5864,8 +5864,8 @@
               "Number of calls": 1.0
             },
             "thresholds": [
-              0,
-              0
+              -9,
+              -3
             ],
             "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
             "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -5944,8 +5944,8 @@
               "Volume - Halstead (HV)": 0.25
             },
             "thresholds": [
-              0,
-              0
+              -36,
+              -12
             ],
             "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
             "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -5979,8 +5979,8 @@
               "Used different global Variables": 1.0
             },
             "thresholds": [
-              0,
-              0
+              -9,
+              -3
             ],
             "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
             "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -6070,8 +6070,8 @@
                   "Number of SFC branches": 0.5
                 },
                 "thresholds": [
-                  0,
-                  0
+                  -18,
+                  -6
                 ],
                 "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                 "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -6105,8 +6105,8 @@
                   "Lack of Cohesion Of Methods - LCOM": 1.0
                 },
                 "thresholds": [
-                  0,
-                  0
+                  -9,
+                  -3
                 ],
                 "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                 "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -6140,8 +6140,8 @@
                   "Number of calls": 1.0
                 },
                 "thresholds": [
-                  0,
-                  0
+                  -9,
+                  -3
                 ],
                 "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                 "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -6208,8 +6208,8 @@
                   "NOC - Number Of Children": 0.5
                 },
                 "thresholds": [
-                  0,
-                  0
+                  -18,
+                  -6
                 ],
                 "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                 "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -6258,8 +6258,8 @@
                   "RFC - Response For Class": 0.5
                 },
                 "thresholds": [
-                  0,
-                  0
+                  -18,
+                  -6
                 ],
                 "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                 "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -6293,8 +6293,8 @@
                   "Number of direct address accesses": 1.0
                 },
                 "thresholds": [
-                  0,
-                  0
+                  -9,
+                  -3
                 ],
                 "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                 "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -6328,8 +6328,8 @@
                   "NOS - Number Of Statements": 1.0
                 },
                 "thresholds": [
-                  0,
-                  0
+                  -9,
+                  -3
                 ],
                 "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                 "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -6408,8 +6408,8 @@
                   "Volume - Halstead (HV)": 0.25
                 },
                 "thresholds": [
-                  0,
-                  0
+                  -36,
+                  -12
                 ],
                 "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                 "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -6443,8 +6443,8 @@
                   "Used different global Variables": 1.0
                 },
                 "thresholds": [
-                  0,
-                  0
+                  -9,
+                  -3
                 ],
                 "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                 "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -6518,8 +6518,8 @@
                   "Number of SFC branches": 0.5
                 },
                 "thresholds": [
-                  0,
-                  0
+                  -18,
+                  -6
                 ],
                 "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                 "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -6553,8 +6553,8 @@
                   "Lack of Cohesion Of Methods - LCOM": 1.0
                 },
                 "thresholds": [
-                  0,
-                  0
+                  -9,
+                  -3
                 ],
                 "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                 "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -6621,8 +6621,8 @@
                   "NOC - Number Of Children": 0.5
                 },
                 "thresholds": [
-                  0,
-                  0
+                  -18,
+                  -6
                 ],
                 "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                 "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -6671,8 +6671,8 @@
                   "RFC - Response For Class": 0.5
                 },
                 "thresholds": [
-                  0,
-                  0
+                  -18,
+                  -6
                 ],
                 "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                 "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -6706,8 +6706,8 @@
                   "Number of direct address accesses": 1.0
                 },
                 "thresholds": [
-                  0,
-                  0
+                  -9,
+                  -3
                 ],
                 "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                 "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -6741,8 +6741,8 @@
                   "NOS - Number Of Statements": 1.0
                 },
                 "thresholds": [
-                  0,
-                  0
+                  -9,
+                  -3
                 ],
                 "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                 "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -6821,8 +6821,8 @@
                   "Volume - Halstead (HV)": 0.25
                 },
                 "thresholds": [
-                  0,
-                  0
+                  -36,
+                  -12
                 ],
                 "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                 "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -6871,8 +6871,8 @@
                   "Number of inputs variables": 0.5
                 },
                 "thresholds": [
-                  0,
-                  0
+                  -9,
+                  -3
                 ],
                 "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                 "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -6930,8 +6930,8 @@
                   "Number of local variables": 1.0
                 },
                 "thresholds": [
-                  0,
-                  0
+                  -9,
+                  -3
                 ],
                 "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                 "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -6980,8 +6980,8 @@
                   "Stack size (number of bytes)": 0.5
                 },
                 "thresholds": [
-                  0,
-                  0
+                  -18,
+                  -6
                 ],
                 "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                 "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -7015,8 +7015,8 @@
                   "Used different global Variables": 1.0
                 },
                 "thresholds": [
-                  0,
-                  0
+                  -9,
+                  -3
                 ],
                 "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                 "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -7068,8 +7068,8 @@
                   "Lack of Cohesion Of Methods - LCOM": 1.0
                 },
                 "thresholds": [
-                  0,
-                  0
+                  -9,
+                  -3
                 ],
                 "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                 "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -7136,8 +7136,8 @@
                   "RFC - Response For Class": 0.5
                 },
                 "thresholds": [
-                  0,
-                  0
+                  -18,
+                  -6
                 ],
                 "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                 "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -7171,8 +7171,8 @@
                   "Percentage of comment": 1.0
                 },
                 "thresholds": [
-                  0,
-                  0
+                  -9,
+                  -3
                 ],
                 "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                 "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -7221,8 +7221,8 @@
                   "NOC - Number Of Children": 0.5
                 },
                 "thresholds": [
-                  0,
-                  0
+                  -18,
+                  -6
                 ],
                 "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                 "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -7271,8 +7271,8 @@
                   "Number of SFC branches": 0.5
                 },
                 "thresholds": [
-                  0,
-                  0
+                  -18,
+                  -6
                 ],
                 "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                 "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -7306,8 +7306,8 @@
                   "NOS - Number Of Statements": 1.0
                 },
                 "thresholds": [
-                  0,
-                  0
+                  -9,
+                  -3
                 ],
                 "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                 "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -7386,8 +7386,8 @@
                   "Volume - Halstead (HV)": 0.25
                 },
                 "thresholds": [
-                  0,
-                  0
+                  -36,
+                  -12
                 ],
                 "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                 "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -7421,8 +7421,8 @@
                   "Used different global Variables": 1.0
                 },
                 "thresholds": [
-                  0,
-                  0
+                  -9,
+                  -3
                 ],
                 "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                 "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -7471,8 +7471,8 @@
                   "Number of inputs variables": 0.5
                 },
                 "thresholds": [
-                  0,
-                  0
+                  -9,
+                  -3
                 ],
                 "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                 "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -7546,8 +7546,8 @@
                   "Number of SFC branches": 0.5
                 },
                 "thresholds": [
-                  0,
-                  0
+                  -18,
+                  -6
                 ],
                 "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                 "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -7614,8 +7614,8 @@
                   "RFC - Response For Class": 0.5
                 },
                 "thresholds": [
-                  0,
-                  0
+                  -18,
+                  -6
                 ],
                 "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                 "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -7649,8 +7649,8 @@
                   "Number of calls": 1.0
                 },
                 "thresholds": [
-                  0,
-                  0
+                  -9,
+                  -3
                 ],
                 "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                 "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -7729,8 +7729,8 @@
                   "Volume - Halstead (HV)": 0.25
                 },
                 "thresholds": [
-                  0,
-                  0
+                  -36,
+                  -12
                 ],
                 "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                 "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -7764,8 +7764,8 @@
                   "Used different global Variables": 1.0
                 },
                 "thresholds": [
-                  0,
-                  0
+                  -9,
+                  -3
                 ],
                 "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                 "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -8003,8 +8003,8 @@
                   "SA0101: Names with invalid length": 1.0
                 },
                 "thresholds": [
-                  0,
-                  0
+                  -1,
+                  -1
                 ],
                 "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                 "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -8493,7 +8493,7 @@
                   "SA0066: Uses of temporary results": 1.0
                 },
                 "thresholds": [
-                  0,
+                  -1,
                   0
                 ],
                 "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
@@ -8563,7 +8563,7 @@
                   "SA0038: Read access to output variable": 1.0
                 },
                 "thresholds": [
-                  0,
+                  -1,
                   0
                 ],
                 "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
@@ -9088,7 +9088,7 @@
                   "SA0033: Unused variables": 1.0
                 },
                 "thresholds": [
-                  0,
+                  -1,
                   0
                 ],
                 "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
@@ -9160,6 +9160,41 @@
                 "thresholds": [
                   0,
                   0
+                ],
+                "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
+                "normalizer": "pique.evaluation.DefaultNormalizer",
+                "utility_function": {
+                  "name": "pique.evaluation.DefaultUtility",
+                  "description": "Simple linear utility function based on min and max of threshold data"
+                }
+              },
+              "SA0102: Access to program/fb variables from the outside - Score": {
+                "positive": false,
+                "name": "SA0102: Access to program/fb variables from the outside - Score",
+                "value": 0.0,
+                "description": "Detects external access to local variables of programs or function blocks.",
+                "children": {
+                  "SA0102: Access to program/fb variables from the outside": {
+                    "toolName": "CODESYS",
+                    "name": "SA0102: Access to program/fb variables from the outside",
+                    "value": 0.0,
+                    "description": "Detects external access to local variables of programs or function blocks.",
+                    "children": {},
+                    "weights": {},
+                    "eval_strategy": "pique.evaluation.DefaultDiagnosticEvaluator",
+                    "normalizer": "pique.evaluation.DefaultNormalizer",
+                    "utility_function": {
+                      "name": "pique.evaluation.DefaultUtility",
+                      "description": "Simple linear utility function based on min and max of threshold data"
+                    }
+                  }
+                },
+                "weights": {
+                  "SA0102: Access to program/fb variables from the outside": 1.0
+                },
+                "thresholds": [
+                  -1,
+                  -1
                 ],
                 "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                 "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -9578,7 +9613,7 @@
                   "SA0062: Uses of TRUE or FALSE in expressions": 1.0
                 },
                 "thresholds": [
-                  0,
+                  -1,
                   0
                 ],
                 "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
@@ -9823,7 +9858,7 @@
                   "SA0040: Possible division by zero": 1.0
                 },
                 "thresholds": [
-                  0,
+                  -1,
                   0
                 ],
                 "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
@@ -9858,8 +9893,8 @@
                   "SA0031: Unused signatures": 1.0
                 },
                 "thresholds": [
-                  0,
-                  0
+                  -1,
+                  -1
                 ],
                 "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                 "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -10278,8 +10313,8 @@
                   "SA0162: Missing comments": 1.0
                 },
                 "thresholds": [
-                  0,
-                  0
+                  -1,
+                  -1
                 ],
                 "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                 "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -11048,7 +11083,7 @@
                   "SA0130: Implicit expanding conversions": 1.0
                 },
                 "thresholds": [
-                  0,
+                  -1,
                   0
                 ],
                 "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
@@ -11398,7 +11433,7 @@
                   "SA0024: Untyped literals / constants": 1.0
                 },
                 "thresholds": [
-                  0,
+                  -1,
                   0
                 ],
                 "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
@@ -11536,41 +11571,6 @@
                 },
                 "weights": {
                   "SA0105: Multiple instance calls": 1.0
-                },
-                "thresholds": [
-                  0,
-                  0
-                ],
-                "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
-                "normalizer": "pique.evaluation.DefaultNormalizer",
-                "utility_function": {
-                  "name": "pique.evaluation.DefaultUtility",
-                  "description": "Simple linear utility function based on min and max of threshold data"
-                }
-              },
-              "A0102: Access to program/fb variables from the outside - Score": {
-                "positive": false,
-                "name": "A0102: Access to program/fb variables from the outside - Score",
-                "value": 0.0,
-                "description": "Detects external access to local variables of programs or function blocks.",
-                "children": {
-                  "A0102: Access to program/fb variables from the outside": {
-                    "toolName": "CODESYS",
-                    "name": "A0102: Access to program/fb variables from the outside",
-                    "value": 0.0,
-                    "description": "Detects external access to local variables of programs or function blocks.",
-                    "children": {},
-                    "weights": {},
-                    "eval_strategy": "pique.evaluation.DefaultDiagnosticEvaluator",
-                    "normalizer": "pique.evaluation.DefaultNormalizer",
-                    "utility_function": {
-                      "name": "pique.evaluation.DefaultUtility",
-                      "description": "Simple linear utility function based on min and max of threshold data"
-                    }
-                  }
-                },
-                "weights": {
-                  "A0102: Access to program/fb variables from the outside": 1.0
                 },
                 "thresholds": [
                   0,
@@ -12005,6 +12005,7 @@
               "SA0033: Unused variables - Score": 0.008695652173913043478260870,
               "SA0121: Missing 'VAR_EXTERNAL' declarations - Score": 0.008695652173913043478260870,
               "SA0044: Declarations with reference to interface - Score": 0.008695652173913043478260870,
+              "SA0102: Access to program/fb variables from the outside - Score": 0.008695652173913043478260870,
               "SA0133: Explicit narrowing conversions - Score": 0.008695652173913043478260870,
               "SA0002: Empty objects - Score": 0.008695652173913043478260870,
               "SA0081: Upper border is not a constant - Score": 0.008695652173913043478260870,
@@ -12073,7 +12074,6 @@
               "SA0035: Unused input variables - Score": 0.008695652173913043478260870,
               "SA0037: Write access to input variable - Score": 0.008695652173913043478260870,
               "SA0105: Multiple instance calls - Score": 0.008695652173913043478260870,
-              "A0102: Access to program/fb variables from the outside - Score": 0.008695652173913043478260870,
               "SA0134: Explicit signed/unsigned conversions - Score": 0.008695652173913043478260870,
               "SA0131: Implicit narrowing conversions - Score": 0.008695652173913043478260870,
               "SA0119:Object-oriented features - Score": 0.008695652173913043478260870,
@@ -12161,8 +12161,8 @@
                       "Number of SFC branches": 0.5
                     },
                     "thresholds": [
-                      0,
-                      0
+                      -18,
+                      -6
                     ],
                     "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                     "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -12196,8 +12196,8 @@
                       "Lack of Cohesion Of Methods - LCOM": 1.0
                     },
                     "thresholds": [
-                      0,
-                      0
+                      -9,
+                      -3
                     ],
                     "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                     "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -12231,8 +12231,8 @@
                       "Number of calls": 1.0
                     },
                     "thresholds": [
-                      0,
-                      0
+                      -9,
+                      -3
                     ],
                     "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                     "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -12299,8 +12299,8 @@
                       "NOC - Number Of Children": 0.5
                     },
                     "thresholds": [
-                      0,
-                      0
+                      -18,
+                      -6
                     ],
                     "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                     "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -12349,8 +12349,8 @@
                       "RFC - Response For Class": 0.5
                     },
                     "thresholds": [
-                      0,
-                      0
+                      -18,
+                      -6
                     ],
                     "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                     "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -12384,8 +12384,8 @@
                       "Number of direct address accesses": 1.0
                     },
                     "thresholds": [
-                      0,
-                      0
+                      -9,
+                      -3
                     ],
                     "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                     "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -12419,8 +12419,8 @@
                       "NOS - Number Of Statements": 1.0
                     },
                     "thresholds": [
-                      0,
-                      0
+                      -9,
+                      -3
                     ],
                     "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                     "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -12499,8 +12499,8 @@
                       "Volume - Halstead (HV)": 0.25
                     },
                     "thresholds": [
-                      0,
-                      0
+                      -36,
+                      -12
                     ],
                     "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                     "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -12534,8 +12534,8 @@
                       "Used different global Variables": 1.0
                     },
                     "thresholds": [
-                      0,
-                      0
+                      -9,
+                      -3
                     ],
                     "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                     "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -12609,8 +12609,8 @@
                       "Number of SFC branches": 0.5
                     },
                     "thresholds": [
-                      0,
-                      0
+                      -18,
+                      -6
                     ],
                     "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                     "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -12644,8 +12644,8 @@
                       "Lack of Cohesion Of Methods - LCOM": 1.0
                     },
                     "thresholds": [
-                      0,
-                      0
+                      -9,
+                      -3
                     ],
                     "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                     "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -12712,8 +12712,8 @@
                       "NOC - Number Of Children": 0.5
                     },
                     "thresholds": [
-                      0,
-                      0
+                      -18,
+                      -6
                     ],
                     "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                     "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -12762,8 +12762,8 @@
                       "RFC - Response For Class": 0.5
                     },
                     "thresholds": [
-                      0,
-                      0
+                      -18,
+                      -6
                     ],
                     "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                     "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -12797,8 +12797,8 @@
                       "Number of direct address accesses": 1.0
                     },
                     "thresholds": [
-                      0,
-                      0
+                      -9,
+                      -3
                     ],
                     "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                     "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -12832,8 +12832,8 @@
                       "NOS - Number Of Statements": 1.0
                     },
                     "thresholds": [
-                      0,
-                      0
+                      -9,
+                      -3
                     ],
                     "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                     "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -12912,8 +12912,8 @@
                       "Volume - Halstead (HV)": 0.25
                     },
                     "thresholds": [
-                      0,
-                      0
+                      -36,
+                      -12
                     ],
                     "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                     "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -12962,8 +12962,8 @@
                       "Number of inputs variables": 0.5
                     },
                     "thresholds": [
-                      0,
-                      0
+                      -9,
+                      -3
                     ],
                     "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                     "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -13021,8 +13021,8 @@
                       "Number of local variables": 1.0
                     },
                     "thresholds": [
-                      0,
-                      0
+                      -9,
+                      -3
                     ],
                     "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                     "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -13071,8 +13071,8 @@
                       "Stack size (number of bytes)": 0.5
                     },
                     "thresholds": [
-                      0,
-                      0
+                      -18,
+                      -6
                     ],
                     "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                     "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -13106,8 +13106,8 @@
                       "Used different global Variables": 1.0
                     },
                     "thresholds": [
-                      0,
-                      0
+                      -9,
+                      -3
                     ],
                     "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                     "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -13159,8 +13159,8 @@
                       "Lack of Cohesion Of Methods - LCOM": 1.0
                     },
                     "thresholds": [
-                      0,
-                      0
+                      -9,
+                      -3
                     ],
                     "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                     "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -13227,8 +13227,8 @@
                       "RFC - Response For Class": 0.5
                     },
                     "thresholds": [
-                      0,
-                      0
+                      -18,
+                      -6
                     ],
                     "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                     "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -13262,8 +13262,8 @@
                       "Percentage of comment": 1.0
                     },
                     "thresholds": [
-                      0,
-                      0
+                      -9,
+                      -3
                     ],
                     "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                     "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -13312,8 +13312,8 @@
                       "NOC - Number Of Children": 0.5
                     },
                     "thresholds": [
-                      0,
-                      0
+                      -18,
+                      -6
                     ],
                     "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                     "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -13362,8 +13362,8 @@
                       "Number of SFC branches": 0.5
                     },
                     "thresholds": [
-                      0,
-                      0
+                      -18,
+                      -6
                     ],
                     "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                     "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -13397,8 +13397,8 @@
                       "NOS - Number Of Statements": 1.0
                     },
                     "thresholds": [
-                      0,
-                      0
+                      -9,
+                      -3
                     ],
                     "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                     "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -13477,8 +13477,8 @@
                       "Volume - Halstead (HV)": 0.25
                     },
                     "thresholds": [
-                      0,
-                      0
+                      -36,
+                      -12
                     ],
                     "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                     "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -13512,8 +13512,8 @@
                       "Used different global Variables": 1.0
                     },
                     "thresholds": [
-                      0,
-                      0
+                      -9,
+                      -3
                     ],
                     "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                     "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -13562,8 +13562,8 @@
                       "Number of inputs variables": 0.5
                     },
                     "thresholds": [
-                      0,
-                      0
+                      -9,
+                      -3
                     ],
                     "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                     "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -13637,8 +13637,8 @@
                       "Number of SFC branches": 0.5
                     },
                     "thresholds": [
-                      0,
-                      0
+                      -18,
+                      -6
                     ],
                     "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                     "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -13705,8 +13705,8 @@
                       "RFC - Response For Class": 0.5
                     },
                     "thresholds": [
-                      0,
-                      0
+                      -18,
+                      -6
                     ],
                     "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                     "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -13740,8 +13740,8 @@
                       "Number of calls": 1.0
                     },
                     "thresholds": [
-                      0,
-                      0
+                      -9,
+                      -3
                     ],
                     "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                     "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -13820,8 +13820,8 @@
                       "Volume - Halstead (HV)": 0.25
                     },
                     "thresholds": [
-                      0,
-                      0
+                      -36,
+                      -12
                     ],
                     "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                     "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -13855,8 +13855,8 @@
                       "Used different global Variables": 1.0
                     },
                     "thresholds": [
-                      0,
-                      0
+                      -9,
+                      -3
                     ],
                     "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                     "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -14009,8 +14009,8 @@
                       "SA0101: Names with invalid length": 1.0
                     },
                     "thresholds": [
-                      0,
-                      0
+                      -1,
+                      -1
                     ],
                     "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                     "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -14499,7 +14499,7 @@
                       "SA0066: Uses of temporary results": 1.0
                     },
                     "thresholds": [
-                      0,
+                      -1,
                       0
                     ],
                     "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
@@ -14569,7 +14569,7 @@
                       "SA0038: Read access to output variable": 1.0
                     },
                     "thresholds": [
-                      0,
+                      -1,
                       0
                     ],
                     "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
@@ -15094,7 +15094,7 @@
                       "SA0033: Unused variables": 1.0
                     },
                     "thresholds": [
-                      0,
+                      -1,
                       0
                     ],
                     "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
@@ -15166,6 +15166,41 @@
                     "thresholds": [
                       0,
                       0
+                    ],
+                    "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
+                    "normalizer": "pique.evaluation.DefaultNormalizer",
+                    "utility_function": {
+                      "name": "pique.evaluation.DefaultUtility",
+                      "description": "Simple linear utility function based on min and max of threshold data"
+                    }
+                  },
+                  "SA0102: Access to program/fb variables from the outside - Score": {
+                    "positive": false,
+                    "name": "SA0102: Access to program/fb variables from the outside - Score",
+                    "value": 0.0,
+                    "description": "Detects external access to local variables of programs or function blocks.",
+                    "children": {
+                      "SA0102: Access to program/fb variables from the outside": {
+                        "toolName": "CODESYS",
+                        "name": "SA0102: Access to program/fb variables from the outside",
+                        "value": 0.0,
+                        "description": "Detects external access to local variables of programs or function blocks.",
+                        "children": {},
+                        "weights": {},
+                        "eval_strategy": "pique.evaluation.DefaultDiagnosticEvaluator",
+                        "normalizer": "pique.evaluation.DefaultNormalizer",
+                        "utility_function": {
+                          "name": "pique.evaluation.DefaultUtility",
+                          "description": "Simple linear utility function based on min and max of threshold data"
+                        }
+                      }
+                    },
+                    "weights": {
+                      "SA0102: Access to program/fb variables from the outside": 1.0
+                    },
+                    "thresholds": [
+                      -1,
+                      -1
                     ],
                     "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                     "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -15584,7 +15619,7 @@
                       "SA0062: Uses of TRUE or FALSE in expressions": 1.0
                     },
                     "thresholds": [
-                      0,
+                      -1,
                       0
                     ],
                     "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
@@ -15829,7 +15864,7 @@
                       "SA0040: Possible division by zero": 1.0
                     },
                     "thresholds": [
-                      0,
+                      -1,
                       0
                     ],
                     "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
@@ -15864,8 +15899,8 @@
                       "SA0031: Unused signatures": 1.0
                     },
                     "thresholds": [
-                      0,
-                      0
+                      -1,
+                      -1
                     ],
                     "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                     "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -16284,8 +16319,8 @@
                       "SA0162: Missing comments": 1.0
                     },
                     "thresholds": [
-                      0,
-                      0
+                      -1,
+                      -1
                     ],
                     "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
                     "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -17054,7 +17089,7 @@
                       "SA0130: Implicit expanding conversions": 1.0
                     },
                     "thresholds": [
-                      0,
+                      -1,
                       0
                     ],
                     "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
@@ -17404,7 +17439,7 @@
                       "SA0024: Untyped literals / constants": 1.0
                     },
                     "thresholds": [
-                      0,
+                      -1,
                       0
                     ],
                     "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
@@ -17542,41 +17577,6 @@
                     },
                     "weights": {
                       "SA0105: Multiple instance calls": 1.0
-                    },
-                    "thresholds": [
-                      0,
-                      0
-                    ],
-                    "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
-                    "normalizer": "pique.evaluation.DefaultNormalizer",
-                    "utility_function": {
-                      "name": "pique.evaluation.DefaultUtility",
-                      "description": "Simple linear utility function based on min and max of threshold data"
-                    }
-                  },
-                  "A0102: Access to program/fb variables from the outside - Score": {
-                    "positive": false,
-                    "name": "A0102: Access to program/fb variables from the outside - Score",
-                    "value": 0.0,
-                    "description": "Detects external access to local variables of programs or function blocks.",
-                    "children": {
-                      "A0102: Access to program/fb variables from the outside": {
-                        "toolName": "CODESYS",
-                        "name": "A0102: Access to program/fb variables from the outside",
-                        "value": 0.0,
-                        "description": "Detects external access to local variables of programs or function blocks.",
-                        "children": {},
-                        "weights": {},
-                        "eval_strategy": "pique.evaluation.DefaultDiagnosticEvaluator",
-                        "normalizer": "pique.evaluation.DefaultNormalizer",
-                        "utility_function": {
-                          "name": "pique.evaluation.DefaultUtility",
-                          "description": "Simple linear utility function based on min and max of threshold data"
-                        }
-                      }
-                    },
-                    "weights": {
-                      "A0102: Access to program/fb variables from the outside": 1.0
                     },
                     "thresholds": [
                       0,
@@ -18011,6 +18011,7 @@
                   "SA0033: Unused variables - Score": 0.008695652173913043478260870,
                   "SA0121: Missing 'VAR_EXTERNAL' declarations - Score": 0.008695652173913043478260870,
                   "SA0044: Declarations with reference to interface - Score": 0.008695652173913043478260870,
+                  "SA0102: Access to program/fb variables from the outside - Score": 0.008695652173913043478260870,
                   "SA0133: Explicit narrowing conversions - Score": 0.008695652173913043478260870,
                   "SA0002: Empty objects - Score": 0.008695652173913043478260870,
                   "SA0081: Upper border is not a constant - Score": 0.008695652173913043478260870,
@@ -18079,7 +18080,6 @@
                   "SA0035: Unused input variables - Score": 0.008695652173913043478260870,
                   "SA0037: Write access to input variable - Score": 0.008695652173913043478260870,
                   "SA0105: Multiple instance calls - Score": 0.008695652173913043478260870,
-                  "A0102: Access to program/fb variables from the outside - Score": 0.008695652173913043478260870,
                   "SA0134: Explicit signed/unsigned conversions - Score": 0.008695652173913043478260870,
                   "SA0131: Implicit narrowing conversions - Score": 0.008695652173913043478260870,
                   "SA0119:Object-oriented features - Score": 0.008695652173913043478260870,
@@ -18272,8 +18272,8 @@
         "SA0101: Names with invalid length": 1.0
       },
       "thresholds": [
-        0,
-        0
+        -1,
+        -1
       ],
       "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
       "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -18342,8 +18342,8 @@
         "Number of calls": 1.0
       },
       "thresholds": [
-        0,
-        0
+        -9,
+        -3
       ],
       "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
       "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -18412,8 +18412,8 @@
         "Number of direct address accesses": 1.0
       },
       "thresholds": [
-        0,
-        0
+        -9,
+        -3
       ],
       "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
       "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -18742,8 +18742,8 @@
         "Stack size (number of bytes)": 0.5
       },
       "thresholds": [
-        0,
-        0
+        -18,
+        -6
       ],
       "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
       "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -18882,7 +18882,7 @@
         "SA0066: Uses of temporary results": 1.0
       },
       "thresholds": [
-        0,
+        -1,
         0
       ],
       "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
@@ -18970,7 +18970,7 @@
         "SA0038: Read access to output variable": 1.0
       },
       "thresholds": [
-        0,
+        -1,
         0
       ],
       "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
@@ -19160,8 +19160,8 @@
         "NOC - Number Of Children": 0.5
       },
       "thresholds": [
-        0,
-        0
+        -18,
+        -6
       ],
       "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
       "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -19210,8 +19210,8 @@
         "RFC - Response For Class": 0.5
       },
       "thresholds": [
-        0,
-        0
+        -18,
+        -6
       ],
       "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
       "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -19420,8 +19420,8 @@
         "Lack of Cohesion Of Methods - LCOM": 1.0
       },
       "thresholds": [
-        0,
-        0
+        -9,
+        -3
       ],
       "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
       "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -19630,7 +19630,7 @@
         "SA0033: Unused variables": 1.0
       },
       "thresholds": [
-        0,
+        -1,
         0
       ],
       "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
@@ -19702,6 +19702,41 @@
       "thresholds": [
         0,
         0
+      ],
+      "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
+      "normalizer": "pique.evaluation.DefaultNormalizer",
+      "utility_function": {
+        "name": "pique.evaluation.DefaultUtility",
+        "description": "Simple linear utility function based on min and max of threshold data"
+      }
+    },
+    "SA0102: Access to program/fb variables from the outside - Score": {
+      "positive": false,
+      "name": "SA0102: Access to program/fb variables from the outside - Score",
+      "value": 0.0,
+      "description": "Detects external access to local variables of programs or function blocks.",
+      "children": {
+        "SA0102: Access to program/fb variables from the outside": {
+          "toolName": "CODESYS",
+          "name": "SA0102: Access to program/fb variables from the outside",
+          "value": 0.0,
+          "description": "Detects external access to local variables of programs or function blocks.",
+          "children": {},
+          "weights": {},
+          "eval_strategy": "pique.evaluation.DefaultDiagnosticEvaluator",
+          "normalizer": "pique.evaluation.DefaultNormalizer",
+          "utility_function": {
+            "name": "pique.evaluation.DefaultUtility",
+            "description": "Simple linear utility function based on min and max of threshold data"
+          }
+        }
+      },
+      "weights": {
+        "SA0102: Access to program/fb variables from the outside": 1.0
+      },
+      "thresholds": [
+        -1,
+        -1
       ],
       "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
       "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -19785,8 +19820,8 @@
         "Number of SFC branches": 0.5
       },
       "thresholds": [
-        0,
-        0
+        -18,
+        -6
       ],
       "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
       "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -19855,8 +19890,8 @@
         "Number of calls": 1.0
       },
       "thresholds": [
-        0,
-        0
+        -9,
+        -3
       ],
       "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
       "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -20205,7 +20240,7 @@
         "SA0062: Uses of TRUE or FALSE in expressions": 1.0
       },
       "thresholds": [
-        0,
+        -1,
         0
       ],
       "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
@@ -20345,8 +20380,8 @@
         "Number of local variables": 1.0
       },
       "thresholds": [
-        0,
-        0
+        -9,
+        -3
       ],
       "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
       "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -20485,7 +20520,7 @@
         "SA0040: Possible division by zero": 1.0
       },
       "thresholds": [
-        0,
+        -1,
         0
       ],
       "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
@@ -20520,8 +20555,8 @@
         "SA0031: Unused signatures": 1.0
       },
       "thresholds": [
-        0,
-        0
+        -1,
+        -1
       ],
       "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
       "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -20940,8 +20975,8 @@
         "SA0162: Missing comments": 1.0
       },
       "thresholds": [
-        0,
-        0
+        -1,
+        -1
       ],
       "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
       "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -21045,8 +21080,8 @@
         "Used different global Variables": 1.0
       },
       "thresholds": [
-        0,
-        0
+        -9,
+        -3
       ],
       "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
       "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -21095,8 +21130,8 @@
         "Number of inputs variables": 0.5
       },
       "thresholds": [
-        0,
-        0
+        -9,
+        -3
       ],
       "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
       "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -21390,8 +21425,8 @@
         "NOC - Number Of Children": 0.5
       },
       "thresholds": [
-        0,
-        0
+        -18,
+        -6
       ],
       "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
       "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -21545,8 +21580,8 @@
         "Number of SFC branches": 0.5
       },
       "thresholds": [
-        0,
-        0
+        -18,
+        -6
       ],
       "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
       "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -21580,8 +21615,8 @@
         "NOS - Number Of Statements": 1.0
       },
       "thresholds": [
-        0,
-        0
+        -9,
+        -3
       ],
       "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
       "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -21860,8 +21895,8 @@
         "Percentage of comment": 1.0
       },
       "thresholds": [
-        0,
-        0
+        -9,
+        -3
       ],
       "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
       "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -21965,7 +22000,7 @@
         "SA0130: Implicit expanding conversions": 1.0
       },
       "thresholds": [
-        0,
+        -1,
         0
       ],
       "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
@@ -22315,7 +22350,7 @@
         "SA0024: Untyped literals / constants": 1.0
       },
       "thresholds": [
-        0,
+        -1,
         0
       ],
       "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
@@ -22465,41 +22500,6 @@
         "description": "Simple linear utility function based on min and max of threshold data"
       }
     },
-    "A0102: Access to program/fb variables from the outside - Score": {
-      "positive": false,
-      "name": "A0102: Access to program/fb variables from the outside - Score",
-      "value": 0.0,
-      "description": "Detects external access to local variables of programs or function blocks.",
-      "children": {
-        "A0102: Access to program/fb variables from the outside": {
-          "toolName": "CODESYS",
-          "name": "A0102: Access to program/fb variables from the outside",
-          "value": 0.0,
-          "description": "Detects external access to local variables of programs or function blocks.",
-          "children": {},
-          "weights": {},
-          "eval_strategy": "pique.evaluation.DefaultDiagnosticEvaluator",
-          "normalizer": "pique.evaluation.DefaultNormalizer",
-          "utility_function": {
-            "name": "pique.evaluation.DefaultUtility",
-            "description": "Simple linear utility function based on min and max of threshold data"
-          }
-        }
-      },
-      "weights": {
-        "A0102: Access to program/fb variables from the outside": 1.0
-      },
-      "thresholds": [
-        0,
-        0
-      ],
-      "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
-      "normalizer": "pique.evaluation.DefaultNormalizer",
-      "utility_function": {
-        "name": "pique.evaluation.DefaultUtility",
-        "description": "Simple linear utility function based on min and max of threshold data"
-      }
-    },
     "Complexity and length of source code": {
       "positive": false,
       "name": "Complexity and length of source code",
@@ -22570,8 +22570,8 @@
         "Volume - Halstead (HV)": 0.25
       },
       "thresholds": [
-        0,
-        0
+        -36,
+        -12
       ],
       "eval_strategy": "pique.evaluation.DefaultMeasureEvaluator",
       "normalizer": "pique.evaluation.DefaultNormalizer",
@@ -24087,6 +24087,20 @@
         "description": "Simple linear utility function based on min and max of threshold data"
       }
     },
+    "SA0102: Access to program/fb variables from the outside": {
+      "toolName": "CODESYS",
+      "name": "SA0102: Access to program/fb variables from the outside",
+      "value": 0.0,
+      "description": "Detects external access to local variables of programs or function blocks.",
+      "children": {},
+      "weights": {},
+      "eval_strategy": "pique.evaluation.DefaultDiagnosticEvaluator",
+      "normalizer": "pique.evaluation.DefaultNormalizer",
+      "utility_function": {
+        "name": "pique.evaluation.DefaultUtility",
+        "description": "Simple linear utility function based on min and max of threshold data"
+      }
+    },
     "SA0120: Program calls": {
       "toolName": "CODESYS",
       "name": "SA0120: Program calls",
@@ -24484,20 +24498,6 @@
       "name": "Number of direct address accesses",
       "value": 0.0,
       "description": "Number of direct address accesses",
-      "children": {},
-      "weights": {},
-      "eval_strategy": "pique.evaluation.DefaultDiagnosticEvaluator",
-      "normalizer": "pique.evaluation.DefaultNormalizer",
-      "utility_function": {
-        "name": "pique.evaluation.DefaultUtility",
-        "description": "Simple linear utility function based on min and max of threshold data"
-      }
-    },
-    "A0102: Access to program/fb variables from the outside": {
-      "toolName": "CODESYS",
-      "name": "A0102: Access to program/fb variables from the outside",
-      "value": 0.0,
-      "description": "Detects external access to local variables of programs or function blocks.",
       "children": {},
       "weights": {},
       "eval_strategy": "pique.evaluation.DefaultDiagnosticEvaluator",

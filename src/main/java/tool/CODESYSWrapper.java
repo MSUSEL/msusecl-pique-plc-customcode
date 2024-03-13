@@ -25,52 +25,31 @@ package tool;
 import com.google.common.collect.HashBasedTable;
 import com.google.common.collect.Table;
 import com.google.common.primitives.Doubles;
-import com.opencsv.CSVReader;
+import model.MetricFinding;
 import model.RuleFinding;
 import org.apache.commons.compress.utils.FileNameUtils;
 import org.apache.commons.lang3.tuple.ImmutablePair;
 import org.apache.commons.lang3.tuple.Pair;
-import org.checkerframework.checker.units.qual.C;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import pique.analysis.ITool;
 import pique.analysis.Tool;
 import pique.model.Diagnostic;
 import pique.model.Finding;
-import pique.utility.FileUtility;
-import pique.utility.PiqueProperties;
 
 import utilities.helperFunctions;
 
-import javax.swing.border.LineBorder;
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.*;
+
+import static java.util.Objects.requireNonNull;
 
 /**
  * This class wraps the CODESYS static analysis tool. It initializes
  * the tool, gets the output, and parses that output into a model
  * that can be interpreted in PIQUE.
- *
- * IMPORTANT regarding metrics output!!!
- * There are currently some problems in this class. Parsing the metrics file
- * is not straightforward and the following questions need to be answered before
- * we can have confidence in our model.
- *
- * How general is our metrics-output.txt oracle? If it is not representative
- * of all possible CODESYS output, then parseAnalysis() is much too fragile
- * to handle the general case.
- *
- * Why does metrics-output.txt not include values for the last column? In the
- * output, that column name is on a separate line from the rest.
- *
- * Do the metrics ever output negative values? The Table data structure being
- * used cannot accept null or empty values, and 0 is in the range of possible
- * output values. Therefore, negative numbers are used to represent nulls in the
- * intermediate step between tool-output file, and PIQUE model.
  */
 public class CODESYSWrapper extends Tool implements ITool {
     private static final Logger LOGGER = LoggerFactory.getLogger(CODESYSWrapper.class);
@@ -87,8 +66,7 @@ public class CODESYSWrapper extends Tool implements ITool {
      */
     @Override
     public Path analyze(Path projectLocation) {
-        System.out.println("in project location");
-
+        //skip this until we get the ability to run codesys on cli
         return projectLocation;
     }
 
@@ -102,60 +80,84 @@ public class CODESYSWrapper extends Tool implements ITool {
     public Map<String, Diagnostic> parseAnalysis(Path toolResults) {
         //toolResults is a directory with 2 files, metrics and rules
 
-        // Add some logic around checking that tool-output files exist
-        // send both files here and logic to swtich based on file type
+        // Add some error handling around checking that tool-output files exist
 
-        System.out.println(this.getName() + " Parsing Analysis...");
-        LOGGER.debug(this.getName() + " Parsing Analysis...");
+        System.out.println("Parsing analysis from " + this.getName() + " on project: " + toolResults);
+        LOGGER.debug("Parsing analysis from " + this.getName() + " on project: " + toolResults);
 
-        HashMap<String, Pair<Path, Path>> benchmarkProjects = new HashMap<>();
+        Pair<Path, Path> benchmarkProjects;
+        Path metricsFile = toolResults;
+        Path rulesFile = toolResults;
         // loop through every directory in benchmarks
-        for (File benchmarkDirectory : toolResults.toFile().listFiles()) {
-            if (benchmarkDirectory.isDirectory()) {
-                Path metricsFile = benchmarkDirectory.toPath();
-                Path rulesFile = benchmarkDirectory.toPath();
-                for(File benchmarkOutputFile : benchmarkDirectory.listFiles()) {
-                    String extension = FileNameUtils.getExtension(benchmarkOutputFile.getName());
-                    if (extension.equals("csv")) {
-                        metricsFile = benchmarkOutputFile.toPath();
-                    } else if (extension.equals("txt")) {
-                        rulesFile = benchmarkOutputFile.toPath();
-                    } else {
-                        LOGGER.debug("Unknown file extension in benchmark repository: " + benchmarkOutputFile.getName());
-                        System.out.println("Unknown file extension in benchmark repository: " + benchmarkOutputFile.getName());
-                    }
+        if (toolResults.toFile().isDirectory()) {
+            for(File benchmarkOutputFile : requireNonNull(toolResults.toFile().listFiles())) {
+                String extension = FileNameUtils.getExtension(benchmarkOutputFile.getName());
+                if (extension.equals("csv")) {
+                    metricsFile = benchmarkOutputFile.toPath();
+                } else if (extension.equals("txt")) {
+                    rulesFile = benchmarkOutputFile.toPath();
+                } else {
+                    LOGGER.debug("Unknown file extension in benchmark repository: " + benchmarkOutputFile.getName());
+                    System.out.println("Unknown file extension in benchmark repository: " + benchmarkOutputFile.getName());
                 }
-                benchmarkProjects.put(benchmarkDirectory.getName(), new ImmutablePair<>(metricsFile, rulesFile));
             }
         }
+        benchmarkProjects = new ImmutablePair<>(metricsFile, rulesFile);
 
         Map<String, Diagnostic> diagnostics = helperFunctions.initializeDiagnostics(this.getName());
+        Map<String, String> diagKeyMap = separateIdAndDescription(diagnostics);
 
-        for (String key: benchmarkProjects.keySet()) {
-            for (String diagnosticKey : diagnostics.keySet()) {
-
+        //parse rules
+        List<List<String>> formattedRulesOutput= parseRules(benchmarkProjects.getRight());
+        for (List<String> row : formattedRulesOutput) {
+            String key = generateDiagnosticsKeyFromRulesOutput(row.get(0), diagKeyMap);
+            Diagnostic diag = diagnostics.get(key);
+            if (diag != null) {
+                Finding f = new RuleFinding(benchmarkProjects.getRight().toString(), row.get(0), row.get(1), -1);
+                //necessary to add more than one child
+                f.setName(row.get(0) + " - " + row.get(1));
+                diag.setChild(f);
+                diagnostics.put(key, diag);
             }
-
-            //parse metrics
-//            Table<String, String, Double> formattedMetricsOutput= parseMetrics(benchmarkProjects.get(key).getLeft());
-//
-//            //parse rules into Findings
-//            List<List<String>> formattedRulesOutput= parseRules(benchmarkProjects.get(key).getRight());
-//            for (List<String> row : formattedRulesOutput) {
-//                Finding f = new RuleFinding(benchmarkProjects.get(key).getRight().toString(), row.get(0), row.get(1), -1);
-//                f.setName(row.get(0));
-//            }
         }
 
-        // Once I have a finding object, what do I do with it?
-        //  Loop through all diagnostics
-        //      Get diagnostic name - key through findings and count number of times finding (e.g. SA0101) appears
-        //      Probably going to need separate findings for rules and metrics
+        //parse metrics
+        Table<String, String, Double> formattedMetricsOutput= parseMetrics(benchmarkProjects.getLeft());
 
-        //Finding f = new Finding(formattedRulesOutput.get()); //getSeverityFromModel);
-
-
+        //columns are metric names, loop through them all
+        for (String column : formattedMetricsOutput.columnKeySet()){
+            Diagnostic diag = diagnostics.get(column);
+            if (diag != null){
+                //rows are individual program metric values
+                for (String row : formattedMetricsOutput.rowKeySet()){
+                    Finding f = new MetricFinding(benchmarkProjects.getLeft().toString(), formattedMetricsOutput.get(row, column), -1);
+                    f.setName(row + " - " + column);
+                    diag.setChild(f);
+                }
+            }else{
+                LOGGER.info("PLCOpen has not mapped metric: {" + column + "} to a quality attribute, therefore it is " +
+                        "not included in the model definition.");
+            }
+        }
         return diagnostics;
+    }
+
+    private Map<String, String> separateIdAndDescription(Map<String, Diagnostic> diagnostics) {
+        Map<String, String> diagKeyBuilder = new HashMap<>();
+        for (String key : diagnostics.keySet()) {
+            if (key.contains("SA")) {
+                String[] defs = key.split(":");
+                diagKeyBuilder.put(defs[0], defs[1]);
+            }
+        }
+        return diagKeyBuilder;
+    }
+
+    private String generateDiagnosticsKeyFromRulesOutput(String rulesOutputLine, Map<String, String> keyBuilder) {
+        String[] keyValuePair = rulesOutputLine.split(":");
+        String diagnosticsValue = keyBuilder.get(keyValuePair[0]);
+
+        return keyValuePair[0] + ":" + diagnosticsValue;
     }
 
     /**
@@ -164,7 +166,6 @@ public class CODESYSWrapper extends Tool implements ITool {
     @Override
     public Path initialize(Path toolRoot) {
         System.out.println("Initializing");
-        // TODO We need to know how to initialize the CODESYS static analysis tool
         return toolRoot;
     }
 
@@ -172,17 +173,12 @@ public class CODESYSWrapper extends Tool implements ITool {
      * Parses the metrics output of CODESYS tool
      *
      * @param toolOutput is a path to the directory containing tool output files
-     * @return an JSONObject of diagnostic(finding?) information to be mapped in parseAnalysis()
+     * @return a Table of information to be mapped in parseAnalysis()
      */
     public Table<String, String, Double> parseMetrics(Path toolOutput) {
-        // Will these filenames always be the same or do we need a cleverer way to grab each file?
-        //final String metricsOutput = "metrics-output.txt";
-
-        //final String metricsOutput = "MidtermESET_2205_2023-Metrics.csv";
         int columnDefinitionLines = 2;  // There are two lines at the top of the example output file that define "columns" in the output
-        int ignoreLines;
-        String fileType;
-        String delimiter;
+        String delimiter = ";";
+        int ignoreLines = 3;
         Table<String, String, Double> formattedToolOuput = HashBasedTable.create();
         String metrics = "";    // This will be the tool output metrics file
 
@@ -194,21 +190,11 @@ public class CODESYSWrapper extends Tool implements ITool {
 
         String[] lines = metrics.split("\n");
 
-        fileType = checkFileFormat(toolOutput.toString());
-        if (fileType.equals(".csv") || fileType.equals(".CSV")) {
-            delimiter = ";";
-            ignoreLines = 3;
-        } else {
-            delimiter = "\t";
-            ignoreLines = 0;
-        }
-
         // parse lines of output that define columns
         ArrayList<String> columnKeys = new ArrayList<>();
-
         for (int i = ignoreLines; i < columnDefinitionLines + ignoreLines; i++) {
             String[] columnNames = lines[i].trim().split(delimiter);
-            String[] trimmedColumnNames = new String[columnNames.length - 1];   // need a better way to do this
+            String[] trimmedColumnNames;   // need a better way to do this
             if (Objects.equals(columnNames[0], "")) {
                 trimmedColumnNames = Arrays.copyOfRange(columnNames, 1, columnNames.length);
                 Collections.addAll(columnKeys, trimmedColumnNames);
@@ -239,24 +225,15 @@ public class CODESYSWrapper extends Tool implements ITool {
     /**
      * Parses the rules output of CODESYS tool
      *
-     * Questions:
-     * What information from this file do we actually use?
-     * Every line contains "[ERROR]", "Final Exam:", and "[Device: PLC Logic: Final_Proj]"
-     * Do these values ever change - eg [WARNING]? or [Device: <name>: <run name>?"
-     * First version of this method includes all parts of the line in case there are other options
-     *
      * @param toolOutput is a path to the directory containing tool output files
-     * @return an JSONObject of diagnostic(finding?) information to be mapped in parseAnalysis()
+     * @return a List of list of strings representing diagnostic information to be mapped in parseAnalysis()
      */
     public List<List<String>> parseRules(Path toolOutput) {
-        // Always this filename?
-        final String rulesOutput = "static-analysis-output-all_rules_metrics_turnedon.txt";
-
         String rules = "";
         // Read in tool output
         //example line: [ERROR]         Final Exam: CookieProcess [Device: PLC Logic: Final_Proj](Line 3 (Decl)): SA0033:  Unused Variable 'StartPB'
         try {
-            rules = helperFunctions.readFileContent(toolOutput.resolve(rulesOutput));
+            rules = helperFunctions.readFileContent(toolOutput);
         } catch (IOException e) {
             LOGGER.info("No results to read from CODESYS.");
         }
@@ -271,8 +248,6 @@ public class CODESYSWrapper extends Tool implements ITool {
      * @return formattedOutput An ArrayList containing ArrayLists of strings representing findings associated with a specific standard
      */
     private List<List<String>> formatRulesOutput(String rules) {
-        // The number of lines at the top of the file that proved lables rather than static analysis
-        // This might only ever say "static analysis" in which case, titleLines can be removed.
         int titleLines = 1;
         List<List<String>> formattedOutput = new ArrayList<>();
         String[] lines = rules.trim().split("\n");
@@ -316,14 +291,5 @@ public class CODESYSWrapper extends Tool implements ITool {
         }
 
         return severityInt;
-    }
-
-    private String checkFileFormat(String fileName) {
-        if (fileName.length() < 3) {
-            throw new IllegalArgumentException("fileName does not exist or is improperly formatted");
-        } else {
-            System.out.println(fileName.substring(fileName.length() - 4));
-            return fileName.substring(fileName.length() - 4);
-        }
     }
 }
