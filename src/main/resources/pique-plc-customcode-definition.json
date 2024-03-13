@@ -1,8 +1,8 @@
 {
-  "name": "PIQUE PLC model",
+  "name": "PIQUE PLC model quality model",
   "additionalData": {},
   "global_config": {
-    "benchmark_strategy": "pique.calibration.NaiveBenchmarker",
+    "benchmark_strategy": "calibration.PLCBenchmarker",
     "normalizer": "pique.evaluation.NoNormalizer",
     "weights_strategy": "pique.calibration.NaiveWeighter"
   },
@@ -17,17 +17,17 @@
 			"description": "This product factor captures all rule-based issues presented by the tool CODESYS. The score of this node reflects how many rules have been violated",
 			"eval_strategy": "pique.evaluation.DefaultFactorEvaluator",
 			"children": {
-				"Rule-based Issues": {}
+				"Rule-based Issues - product_factor": {}
 			}
 		},
       "ISO-25010": {
         "description": "degree to which the code reflects the quality properties outlined in the ISO 25010:2011 software product quality model",
         "eval_strategy": "pique.evaluation.DefaultFactorEvaluator",
 		"children": {
-			"Reliability": {}
-			"Efficiency": {}
-			"Maintainability": {}
-			"Reusability": {}
+			"Reliability": {},
+			"Efficiency": {},
+			"Maintainability": {},
+			"Reusability": {},
 			"Testability": {}
 		}
       },
@@ -35,10 +35,10 @@
         "description": "degree to which the code cannot cause harm to individuals, damage to the product or industrial process, or adverse impacts to the environment.",
         "eval_strategy": "pique.evaluation.DefaultFactorEvaluator",
 		"children": {
-			"Data Validity": {}
-			"Process state awareness": {}
-			"State exclusivity": {}
-			"Configuration awareness": {}
+			"Data Validity": {},
+			"Process state awareness": {},
+			"State exclusivity": {},
+			"Configuration awareness": {},
 			"Conservativity": {}
 		}
       },
@@ -46,14 +46,14 @@
         "description": "degree to which the code is vulnerable, from both a hardware and a software level",
         "eval_strategy": "pique.evaluation.DefaultFactorEvaluator",
 		"children": {
-			"Hardware Based (Physical) Error": {}
+			"Hardware Based (Physical) Error": {},
 			"Software Based (Virtual) Errors": {}
 		}
       }
     },
     "product_factors": {
-	  "Rule-based Issues": {
-        "name": "Rule-based Issues",
+	  "Rule-based Issues - product_factor": {
+        "name": "Rule-based Issues - product_factor",
         "description": "This product factor captures all rule-based issues presented by the tool CODESYS. The score of this node reflects how many rules have been violated",
         "eval_strategy": "pique.evaluation.DefaultProductFactorEvaluator",
         "children": {
@@ -176,7 +176,7 @@
       },
 	  "Reliability": {
         "name": "Reliability",
-        "description": "From McCall: Extent to which a program satisfies its specifications and fulfills the user’s mission objectives (sub-characteristicof product operation)\n From ISO 25010: Degree to which a system, product or component performs specified functions under specified conditions for a specified period of time. Sub-characteristic maturity: Degree to which a system, product or component meets needs for reliability under normal operation.",
+        "description": "From McCall: Extent to which a program satisfies its specifications and fulfills the user’s mission objectives (sub-characteristicof product operation) From ISO 25010: Degree to which a system, product or component performs specified functions under specified conditions for a specified period of time. Sub-characteristic maturity: Degree to which a system, product or component meets needs for reliability under normal operation.",
         "eval_strategy": "pique.evaluation.DefaultProductFactorEvaluator",
         "children": {
           "Number of transitions in SFC": {},
@@ -393,7 +393,7 @@
       "description": "Detects variables with names that are already used by other variables (for example, global and local variables with the same name). Also detects variables with names of functions, actions, methods, or properties which are used in the same access scope. Variables are also detected that are declared in a GVL in the Devices view or in the POUs pool. For this, however, the GVL of the POUs view have to be used in the application program.",
 	  "positive": "false",
 	  "children": {
-		  "SA0013: Declarations with the same variable name - Score": {}
+		  "SA0013: Declarations with the same variable name": {}
 	  }
 	},
 	"SA0014: Assignment of instances - Score": {
@@ -734,7 +734,7 @@
 	},
 	"SA0060: Zero used as invalid operand - Score": {
       "toolName": "CODESYS",
-      "description": "Detects operations where an operand with the value "0" causes an invalid or a nonsense operation",
+      "description": "Detects operations where an operand with the value \"0\" causes an invalid or a nonsense operation",
 	  "positive": "false",
 	  "children": {
 		  "SA0060: Zero used as invalid operand": {}
@@ -1225,7 +1225,7 @@
       "positive": "false",
       "description": "Number of steps, transitions, branches in SFC",
       "children": {
-        "Number of SFC branches": {}
+        "Number of SFC branches": {},
         "Number of SFC steps": {}
       }
     },
@@ -1242,8 +1242,8 @@
       "positive": "false",
       "description": "POU interfaces",
       "children": {
-        "Number of inputs variables": {}
-        "Number of output variables": {}
+        "Number of inputs variables": {},
+        "Number of outputs variables": {}
       }
     },
     "Comments in the source code": {
@@ -1259,7 +1259,7 @@
       "positive": "false",
       "description": "Depth of inheritance",
       "children": {
-        "DIT - Depth of Inheritance Tree": {}
+        "DIT - Depth of Inheritance Tree": {},
         "NOC - Number Of Children": {}
       }
     },
@@ -1276,7 +1276,7 @@
       "positive": "false",
       "description": "Coupling of objects to the environment",
       "children": {
-        "RFC - Response For Class": {}
+        "RFC - Response For Class": {},
         "CBO - Coupling Between Objects": {}
       }
     },
@@ -1285,9 +1285,9 @@
       "positive": "false",
       "description": "Complexity and length of source code",
       "children": {
-        "Difficulty - Halstead (D)": {}
-        "Volume - Halstead (HV)": {}
-        "Length - Halstead (HL)": {}
+        "Difficulty - Halstead (D)": {},
+        "Volume - Halstead (HV)": {},
+        "Length - Halstead (HL)": {},
         "Complexity (McCabe)": {}
       }
     },
@@ -1303,7 +1303,7 @@
       "positive": "false",
       "description": "Number of transitions in SFC",
       "children": {
-        "Number of SFC branches": {}
+        "Number of SFC branches": {},
         "Number of SFC steps": {}
       }
     },
@@ -1320,7 +1320,7 @@
       "positive": "true",
       "description": "Usage of inheritance",
       "children": {
-		  "DIT - Depth of Inheritance Tree": {}
+		  "DIT - Depth of Inheritance Tree": {},
 		  "NOC - Number Of Children": {}
       }
     },
@@ -1337,7 +1337,7 @@
       "positive": "false",
       "description": "Memory allocation",
       "children": {
-		  "Code size (number of bytes)": {}
+		  "Code size (number of bytes)": {},
 		  "Stack size (number of bytes)": {}
       }
     },
@@ -1356,7 +1356,7 @@
       "children": {
 		  "Number of calls": {}
       }
-    },
+    }
 	
   },
   "diagnostics": {
@@ -1637,7 +1637,7 @@
 	},
 	"SA0060: Zero used as invalid operand": {
       "toolName": "CODESYS",
-      "description": "Detects operations where an operand with the value "0" causes an invalid or a nonsense operation",
+      "description": "Detects operations where an operand with the value \"0\" causes an invalid or a nonsense operation",
 	  "importance": "Medium"
 	},
 	"SA0061: Unusual operation on pointer": {
@@ -1934,186 +1934,186 @@
       "toolName": "CODESYS",
       "description": "Detects declarations of enumerations which are not provided with the {attribute 'strict'} attribute.",
 	  "importance": "High"
-	}
-	"Code Size (number of bytes)":{
+	},
+	"Code size (number of bytes)":{
 	  "toolName": "CODESYS",
       "description": "Code size in bytes",
-	  "importance": "Unknown"
+	  "importance": "Unknown",
+		"eval_strategy": "evaluation.MetricDiagnosticEvaluator"
 	},
-	"Variable Size (number of bytes)":{
+	"Variable size (number of bytes)":{
 	  "toolName": "CODESYS",
       "description": "Variable size in bytes",
-	  "importance": "Unknown"
+	  "importance": "Unknown",
+		"eval_strategy": "evaluation.MetricDiagnosticEvaluator"
 	},
-	"Stack Size (number of bytes)":{
+	"Stack size (number of bytes)":{
 	  "toolName": "CODESYS",
       "description": "Stack size in bytes",
-	  "importance": "Unknown"
+	  "importance": "Unknown",
+		"eval_strategy": "evaluation.MetricDiagnosticEvaluator"
 	},
 	"Number of calls":{
 	  "toolName": "CODESYS",
       "description": "Number of calls",
-	  "importance": "Unknown"
+	  "importance": "Unknown",
+		"eval_strategy": "evaluation.MetricDiagnosticEvaluator"
 	},
 	"Called in tasks":{
 	  "toolName": "CODESYS",
       "description": "Called in tasks",
-	  "importance": "Unknown"
+	  "importance": "Unknown",
+		"eval_strategy": "evaluation.MetricDiagnosticEvaluator"
 	},
 	"Used different global Variables":{
 	  "toolName": "CODESYS",
       "description": "Used different global Variables",
-	  "importance": "Unknown"
+	  "importance": "Unknown",
+		"eval_strategy": "evaluation.MetricDiagnosticEvaluator"
 	},
 	"Number of direct address accesses":{
 	  "toolName": "CODESYS",
       "description": "Number of direct address accesses",
-	  "importance": "Unknown"
+	  "importance": "Unknown",
+		"eval_strategy": "evaluation.MetricDiagnosticEvaluator"
 	},
 	"Number of local variables":{
 	  "toolName": "CODESYS",
       "description": "Number of local variables",
-	  "importance": "Unknown"
+	  "importance": "Unknown",
+		"eval_strategy": "evaluation.MetricDiagnosticEvaluator"
 	},
 	"Number of inputs variables":{
 	  "toolName": "CODESYS",
       "description": "Number of inputs variables",
-	  "importance": "Unknown"
+	  "importance": "Unknown",
+		"eval_strategy": "evaluation.MetricDiagnosticEvaluator"
 	},
 	"Number of outputs variables":{
 	  "toolName": "CODESYS",
       "description": "Number of outputs variables",
-	  "importance": "Unknown"
+	  "importance": "Unknown",
+		"eval_strategy": "evaluation.MetricDiagnosticEvaluator"
 	},
 	"NOS - Number Of Statements":{
 	  "toolName": "CODESYS",
       "description": "NOS - Number Of Statements",
-	  "importance": "Unknown"
+	  "importance": "Unknown",
+		"eval_strategy": "evaluation.MetricDiagnosticEvaluator"
 	},
 	"Percentage of comment":{
 	  "toolName": "CODESYS",
       "description": "Percentage of comment",
-	  "importance": "Unknown"
+	  "importance": "Unknown",
+		"eval_strategy": "evaluation.MetricDiagnosticEvaluator"
 	},
 	"Complexity (McCabe)":{
 	  "toolName": "CODESYS",
       "description": "Complexity (McCabe)",
-	  "importance": "Unknown"
+	  "importance": "Unknown",
+		"eval_strategy": "evaluation.MetricDiagnosticEvaluator"
 	},
 	"Complexity of nesting (Prather)":{
 	  "toolName": "CODESYS",
       "description": "Complexity of nesting (Prather)",
-	  "importance": "Unknown"
+	  "importance": "Unknown",
+		"eval_strategy": "evaluation.MetricDiagnosticEvaluator"
 	},
 	"DIT - Depth of Inheritance Tree":{
 	  "toolName": "CODESYS",
       "description": "DIT - Depth of Inheritance Tree",
-	  "importance": "Unknown"
+	  "importance": "Unknown",
+		"eval_strategy": "evaluation.MetricDiagnosticEvaluator"
 	},
 	"NOC - Number Of Children":{
 	  "toolName": "CODESYS",
       "description": "NOC - Number Of Children",
-	  "importance": "Unknown"
+	  "importance": "Unknown",
+		"eval_strategy": "evaluation.MetricDiagnosticEvaluator"
 	},
 	"RFC - Response For Class":{
 	  "toolName": "CODESYS",
       "description": "RFC - Response For Class",
-	  "importance": "Unknown"
+	  "importance": "Unknown",
+		"eval_strategy": "evaluation.MetricDiagnosticEvaluator"
 	},
 	"CBO - Coupling Between Objects":{
 	  "toolName": "CODESYS",
       "description": "CBO - Coupling Between Objects",
-	  "importance": "Unknown"
+	  "importance": "Unknown",
+		"eval_strategy": "evaluation.MetricDiagnosticEvaluator"
 	},
 	"Complexity of reference (Elshof)":{
 	  "toolName": "CODESYS",
       "description": "Complexity of reference (Elshof)",
-	  "importance": "Unknown"
+	  "importance": "Unknown",
+		"eval_strategy": "evaluation.MetricDiagnosticEvaluator"
 	},
 	"Lack of Cohesion Of Methods - LCOM":{
 	  "toolName": "CODESYS",
       "description": "Lack of Cohesion Of Methods - LCOM",
-	  "importance": "Unknown"
+	  "importance": "Unknown",
+		"eval_strategy": "evaluation.MetricDiagnosticEvaluator"
 	},
 	"Number of different used operators - Halstead (n1)":{
 	  "toolName": "CODESYS",
       "description": "Number of different used operators - Halstead (n1)",
-	  "importance": "Unknown"
+	  "importance": "Unknown",
+		"eval_strategy": "evaluation.MetricDiagnosticEvaluator"
 	},
 	"Number of operators - Halstead (N1)":{
 	  "toolName": "CODESYS",
       "description": "Number of operators - Halstead (N1)",
-	  "importance": "Unknown"
+	  "importance": "Unknown",
+		"eval_strategy": "evaluation.MetricDiagnosticEvaluator"
 	},
 	"Number of different used operands - Halstead (n2)":{
 	  "toolName": "CODESYS",
       "description": "Number of different used operands - Halstead (n2)",
-	  "importance": "Unknown"
+	  "importance": "Unknown",
+		"eval_strategy": "evaluation.MetricDiagnosticEvaluator"
 	},
 	"Number of operands - Halstead (N2)":{
 	  "toolName": "CODESYS",
       "description": "Number of operands - Halstead (N2)",
-	  "importance": "Unknown"
+	  "importance": "Unknown",
+		"eval_strategy": "evaluation.MetricDiagnosticEvaluator"
 	},
 	"Length - Halstead (HL)":{
 	  "toolName": "CODESYS",
       "description": "Length - Halstead (HL)",
-	  "importance": "Unknown"
+	  "importance": "Unknown",
+		"eval_strategy": "evaluation.MetricDiagnosticEvaluator"
 	},
 	"Volume - Halstead (HV)":{
 	  "toolName": "CODESYS",
       "description": "Volume - Halstead (HV)",
-	  "importance": "Unknown"
+	  "importance": "Unknown",
+		"eval_strategy": "evaluation.MetricDiagnosticEvaluator"
 	},
 	"Difficulty - Halstead (D)":{
 	  "toolName": "CODESYS",
       "description": "Difficulty - Halstead (D)",
-	  "importance": "Unknown"
+	  "importance": "Unknown",
+		"eval_strategy": "evaluation.MetricDiagnosticEvaluator"
 	},
 	"Number of SFC branches":{
 	  "toolName": "CODESYS",
       "description": "Number of SFC branches",
-	  "importance": "Unknown"
+	  "importance": "Unknown",
+		"eval_strategy": "evaluation.MetricDiagnosticEvaluator"
 	},
 	"Number of SFC steps":{
 	  "toolName": "CODESYS",
       "description": "Number of SFC steps",
-	  "importance": "Unknown"
+	  "importance": "Unknown",
+		"eval_strategy": "evaluation.MetricDiagnosticEvaluator"
 	},
 	"Number of subroutines":{
 	  "toolName": "CODESYS",
       "description": "Number of subroutines in the greater program",
-	  "importance": "Unknown"
-	},
+	  "importance": "Unknown",
+		"eval_strategy": "evaluation.MetricDiagnosticEvaluator"
+	}
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

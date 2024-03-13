@@ -1,0 +1,15 @@
+Min.:
+Max.:
+
+;Code size (number of bytes);Variables size (number of bytes);Stack size (number of bytes);Number of calls;Called in tasks;Used different global Variables;Number of direct address accesses;Number of local variables;Number of inputs variables;Number of output variables;NOS - Number Of Statements;Percentage of comment;Complexity (McCabe);Complexity of nesting (Prather);DIT - Depth of Inheritance Tree;NOC - Number Of Children;RFC - Response For Class;CBO - Coupling Between Objects;Complexity of reference (Elshof);Lack of Cohesion Of Methods - LCOM;Number of different used operators - Halstead (n1);Number of operators - Halstead (N1);Number of different used operands - Halstead (n2);Number of operands - Halstead (N2);Length - Halstead (HL);Volume - Halstead (HV);Difficulty - Halstead (D);Number of SFC branches
+;Number of SFC steps
+
+T_PLC_MS;128;;32;2;;;;;;;;;;;;;;;;;;;;;;;;;
+RDM2;192;;16;2;;;;;;;;;;;;;;;;;;;;;;;;;
+RDM;648;;32;2;;;;;;;;;;;;;;;;;;;;;;;;;
+Main;160;639;0;1;1;0;0;7;0;0;3;0;1;1.00;;;1;;0.89;;4;11;16;18;72;125;2.3;;
+Globale_Variablen;;2236;;;;;;;;;;;;;;;;;;;;;;;;;;;
+GEN_RDM;240;40;16;1;;;;;;;;;;;;;;;;;;;;;;;;;
+FRACT;176;;16;2;;;;;;;;;;;;;;;;;;;;;;;;;
+D_TRUNC;208;;16;1;;;;;;;;;;;;;;;;;;;;;;;;;
+BIT_COUNT;72;;16;2;;;;;;;;;;;;;;;;;;;;;;;;;

@@ -1,0 +1,144 @@
+====
+    MIT License
+
+    Copyright (c) 2024 Montana State University Software Engineering Labs
+
+    Permission is hereby granted, free of charge, to any person obtaining a copy
+    of this software and associated documentation files (the "Software"), to deal
+    in the Software without restriction, including without limitation the rights
+    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+    copies of the Software, and to permit persons to whom the Software is
+    furnished to do so, subject to the following conditions:
+
+    The above copyright notice and this permission notice shall be included in all
+    copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+    SOFTWARE.
+====
+
+                Static analysis...
+[ERROR]         WK6HMKComputation_Comparison: W6PU7_2 [Device: PLC Logic: Application](Line 9 (Decl)): SA0033:  Unused Variable 'newVar'
+[ERROR]         WK6HMKComputation_Comparison: W6PU7_18_LD [Device: PLC Logic: Application](Line 13 (Decl)): SA0033:  Unused Variable 'Low'
+[ERROR]         WK6HMKComputation_Comparison: W6PU7_18_LD [Device: PLC Logic: Application](Line 14 (Decl)): SA0033:  Unused Variable 'Flash'
+[ERROR]         WK6HMKComputation_Comparison: W6PU7_18_LD [Device: PLC Logic: Application](Line 15 (Decl)): SA0033:  Unused Variable 'TON_0'
+[ERROR]         WK6HMKComputation_Comparison: W6PU7_18_LD [Device: PLC Logic: Application](Line 16 (Decl)): SA0033:  Unused Variable 'Elapsed'
+[ERROR]         WK6HMKComputation_Comparison: W6PU7_18_LD [Device: PLC Logic: Application](Line 17 (Decl)): SA0033:  Unused Variable 'Time_0'
+[ERROR]         WK6HMKComputation_Comparison: W6PU7_18_LD [Device: PLC Logic: Application](Line 18 (Decl)): SA0033:  Unused Variable 'TON_O_Out'
+[ERROR]         WK6HMKComputation_Comparison: W6PU7_18_LD [Device: PLC Logic: Application](Line 19 (Decl)): SA0033:  Unused Variable 'TON_1'
+[ERROR]         WK6HMKComputation_Comparison: W6PU7_18_LD [Device: PLC Logic: Application](Line 20 (Decl)): SA0033:  Unused Variable 'ElapsedTime_1'
+[ERROR]         WK6HMKComputation_Comparison: W6PU7_18 [Device: PLC Logic: Application]: SA0031:  Unused Program 'W6PU7_18'
+[ERROR]         WK6HMKComputation_Comparison: W6Pu7_18VIZ [Device: PLC Logic: Application]: SA0031:  Unused Property Get 'Container'
+[ERROR]         WK6HMKComputation_Comparison: W6Pu7_18VIZ [Device: PLC Logic: Application]: SA0031:  Unused Property Get 'Visu'
+[ERROR]         WK6HMKComputation_Comparison: W6Pu7_18VIZ [Device: PLC Logic: Application]: SA0031:  Unused Method 'FB_ReInit'
+[ERROR]         WK6HMKComputation_Comparison: W6PU7_2 [Device: PLC Logic: Application]: SA0162:  Missing comment for 'W6PU7_2'
+[ERROR]         WK6HMKComputation_Comparison: W6PU7_2 [Device: PLC Logic: Application](Line 3 (Decl)): SA0162:  Missing comment for 'ADC_V'
+[ERROR]         WK6HMKComputation_Comparison: W6PU7_2 [Device: PLC Logic: Application](Line 6 (Decl)): SA0162:  Missing comment for 'POut'
+[ERROR]         WK6HMKComputation_Comparison: W6PU7_2 [Device: PLC Logic: Application](Line 6 (Decl)): SA0101:  Incorrect length of name 'POut'
+[ERROR]         WK6HMKComputation_Comparison: W6PU7_2 [Device: PLC Logic: Application](Line 9 (Decl)): SA0162:  Missing comment for 'newVar'
+[ERROR]         WK6HMKComputation_Comparison: W6PU7_2 [Device: PLC Logic: Application](Line 10 (Decl)): SA0162:  Missing comment for 'VSpan1'
+[ERROR]         WK6HMKComputation_Comparison: W6PU7_2 [Device: PLC Logic: Application](Line 11 (Decl)): SA0162:  Missing comment for 'ADC_Zero'
+[ERROR]         WK6HMKComputation_Comparison: W6PU7_2 [Device: PLC Logic: Application](Line 12 (Decl)): SA0162:  Missing comment for 'PSI_Zero'
+[ERROR]         WK6HMKComputation_Comparison: W6PU7_2 [Device: PLC Logic: Application](Line 13 (Decl)): SA0162:  Missing comment for 'PSI_Span'
+[ERROR]         WK6HMKComputation_Comparison: W6PU7_2 [Device: PLC Logic: Application](Line 1, Column 1 (Impl)): SA0066:  Use of temporary result: (((ADC_V - INT_TO_REAL(ADC_Zero)) / INT_TO_REAL(VSpan1)) * INT_TO_REAL(PSI_Span))
+[ERROR]         WK6HMKComputation_Comparison: W6PU7_2 [Device: PLC Logic: Application](Line 1, Column 1 (Impl)): SA0130:  Implicit widening conversion from type 'INT' to type 'REAL'
+[ERROR]         WK6HMKComputation_Comparison: W6PU7_2 [Device: PLC Logic: Application](Line 1, Column 1 (Impl)): SA0130:  Implicit widening conversion from type 'INT' to type 'REAL'
+[ERROR]         WK6HMKComputation_Comparison: W6PU7_2 [Device: PLC Logic: Application](Line 1, Column 1 (Impl)): SA0130:  Implicit widening conversion from type 'INT' to type 'REAL'
+[ERROR]         WK6HMKComputation_Comparison: W6PU7_2 [Device: PLC Logic: Application](Line 1, Column 1 (Impl)): SA0130:  Implicit widening conversion from type 'INT' to type 'REAL'
+[ERROR]         WK6HMKComputation_Comparison: W6PU7_2 [Device: PLC Logic: Application](Line 1, Column 1 (Impl)): SA0040:  Possible division by zero
+[ERROR]         WK6HMKComputation_Comparison: W6PU7_18_LD [Device: PLC Logic: Application](Unknown Position (Impl)): SA0162:  Missing comment for 'W6PU7_18_LD'
+[ERROR]         WK6HMKComputation_Comparison: W6PU7_18_LD [Device: PLC Logic: Application](Network 1 /  (Impl)): SA0162:  Missing comment for network 1 in 'W6PU7_18_LD'
+[ERROR]         WK6HMKComputation_Comparison: W6PU7_18_LD [Device: PLC Logic: Application](Network 2 /  (Impl)): SA0162:  Missing comment for network 2 in 'W6PU7_18_LD'
+[ERROR]         WK6HMKComputation_Comparison: W6PU7_18_LD [Device: PLC Logic: Application](Network 3 /  (Impl)): SA0162:  Missing comment for network 3 in 'W6PU7_18_LD'
+[ERROR]         WK6HMKComputation_Comparison: W6PU7_18_LD [Device: PLC Logic: Application](Network 4 /  (Impl)): SA0162:  Missing comment for network 4 in 'W6PU7_18_LD'
+[ERROR]         WK6HMKComputation_Comparison: W6PU7_18_LD [Device: PLC Logic: Application](Network 5 /  (Impl)): SA0162:  Missing comment for network 5 in 'W6PU7_18_LD'
+[ERROR]         WK6HMKComputation_Comparison: W6PU7_18_LD [Device: PLC Logic: Application](Network 6 /  (Impl)): SA0162:  Missing comment for network 6 in 'W6PU7_18_LD'
+[ERROR]         WK6HMKComputation_Comparison: W6PU7_18_LD [Device: PLC Logic: Application](Network 7 /  (Impl)): SA0162:  Missing comment for network 7 in 'W6PU7_18_LD'
+[ERROR]         WK6HMKComputation_Comparison: W6PU7_18_LD [Device: PLC Logic: Application](Line 3 (Decl)): SA0162:  Missing comment for 'L2151_Meas'
+[ERROR]         WK6HMKComputation_Comparison: W6PU7_18_LD [Device: PLC Logic: Application](Line 6 (Decl)): SA0162:  Missing comment for 'ADC_Z'
+[ERROR]         WK6HMKComputation_Comparison: W6PU7_18_LD [Device: PLC Logic: Application](Line 7 (Decl)): SA0162:  Missing comment for 'ADC_S'
+[ERROR]         WK6HMKComputation_Comparison: W6PU7_18_LD [Device: PLC Logic: Application](Line 8 (Decl)): SA0162:  Missing comment for 'Meter_Span'
+[ERROR]         WK6HMKComputation_Comparison: W6PU7_18_LD [Device: PLC Logic: Application](Line 9 (Decl)): SA0162:  Missing comment for 'Meter_Zero'
+[ERROR]         WK6HMKComputation_Comparison: W6PU7_18_LD [Device: PLC Logic: Application](Line 10 (Decl)): SA0162:  Missing comment for 'LT2151_ALM'
+[ERROR]         WK6HMKComputation_Comparison: W6Pu7_18VIZ [Device: PLC Logic: Application](Element ID 11): SA0102:  Access to program/fb variable 'LT2151_ALM' from the outside
+[ERROR]         WK6HMKComputation_Comparison: W6Pu7_18VIZ [Device: PLC Logic: Application](Element ID 11): SA0102:  Access to program/fb variable 'LT2151_ALM' from the outside
+[ERROR]         WK6HMKComputation_Comparison: W6Pu7_18VIZ [Device: PLC Logic: Application](Element ID 11): SA0102:  Access to program/fb variable 'LT2151_ALM' from the outside
+[ERROR]         WK6HMKComputation_Comparison: W6Pu7_18VIZ [Device: PLC Logic: Application](Element ID 11): SA0102:  Access to program/fb variable 'LT2151_ALM' from the outside
+[ERROR]         WK6HMKComputation_Comparison: W6Pu7_18VIZ [Device: PLC Logic: Application](Element ID 11): SA0102:  Access to program/fb variable 'LT2151_ALM' from the outside
+[ERROR]         WK6HMKComputation_Comparison: W6Pu7_18VIZ [Device: PLC Logic: Application](Element ID 11): SA0102:  Access to program/fb variable 'LT2151_ALM' from the outside
+[ERROR]         WK6HMKComputation_Comparison: W6PU7_18_LD [Device: PLC Logic: Application](Line 11 (Decl)): SA0162:  Missing comment for 'ALM_ACK'
+[ERROR]         WK6HMKComputation_Comparison: W6Pu7_18VIZ [Device: PLC Logic: Application](Element ID 0): SA0102:  Access to program/fb variable 'ALM_ACK' from the outside
+[ERROR]         WK6HMKComputation_Comparison: W6Pu7_18VIZ [Device: PLC Logic: Application](Element ID 0): SA0102:  Access to program/fb variable 'ALM_ACK' from the outside
+[ERROR]         WK6HMKComputation_Comparison: W6Pu7_18VIZ [Device: PLC Logic: Application](Element ID 0): SA0102:  Access to program/fb variable 'ALM_ACK' from the outside
+[ERROR]         WK6HMKComputation_Comparison: W6Pu7_18VIZ [Device: PLC Logic: Application](Element ID 0): SA0102:  Access to program/fb variable 'ALM_ACK' from the outside
+[ERROR]         WK6HMKComputation_Comparison: W6Pu7_18VIZ [Device: PLC Logic: Application](Element ID 0): SA0102:  Access to program/fb variable 'ALM_ACK' from the outside
+[ERROR]         WK6HMKComputation_Comparison: W6Pu7_18VIZ [Device: PLC Logic: Application](Element ID 0): SA0102:  Access to program/fb variable 'ALM_ACK' from the outside
+[ERROR]         WK6HMKComputation_Comparison: W6PU7_18_LD [Device: PLC Logic: Application](Line 12 (Decl)): SA0162:  Missing comment for 'LT2151_LO'
+[ERROR]         WK6HMKComputation_Comparison: W6Pu7_18VIZ [Device: PLC Logic: Application](Element ID 5): SA0102:  Access to program/fb variable 'LT2151_LO' from the outside
+[ERROR]         WK6HMKComputation_Comparison: W6Pu7_18VIZ [Device: PLC Logic: Application](Element ID 5): SA0102:  Access to program/fb variable 'LT2151_LO' from the outside
+[ERROR]         WK6HMKComputation_Comparison: W6Pu7_18VIZ [Device: PLC Logic: Application](Element ID 5): SA0102:  Access to program/fb variable 'LT2151_LO' from the outside
+[ERROR]         WK6HMKComputation_Comparison: W6Pu7_18VIZ [Device: PLC Logic: Application](Element ID 5): SA0102:  Access to program/fb variable 'LT2151_LO' from the outside
+[ERROR]         WK6HMKComputation_Comparison: W6Pu7_18VIZ [Device: PLC Logic: Application](Element ID 5): SA0102:  Access to program/fb variable 'LT2151_LO' from the outside
+[ERROR]         WK6HMKComputation_Comparison: W6Pu7_18VIZ [Device: PLC Logic: Application](Element ID 5): SA0102:  Access to program/fb variable 'LT2151_LO' from the outside
+[ERROR]         WK6HMKComputation_Comparison: W6PU7_18_LD [Device: PLC Logic: Application](Line 13 (Decl)): SA0162:  Missing comment for 'Low'
+[ERROR]         WK6HMKComputation_Comparison: W6PU7_18_LD [Device: PLC Logic: Application](Line 13 (Decl)): SA0101:  Incorrect length of name 'Low'
+[ERROR]         WK6HMKComputation_Comparison: W6PU7_18_LD [Device: PLC Logic: Application](Line 14 (Decl)): SA0162:  Missing comment for 'Flash'
+[ERROR]         WK6HMKComputation_Comparison: W6PU7_18_LD [Device: PLC Logic: Application](Line 15 (Decl)): SA0162:  Missing comment for 'TON_0'
+[ERROR]         WK6HMKComputation_Comparison: W6PU7_18_LD [Device: PLC Logic: Application](Line 16 (Decl)): SA0162:  Missing comment for 'Elapsed'
+[ERROR]         WK6HMKComputation_Comparison: W6PU7_18_LD [Device: PLC Logic: Application](Line 17 (Decl)): SA0162:  Missing comment for 'Time_0'
+[ERROR]         WK6HMKComputation_Comparison: W6PU7_18_LD [Device: PLC Logic: Application](Line 18 (Decl)): SA0162:  Missing comment for 'TON_O_Out'
+[ERROR]         WK6HMKComputation_Comparison: W6PU7_18_LD [Device: PLC Logic: Application](Line 19 (Decl)): SA0162:  Missing comment for 'TON_1'
+[ERROR]         WK6HMKComputation_Comparison: W6PU7_18_LD [Device: PLC Logic: Application](Line 20 (Decl)): SA0162:  Missing comment for 'ElapsedTime_1'
+[ERROR]         WK6HMKComputation_Comparison: W6PU7_18_LD [Device: PLC Logic: Application](Line 21 (Decl)): SA0162:  Missing comment for 'BLINK_0'
+[ERROR]         WK6HMKComputation_Comparison: W6PU7_18_LD [Device: PLC Logic: Application](Line 22 (Decl)): SA0162:  Missing comment for 'TON_2'
+[ERROR]         WK6HMKComputation_Comparison: W6PU7_18_LD [Device: PLC Logic: Application](Line 23 (Decl)): SA0162:  Missing comment for 'ElapsedTime_3'
+[ERROR]         WK6HMKComputation_Comparison: W6PU7_18_LD [Device: PLC Logic: Application](Line 26 (Decl)): SA0162:  Missing comment for 'LT2151_VAL'
+[ERROR]         WK6HMKComputation_Comparison: W6PU7_18_LD [Device: PLC Logic: Application](Line 27 (Decl)): SA0162:  Missing comment for 'LT2151_NM'
+[ERROR]         WK6HMKComputation_Comparison: W6PU7_18_LD [Device: PLC Logic: Application](Line 28 (Decl)): SA0162:  Missing comment for 'LT2151_HI'
+[ERROR]         WK6HMKComputation_Comparison: W6PU7_18_LD [Device: PLC Logic: Application](Network 1 / Operand 'TO_REAL ((((L2151_Meas-ADC_Z)/ADC_S)*Meter_Span)+Meter_Zero)' (Impl)): SA0066:  Use of temporary result: (((L2151_Meas - INT_TO_REAL(ADC_Z)) / INT_TO_REAL(ADC_S)) * INT_TO_REAL(Meter_Span))
+[ERROR]         WK6HMKComputation_Comparison: W6PU7_18_LD [Device: PLC Logic: Application](Network 1 / Operand 'TO_REAL ((((L2151_Meas-ADC_Z)/ADC_S)*Meter_Span)+Meter_Zero)' (Impl)): SA0130:  Implicit widening conversion from type 'INT' to type 'REAL'
+[ERROR]         WK6HMKComputation_Comparison: W6PU7_18_LD [Device: PLC Logic: Application](Network 1 / Operand 'TO_REAL ((((L2151_Meas-ADC_Z)/ADC_S)*Meter_Span)+Meter_Zero)' (Impl)): SA0130:  Implicit widening conversion from type 'INT' to type 'REAL'
+[ERROR]         WK6HMKComputation_Comparison: W6PU7_18_LD [Device: PLC Logic: Application](Network 1 / Operand 'TO_REAL ((((L2151_Meas-ADC_Z)/ADC_S)*Meter_Span)+Meter_Zero)' (Impl)): SA0130:  Implicit widening conversion from type 'INT' to type 'REAL'
+[ERROR]         WK6HMKComputation_Comparison: W6PU7_18_LD [Device: PLC Logic: Application](Network 1 / Operand 'TO_REAL ((((L2151_Meas-ADC_Z)/ADC_S)*Meter_Span)+Meter_Zero)' (Impl)): SA0130:  Implicit widening conversion from type 'INT' to type 'REAL'
+[ERROR]         WK6HMKComputation_Comparison: W6PU7_18_LD [Device: PLC Logic: Application](Network 2 /  (Impl)): SA0062:  Uses of TRUE or FALSE in expressions
+[ERROR]         WK6HMKComputation_Comparison: W6PU7_18_LD [Device: PLC Logic: Application](Network 2 / Operand 'LT2151_VAL' (Impl)): SA0038:  Read access to output variable 'LT2151_VAL'
+[ERROR]         WK6HMKComputation_Comparison: W6PU7_18_LD [Device: PLC Logic: Application](Network 2 / Operand '2.0' (Impl)): SA0024:  Untyped literal found
+[ERROR]         WK6HMKComputation_Comparison: W6PU7_18_LD [Device: PLC Logic: Application](Network 2 / Operand 'LT2151_VAL' (Impl)): SA0038:  Read access to output variable 'LT2151_VAL'
+[ERROR]         WK6HMKComputation_Comparison: W6PU7_18_LD [Device: PLC Logic: Application](Network 2 / Operand '7.0' (Impl)): SA0024:  Untyped literal found
+[ERROR]         WK6HMKComputation_Comparison: W6PU7_18_LD [Device: PLC Logic: Application](Network 3 /  (Impl)): SA0062:  Uses of TRUE or FALSE in expressions
+[ERROR]         WK6HMKComputation_Comparison: W6PU7_18_LD [Device: PLC Logic: Application](Network 3 / Operand 'LT2151_VAL' (Impl)): SA0038:  Read access to output variable 'LT2151_VAL'
+[ERROR]         WK6HMKComputation_Comparison: W6PU7_18_LD [Device: PLC Logic: Application](Network 3 / Operand '7.0' (Impl)): SA0024:  Untyped literal found
+[ERROR]         WK6HMKComputation_Comparison: W6PU7_18_LD [Device: PLC Logic: Application](Network 4 /  (Impl)): SA0062:  Uses of TRUE or FALSE in expressions
+[ERROR]         WK6HMKComputation_Comparison: W6PU7_18_LD [Device: PLC Logic: Application](Network 4 / Operand 'LT2151_VAL' (Impl)): SA0038:  Read access to output variable 'LT2151_VAL'
+[ERROR]         WK6HMKComputation_Comparison: W6PU7_18_LD [Device: PLC Logic: Application](Network 4 / Operand '1.0' (Impl)): SA0024:  Untyped literal found
+[ERROR]         WK6HMKComputation_Comparison: W6PU7_18_LD [Device: PLC Logic: Application](Network 4 / Operand 'LT2151_VAL' (Impl)): SA0038:  Read access to output variable 'LT2151_VAL'
+[ERROR]         WK6HMKComputation_Comparison: W6PU7_18_LD [Device: PLC Logic: Application](Network 4 / Operand '2.0' (Impl)): SA0024:  Untyped literal found
+[ERROR]         WK6HMKComputation_Comparison: W6PU7_18_LD [Device: PLC Logic: Application](Network 5 /  (Impl)): SA0062:  Uses of TRUE or FALSE in expressions
+[ERROR]         WK6HMKComputation_Comparison: W6PU7_18_LD [Device: PLC Logic: Application](Network 5 / Operand 'LT2151_VAL' (Impl)): SA0038:  Read access to output variable 'LT2151_VAL'
+[ERROR]         WK6HMKComputation_Comparison: W6PU7_18_LD [Device: PLC Logic: Application](Network 5 / Operand '1.0' (Impl)): SA0024:  Untyped literal found
+[ERROR]         WK6HMKComputation_Comparison: W6PU7_18_LD [Device: PLC Logic: Application](Network 6 /  (Impl)): SA0062:  Uses of TRUE or FALSE in expressions
+[ERROR]         WK6HMKComputation_Comparison: W6PU7_18_LD [Device: PLC Logic: Application](Network 6 / Operand 'LT2151_VAL' (Impl)): SA0038:  Read access to output variable 'LT2151_VAL'
+[ERROR]         WK6HMKComputation_Comparison: W6PU7_18_LD [Device: PLC Logic: Application](Network 6 / Operand '1.0' (Impl)): SA0024:  Untyped literal found
+[ERROR]         WK6HMKComputation_Comparison: W6PU7_18_LD [Device: PLC Logic: Application](Network 1 / Operand 'TO_REAL ((((L2151_Meas-ADC_Z)/ADC_S)*Meter_Span)+Meter_Zero)' (Impl)): SA0040:  Possible division by zero
+[ERROR]         WK6HMKComputation_Comparison: W6PU7_6 [Device: PLC Logic: Application]: SA0162:  Missing comment for 'W6PU7_6'
+[ERROR]         WK6HMKComputation_Comparison: W6PU7_6 [Device: PLC Logic: Application](Line 3 (Decl)): SA0162:  Missing comment for 'ADC_V'
+[ERROR]         WK6HMKComputation_Comparison: W6PU7_6 [Device: PLC Logic: Application](Line 6 (Decl)): SA0162:  Missing comment for 'ADC_Z'
+[ERROR]         WK6HMKComputation_Comparison: W6PU7_6 [Device: PLC Logic: Application](Line 7 (Decl)): SA0162:  Missing comment for 'ADC_S'
+[ERROR]         WK6HMKComputation_Comparison: W6PU7_6 [Device: PLC Logic: Application](Line 8 (Decl)): SA0162:  Missing comment for 'FT_S'
+[ERROR]         WK6HMKComputation_Comparison: W6PU7_6 [Device: PLC Logic: Application](Line 8 (Decl)): SA0101:  Incorrect length of name 'FT_S'
+[ERROR]         WK6HMKComputation_Comparison: W6PU7_6 [Device: PLC Logic: Application](Line 9 (Decl)): SA0162:  Missing comment for 'FT_Z'
+[ERROR]         WK6HMKComputation_Comparison: W6PU7_6 [Device: PLC Logic: Application](Line 9 (Decl)): SA0101:  Incorrect length of name 'FT_Z'
+[ERROR]         WK6HMKComputation_Comparison: W6PU7_6 [Device: PLC Logic: Application](Line 12 (Decl)): SA0162:  Missing comment for 'FT_OUT'
+[ERROR]         WK6HMKComputation_Comparison: W6PU7_6 [Device: PLC Logic: Application](Line 1, Column 1 (Impl)): SA0066:  Use of temporary result: ((((ADC_V - INT_TO_REAL(ADC_Z)) / INT_TO_REAL(ADC_S)) * INT_TO_REAL(FT_S)) + INT_TO_REAL(FT_Z))
+[ERROR]         WK6HMKComputation_Comparison: W6PU7_6 [Device: PLC Logic: Application](Line 1, Column 1 (Impl)): SA0024:  Untyped literal found
+[ERROR]         WK6HMKComputation_Comparison: W6PU7_6 [Device: PLC Logic: Application](Line 1, Column 1 (Impl)): SA0130:  Implicit widening conversion from type 'INT' to type 'REAL'
+[ERROR]         WK6HMKComputation_Comparison: W6PU7_6 [Device: PLC Logic: Application](Line 1, Column 1 (Impl)): SA0130:  Implicit widening conversion from type 'INT' to type 'REAL'
+[ERROR]         WK6HMKComputation_Comparison: W6PU7_6 [Device: PLC Logic: Application](Line 1, Column 1 (Impl)): SA0130:  Implicit widening conversion from type 'INT' to type 'REAL'
+[ERROR]         WK6HMKComputation_Comparison: W6PU7_6 [Device: PLC Logic: Application](Line 1, Column 1 (Impl)): SA0130:  Implicit widening conversion from type 'INT' to type 'REAL'
+[ERROR]         WK6HMKComputation_Comparison: W6PU7_6 [Device: PLC Logic: Application](Line 1, Column 1 (Impl)): SA0040:  Possible division by zero
+                Static analysis complete -- 118 errors, 0 warnings

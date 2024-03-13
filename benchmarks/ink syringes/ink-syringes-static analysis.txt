@@ -1,0 +1,64 @@
+====
+    MIT License
+
+    Copyright (c) 2024 Montana State University Software Engineering Labs
+
+    Permission is hereby granted, free of charge, to any person obtaining a copy
+    of this software and associated documentation files (the "Software"), to deal
+    in the Software without restriction, including without limitation the rights
+    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+    copies of the Software, and to permit persons to whom the Software is
+    furnished to do so, subject to the following conditions:
+
+    The above copyright notice and this permission notice shall be included in all
+    copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+    SOFTWARE.
+====
+
+                Static analysis...
+[ERROR]         InkSyringes: PLC_PRG [Device: PLC Logic: Application](Unknown Position (Impl)): SA0162:  Missing comment for 'PLC_PRG'
+[ERROR]         InkSyringes: PLC_PRG [Device: PLC Logic: Application](Network 1 /  (Impl)): SA0162:  Missing comment for network 1 in 'PLC_PRG'
+[ERROR]         InkSyringes: PLC_PRG [Device: PLC Logic: Application](Network 2 /  (Impl)): SA0162:  Missing comment for network 2 in 'PLC_PRG'
+[ERROR]         InkSyringes: PLC_PRG [Device: PLC Logic: Application](Network 3 /  (Impl)): SA0162:  Missing comment for network 3 in 'PLC_PRG'
+[ERROR]         InkSyringes: PLC_PRG [Device: PLC Logic: Application](Network 4 /  (Impl)): SA0162:  Missing comment for network 4 in 'PLC_PRG'
+[ERROR]         InkSyringes: PLC_PRG [Device: PLC Logic: Application](Network 5 /  (Impl)): SA0162:  Missing comment for network 5 in 'PLC_PRG'
+[ERROR]         InkSyringes: PLC_PRG [Device: PLC Logic: Application](Network 6 /  (Impl)): SA0162:  Missing comment for network 6 in 'PLC_PRG'
+[ERROR]         InkSyringes: PLC_PRG [Device: PLC Logic: Application](Network 7 /  (Impl)): SA0162:  Missing comment for network 7 in 'PLC_PRG'
+[ERROR]         InkSyringes: PLC_PRG [Device: PLC Logic: Application](Network 8 /  (Impl)): SA0162:  Missing comment for network 8 in 'PLC_PRG'
+[ERROR]         InkSyringes: PLC_PRG [Device: PLC Logic: Application](Network 9 /  (Impl)): SA0162:  Missing comment for network 9 in 'PLC_PRG'
+[ERROR]         InkSyringes: PLC_PRG [Device: PLC Logic: Application](Network 10 /  (Impl)): SA0162:  Missing comment for network 10 in 'PLC_PRG'
+[ERROR]         InkSyringes: PLC_PRG [Device: PLC Logic: Application](Network 11 /  (Impl)): SA0162:  Missing comment for network 11 in 'PLC_PRG'
+[ERROR]         InkSyringes: PLC_PRG [Device: PLC Logic: Application](Network 12 /  (Impl)): SA0162:  Missing comment for network 12 in 'PLC_PRG'
+[ERROR]         InkSyringes: PLC_PRG [Device: PLC Logic: Application](Network 13 /  (Impl)): SA0162:  Missing comment for network 13 in 'PLC_PRG'
+[ERROR]         InkSyringes: PLC_PRG [Device: PLC Logic: Application](Line 3 (Decl)): SA0162:  Missing comment for 'I_Run'
+[ERROR]         InkSyringes: PLC_PRG [Device: PLC Logic: Application](Line 4 (Decl)): SA0162:  Missing comment for 'I_Reset'
+[ERROR]         InkSyringes: PLC_PRG [Device: PLC Logic: Application](Line 5 (Decl)): SA0162:  Missing comment for 'Step_1'
+[ERROR]         InkSyringes: PLC_PRG [Device: PLC Logic: Application](Line 6 (Decl)): SA0162:  Missing comment for 'Step_2'
+[ERROR]         InkSyringes: PLC_PRG [Device: PLC Logic: Application](Line 7 (Decl)): SA0162:  Missing comment for 'Step_3'
+[ERROR]         InkSyringes: PLC_PRG [Device: PLC Logic: Application](Line 8 (Decl)): SA0162:  Missing comment for 'Step_4'
+[ERROR]         InkSyringes: PLC_PRG [Device: PLC Logic: Application](Line 9 (Decl)): SA0162:  Missing comment for 'Step_5'
+[ERROR]         InkSyringes: PLC_PRG [Device: PLC Logic: Application](Line 10 (Decl)): SA0162:  Missing comment for 'Step_6'
+[ERROR]         InkSyringes: PLC_PRG [Device: PLC Logic: Application](Line 11 (Decl)): SA0162:  Missing comment for 'PROX4'
+[ERROR]         InkSyringes: PLC_PRG [Device: PLC Logic: Application](Line 12 (Decl)): SA0162:  Missing comment for 'SYR_OUT'
+[ERROR]         InkSyringes: PLC_PRG [Device: PLC Logic: Application](Line 13 (Decl)): SA0162:  Missing comment for 'SYR_BACK'
+[ERROR]         InkSyringes: PLC_PRG [Device: PLC Logic: Application](Line 14 (Decl)): SA0162:  Missing comment for 'SYR_OLS'
+[ERROR]         InkSyringes: PLC_PRG [Device: PLC Logic: Application](Line 15 (Decl)): SA0162:  Missing comment for 'SYR_BLS'
+[ERROR]         InkSyringes: PLC_PRG [Device: PLC Logic: Application](Line 16 (Decl)): SA0162:  Missing comment for 'PIST_EXT'
+[ERROR]         InkSyringes: PLC_PRG [Device: PLC Logic: Application](Line 17 (Decl)): SA0162:  Missing comment for 'PIST_RET'
+[ERROR]         InkSyringes: PLC_PRG [Device: PLC Logic: Application](Line 18 (Decl)): SA0162:  Missing comment for 'PIST_ELS'
+[ERROR]         InkSyringes: PLC_PRG [Device: PLC Logic: Application](Line 19 (Decl)): SA0162:  Missing comment for 'PIST_RLS'
+[ERROR]         InkSyringes: PLC_PRG [Device: PLC Logic: Application](Line 20 (Decl)): SA0162:  Missing comment for 'INK_CLS'
+[ERROR]         InkSyringes: PLC_PRG [Device: PLC Logic: Application](Line 21 (Decl)): SA0162:  Missing comment for 'INK_VLV'
+[ERROR]         InkSyringes: PLC_PRG [Device: PLC Logic: Application](Line 22 (Decl)): SA0162:  Missing comment for 'TON_0'
+[ERROR]         InkSyringes: PLC_PRG [Device: PLC Logic: Application](Line 23 (Decl)): SA0162:  Missing comment for 'INT_Reset'
+[ERROR]         InkSyringes: PLC_PRG [Device: PLC Logic: Application](Line 24 (Decl)): SA0162:  Missing comment for 'RStep_1'
+[ERROR]         InkSyringes: PLC_PRG [Device: PLC Logic: Application](Line 25 (Decl)): SA0162:  Missing comment for 'RStep_2'
+[ERROR]         InkSyringes: PLC_PRG [Device: PLC Logic: Application](Line 26 (Decl)): SA0162:  Missing comment for 'RStep_3'
+                Static analysis complete -- 38 errors, 0 warnings
