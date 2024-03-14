@@ -30,8 +30,27 @@
 			"Reusability": {},
 			"Testability": {}
 		}
+      },
+      "Safety": {
+        "description": "degree to which the code cannot cause harm to individuals, damage to the product or industrial process, or adverse impacts to the environment.",
+        "eval_strategy": "pique.evaluation.DefaultFactorEvaluator",
+		"children": {
+			"Data Validity": {},
+			"Process state awareness": {},
+			"State exclusivity": {},
+			"Configuration awareness": {},
+			"Conservativity": {}
+		}
+      },
+      "Design-level Errors": {
+        "description": "degree to which the code is vulnerable, from both a hardware and a software level",
+        "eval_strategy": "pique.evaluation.DefaultFactorEvaluator",
+		"children": {
+			"Hardware Based (Physical) Error": {},
+			"Software Based (Virtual) Errors": {}
+		}
       }
-	},
+    },
     "product_factors": {
 	  "Rule-based Issues - product_factor": {
         "name": "Rule-based Issues - product_factor",
@@ -227,8 +246,50 @@
           "Complexity and length of source code": {},
           "Duplication": {}
 		}
+      },
+	  "Data Validity": {
+        "name": "Data Validity",
+        "description": "Degree to which the code ensures values received by the PLC represent real world measurements",
+        "eval_strategy": "pique.evaluation.DefaultProductFactorEvaluator",
+        "children": {}
+      },
+	  "Process state awareness": {
+        "name": "Process state awareness",
+        "description": "Degree to which the code tracks specific sets of conditions in which the process may exist",
+        "eval_strategy": "pique.evaluation.DefaultProductFactorEvaluator",
+        "children": {}
+      },
+	  "State exclusivity": {
+        "name": "State exclusivity",
+        "description": "Degree to which the code disallows simultaneous assertion of incompatible system states",
+        "eval_strategy": "pique.evaluation.DefaultProductFactorEvaluator",
+        "children": {}
+      },
+	  "Configuration awareness": {
+        "name": "Configuration awareness",
+        "description": "Degree to which the code incorporates awareness of configuration changes to the PLC",
+        "eval_strategy": "pique.evaluation.DefaultProductFactorEvaluator",
+        "children": {}
+      },
+	  "Conservativity": {
+        "name": "Conservativity",
+        "description": "Degree to which the code incorporates a fall-back state of operations",
+        "eval_strategy": "pique.evaluation.DefaultProductFactorEvaluator",
+        "children": {}
+      },
+	  "Hardware Based (Physical) Error": {
+        "name": "Hardware Based (Physical) Error",
+        "description": "The attribute associated with hardware based (physical) errors is device type",
+        "eval_strategy": "pique.evaluation.DefaultProductFactorEvaluator",
+        "children": {}
+      },
+	  "Software Based (Virtual) Errors": {
+        "name": "Software Based (Virtual) Errors",
+        "description": "The attributes associated with software based (virtual) errors are the error class and error subclass",
+        "eval_strategy": "pique.evaluation.DefaultProductFactorEvaluator",
+        "children": {}
       }
-	}
+    }
   },
   "measures": {
 	"SA0001: Unreachable code - Score": {

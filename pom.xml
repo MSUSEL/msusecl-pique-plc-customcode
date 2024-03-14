@@ -37,9 +37,9 @@
     </parent>
 
     <artifactId>msusel-pique-plc-customcode</artifactId>
-    <version>1.0.1</version>
+    <version>1.0.0</version>
     <packaging>jar</packaging>
-    <description>MSU PIQUE quality model implementation for dockerfiles</description>
+    <description>MSU PIQUE quality model implementation for PLC customcode</description>
     <url>https://msusel.github.io</url>
 
 

@@ -34,8 +34,7 @@ RUN git clone https://github.com/MSUSEL/msusecl-pique-plc-customcode
 WORKDIR "/home/msusecl-pique-plc-customcode"
 
 # build pique plc customcode
-RUN git checkout -b derek_dev
-RUN mvn clean package -Dmaven.test.skip
+RUN mvn clean package -Dmaven.test.skip -Dlicense.skip
 
 # create input directory
 RUN mkdir "/input"
