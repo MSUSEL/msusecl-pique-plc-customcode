@@ -53,11 +53,12 @@ public class Wrapper {
                     .setDefault("evaluate")
                     .choices("derive", "evaluate")
                     .help("derive: derives a new quality model from the benchmark repository, using --file throws an IllegalArgumentException and print the stack trace" +
-                            "\n evaluate: evaluates dockerfile with derived quality model, --file must exist otherwise throw an IllegalArgumentException and print the stack trace");
-            parser.addArgument( "--file")
-                    .dest("fileName")
+                            "\n evaluate: evaluates output from two CODESYS output analysis files (a rules file and a metrics file)" +
+                            " with derived quality model, --file must exist otherwise throw an IllegalArgumentException and print the stack trace");
+            parser.addArgument( "--outputPath")
+                    .dest("outputPath")
                     .type(String.class)
-                    .help("path to JSON of dockerfiles to evaluate (required if run argument is evaluate)");
+                    .help("path to directory of CODESYS output files to evaluate. Expected is a txt file of CODESYS rules and a csv file of CODESYS metrics");
             parser.addArgument("--version")
                     .action(Arguments.storeTrue())
                     .setDefault(false)
@@ -72,26 +73,18 @@ public class Wrapper {
             }
 
             String runType = namespace.getString("run");
-            String fileName = namespace.getString("fileName");
+            String outputPath = namespace.getString("outputPath");
             boolean printVersion = namespace.getBoolean("version");
-            boolean downloadNVDFlag = namespace.getBoolean("downloadNVD");
             Properties prop = PiqueProperties.getProperties();
 
             if (printVersion) {
                 Path version = Paths.get(prop.getProperty("version"));
-                System.out.println("PIQUE-CLOUD version " + version);
+                System.out.println("PIQUE-PLC-CUSTOMCODE version " + version);
                 System.exit(0);
             }
 
-            String nvdDictionaryPath = Paths.get(prop.getProperty("nvd-dictionary.location")).toString();
-            File f = new File(nvdDictionaryPath);
-            if (!f.isFile()) {
-                System.out.println("Error: the National Vulnerability Database must be downloaded before deriving or evaluating. Use --help for more information.");
-                System.exit(1);
-            }
-
             if ("derive".equals(runType)) {
-                if (fileName != null) {
+                if (outputPath != null) {
                     throw new IllegalArgumentException("Incorrect input parameters given. Use --help for more information");
                 }
                 else {
@@ -100,7 +93,7 @@ public class Wrapper {
                 }
             }
             else if ("evaluate".equals(runType)) {
-                new SingleProjectEvaluator(fileName);
+                new SingleProjectEvaluator(outputPath);
             }
             else {
                 throw new IllegalArgumentException("Incorrect input parameters given. Use --help for more information");
