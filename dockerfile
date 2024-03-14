@@ -24,7 +24,7 @@
 
 FROM msusel/pique-core:0.9.5_2
 
-ARG PIQUE_PLC_CUSTOMCODE_VERSION=1.0
+ARG PIQUE_PLC_CUSTOMCODE_VERSION=1.0.0
 
 # move to home for a fresh start
 WORKDIR "/home"
@@ -46,8 +46,8 @@ VOLUME ["/input"]
 VOLUME ["/output"]
 
 # symlink to jar file for cleanliness
-RUN ln -s /home/msusecl-pique-plc-customcode/target/msusel-pique-plc-customcode-PIQUE_PLC_CUSTOMCODE_VERSION-jar-with-dependencies.jar \
-        /home/msusecl-pique-plc-customcode/entrypoint.jar
+RUN ln -s /home/msusecl-pique-plc-customcode/target/msusel-pique-plc-customcode-$PIQUE_PLC_CUSTOMCODE_VERSION-jar-with-dependencies.jar \
+         /home/msusecl-pique-plc-customcode/entrypoint.jar
 
 ##### secret sauce
-#ENTRYPOINT ["java", "-jar", "/home/msusecl-pique-plc-customcode/entrypoint.jar", "--run", "evaluate", "--file", "/input/custom-code-target.json"]
+ENTRYPOINT ["java", "-jar", "/home/msusecl-pique-plc-customcode/entrypoint.jar", "--run", "evaluate"]

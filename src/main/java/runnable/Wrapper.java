@@ -55,10 +55,6 @@ public class Wrapper {
                     .help("derive: derives a new quality model from the benchmark repository, using --file throws an IllegalArgumentException and print the stack trace" +
                             "\n evaluate: evaluates output from two CODESYS output analysis files (a rules file and a metrics file)" +
                             " with derived quality model, --file must exist otherwise throw an IllegalArgumentException and print the stack trace");
-            parser.addArgument( "--outputPath")
-                    .dest("outputPath")
-                    .type(String.class)
-                    .help("path to directory of CODESYS output files to evaluate. Expected is a txt file of CODESYS rules and a csv file of CODESYS metrics");
             parser.addArgument("--version")
                     .action(Arguments.storeTrue())
                     .setDefault(false)
