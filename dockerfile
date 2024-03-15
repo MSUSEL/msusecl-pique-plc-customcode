@@ -50,4 +50,4 @@ RUN ln -s /home/msusecl-pique-plc-customcode/target/msusel-pique-plc-customcode-
          /home/msusecl-pique-plc-customcode/entrypoint.jar
 
 ##### secret sauce
-#ENTRYPOINT ["java", "-jar", "/home/msusecl-pique-plc-customcode/entrypoint.jar", "--run", "evaluate"]
+ENTRYPOINT ["java", "-jar", "/home/msusecl-pique-plc-customcode/entrypoint.jar", "--run", "evaluate"]
