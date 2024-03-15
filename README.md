@@ -35,7 +35,7 @@ are supplied on this repository.
 3. Navigate to a working directory for this project
 4. Create two directories, "input" and "output". 
 5. Move CODESYS analysis output files (txt file and csv file) into their own directory, named appropriately. Examples are available [here](https://github.com/MSUSEL/benchmarks/tree/main/plc-customcode/codesys-output)
-   * Move these files into the "input directory"
+   * Move these files into the "input" directory
 6. The resulting directory structure should look like this:
 ```
 ├── $WORKDIR
