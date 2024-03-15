@@ -45,7 +45,7 @@ are supplied on this repository.
 │   │   │   ├── CODESYS_metrics_output.csv
 │   ├── output
 ```
-11. Run the command `docker run -it --rm -v /path/to/working/directory/input:/input -v /path/to/working/directory/output:/output pique-plc-customcode:latest`
+11. Run the command `docker run -it --rm -v /path/to/working/directory/input:/input -v /path/to/working/directory/output:/output msusel/pique-plc-customcode:latest`
 12. Results will be generated in the 'output' directory
 
 Funding Agency:
