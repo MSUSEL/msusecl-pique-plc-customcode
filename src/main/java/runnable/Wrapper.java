@@ -31,6 +31,7 @@ import pique.utility.PiqueProperties;
 import utilities.helperFunctions;
 
 import java.io.File;
+import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Properties;
@@ -40,11 +41,11 @@ public class Wrapper {
     public static String[] args;
 
     public Wrapper(){
-        handleArgs();
-        loadConfig();
+        Path projectsToAnalyze = loadConfig();
+        handleArgs(projectsToAnalyze);
     }
 
-    public void handleArgs(){
+    public void handleArgs(Path projectsToAnalyze){
         try {
             boolean helpFlag = check_help(args);
             ArgumentParser parser = ArgumentParsers.newFor("runnable.Wrapper").build()
@@ -69,7 +70,6 @@ public class Wrapper {
             }
 
             String runType = namespace.getString("run");
-            String outputPath = namespace.getString("outputPath");
             boolean printVersion = namespace.getBoolean("version");
             Properties prop = PiqueProperties.getProperties();
 
@@ -80,16 +80,11 @@ public class Wrapper {
             }
 
             if ("derive".equals(runType)) {
-                if (outputPath != null) {
-                    throw new IllegalArgumentException("Incorrect input parameters given. Use --help for more information");
-                }
-                else {
-                    // kick off deriver
-                    new QualityModelDeriver();
-                }
+                // kick off deriver
+                new QualityModelDeriver();
             }
             else if ("evaluate".equals(runType)) {
-                new SingleProjectEvaluator(outputPath);
+                new SingleProjectEvaluator(projectsToAnalyze.toString());
             }
             else {
                 throw new IllegalArgumentException("Incorrect input parameters given. Use --help for more information");
@@ -102,8 +97,17 @@ public class Wrapper {
 
     }
 
-    public void loadConfig(){
-
+    public Path loadConfig(){
+        //need to read in project.root
+        Properties prop = null;
+        String defaultPropertiesLocation = "src/main/resources/pique-properties.properties";
+        try {
+            prop = defaultPropertiesLocation == null ? PiqueProperties.getProperties() : PiqueProperties.getProperties(defaultPropertiesLocation);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        Path projectRoot = Paths.get(prop.getProperty("project.root"));
+        return projectRoot;
     }
 
     public static void main(String[] args) {
