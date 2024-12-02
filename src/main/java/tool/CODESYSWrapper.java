@@ -94,14 +94,18 @@ public class CODESYSWrapper extends Tool implements ITool {
         // loop through every directory in benchmarks
         if (toolResults.toFile().isDirectory()) {
             for(File benchmarkOutputFile : requireNonNull(toolResults.toFile().listFiles())) {
-                String extension = FileNameUtils.getExtension(benchmarkOutputFile.getName());
-                if (extension.equals("csv")) {
-                    metricsFile = benchmarkOutputFile.toPath();
-                } else if (extension.equals("txt")) {
-                    rulesFile = benchmarkOutputFile.toPath();
-                } else {
-                    LOGGER.debug("Unknown file extension in benchmark repository: " + benchmarkOutputFile.getName());
-                    System.out.println("Unknown file extension in benchmark repository: " + benchmarkOutputFile.getName());
+                String[] toolDifferentiator = benchmarkOutputFile.getName().split("-");
+                if (toolDifferentiator[0].equals("CodeSys")) {
+                    if (toolDifferentiator.length == 3) { //change to 4 when I want to incorporate the "new" metrics
+                        String extension = FileNameUtils.getExtension(benchmarkOutputFile.getName());
+                        if (extension.equals("csv")) {
+                            metricsFile = benchmarkOutputFile.toPath();
+                            //System.out.println("Adding metrics" + metricsFile);
+                        } else if (extension.equals("txt")) {
+                            rulesFile = benchmarkOutputFile.toPath();
+                            //System.out.println("Adding rules" + rulesFile);
+                        }
+                    }
                 }
             }
         }
@@ -113,15 +117,17 @@ public class CODESYSWrapper extends Tool implements ITool {
         //parse rules
         List<List<String>> formattedRulesOutput= parseRules(benchmarkProjects.getRight());
         for (List<String> row : formattedRulesOutput) {
-            String key = generateDiagnosticsKeyFromRulesOutput(row.get(0), diagKeyMap);
-            CODESYSRuleDiagnostic diag = (CODESYSRuleDiagnostic)diagnostics.get(key);
-            if (diag != null) {
-                int severity = severityToInt(diag.getImportance());
-                Finding f = new RuleFinding(benchmarkProjects.getRight().toString(), row.get(0), row.get(1), severity);
-                //necessary to add more than one child
-                f.setName(row.get(0) + " - " + row.get(1));
-                diag.setChild(f);
-                diagnostics.put(key, diag);
+            if (!row.isEmpty()) { //will be empty if we encountered a SA internal tool error
+                String key = generateDiagnosticsKeyFromRulesOutput(row.get(0), diagKeyMap);
+                CODESYSRuleDiagnostic diag = (CODESYSRuleDiagnostic) diagnostics.get(key);
+                if (diag != null) {
+                    int severity = severityToInt(diag.getImportance());
+                    Finding f = new RuleFinding(benchmarkProjects.getRight().toString(), row.get(0), row.get(1), severity);
+                    //necessary to add more than one child
+                    f.setName(row.get(0) + " - " + row.get(1));
+                    diag.setChild(f);
+                    diagnostics.put(key, diag);
+                }
             }
         }
 
@@ -263,11 +269,15 @@ public class CODESYSWrapper extends Tool implements ITool {
             String[] line = lines[i].trim().split(":");
             ArrayList<String> formattedLine = new ArrayList<>();
             // should probably improve performance of this nested loop with more string formatting but this is good enough for now
-            for (int j = 0; j < line.length; j++) {
-                //potentially FIXME -- robustify the SA parsing
-                if (line[j].contains("SA")) {
-                    formattedLine.add(line[j].trim());
-                    formattedLine.add(line[j + 1].trim());
+            //fix for SA internal error
+            if (!(line[0].contains("FATAL ERROR"))) {
+                for (int j = 0; j < line.length; j++) {
+                    //potentially FIXME -- robustify the SA parsing
+                    // --- Derek followup, ran into issue where the SA tool encountered an internal error, adding fix at higher level than this
+                    if (line[j].contains("SA")) {
+                        formattedLine.add(line[j].trim());
+                        formattedLine.add(line[j + 1].trim());
+                    }
                 }
             }
             formattedOutput.add(formattedLine);

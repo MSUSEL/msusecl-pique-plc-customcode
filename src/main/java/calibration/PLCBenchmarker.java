@@ -23,13 +23,13 @@
  */
 package calibration;
 
-import pique.calibration.NaiveBenchmarker;
+import pique.calibration.ProbabilityDensityFunctionBenchmarker;
 
 import java.io.File;
 import java.nio.file.Path;
 import java.util.*;
 
-public class PLCBenchmarker extends NaiveBenchmarker {
+public class PLCBenchmarker extends ProbabilityDensityFunctionBenchmarker {
 
     @Override
     public Set<Path> CollectProjectPaths(Path benchmarkRepository, String projectRootFlag) {
