@@ -9,6 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="msusel-pique-cloud-dockerfile" />
         <module name="msusel-pique" />
+        <module name="msusel-pique-plc-customcode" />
       </profile>
     </annotationProcessing>
   </component>
