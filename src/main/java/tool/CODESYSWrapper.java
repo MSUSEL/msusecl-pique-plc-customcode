@@ -39,8 +39,7 @@ import pique.analysis.Tool;
 import pique.model.Diagnostic;
 import pique.model.Finding;
 
-import pique.model.ModelNode;
-import utilities.helperFunctions;
+import utilities.HelperFunctions;
 
 import java.io.File;
 import java.io.IOException;
@@ -111,7 +110,7 @@ public class CODESYSWrapper extends Tool implements ITool {
         }
         benchmarkProjects = new ImmutablePair<>(metricsFile, rulesFile);
 
-        Map<String, Diagnostic> diagnostics = helperFunctions.initializeDiagnostics(this.getName());
+        Map<String, Diagnostic> diagnostics = HelperFunctions.initializeDiagnostics(this.getName());
         Map<String, String> diagKeyMap = separateIdAndDescription(diagnostics);
 
         //parse rules
@@ -132,7 +131,7 @@ public class CODESYSWrapper extends Tool implements ITool {
         }
 
         //parse metrics
-        Table<String, String, Double> formattedMetricsOutput= parseMetrics(benchmarkProjects.getLeft());
+        Table<String, String, Double> formattedMetricsOutput = parseMetrics(benchmarkProjects.getLeft());
 
         //columns are metric names, loop through them all
         for (String column : formattedMetricsOutput.columnKeySet()){
@@ -196,7 +195,7 @@ public class CODESYSWrapper extends Tool implements ITool {
         String metrics = "";    // This will be the tool output metrics file
 
         try {
-            metrics = helperFunctions.readFileContent(toolOutput);
+            metrics = HelperFunctions.readFileContent(toolOutput);
         } catch (IOException e) {
             LOGGER.info("No results to read from CODESYS.");
         }
@@ -246,7 +245,7 @@ public class CODESYSWrapper extends Tool implements ITool {
         // Read in tool output
         //example line: [ERROR]         Final Exam: CookieProcess [Device: PLC Logic: Final_Proj](Line 3 (Decl)): SA0033:  Unused Variable 'StartPB'
         try {
-            rules = helperFunctions.readFileContent(toolOutput);
+            rules = HelperFunctions.readFileContent(toolOutput);
         } catch (IOException e) {
             LOGGER.info("No results to read from CODESYS.");
         }
