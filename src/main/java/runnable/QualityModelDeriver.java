@@ -24,6 +24,7 @@
 package runnable;
 
 import model.PLCQualityModelImport;
+import org.checkerframework.checker.units.qual.K;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import pique.analysis.ITool;
@@ -33,6 +34,7 @@ import pique.model.QualityModelImport;
 import pique.runnable.AQualityModelDeriver;
 import pique.utility.PiqueProperties;
 import tool.CODESYSWrapper;
+import tool.KENWrapper;
 
 import java.io.IOException;
 import java.nio.file.Path;
@@ -76,7 +78,8 @@ public class QualityModelDeriver extends AQualityModelDeriver {
         Path benchmarkRepo = Paths.get(prop.getProperty("benchmark.repo"));
 
         ITool CODESYSWrapper = new CODESYSWrapper();
-        Set<ITool> tools = Stream.of(CODESYSWrapper).collect(Collectors.toSet());
+        ITool KENWrapper = new KENWrapper();
+        Set<ITool> tools = Stream.of(CODESYSWrapper, KENWrapper).collect(Collectors.toSet());
         PLCQualityModelImport qmImport = new PLCQualityModelImport(blankqmFilePath);
         QualityModel qmDescription = qmImport.importQualityModel();
 

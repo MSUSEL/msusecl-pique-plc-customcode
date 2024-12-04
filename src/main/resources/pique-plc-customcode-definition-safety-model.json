@@ -257,9 +257,7 @@
 			"Number of Rungs - Score" : {},
 			"Number of POUs - Score" : {},
 			"Number of 61131-3 languages used - Score" : {},
-			"IEC 61131-3 languages used as a percent of total - Score" : {},
-			"Number of tags (global and local) - Score" : {},
-			"Number of terms in “Key Terms Dictionary” - Score" : {}
+			"Number of tags (global and local) - Score" : {}
 		}
       },
 	  "Process state awareness": {
@@ -272,9 +270,7 @@
 			"Number of Rungs - Score" : {},
 			"Number of POUs - Score" : {},
 			"Number of 61131-3 languages used - Score" : {},
-			"IEC 61131-3 languages used as a percent of total - Score" : {},
-			"Number of tags (global and local) - Score" : {},
-			"Number of terms in “Key Terms Dictionary” - Score" : {}
+			"Number of tags (global and local) - Score" : {}
 		}
       },
 	  "State exclusivity": {
@@ -287,9 +283,7 @@
 			"Number of Rungs - Score" : {},
 			"Number of POUs - Score" : {},
 			"Number of 61131-3 languages used - Score" : {},
-			"IEC 61131-3 languages used as a percent of total - Score" : {},
-			"Number of tags (global and local) - Score" : {},
-			"Number of terms in “Key Terms Dictionary” - Score" : {}
+			"Number of tags (global and local) - Score" : {}
 		}
       },
 	  "Configuration awareness": {
@@ -302,9 +296,7 @@
 			"Number of Rungs - Score" : {},
 			"Number of POUs - Score" : {},
 			"Number of 61131-3 languages used - Score" : {},
-			"IEC 61131-3 languages used as a percent of total - Score" : {},
-			"Number of tags (global and local) - Score" : {},
-			"Number of terms in “Key Terms Dictionary” - Score" : {}
+			"Number of tags (global and local) - Score" : {}
 		}
       },
 	  "Conservativity": {
@@ -317,9 +309,7 @@
 			"Number of Rungs - Score" : {},
 			"Number of POUs - Score" : {},
 			"Number of 61131-3 languages used - Score" : {},
-			"IEC 61131-3 languages used as a percent of total - Score" : {},
-			"Number of tags (global and local) - Score" : {},
-			"Number of terms in “Key Terms Dictionary” - Score" : {}
+			"Number of tags (global and local) - Score" : {}
 		}
       },
 	  "Hardware Based (Physical) Error": {
@@ -377,28 +367,12 @@
 		  "Number_of_languages": {}
 	  }
   },
-  "IEC 61131-3 languages used as a percent of total - Score": {
-	  "toolName": "KEN",
-	  "description": "IEC 61131-3 languages used in code as a percent of total, as a score",
-	  "positive": "false",
-	  "children": {
-		  "IEC 61131-3 languages used as a percent of total": {}
-	  }
-  },
   "Number of tags (global and local) - Score": {
 	  "toolName": "KEN",
 	  "description": "Number of tags (global and local) in code, as a score",
 	  "positive": "false",
 	  "children": {
 		  "Number_of_tags": {}
-	  }
-  },
-  "Number of terms in “Key Terms Dictionary” - Score": {
-	  "toolName": "KEN",
-	  "description": "Number of terms in “Key Terms Dictionary” in code, as a score",
-	  "positive": "false",
-	  "children": {
-		  "Number of terms in “Key Terms Dictionary": {}
 	  }
   },
 	"SA0001: Unreachable code - Score": {
@@ -1487,18 +1461,9 @@
 	  "Number_of_languages": {
 		  "toolName": "KEN",
 		  "description": "Number of 61131-3 languages used"
-	  },
-	  "IEC 61131-3 languages used as a percent of total": {
-		  "toolName": "KEN",
-		  "description": "Number of 61131-3 languages used as a percentage of total"
-	  },
 	  "Number_of_tags": {
 		  "toolName": "KEN",
 		  "description": "Number of tags in program"
-	  },
-	  "Number of terms in “Key Terms Dictionary": {
-		  "toolName": "KEN",
-		  "description": "Number of terms in “Key Terms Dictionary"
 	  },
     "SA0001: Unreachable code": {
       "toolName": "CODESYS",
