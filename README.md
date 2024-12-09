@@ -9,7 +9,7 @@ this project is also provided as a packaged standalone docker image. That image 
 
 ## Tools and 3rd party libraries
 These tools and 3rd party libraries will be automatically pulled with the docker image
-* [PIQUE-core](https://github.com/MSUSEL/msusel-pique) version 0.9.5_2 (packaged as a layer in the image)
+* [PIQUE-core](https://github.com/MSUSEL/msusel-pique) version 1.0.1 (packaged as a layer in the image)
 * PIQUE-plc-customcode relies upon output from the tool CODESYS, specifically a txt file of rule violations and a csv file of metrics. 
 For examples of these files, please refer to this [repository](https://github.com/MSUSEL/benchmarks/tree/main/plc-customcode/codesys-output) 
 

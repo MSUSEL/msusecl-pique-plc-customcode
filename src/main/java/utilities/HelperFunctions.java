@@ -23,21 +23,15 @@
  */
 package utilities;
 
-import model.CODESYSRuleDiagnostic;
 import model.PLCQualityModelImport;
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import pique.model.Diagnostic;
 import pique.model.ModelNode;
 import pique.model.QualityModel;
-import pique.model.QualityModelImport;
 import pique.utility.PiqueProperties;
 
 import java.io.*;
-import java.lang.reflect.Array;
 import java.math.BigDecimal;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -51,8 +45,8 @@ import java.util.stream.Stream;
  * Collection of common helper functions used across the project
  *
  */
-public class helperFunctions {
-	private static final Logger LOGGER = LoggerFactory.getLogger(helperFunctions.class);
+public class HelperFunctions {
+	private static final Logger LOGGER = LoggerFactory.getLogger(HelperFunctions.class);
 	/**
 	 * A method to check for equality up to some error bounds
 	 * @param x The first number
