@@ -78,8 +78,10 @@ public class QualityModelDeriver extends AQualityModelDeriver {
         Path benchmarkRepo = Paths.get(prop.getProperty("benchmark.repo"));
 
         ITool CODESYSWrapper = new CODESYSWrapper();
-        ITool KENWrapper = new KENWrapper();
-        Set<ITool> tools = Stream.of(CODESYSWrapper, KENWrapper).collect(Collectors.toSet());
+        //uncomment me when we get KEN working
+        //ITool KENWrapper = new KENWrapper();
+        //Set<ITool> tools = Stream.of(CODESYSWrapper, KENWrapper).collect(Collectors.toSet());
+        Set<ITool> tools = Stream.of(CODESYSWrapper).collect(Collectors.toSet());
         PLCQualityModelImport qmImport = new PLCQualityModelImport(blankqmFilePath);
         QualityModel qmDescription = qmImport.importQualityModel();
 

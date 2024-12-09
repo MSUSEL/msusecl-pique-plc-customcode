@@ -23,13 +23,21 @@
  */
 package calibration;
 
+import pique.calibration.AbstractBenchmarker;
+import pique.calibration.IBenchmarker;
 import pique.calibration.ProbabilityDensityFunctionBenchmarker;
 
 import java.io.File;
+import java.math.BigDecimal;
 import java.nio.file.Path;
 import java.util.*;
 
-public class PLCBenchmarker extends ProbabilityDensityFunctionBenchmarker {
+public class PLCBenchmarker extends AbstractBenchmarker implements IBenchmarker {
+
+    @Override
+    public String getName(){
+        return this.getClass().getCanonicalName();
+    }
 
     @Override
     public Set<Path> CollectProjectPaths(Path benchmarkRepository, String projectRootFlag) {
@@ -41,4 +49,16 @@ public class PLCBenchmarker extends ProbabilityDensityFunctionBenchmarker {
         }
         return projectRoots;
     }
+
+    @Override
+    public Map<String, BigDecimal[]> calculateThresholds(Map<String, ArrayList<BigDecimal>> measureBenchmarkData) {
+        //for the pdf function, store all values as the thresholds. PDF function operation occurs in the evaluator run
+        Map<String, BigDecimal[]> measureThresholds = new HashMap<>();
+        measureBenchmarkData.forEach((measureName, measureValues) -> {
+            BigDecimal[] measureValuesArray = new BigDecimal[measureValues.size()];
+            measureThresholds.putIfAbsent(measureName, measureValues.toArray(measureValuesArray));
+        });
+        return measureThresholds;
+    }
+
 }

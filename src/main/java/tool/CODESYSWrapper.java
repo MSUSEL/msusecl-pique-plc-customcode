@@ -94,7 +94,7 @@ public class CODESYSWrapper extends Tool implements ITool {
         if (toolResults.toFile().isDirectory()) {
             for(File benchmarkOutputFile : requireNonNull(toolResults.toFile().listFiles())) {
                 String[] toolDifferentiator = benchmarkOutputFile.getName().split("-");
-                if (toolDifferentiator[0].equals("CodeSys")) {
+                if (toolDifferentiator[0].equalsIgnoreCase("CODESYS")) {
                     if (toolDifferentiator.length == 3) { //change to 4 when I want to incorporate the "new" metrics
                         String extension = FileNameUtils.getExtension(benchmarkOutputFile.getName());
                         if (extension.equals("csv")) {

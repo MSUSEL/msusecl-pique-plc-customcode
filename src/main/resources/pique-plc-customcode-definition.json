@@ -235,6 +235,7 @@
       "toolName": "CODESYS",
       "description": "Detects lines of code that are not executed, for example due to a RETURN or CONTINUE statement",
       "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "SA0001: Unreachable code": {}
 	  }
@@ -243,6 +244,7 @@
       "toolName": "CODESYS",
       "description": "Detects POUs, GVLs, data type declarations, or interfaces that do not contain any code",
       "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "SA0002: Empty objects": {}
 	  }
@@ -251,6 +253,7 @@
       "toolName": "CODESYS",
       "description": "Detects lines of code that have a semicolon (;) but not a statement",
 	  "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "SA0003: Empty statements": {}
 	  }
@@ -259,6 +262,7 @@
       "toolName": "CODESYS",
       "description": "Detects outputs which are written to more than one location.",
 	  "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "SA0004: Multiple write access on output": {}
 	  }
@@ -267,6 +271,7 @@
       "toolName": "CODESYS",
       "description": "Detects invalid addresses and data type specifications. Valid size prefixes in addresses: X for BOOL B for 1-byte data types, W for 2-byte data types, and D for 4-byte data types.",
 	  "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "SA0005: Invalid addresses and data types": {}
 	  }
@@ -275,6 +280,7 @@
       "toolName": "CODESYS",
       "description": "Detects variables which are written to by more than one task.",
 	  "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "SA0006: Write access from several tasks": {}
 	  }
@@ -283,6 +289,7 @@
       "toolName": "CODESYS",
       "description": "Detects lines of code where the operator ADR is applied for a constant",
 	  "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "SA0007: Address operator on constants": {}
 	  }
@@ -291,6 +298,7 @@
       "toolName": "CODESYS",
       "description": "Detects out-of-range violations of subrange types. Assigned literals are already checked by the compiler. When constants are assigned, then the values must be within the defined range. When variables are assigned, then the data types must be identical.",
 	  "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "SA0008: Check subrange types": {}
 	  }
@@ -299,6 +307,7 @@
       "toolName": "CODESYS",
       "description": "Detects function, method and property calls in which the return value is not used",
 	  "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "SA0009: Unused return values": {}
 	  }
@@ -307,6 +316,7 @@
       "toolName": "CODESYS",
       "description": "Detects arrays with only one element",
 	  "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "SA0010: Arrays with only one component": {}
 	  }
@@ -315,6 +325,7 @@
       "toolName": "CODESYS",
       "description": "Detects structures or enumerations with only one component",
 	  "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "SA0011: Useless declarations": {}
 	  }
@@ -323,6 +334,7 @@
       "toolName": "CODESYS",
       "description": "Detects variables that are not accessed with write permission and therefore could be declared as constants",
 	  "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "SA0012: Variable which could be declared as constants": {}
 	  }
@@ -331,6 +343,7 @@
       "toolName": "CODESYS",
       "description": "Detects variables with names that are already used by other variables (for example, global and local variables with the same name). Also detects variables with names of functions, actions, methods, or properties which are used in the same access scope. Variables are also detected that are declared in a GVL in the Devices view or in the POUs pool. For this, however, the GVL of the POUs view have to be used in the application program.",
 	  "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "SA0013: Declarations with the same variable name": {}
 	  }
@@ -339,6 +352,7 @@
       "toolName": "CODESYS",
       "description": "Detects assignments to function block instances. In the case of instances with pointer or reference variables, these assignments are potentially risky.",
 	  "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "SA0014: Assignment of instances": {}
 	  }
@@ -347,6 +361,7 @@
       "toolName": "CODESYS",
       "description": "Detects the access of a function block to global variables by means of the method FB_Init. The value of this variable depends on the order of initializations.",
 	  "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "SA0015: Access to global data via FB_Init": {}
 	  }
@@ -355,6 +370,7 @@
       "toolName": "CODESYS",
       "description": "Detects gaps in structures or function blocks that are caused by the alignment requirements of the currently set target system. If possible, you should remove the gaps by resorting the structure elements or filling them with a dummy element. If this is not possible, then you can deactivate the rule for the affected structures by means of the analysis pragma.",
 	  "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "SA0016: Gaps in structures": {}
 	  }
@@ -363,6 +379,7 @@
       "toolName": "CODESYS",
       "description": "Detects assignments to pointers that are neither addresses (ADR operator, pointer variables) nor constants 0",
 	  "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "SA0017: Non-regular assignments": {}
 	  }
@@ -371,6 +388,7 @@
       "toolName": "CODESYS",
       "description": "Detects bit access to signed variables. However, the IEC 61131-3 standard permits only bit access and bit shift operations on bit fields. See also the strict rules SA0147 and SA0148.",
 	  "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "SA0018: Unusual bit access": {}
 	  }
@@ -379,6 +397,7 @@
       "toolName": "CODESYS",
       "description": "Detects implicitly generated pointer conversions",
 	  "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "SA0019: Implicit pointer conversions": {}
 	  }
@@ -387,6 +406,7 @@
       "toolName": "CODESYS",
       "description": "Detects operations on integer variables for which a truncated value could be assigned to a REAL data type variable",
 	  "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "SA0020: Possibly assignment of truncated value to REAL variable": {}
 	  }
@@ -395,6 +415,7 @@
       "toolName": "CODESYS",
       "description": "Detects address assignments of temporary variables (on the stack) to non-temporary variables",
 	  "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "SA0021: Transporting the address of a temporary variable": {}
 	  }
@@ -403,6 +424,7 @@
       "toolName": "CODESYS",
       "description": "Detects all functions and methods that include an execution thread without an assignment to the return value",
 	  "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "SA0022: (Possibly) unassigned return value": {}
 	  }
@@ -411,6 +433,7 @@
       "toolName": "CODESYS",
       "description": "Determines complex return values that cannot be returned with a simple registry copy of the processor. This includes structures, arrays, and return values of type STRING (regardless of the size of the used memory).",
 	  "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "SA0023: Complex return values": {}
 	  }
@@ -419,6 +442,7 @@
       "toolName": "CODESYS",
       "description": "Detects untyped literals and constants",
 	  "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "SA0024: Untyped literals / constants": {}
 	  }
@@ -427,6 +451,7 @@
       "toolName": "CODESYS",
       "description": "Detects enumeration constants for which a qualified name does not prepend the enumeration",
 	  "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "SA0025: Unqualified enumeration constants": {}
 	  }
@@ -435,6 +460,7 @@
       "toolName": "CODESYS",
       "description": "Detects string assignments and string initializations that do not use sufficient string length",
 	  "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "SA0026: Possible truncated strings": {}
 	  }
@@ -443,6 +469,7 @@
       "toolName": "CODESYS",
       "description": "Detects multiple uses of a name/identifier for a variable or an object (POU) within the scope of a project. In the case of enumerations, the qualified name is taken into account.",
 	  "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "SA0027: Multiple uses of identifiers": {}
 	  }
@@ -451,6 +478,7 @@
       "toolName": "CODESYS",
       "description": "Detects the lines of code where two or more variables reserve the same memory.",
 	  "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "SA0028: Overlapping memory areas": {}
 	  }
@@ -459,6 +487,7 @@
       "toolName": "CODESYS",
       "description": "Detects the code locations where the notation of an identifier is different from the notation in its declaration",
 	  "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "SA0029: Notation in code different to declaration": {}
 	  }
@@ -467,6 +496,7 @@
       "toolName": "CODESYS",
       "description": "Detects programs, function blocks, functions, data types, interfaces, methods, properties, and actions that are not called within the compiled program code",
 	  "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "SA0031: Unused signatures": {}
 	  }
@@ -475,6 +505,7 @@
       "toolName": "CODESYS",
       "description": "Detects enumeration constants that are not used in the compiled program code",
 	  "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "SA0032: Unused enumeration constants": {}
 	  }
@@ -483,6 +514,7 @@
       "toolName": "CODESYS",
       "description": "Detects variables that are declared but not used within the compiled program code",
 	  "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "SA0033: Unused variables": {}
 	  }
@@ -491,6 +523,7 @@
       "toolName": "CODESYS",
       "description": "Detects values that are assigned to an enumeration variable. Only defined enumeration constants of an enumeration variable are permitted to be assigned.",
 	  "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "SA0034: Enumerations with incorrect assignment": {}
 	  }
@@ -499,6 +532,7 @@
       "toolName": "CODESYS",
       "description": "Detects input variables that are not used by any function block instance",
 	  "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "SA0035: Unused input variables": {}
 	  }
@@ -507,6 +541,7 @@
       "toolName": "CODESYS",
       "description": "Detects the output variables of functions and function blocks which are not assigned within the respective function or function block.",
 	  "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "SA0036: Unused output variables": {}
 	  }
@@ -515,6 +550,7 @@
       "toolName": "CODESYS",
       "description": "Detects input variables (VAR_INPUT) that are accessed with write permission within the POU",
 	  "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "SA0037: Write access to input variable": {}
 	  }
@@ -523,6 +559,7 @@
       "toolName": "CODESYS",
       "description": "Detects output variables (VAR_OUTPUT) that are accessed with read permission within the POU",
 	  "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "SA0038: Read access to output variable": {}
 	  }
@@ -531,6 +568,7 @@
       "toolName": "CODESYS",
       "description": "Detects code locations where a null pointer is possibly dereferenced",
 	  "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "SA0039: Possible null-pointer deferences": {}
 	  }
@@ -539,6 +577,7 @@
       "toolName": "CODESYS",
       "description": "Detects code locations where there is possible division by zero",
 	  "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "SA0040: Possible division by zero": {}
 	  }
@@ -547,6 +586,7 @@
       "toolName": "CODESYS",
       "description": "Detects assignments in loops that calculate the same value for each loop cycle. These lines of code could possibly be inserted outside of the loop.",
 	  "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "SA0041: Detect possible loop invariant code": {}
 	  }
@@ -555,6 +595,7 @@
       "toolName": "CODESYS",
       "description": "Detects the usage of different access paths for the same variable",
 	  "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "SA0042: Usage of different access paths": {}
 	  }
@@ -563,6 +604,7 @@
       "toolName": "CODESYS",
       "description": "Detects the use of a global variable in only a single POU",
 	  "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "SA0043: Use of a global variable in only one POU": {}
 	  }
@@ -571,6 +613,7 @@
       "toolName": "CODESYS",
       "description": "Detects declarations with REFERENCE TO interfaces and declarations of VAR_IN_OUT variables with interfaces (implicitly implemented by means of REFERENCE TO)",
 	  "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "SA0044: Declarations with reference to interface": {}
 	  }
@@ -579,6 +622,7 @@
       "toolName": "CODESYS",
       "description": "Detects the use of interfaces that were not initialized before being used",
 	  "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "SA0046: Possible use of not initialised interface": {}
 	  }
@@ -587,6 +631,7 @@
       "toolName": "CODESYS",
       "description": "Detects direct address access in the implementation code",
 	  "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "SA0047: Accesses to direct address": {}
 	  }
@@ -595,6 +640,7 @@
       "toolName": "CODESYS",
       "description": "Detects AT declarations on direct addresses",
 	  "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "SA0048: AT-declarations on direct addresses": {}
 	  }
@@ -603,6 +649,7 @@
       "toolName": "CODESYS",
       "description": "Detects comparison operations on variables of type BOOL",
 	  "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "SA0051: Comparison operations on BOOL variables": {}
 	  }
@@ -611,6 +658,7 @@
       "toolName": "CODESYS",
       "description": "Detects shift operations (bit shift) on signed variables. In the case of shift operations on bit field data types (Byte, DWORD, LWORD, WORD), an error is not reported.",
 	  "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "SA0052: Unusual shift operation": {}
 	  }
@@ -619,6 +667,7 @@
       "toolName": "CODESYS",
       "description": "Detects whether or not the data type width of the operand has been exceeded in the case of a bitwise shift (bit shift) of operands",
 	  "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "SA0053: Too big bitwise shift": {}
 	  }
@@ -627,6 +676,7 @@
       "toolName": "CODESYS",
       "description": "Detects whether or not the comparison operators = (equality) and <> (inequality) compare the operands of type REAL or LREAL.",
 	  "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "SA0054: Comparisons of REAL/LREAL for equality / inequality": {}
 	  }
@@ -635,6 +685,7 @@
       "toolName": "CODESYS",
       "description": "Detects unnecessary comparisons with unsigned operands. An unsigned data type is never less than zero. This can be used as a sign check.",
 	  "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "SA0055: Unnecessary comparisons of unsigned operands": {}
 	  }
@@ -643,6 +694,7 @@
       "toolName": "CODESYS",
       "description": "Detects literals (constants) outside of the valid range of the operator",
 	  "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "SA0056: Constant out of valid range": {}
 	  }
@@ -651,6 +703,7 @@
       "toolName": "CODESYS",
       "description": "Detects statements with possible loss of decimal places",
 	  "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "SA0057: Possible loss of decimal places": {}
 	  }
@@ -659,6 +712,7 @@
       "toolName": "CODESYS",
       "description": "Detects operations on variables of the enumeration data type Assignments are permitted.",
 	  "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "SA0058: Operations on enumeration variables": {}
 	  }
@@ -667,6 +721,7 @@
       "toolName": "CODESYS",
       "description": "Detects comparisons with literals that always have the result TRUE or FALSE, and can already be processed during at the compile.",
 	  "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "SA0059: Comparison operations always returning TRUE or FALSE": {}
 	  }
@@ -675,6 +730,7 @@
       "toolName": "CODESYS",
       "description": "Detects operations where an operand with the value \"0\" causes an invalid or a nonsense operation",
 	  "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "SA0060: Zero used as invalid operand": {}
 	  }
@@ -683,6 +739,7 @@
       "toolName": "CODESYS",
       "description": "Detects operations one variables of type POINTER TO which are not = (equality), <> (inequality), + (addition), or ADR.",
 	  "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "SA0061: Unusual operation on pointer": {}
 	  }
@@ -691,6 +748,7 @@
       "toolName": "CODESYS",
       "description": "Detects the use of the literals TRUE or FALSE in expressions",
 	  "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "SA0062: Uses of TRUE or FALSE in expressions": {}
 	  }
@@ -699,6 +757,7 @@
       "toolName": "CODESYS",
       "description": "Detects 16-bit operations with temporary results. Background: On 16-bit systems, 32-bit temporary results can be truncated. Example: (int+10) can exceed 16 bits.",
 	  "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "SA0063: Possibly not 16-bit-compatible operations": {}
 	  }
@@ -707,6 +766,7 @@
       "toolName": "CODESYS",
       "description": "Detects the addition of pointers",
 	  "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "SA0064: Addition of pointer": {}
 	  }
@@ -715,6 +775,7 @@
       "toolName": "CODESYS",
       "description": "Detects pointer additions for which the value to be added does not match the base size of the pointer. Only literals of the base size can be added. Also multiplication products of the base size cannot be added.",
 	  "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "SA0065: Incorrect pointer addition to base size": {}
 	  }
@@ -723,6 +784,7 @@
       "toolName": "CODESYS",
       "description": "Detects the use of temporary results in statements with a data type that is less than the registry size. The implicit cast in this case may lead to unwanted results.",
 	  "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "SA0066: Uses of temporary results": {}
 	  }
@@ -731,6 +793,7 @@
       "toolName": "CODESYS",
       "description": "Detects the use of a counter variable in a FOR loop",
 	  "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "SA0072: Invalid uses of counter variable": {}
 	  }
@@ -739,6 +802,7 @@
       "toolName": "CODESYS",
       "description": "Detects the use of non-temporary variables in FOR loops.",
 	  "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "SA0073: Uses of inadequate counter variable": {}
 	  }
@@ -747,6 +811,7 @@
       "toolName": "CODESYS",
       "description": "Detects CASE statements without an ELSE branch",
 	  "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "SA0075: Missing ELSE": {}
 	  }
@@ -755,6 +820,7 @@
       "toolName": "CODESYS",
       "description": "Detects whether or not an enumeration variable is used as a condition and not all enumeration values are treated as CASE branches",
 	  "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "SA0076: Missing enumeration constant": {}
 	  }
@@ -763,6 +829,7 @@
       "toolName": "CODESYS",
       "description": "Detects code locations where the data type of a condition does not match that of the CASE branch",
 	  "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "SA0077: Type mismatches with CASE expression": {}
 	  }
@@ -771,6 +838,7 @@
       "toolName": "CODESYS",
       "description": "Detects CASE statements without CASE branches and only one ELSE statement",
 	  "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "SA0078: Missing CASE branches": {}
 	  }
@@ -779,6 +847,7 @@
       "toolName": "CODESYS",
       "description": "Detects the FOR statements where the index variable is used to access an array index and exceeds the range of the array index",
 	  "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "SA0080: Loop index variable for array index exceeds array range": {}
 	  }
@@ -787,6 +856,7 @@
       "toolName": "CODESYS",
       "description": "Detects the FOR statements where the upper bound is not defined with a constant value",
 	  "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "SA0081: Upper border is not a constant": {}
 	  }
@@ -795,6 +865,7 @@
       "toolName": "CODESYS",
       "description": "Detects whether or not the RETURN statement is not the last statement in a function, method, property, or program.",
 	  "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "SA0090: Return statement before end of function": {}
 	  }
@@ -803,6 +874,7 @@
       "toolName": "CODESYS",
       "description": "Detects assignments in conditions of IF, CASE, or REPEAT constructs",
 	  "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "SA0095: Assignments in conditions": {}
 	  }
@@ -811,6 +883,7 @@
       "toolName": "CODESYS",
       "description": "Detects variables that use more than n bytes, where n is defined by the current configuration. Default value: 1024 bytes. The value can be changed by double-clicking the line.",
 	  "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "SA0100: Variables greater than <n> bytes": {}
 	  }
@@ -819,6 +892,7 @@
       "toolName": "CODESYS",
       "description": "Detects names with invalid lengths. In the Project Settings, double-click the rule entry to open a dialog where you can define the length of the name and define any exception.",
 	  "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "SA0101: Names with invalid length": {}
 	  }
@@ -827,6 +901,7 @@
       "toolName": "CODESYS",
       "description": "Detects external access to local variables of programs or function blocks.",
 	  "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "A0102: Access to program/fb variables from the outside": {}
 	  }
@@ -835,6 +910,7 @@
       "toolName": "CODESYS",
       "description": "Detects whether or not non-atomic variables (for example, with data type STRING, WSTRING, ARRAY, STRUCT, FB instances, 64-bit data types) are used in more than one task",
 	  "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "SA0103: Concurrent access on not atomic data": {}
 	  }
@@ -843,6 +919,7 @@
       "toolName": "CODESYS",
       "description": "Detects the instances of function blocks that are called multiple times. To do this, the function blocks haves to be marked with the pragma {attribute 'analysis:report-multiple-instance-calls'}.",
 	  "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "SA0105: Multiple instance calls": {}
 	  }
@@ -851,6 +928,7 @@
       "toolName": "CODESYS",
       "description": "Detects method calls in the FB_Init method of a base function block, which are overwritten by a function block derived from a base function block",
 	  "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "SA0106: Virtual method calls in FB_INIT": {}
 	  }
@@ -859,6 +937,7 @@
       "toolName": "CODESYS",
       "description": "Detects whether or not formal parameters are missing",
 	  "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "SA0107: Missing formal parameters": {}
 	  }
@@ -867,6 +946,7 @@
       "toolName": "CODESYS",
       "description": "Detects variables of type POINTER TO",
 	  "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "SA0111: Pointer variables": {}
 	  }
@@ -875,6 +955,7 @@
       "toolName": "CODESYS",
       "description": "Detects variables of type REFERENCE TO",
 	  "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "SA0112: Reference variables": {}
 	  }
@@ -883,6 +964,7 @@
       "toolName": "CODESYS",
       "description": "Detects variables of type WSTRING",
 	  "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "SA0113: Variables with data type WSTRING": {}
 	  }
@@ -891,6 +973,7 @@
       "toolName": "CODESYS",
       "description": "Detects variables of type LTIME.",
 	  "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "SA0114: Variables with data type LTIME": {}
 	  }
@@ -899,6 +982,7 @@
       "toolName": "CODESYS",
       "description": "Detects declarations of a UNION data type and variable declarations of the UNION type",
 	  "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "SA0115: Variables with data type UNION": {}
 	  }
@@ -907,6 +991,7 @@
       "toolName": "CODESYS",
       "description": "Detects variable declarations of data type BIT (possible within structure definitions)",
 	  "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "SA0117: Variables with data type BIT": {}
 	  }
@@ -915,6 +1000,7 @@
       "toolName": "CODESYS",
       "description": "Detects initializations that do not assign constants",
 	  "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "SA0118: Initialisations not using constants": {}
 	  }
@@ -923,6 +1009,7 @@
       "toolName": "CODESYS",
       "description": "Detects the use of object-oriented features, such as function block declarations with EXTENDS and IMPLEMENTS, or property and interface declarations. This rule is useful when you write code that is intended to be ported to other IEC 61131-3-compliant systems.",
 	  "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "SA0119:Object-oriented features": {}
 	  }
@@ -931,6 +1018,7 @@
       "toolName": "CODESYS",
       "description": "Detects program calls",
 	  "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "SA0120: Program calls": {}
 	  }
@@ -939,6 +1027,7 @@
       "toolName": "CODESYS",
       "description": "Detects the use of a global variable in function blocks without them being declared there as VAR_EXTERNAL",
 	  "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "SA0121: Missing 'VAR_EXTERNAL' declarations": {}
 	  }
@@ -947,6 +1036,7 @@
       "toolName": "CODESYS",
       "description": "Detects the use of expressions in the declaration of array indexes",
 	  "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "SA0122: Array index defined as expression": {}
 	  }
@@ -955,6 +1045,7 @@
       "toolName": "CODESYS",
       "description": "Detects the use of the CODESYS Static Analysis-specific operators INI, ADR, and BITADR.",
 	  "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "SA0123: Usages of INI, ADR or BITADR": {}
 	  }
@@ -963,6 +1054,7 @@
       "toolName": "CODESYS",
       "description": "Detects pointer dereferences that are used for initialization in the declaration part",
 	  "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "SA0124: Pointer dereferences in declarations": {}
 	  }
@@ -971,6 +1063,7 @@
       "toolName": "CODESYS",
       "description": "Detects reference variables that are used for initialization in the declaration part",
 	  "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "SA0125: References in initializations": {}
 	  }
@@ -979,6 +1072,7 @@
       "toolName": "CODESYS",
       "description": "Detects implicit conversions from smaller data types to larger data types",
 	  "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "SA0130: Implicit expanding conversions": {}
 	  }
@@ -987,6 +1081,7 @@
       "toolName": "CODESYS",
       "description": "Detects implicit conversions from larger data types to smaller data types",
 	  "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "SA0131: Implicit narrowing conversions": {}
 	  }
@@ -995,6 +1090,7 @@
       "toolName": "CODESYS",
       "description": "Detects implicit conversions from signed data types to unsigned data types or the other way around.",
 	  "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "SA0132: Implicit signed/unsigned conversions": {}
 	  }
@@ -1003,6 +1099,7 @@
       "toolName": "CODESYS",
       "description": "Detects explicit conversions from a larger data type to a smaller data type",
 	  "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "SA0133: Explicit narrowing conversions": {}
 	  }
@@ -1011,6 +1108,7 @@
       "toolName": "CODESYS",
       "description": "Detects explicit conversions from signed data types to unsigned data types and the other way around",
 	  "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "SA0134: Explicit signed/unsigned conversions": {}
 	  }
@@ -1019,6 +1117,7 @@
       "toolName": "CODESYS",
       "description": "Detects commented-out statements",
 	  "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "SA0140: Statements commented out": {}
 	  }
@@ -1027,6 +1126,7 @@
       "toolName": "CODESYS",
       "description": "Detects any reference variables that may not be initialized before use and are not checked by the operator __ISVALIDREF. This rule is applied in the implementation part of POUs. For the declaration, there is rule SA0124.",
 	  "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "SA0145: Possible use of not initialised reference": {}
 	  }
@@ -1035,6 +1135,7 @@
       "toolName": "CODESYS",
       "description": "Detects bit shift operations that are not made to bit field data types (BYTE, WORD, DWORD, LWORD)",
 	  "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "SA0147: Unusual shift operation - strict": {}
 	  }
@@ -1043,6 +1144,7 @@
       "toolName": "CODESYS",
       "description": "Detects bit access that is not made to bit field data types (BYTE, WORD, DWORD, and LWORD). The IEC 61131-3 standard permits only bit access to bit field data types. However, the CODESYS compiler also permits bit access to unsigned data types.",
 	  "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "SA0148: Unusual bit access - strict": {}
 	  }
@@ -1051,6 +1153,7 @@
       "toolName": "CODESYS",
       "description": "Detects the POUs that violate the activated metrics at the lower or upper limits",
 	  "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "SA0150: Violations of lower or upper limits or the metrics": {}
 	  }
@@ -1059,6 +1162,7 @@
       "toolName": "CODESYS",
       "description": "Detects recursive calls in actions, methods, and properties of function blocks. Also detects possible recursions from virtual function calls and interface calls.",
 	  "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "SA0160: Recursive calls": {}
 	  }
@@ -1067,6 +1171,7 @@
       "toolName": "CODESYS",
       "description": "Detects unpacked structures that are used in packed structures",
 	  "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "SA0161: Unpacked structure in packed structure": {}
 	  }
@@ -1075,6 +1180,7 @@
       "toolName": "CODESYS",
       "description": "Detects uncommented locations in the program",
 	  "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "SA0162: Missing comments": {}
 	  }
@@ -1083,6 +1189,7 @@
       "toolName": "CODESYS",
       "description": "Detects nested comments",
 	  "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "SA0163: Nested comments": {}
 	  }
@@ -1091,6 +1198,7 @@
       "toolName": "CODESYS",
       "description": "Detects multiline comments that are coded as (* comment *). Only single-line comments that are coded as // comment are permitted.",
 	  "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "SA0164: Multiline comments": {}
 	  }
@@ -1099,6 +1207,7 @@
       "toolName": "CODESYS",
       "description": "Detects tasks that call function blocks or functions instead of a program",
 	  "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "SA0165: Tasks calling other POUs than programs": {}
 	  }
@@ -1107,6 +1216,7 @@
       "toolName": "CODESYS",
       "description": "Detects whether or not a defined number of input variables (VAR_INPUT), output variables (VAR_OUTPUT) or VAR_IN_OUT variables is exceeded in a POU. In the Project Settings, double-click the rule entry to open a dialog where you define the maximum number.",
 	  "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "SA0166: Max. number of input/output/in-out variables...": {}
 	  }
@@ -1115,6 +1225,7 @@
       "toolName": "CODESYS",
       "description": "The check detects function block instances which are declared as temporary variables. This affects instances which are declared in a method or function or as VAR_TEMP, and therefore are reinitialized in each processing cycle or for each POU call.",
 	  "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "SA0167: Temporary function block instances": {}
 	  }
@@ -1123,6 +1234,7 @@
       "toolName": "CODESYS",
       "description": "Detects assignments to variables which do not have any effect in the code.",
 	  "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "SA0168: Unnecessary Assignments": {}
 	  }
@@ -1131,6 +1243,7 @@
       "toolName": "CODESYS",
       "description": "Detects the outputs of methods and functions that are not specified when calling the method or function.",
 	  "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "SA0169: Ignored outputs": {}
 	  }
@@ -1139,6 +1252,7 @@
       "toolName": "CODESYS",
       "description": "Detects code locations where the address of an output variable (VAR_OUTPUT, VAR_IN_OUT) of a function block is is determined.",
 	  "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "SA0170: Address of an output variable should not be used": {}
 	  }
@@ -1147,6 +1261,7 @@
       "toolName": "CODESYS",
       "description": "Detects declarations of enumerations which are not provided with the {attribute 'strict'} attribute.",
 	  "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
 	  "children": {
 		  "SA0171: Enumerations should have the 'strict' attribute": {}
 	  }
@@ -1154,6 +1269,7 @@
     "POU Size": {
       "name": "POU Size",
       "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
       "description": "Size of POU",
       "children": {
         "NOS - Number Of Statements": {}
@@ -1162,6 +1278,7 @@
     "Number of steps, transitions, branches in SFC": {
       "name": "Number of steps, transitions, branches in SFC",
       "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
       "description": "Number of steps, transitions, branches in SFC",
       "children": {
         "Number of SFC branches": {},
@@ -1171,6 +1288,7 @@
     "Usage of global variables": {
       "name": "Usage of global variables",
       "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
       "description": "Usage of global variables",
       "children": {
         "Used different global Variables": {}
@@ -1179,6 +1297,7 @@
     "POU interfaces": {
       "name": "POU interfaces",
       "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
       "description": "POU interfaces",
       "children": {
         "Number of inputs variables": {},
@@ -1188,6 +1307,7 @@
     "Comments in the source code": {
       "name": "Comments in the source code",
       "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
       "description": "Comments in the source code",
       "children": {
         "Percentage of comment": {}
@@ -1196,6 +1316,7 @@
     "Depth of inheritance": {
       "name": "Depth of inheritance",
       "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
       "description": "Depth of inheritance",
       "children": {
         "DIT - Depth of Inheritance Tree": {},
@@ -1213,6 +1334,7 @@
     "Coupling of objects to the environment": {
       "name": "Coupling of objects to the environment",
       "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
       "description": "Coupling of objects to the environment",
       "children": {
         "RFC - Response For Class": {},
@@ -1222,6 +1344,7 @@
     "Complexity and length of source code": {
       "name": "Complexity and length of source code",
       "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
       "description": "Complexity and length of source code",
       "children": {
         "Difficulty - Halstead (D)": {},
@@ -1233,6 +1356,7 @@
     "Duplication": {
       "name": "Duplication",
       "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
       "description": "Duplication",
       "children": {
       }
@@ -1240,6 +1364,7 @@
     "Number of transitions in SFC": {
       "name": "Number of transitions in SFC",
       "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
       "description": "Number of transitions in SFC",
       "children": {
         "Number of SFC branches": {},
@@ -1249,6 +1374,7 @@
     "Direct hardware accesses": {
       "name": "Direct hardware accesses",
       "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
       "description": "Direct hardware accesses",
       "children": {
 		  "Number of direct address accesses": {}
@@ -1274,6 +1400,7 @@
     "Memory allocation": {
       "name": "Memory allocation",
       "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
       "description": "Memory allocation",
       "children": {
 		  "Code size (number of bytes)": {},
@@ -1283,6 +1410,7 @@
     "Usage of local variables": {
       "name": "Usage of local variables",
       "positive": "false",
+	  "utility_function": "pique.evaluation.ProbabilityDensityFunctionUtilityFunction",
       "description": "Usage of local variables",
       "children": {
 		  "Number of local variables": {}
