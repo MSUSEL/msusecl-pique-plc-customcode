@@ -34,15 +34,15 @@ are supplied on this repository.
 2. With Docker engine installed, pull the latest version of this project: `docker pull msusel/pique-plc-customcode:latest`
 3. Navigate to a working directory for this project
 4. Create two directories, "input" and "output". 
-5. Move CODESYS analysis output files (txt file and csv file) into their own directory, named appropriately. Examples are available [here](https://github.com/MSUSEL/benchmarks/tree/main/plc-customcode/codesys-output)
+5. Move CODESYS analysis output files (txt file and csv file) into their own directory, named appropriately with the structure 'CodeSys-{project}-output.csv' and 'CodeSys-{project}-output.txt'. The hypens are required. Examples are available [here](https://github.com/MSUSEL/benchmarks/tree/main/plc-customcode/codesys-output)
    * Move these files into the "input" directory
 6. The resulting directory structure should look like this:
 ```
 ├── $WORKDIR
 │   ├── input
 │   │   ├── project_to_analyze
-│   │   │   ├── CODESYS_rules_output.txt
-│   │   │   ├── CODESYS_metrics_output.csv
+│   │   │   ├── CodeSys-rules-output.txt
+│   │   │   ├── CodeSys-metrics-output.csv
 │   ├── output
 ```
 11. Run the command `docker run -it --rm -v /path/to/working/directory/input:/input -v /path/to/working/directory/output:/output msusel/pique-plc-customcode:latest`

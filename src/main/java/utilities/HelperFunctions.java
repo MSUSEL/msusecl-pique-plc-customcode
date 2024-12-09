@@ -65,26 +65,6 @@ public class HelperFunctions {
 		}
 	}
 
-	public static int getComponentCount() {
-		try {
-			File tempResults = new File(System.getProperty("user.dir") + "/out/sbomqs.txt");
-			FileReader fileReader = new FileReader(tempResults);
-			BufferedReader bufferedReader = new BufferedReader(fileReader);
-			int componenetCount = Integer.parseInt(bufferedReader.readLine());
-			bufferedReader.close();
-
-			return componenetCount;
-		}
-		catch (IOException  e) {
-			LOGGER.error("Failed to open sbomqs.txt could not get component count return 1");
-			LOGGER.error(e.toString());
-			e.printStackTrace();
-			return 1;
-		}
-		// Close the BufferedReader
-
-	}
-
 	 /**
 	  * Taken directly from https://stackoverflow.com/questions/13008526/runtime-getruntime-execcmd-hanging
 	  * 

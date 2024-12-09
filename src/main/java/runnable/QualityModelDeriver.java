@@ -24,6 +24,7 @@
 package runnable;
 
 import model.PLCQualityModelImport;
+import org.checkerframework.checker.units.qual.K;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import pique.analysis.ITool;
@@ -33,6 +34,7 @@ import pique.model.QualityModelImport;
 import pique.runnable.AQualityModelDeriver;
 import pique.utility.PiqueProperties;
 import tool.CODESYSWrapper;
+import tool.KENWrapper;
 
 import java.io.IOException;
 import java.nio.file.Path;
@@ -76,12 +78,12 @@ public class QualityModelDeriver extends AQualityModelDeriver {
         Path benchmarkRepo = Paths.get(prop.getProperty("benchmark.repo"));
 
         ITool CODESYSWrapper = new CODESYSWrapper();
+        //uncomment me when we get KEN working
+        //ITool KENWrapper = new KENWrapper();
+        //Set<ITool> tools = Stream.of(CODESYSWrapper, KENWrapper).collect(Collectors.toSet());
         Set<ITool> tools = Stream.of(CODESYSWrapper).collect(Collectors.toSet());
-        // note that PLCQualityModelImport is a copy paste of the normal quality model import, but with just a few lines changes.
-        // fixme in future, make the default QualityModelImport more extendable (everything is private, make it protected)
         PLCQualityModelImport qmImport = new PLCQualityModelImport(blankqmFilePath);
         QualityModel qmDescription = qmImport.importQualityModel();
-        //qmDescription = pique.utility.TreeTrimmingUtility.trimQualityModelTree(qmDescription);
 
         QualityModel derivedQualityModel = deriveModel(qmDescription, tools, benchmarkRepo, projectRootFlag);
 

@@ -1,6 +1,6 @@
 FROM msusel/pique-core:1.0.1
 
-ARG PIQUE_PLC_CUSTOMCODE_VERSION=1.0.0
+ARG PIQUE_PLC_CUSTOMCODE_VERSION=2.0.0
 
 # move to home for a fresh start
 WORKDIR "/home"
